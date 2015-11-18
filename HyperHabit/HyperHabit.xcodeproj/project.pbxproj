@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
+		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
+		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
+		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
+		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
+		C569AC8C1BFCFCC7003F9995 /* HyperHabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */; };
+		C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C569AC881BFCFCC7003F9995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C569AC6B1BFCFCC7003F9995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C569AC721BFCFCC7003F9995;
+			remoteInfo = HyperHabit;
+		};
+		C569AC931BFCFCC7003F9995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C569AC6B1BFCFCC7003F9995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C569AC721BFCFCC7003F9995;
+			remoteInfo = HyperHabit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C569AC781BFCFCC7003F9995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C569AC7B1BFCFCC7003F9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C569AC801BFCFCC7003F9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C569AC821BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C569AC871BFCFCC7003F9995 /* HyperHabitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperHabitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperHabitTests.swift; sourceTree = "<group>"; };
+		C569AC8D1BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C569AC921BFCFCC7003F9995 /* HyperHabitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperHabitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperHabitUITests.swift; sourceTree = "<group>"; };
+		C569AC981BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C569AC701BFCFCC7003F9995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC841BFCFCC7003F9995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC8F1BFCFCC7003F9995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C569AC6A1BFCFCC7003F9995 = {
+			isa = PBXGroup;
+			children = (
+				C569AC751BFCFCC7003F9995 /* HyperHabit */,
+				C569AC8A1BFCFCC7003F9995 /* HyperHabitTests */,
+				C569AC951BFCFCC7003F9995 /* HyperHabitUITests */,
+				C569AC741BFCFCC7003F9995 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C569AC741BFCFCC7003F9995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C569AC731BFCFCC7003F9995 /* HyperHabit.app */,
+				C569AC871BFCFCC7003F9995 /* HyperHabitTests.xctest */,
+				C569AC921BFCFCC7003F9995 /* HyperHabitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C569AC751BFCFCC7003F9995 /* HyperHabit */ = {
+			isa = PBXGroup;
+			children = (
+				C569AC761BFCFCC7003F9995 /* AppDelegate.swift */,
+				C569AC781BFCFCC7003F9995 /* ViewController.swift */,
+				C569AC7A1BFCFCC7003F9995 /* Main.storyboard */,
+				C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */,
+				C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */,
+				C569AC821BFCFCC7003F9995 /* Info.plist */,
+			);
+			path = HyperHabit;
+			sourceTree = "<group>";
+		};
+		C569AC8A1BFCFCC7003F9995 /* HyperHabitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */,
+				C569AC8D1BFCFCC7003F9995 /* Info.plist */,
+			);
+			path = HyperHabitTests;
+			sourceTree = "<group>";
+		};
+		C569AC951BFCFCC7003F9995 /* HyperHabitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */,
+				C569AC981BFCFCC7003F9995 /* Info.plist */,
+			);
+			path = HyperHabitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C569AC721BFCFCC7003F9995 /* HyperHabit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C569AC9B1BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabit" */;
+			buildPhases = (
+				C569AC6F1BFCFCC7003F9995 /* Sources */,
+				C569AC701BFCFCC7003F9995 /* Frameworks */,
+				C569AC711BFCFCC7003F9995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyperHabit;
+			productName = HyperHabit;
+			productReference = C569AC731BFCFCC7003F9995 /* HyperHabit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C569AC861BFCFCC7003F9995 /* HyperHabitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C569AC9E1BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitTests" */;
+			buildPhases = (
+				C569AC831BFCFCC7003F9995 /* Sources */,
+				C569AC841BFCFCC7003F9995 /* Frameworks */,
+				C569AC851BFCFCC7003F9995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C569AC891BFCFCC7003F9995 /* PBXTargetDependency */,
+			);
+			name = HyperHabitTests;
+			productName = HyperHabitTests;
+			productReference = C569AC871BFCFCC7003F9995 /* HyperHabitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C569AC911BFCFCC7003F9995 /* HyperHabitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C569ACA11BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitUITests" */;
+			buildPhases = (
+				C569AC8E1BFCFCC7003F9995 /* Sources */,
+				C569AC8F1BFCFCC7003F9995 /* Frameworks */,
+				C569AC901BFCFCC7003F9995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C569AC941BFCFCC7003F9995 /* PBXTargetDependency */,
+			);
+			name = HyperHabitUITests;
+			productName = HyperHabitUITests;
+			productReference = C569AC921BFCFCC7003F9995 /* HyperHabitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C569AC6B1BFCFCC7003F9995 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Maxim Pervushin";
+				TargetAttributes = {
+					C569AC721BFCFCC7003F9995 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					C569AC861BFCFCC7003F9995 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = C569AC721BFCFCC7003F9995;
+					};
+					C569AC911BFCFCC7003F9995 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = C569AC721BFCFCC7003F9995;
+					};
+				};
+			};
+			buildConfigurationList = C569AC6E1BFCFCC7003F9995 /* Build configuration list for PBXProject "HyperHabit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C569AC6A1BFCFCC7003F9995;
+			productRefGroup = C569AC741BFCFCC7003F9995 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C569AC721BFCFCC7003F9995 /* HyperHabit */,
+				C569AC861BFCFCC7003F9995 /* HyperHabitTests */,
+				C569AC911BFCFCC7003F9995 /* HyperHabitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C569AC711BFCFCC7003F9995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */,
+				C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */,
+				C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC851BFCFCC7003F9995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC901BFCFCC7003F9995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C569AC6F1BFCFCC7003F9995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */,
+				C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC831BFCFCC7003F9995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C569AC8C1BFCFCC7003F9995 /* HyperHabitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C569AC8E1BFCFCC7003F9995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C569AC891BFCFCC7003F9995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C569AC721BFCFCC7003F9995 /* HyperHabit */;
+			targetProxy = C569AC881BFCFCC7003F9995 /* PBXContainerItemProxy */;
+		};
+		C569AC941BFCFCC7003F9995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C569AC721BFCFCC7003F9995 /* HyperHabit */;
+			targetProxy = C569AC931BFCFCC7003F9995 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C569AC7A1BFCFCC7003F9995 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C569AC7B1BFCFCC7003F9995 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C569AC801BFCFCC7003F9995 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C569AC991BFCFCC7003F9995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C569AC9A1BFCFCC7003F9995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C569AC9C1BFCFCC7003F9995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HyperHabit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C569AC9D1BFCFCC7003F9995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HyperHabit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C569AC9F1BFCFCC7003F9995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HyperHabitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperHabit.app/HyperHabit";
+			};
+			name = Debug;
+		};
+		C569ACA01BFCFCC7003F9995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HyperHabitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperHabit.app/HyperHabit";
+			};
+			name = Release;
+		};
+		C569ACA21BFCFCC7003F9995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HyperHabitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HyperHabit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C569ACA31BFCFCC7003F9995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HyperHabitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HyperHabit;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C569AC6E1BFCFCC7003F9995 /* Build configuration list for PBXProject "HyperHabit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C569AC991BFCFCC7003F9995 /* Debug */,
+				C569AC9A1BFCFCC7003F9995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C569AC9B1BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C569AC9C1BFCFCC7003F9995 /* Debug */,
+				C569AC9D1BFCFCC7003F9995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C569AC9E1BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C569AC9F1BFCFCC7003F9995 /* Debug */,
+				C569ACA01BFCFCC7003F9995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C569ACA11BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C569ACA21BFCFCC7003F9995 /* Debug */,
+				C569ACA31BFCFCC7003F9995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C569AC6B1BFCFCC7003F9995 /* Project object */;
+}
