@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73BC671937D1F9A3080C7722 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
+		73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
+		73BC6BF5DE29630F6369BF37 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
+		73BC6C2233DCC8EC6C0520E3 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
+		73BC6D433646E4A12819128D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
+		73BC6D897516C18AF4408613 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
 		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
 		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73BC6160814D2BB6AF51F95E /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		73BC6E21910937FBB8A97778 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C569AC781BFCFCC7003F9995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73BC64EE8B6D4DAA83E7FE9B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6E21910937FBB8A97778 /* Habit.swift */,
+				73BC6160814D2BB6AF51F95E /* Report.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C569AC6A1BFCFCC7003F9995 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,7 @@
 				C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */,
 				C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */,
 				C569AC821BFCFCC7003F9995 /* Info.plist */,
+				73BC64EE8B6D4DAA83E7FE9B /* Data */,
 			);
 			path = HyperHabit;
 			sourceTree = "<group>";
@@ -258,6 +276,8 @@
 			files = (
 				C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */,
 				C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */,
+				73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */,
+				73BC6D897516C18AF4408613 /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C569AC8C1BFCFCC7003F9995 /* HyperHabitTests.swift in Sources */,
+				73BC6C2233DCC8EC6C0520E3 /* Habit.swift in Sources */,
+				73BC671937D1F9A3080C7722 /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */,
+				73BC6BF5DE29630F6369BF37 /* Habit.swift in Sources */,
+				73BC6D433646E4A12819128D /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
