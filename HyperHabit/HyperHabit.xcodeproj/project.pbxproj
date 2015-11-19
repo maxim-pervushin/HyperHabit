@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
 		73BC63267EECFB386E338996 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
 		73BC64E4608BD8DDCAB3B164 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
 		73BC65B04D87C14F7CF12E9A /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
 		73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
 		73BC671937D1F9A3080C7722 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
-		73BC67E80092DCA65A564D1B /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65D0CC82A5226A0FAC1F /* DataManagerTestCase.swift */; };
+		73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */; };
 		73BC69683F3A2712F8F0FC35 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
 		73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
 		73BC6AB242FEA30D86D2DBBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
@@ -22,14 +23,18 @@
 		73BC6D433646E4A12819128D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
 		73BC6D897516C18AF4408613 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
 		73BC6DA507AC0802F3DE8C61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
+		73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */; };
+		73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */; };
+		73BC6EF0AE08FE2E38B98F83 /* DataManagerTestCase+reportsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */; };
 		73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
 		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
 		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
 		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
-		C569AC8C1BFCFCC7003F9995 /* HyperHabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */; };
 		C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */; };
+		C5E8906D1BFDE5C7004AC6E1 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
+		C5E8906E1BFDE5CA004AC6E1 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTestCase.swift; sourceTree = "<group>"; };
 		73BC6160814D2BB6AF51F95E /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		73BC6189E79E19037FFF9304 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		73BC65D0CC82A5226A0FAC1F /* DataManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTestCase.swift; sourceTree = "<group>"; };
+		73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+deleteHabit.swift"; sourceTree = "<group>"; };
+		73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
+		73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
 		73BC6997F91AF8250549156B /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		73BC6A75D5136D67B2284457 /* MemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+saveHabit.swift"; sourceTree = "<group>"; };
 		73BC6E21910937FBB8A97778 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +73,6 @@
 		C569AC801BFCFCC7003F9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C569AC821BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C569AC871BFCFCC7003F9995 /* HyperHabitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperHabitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperHabitTests.swift; sourceTree = "<group>"; };
 		C569AC8D1BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C569AC921BFCFCC7003F9995 /* HyperHabitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperHabitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperHabitUITests.swift; sourceTree = "<group>"; };
@@ -108,6 +116,25 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		73BC66404DD027F71129D625 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		73BC67EB292DECC64F2EDADF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */,
+				73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */,
+				73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */,
+				73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		C569AC6A1BFCFCC7003F9995 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +165,7 @@
 				C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */,
 				C569AC821BFCFCC7003F9995 /* Info.plist */,
 				73BC64EE8B6D4DAA83E7FE9B /* Data */,
+				73BC66404DD027F71129D625 /* Extensions */,
 			);
 			path = HyperHabit;
 			sourceTree = "<group>";
@@ -145,9 +173,8 @@
 		C569AC8A1BFCFCC7003F9995 /* HyperHabitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C569AC8B1BFCFCC7003F9995 /* HyperHabitTests.swift */,
 				C569AC8D1BFCFCC7003F9995 /* Info.plist */,
-				73BC65D0CC82A5226A0FAC1F /* DataManagerTestCase.swift */,
+				73BC67EB292DECC64F2EDADF /* DataManager */,
 			);
 			path = HyperHabitTests;
 			sourceTree = "<group>";
@@ -299,6 +326,7 @@
 				73BC6AB242FEA30D86D2DBBF /* DataManager.swift in Sources */,
 				73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */,
 				73BC69683F3A2712F8F0FC35 /* MemoryStorage.swift in Sources */,
+				C5E8906D1BFDE5C7004AC6E1 /* NSDate+Hyper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,13 +334,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C569AC8C1BFCFCC7003F9995 /* HyperHabitTests.swift in Sources */,
 				73BC6C2233DCC8EC6C0520E3 /* Habit.swift in Sources */,
 				73BC671937D1F9A3080C7722 /* Report.swift in Sources */,
 				73BC6DA507AC0802F3DE8C61 /* DataManager.swift in Sources */,
 				73BC6CB615376A0CFEA59B2B /* DataProvider.swift in Sources */,
 				73BC64E4608BD8DDCAB3B164 /* MemoryStorage.swift in Sources */,
-				73BC67E80092DCA65A564D1B /* DataManagerTestCase.swift in Sources */,
+				73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */,
+				73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */,
+				73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */,
+				73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */,
+				73BC6EF0AE08FE2E38B98F83 /* DataManagerTestCase+reportsForDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +354,7 @@
 				C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */,
 				73BC6BF5DE29630F6369BF37 /* Habit.swift in Sources */,
 				73BC6D433646E4A12819128D /* Report.swift in Sources */,
+				C5E8906E1BFDE5CA004AC6E1 /* NSDate+Hyper.swift in Sources */,
 				73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */,
 				73BC63267EECFB386E338996 /* DataProvider.swift in Sources */,
 				73BC65B04D87C14F7CF12E9A /* MemoryStorage.swift in Sources */,
@@ -536,6 +568,7 @@
 				C569AC9D1BFCFCC7003F9995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C569AC9E1BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +577,7 @@
 				C569ACA01BFCFCC7003F9995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C569ACA11BFCFCC7003F9995 /* Build configuration list for PBXNativeTarget "HyperHabitUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +586,7 @@
 				C569ACA31BFCFCC7003F9995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

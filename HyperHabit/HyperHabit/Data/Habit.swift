@@ -17,7 +17,7 @@ struct Habit: Equatable {
     }
 
     init(name: String, repeatsTotal: Int) {
-        self.id = NSUUID().UUIDString
+        self.id = "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)"
         self.name = name
         self.repeatsTotal = repeatsTotal
     }

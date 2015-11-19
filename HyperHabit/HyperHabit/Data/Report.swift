@@ -21,7 +21,7 @@ struct Report: Equatable {
     }
 
     init(habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
-        self.id = NSUUID().UUIDString
+        self.id = "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)"
         self.habitName = habitName
         self.habitRepeatsTotal = habitRepeatsTotal
         self.repeatsDone = repeatsDone
@@ -36,8 +36,7 @@ struct Report: Equatable {
 
 extension Report: Hashable {
     var hashValue: Int {
-        // TODO: don't use full date
-        return id.hashValue ^ habitName.hashValue ^ habitRepeatsTotal.hashValue ^ repeatsDone.hashValue ^ date.hashValue
+        return id.hashValue ^ habitName.hashValue ^ habitRepeatsTotal.hashValue ^ repeatsDone.hashValue ^ date.dateComponent.hashValue
     }
 }
 

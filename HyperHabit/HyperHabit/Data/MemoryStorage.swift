@@ -33,7 +33,9 @@ class MemoryStorage: DataProvider {
     }
 
     func reportsForDate(date: NSDate) -> [Report] {
-        return Array(_reportsById.values)
+        return Array(_reportsById.values.filter {
+            return $0.date.dateComponent == date.dateComponent
+        })
     }
 
     func saveReport(report: Report) -> Bool {
