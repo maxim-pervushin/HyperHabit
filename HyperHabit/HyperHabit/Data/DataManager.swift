@@ -42,5 +42,4 @@ class DataManager: DataProvider {
     func deleteReport(report: Report) -> Bool {
         return storage.deleteReport(report)
     }
-
 }

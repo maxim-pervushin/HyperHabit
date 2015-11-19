@@ -6,10 +6,18 @@
 import Foundation
 
 struct Habit: Equatable {
+    let id: String
     let name: String
     let repeatsTotal: Int
 
+    init(id: String, name: String, repeatsTotal: Int) {
+        self.id = id
+        self.name = name
+        self.repeatsTotal = repeatsTotal
+    }
+
     init(name: String, repeatsTotal: Int) {
+        self.id = NSUUID().UUIDString
         self.name = name
         self.repeatsTotal = repeatsTotal
     }
@@ -17,7 +25,7 @@ struct Habit: Equatable {
 
 extension Habit: Hashable {
     var hashValue: Int {
-        return "\(name)\(repeatsTotal)".hashValue
+        return id.hashValue ^ name.hashValue ^ repeatsTotal.hashValue
     }
 }
 

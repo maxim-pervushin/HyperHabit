@@ -6,12 +6,22 @@
 import Foundation
 
 struct Report: Equatable {
+    let id: String
     let habitName: String
     let habitRepeatsTotal: Int
     let repeatsDone: Int
     let date: NSDate
 
+    init(id: String, habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
+        self.id = id
+        self.habitName = habitName
+        self.habitRepeatsTotal = habitRepeatsTotal
+        self.repeatsDone = repeatsDone
+        self.date = date
+    }
+
     init(habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
+        self.id = NSUUID().UUIDString
         self.habitName = habitName
         self.habitRepeatsTotal = habitRepeatsTotal
         self.repeatsDone = repeatsDone
@@ -27,7 +37,7 @@ struct Report: Equatable {
 extension Report: Hashable {
     var hashValue: Int {
         // TODO: don't use full date
-        return "\(habitName)\(habitRepeatsTotal)\(habitRepeatsTotal)\(date)".hashValue
+        return id.hashValue ^ habitName.hashValue ^ habitRepeatsTotal.hashValue ^ repeatsDone.hashValue ^ date.hashValue
     }
 }
 
