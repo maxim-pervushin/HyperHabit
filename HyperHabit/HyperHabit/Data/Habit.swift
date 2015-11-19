@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Habit {
+struct Habit: Equatable {
     let name: String
     let repeatsTotal: Int
 
@@ -13,4 +13,16 @@ struct Habit {
         self.name = name
         self.repeatsTotal = repeatsTotal
     }
+}
+
+extension Habit: Hashable {
+    var hashValue: Int {
+        return "\(name)\(repeatsTotal)".hashValue
+    }
+}
+
+// MARK: - Equatable
+
+func ==(lhs: Habit, rhs: Habit) -> Bool {
+    return lhs.hashValue == rhs.hashValue
 }

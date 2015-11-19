@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Report {
+struct Report: Equatable {
     let habitName: String
     let habitRepeatsTotal: Int
     let repeatsDone: Int
@@ -18,7 +18,21 @@ class Report {
         self.date = date
     }
 
-    convenience init(habit: Habit, repeatsDone: Int, date: NSDate) {
+    init(habit: Habit, repeatsDone: Int, date: NSDate) {
         self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
+
+}
+
+extension Report: Hashable {
+    var hashValue: Int {
+        // TODO: don't use full date
+        return "\(habitName)\(habitRepeatsTotal)\(habitRepeatsTotal)\(date)".hashValue
+    }
+}
+
+// MARK: - Equatable
+
+func ==(lhs: Report, rhs: Report) -> Bool {
+    return lhs.hashValue == rhs.hashValue
 }
