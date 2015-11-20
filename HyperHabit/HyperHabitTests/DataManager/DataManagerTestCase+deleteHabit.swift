@@ -13,7 +13,7 @@ extension DataManagerTestCase {
         dataManager.saveHabit(habit1)
         let habit2 = Habit(name: "Habit 2", repeatsTotal: 2)
         dataManager.saveHabit(habit2)
-        XCTAssertEqual(sortHabits([habit1, habit2]), sortHabits(dataManager.habits))
+        XCTAssertEqual(Test.sortHabits([habit1, habit2]), Test.sortHabits(dataManager.habits))
 
         XCTAssertTrue(dataManager.deleteHabit(habit1))
         XCTAssertEqual([habit2], dataManager.habits)

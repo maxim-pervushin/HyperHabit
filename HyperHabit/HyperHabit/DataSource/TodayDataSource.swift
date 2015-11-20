@@ -5,11 +5,11 @@
 
 import Foundation
 
-class TodayDataSource {
+class TodayDataSource: DataSource {
 
     var todayReports: [Report] {
-        let habits = App.dataManager.habits
-        var reports = App.dataManager.reportsForDate(NSDate())
+        let habits = dataManager.habits
+        var reports = dataManager.reportsForDate(NSDate())
         for habit in habits {
             var createReport = true
             for report in reports {
@@ -27,6 +27,6 @@ class TodayDataSource {
     }
 
     func saveReport(report: Report) -> Bool {
-        return App.dataManager.saveReport(report)
+        return dataManager.saveReport(report)
     }
 }

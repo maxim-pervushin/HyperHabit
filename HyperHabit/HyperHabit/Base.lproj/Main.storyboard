@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-603" y="-34"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Today-->
         <scene sceneID="ECe-Zr-SxW">
             <objects>
                 <tableViewController id="FeX-3U-2YM" customClass="TodayTableViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <outlet property="delegate" destination="FeX-3U-2YM" id="qoA-ZN-22P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="GIf-y4-1BR"/>
+                    <navigationItem key="navigationItem" title="Today" id="7j7-5o-MEm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYu-af-7kQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,7 @@ class TodayTableViewController: UITableViewController {
 
     // MARK: TodayTableViewController
 
-    private let dataSource = TodayDataSource()
+    private let dataSource = TodayDataSource(dataManager: App.dataManager)
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.todayReports.count

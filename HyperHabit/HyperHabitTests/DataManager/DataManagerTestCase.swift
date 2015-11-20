@@ -11,14 +11,6 @@ class DataManagerTestCase: XCTestCase {
 
     internal var dataManager = DataManager(storage: MemoryStorage())
 
-    internal func sortHabits(habits: [Habit]) -> [Habit] {
-        return habits.sort({ $0.hashValue > $1.hashValue })
-    }
-
-    internal func sortReports(reports: [Report]) -> [Report] {
-        return reports.sort({ $0.hashValue > $1.hashValue })
-    }
-
     override func setUp() {
         super.setUp()
         dataManager = DataManager(storage: MemoryStorage())
