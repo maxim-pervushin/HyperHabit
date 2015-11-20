@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Report: Equatable {
+class Report: Equatable {
     let id: String
     let habitName: String
     let habitRepeatsTotal: Int
@@ -20,15 +20,11 @@ struct Report: Equatable {
         self.date = date
     }
 
-    init(habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
-        self.id = "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)"
-        self.habitName = habitName
-        self.habitRepeatsTotal = habitRepeatsTotal
-        self.repeatsDone = repeatsDone
-        self.date = date
+    convenience init(habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
+        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
     }
 
-    init(habit: Habit, repeatsDone: Int, date: NSDate) {
+    convenience init(habit: Habit, repeatsDone: Int, date: NSDate) {
         self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
 

@@ -15,10 +15,13 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
-            Static.instance = DataManager(storage: MemoryStorage())
+
+            Static.instance = DataManager(storage: PlistStorage(contentDirectory: NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]))
             // Add some fake data
-            Static.instance.saveHabit(Habit(name: "Eat vegetables", repeatsTotal: 1));
-            Static.instance.saveHabit(Habit(name: "Drink more water", repeatsTotal: 3));
+            if Static.instance.habits.count == 0 {
+                Static.instance.saveHabit(Habit(name: "Eat vegetables", repeatsTotal: 1));
+                Static.instance.saveHabit(Habit(name: "Drink more water", repeatsTotal: 3));
+            }
         }
 
         return Static.instance

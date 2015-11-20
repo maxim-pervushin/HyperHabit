@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
+		73BC60683950B8FC587DA93C /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */; };
 		73BC6107D5D288C7DAA69670 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E6B11747CA26B750B47 /* DataSource.swift */; };
 		73BC611015B9409E9C0D368A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D36DEAA5EA2A8AED39C /* App.swift */; };
 		73BC63202EA873DDDEFDB237 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A6CC626ACBCF23CE9EB /* Test.swift */; };
 		73BC63267EECFB386E338996 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
 		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
-		73BC64E4608BD8DDCAB3B164 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
-		73BC65B04D87C14F7CF12E9A /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
+		73BC66D8B73CB71B5BFDF23D /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
 		73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
 		73BC671937D1F9A3080C7722 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
 		73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* TodayDataSource.swift */; };
 		73BC67AFAB27DCF035FB4F4D /* TodayDataSourceTestCase+todayReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */; };
 		73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */; };
-		73BC69683F3A2712F8F0FC35 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A75D5136D67B2284457 /* MemoryStorage.swift */; };
+		73BC691A378FB1A9B8DA5469 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
 		73BC6A24F4E568A6934DF9DF /* TodayDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF236D17F6AA73C6E15 /* TodayDataSourceTestCase.swift */; };
 		73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
 		73BC6A9F690EBDE39F691788 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E6B11747CA26B750B47 /* DataSource.swift */; };
@@ -37,6 +37,7 @@
 		73BC6E0A22E5037689849C88 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69522329E8AE2846B0E1 /* TodayTableViewController.swift */; };
 		73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */; };
 		73BC6EF0AE08FE2E38B98F83 /* DataManagerTestCase+reportsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */; };
+		73BC6FB5C8B061F1F2B6FA5F /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
 		73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
 		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTestCase.swift; sourceTree = "<group>"; };
+		73BC615B6230D2503135736A /* MemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		73BC6160814D2BB6AF51F95E /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		73BC6189E79E19037FFF9304 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+deleteHabit.swift"; sourceTree = "<group>"; };
@@ -80,13 +82,13 @@
 		73BC69522329E8AE2846B0E1 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		73BC6997F91AF8250549156B /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		73BC6A6CC626ACBCF23CE9EB /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		73BC6A75D5136D67B2284457 /* MemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6CF236D17F6AA73C6E15 /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC6D36DEAA5EA2A8AED39C /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+saveHabit.swift"; sourceTree = "<group>"; };
 		73BC6E21910937FBB8A97778 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		73BC6E6B11747CA26B750B47 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
 		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C569AC781BFCFCC7003F9995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 				73BC6160814D2BB6AF51F95E /* Report.swift */,
 				73BC6189E79E19037FFF9304 /* DataManager.swift */,
 				73BC6997F91AF8250549156B /* DataProvider.swift */,
-				73BC6A75D5136D67B2284457 /* MemoryStorage.swift */,
+				73BC6FD667D8D2819B4F3439 /* Storage */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -207,6 +209,15 @@
 				73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */,
 			);
 			path = TodayDataSource;
+			sourceTree = "<group>";
+		};
+		73BC6FD667D8D2819B4F3439 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				73BC615B6230D2503135736A /* MemoryStorage.swift */,
+				73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		C569AC6A1BFCFCC7003F9995 = {
@@ -404,7 +415,6 @@
 				73BC6D897516C18AF4408613 /* Report.swift in Sources */,
 				73BC6AB242FEA30D86D2DBBF /* DataManager.swift in Sources */,
 				73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */,
-				73BC69683F3A2712F8F0FC35 /* MemoryStorage.swift in Sources */,
 				C5E8906D1BFDE5C7004AC6E1 /* NSDate+Hyper.swift in Sources */,
 				73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */,
 				73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */,
@@ -412,6 +422,8 @@
 				73BC6E0A22E5037689849C88 /* TodayTableViewController.swift in Sources */,
 				73BC6A9F690EBDE39F691788 /* DataSource.swift in Sources */,
 				73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */,
+				73BC691A378FB1A9B8DA5469 /* MemoryStorage.swift in Sources */,
+				73BC60683950B8FC587DA93C /* PlistStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +436,6 @@
 				C580A4D91BFF324300CF4C31 /* TodayDataSource.swift in Sources */,
 				73BC6DA507AC0802F3DE8C61 /* DataManager.swift in Sources */,
 				73BC6CB615376A0CFEA59B2B /* DataProvider.swift in Sources */,
-				73BC64E4608BD8DDCAB3B164 /* MemoryStorage.swift in Sources */,
 				73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */,
 				73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */,
 				73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */,
@@ -434,6 +445,7 @@
 				73BC6BD5B3FB8CC1D2390E69 /* DataSource.swift in Sources */,
 				73BC63202EA873DDDEFDB237 /* Test.swift in Sources */,
 				73BC67AFAB27DCF035FB4F4D /* TodayDataSourceTestCase+todayReports.swift in Sources */,
+				73BC6FB5C8B061F1F2B6FA5F /* MemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,8 +460,8 @@
 				73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */,
 				C580A4DA1BFF324400CF4C31 /* TodayDataSource.swift in Sources */,
 				73BC63267EECFB386E338996 /* DataProvider.swift in Sources */,
-				73BC65B04D87C14F7CF12E9A /* MemoryStorage.swift in Sources */,
 				73BC6107D5D288C7DAA69670 /* DataSource.swift in Sources */,
+				73BC66D8B73CB71B5BFDF23D /* MemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

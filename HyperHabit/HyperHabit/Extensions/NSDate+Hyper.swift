@@ -7,7 +7,7 @@ import Foundation
 
 extension NSDate {
 
-    private var dateComponentFormatter: NSDateFormatter {
+    private static var dateComponentFormatter: NSDateFormatter {
 
         struct Static {
             static var onceToken: dispatch_once_t = 0
@@ -23,6 +23,10 @@ extension NSDate {
     }
 
     var dateComponent: String {
-        return dateComponentFormatter.stringFromDate(self)
+        return NSDate.dateComponentFormatter.stringFromDate(self)
+    }
+
+    static func dateWithDateComponent(dateComponent: String) -> NSDate? {
+        return dateComponentFormatter.dateFromString(dateComponent)
     }
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Habit: Equatable {
+class Habit: Equatable {
     let id: String
     let name: String
     let repeatsTotal: Int
