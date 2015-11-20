@@ -26,6 +26,14 @@ extension NSDate {
         return NSDate.dateComponentFormatter.stringFromDate(self)
     }
 
+    var nextDay: NSDate {
+        return dateByAddingTimeInterval(24 * 60 * 60)
+    }
+
+    var previousDay: NSDate {
+        return dateByAddingTimeInterval(-24 * 60 * 60)
+    }
+
     static func dateWithDateComponent(dateComponent: String) -> NSDate? {
         return dateComponentFormatter.dateFromString(dateComponent)
     }

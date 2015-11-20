@@ -18,12 +18,13 @@
                     <connections>
                         <segue destination="AiX-N0-Cj8" kind="relationship" relationship="viewControllers" id="NJ5-fP-2Ns"/>
                         <segue destination="yH8-6k-nvz" kind="relationship" relationship="viewControllers" id="Xbv-VO-rza"/>
+                        <segue destination="ef9-0k-SYs" kind="relationship" relationship="viewControllers" id="0Xl-w5-g9n"/>
                         <segue destination="ez7-dF-Sqt" kind="relationship" relationship="viewControllers" id="aDG-AO-Ukx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIs-MG-0fP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-603" y="-34"/>
+            <point key="canvasLocation" x="-655" y="-126"/>
         </scene>
         <!--Today-->
         <scene sceneID="ECe-Zr-SxW">
@@ -123,6 +124,81 @@
             </objects>
             <point key="canvasLocation" x="1083" y="139"/>
         </scene>
+        <!--Statistics-->
+        <scene sceneID="pWw-Zb-Jvn">
+            <objects>
+                <navigationController id="ef9-0k-SYs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" id="LbB-yX-5lk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0X-9M-cTE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8Yb-tq-urg" kind="relationship" relationship="rootViewController" id="pQk-nO-G7X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X24-7G-avY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="849"/>
+        </scene>
+        <!--Calendar Delegate-->
+        <scene sceneID="X4X-oe-h2v">
+            <objects>
+                <viewController id="8Yb-tq-urg" customClass="StatisticsViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tFL-hx-SSJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="JcE-s3-jKH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="377-AG-Yfk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-0C-gqU" customClass="CVCalendarMenuView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hCJ-wO-OFs"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="8Yb-tq-urg" id="9we-jE-6dm"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zR-Bx-AnU" customClass="CVCalendarView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3wX-sC-PSi">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="480"/>
+                                    </constraint>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarDelegate" destination="8Yb-tq-urg" id="ygW-wL-jwc"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zR-Bx-AnU" firstAttribute="top" secondItem="nuf-0C-gqU" secondAttribute="bottom" id="4ly-A1-hbz"/>
+                            <constraint firstAttribute="trailing" secondItem="2zR-Bx-AnU" secondAttribute="trailing" id="Asb-Rb-pMV"/>
+                            <constraint firstAttribute="trailing" secondItem="nuf-0C-gqU" secondAttribute="trailing" id="OL5-N8-lhh"/>
+                            <constraint firstItem="2zR-Bx-AnU" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="iEO-sd-yDN"/>
+                            <constraint firstItem="nuf-0C-gqU" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="kLL-O0-s7Q"/>
+                            <constraint firstItem="nuf-0C-gqU" firstAttribute="top" secondItem="tFL-hx-SSJ" secondAttribute="bottom" id="rBm-KW-NH7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sDn-Yw-Mxs"/>
+                    <connections>
+                        <outlet property="calendarMenuView" destination="nuf-0C-gqU" id="bYf-Py-mfg"/>
+                        <outlet property="calendarView" destination="2zR-Bx-AnU" id="s4a-sX-1iX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9G3-58-J0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="849"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="VJd-ua-Jo4">
             <objects>
@@ -153,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOR-D3-I3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="895"/>
+            <point key="canvasLocation" x="1083" y="1587"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1nP-Uy-coG">
@@ -171,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea9-MY-kT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="895"/>
+            <point key="canvasLocation" x="263" y="1587"/>
         </scene>
         <!--Habits-->
         <scene sceneID="1ht-YF-2WX">
