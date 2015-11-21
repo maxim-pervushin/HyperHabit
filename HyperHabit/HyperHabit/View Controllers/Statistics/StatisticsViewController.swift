@@ -22,6 +22,8 @@ class StatisticsViewController: UIViewController {
 
 extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 
+    // TODO: Find a way to customize DayView background
+
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
         return .MonthView
