@@ -45,8 +45,12 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     }
 
     func didSelectDayView(dayView: CVCalendarDayView) {
-        let date = dayView.date
-        print("\(calendarView.presentedDate.commonDescription) is selected!")
+        guard let date = dayView.date.convertedDate() else  {
+            return
+        }
+
+        let reports = dataSource.reportsForDate(date)
+        print("Show reports:\(reports), for date:\(date)")
     }
 
     func presentedDateUpdated(date: CVDate) {

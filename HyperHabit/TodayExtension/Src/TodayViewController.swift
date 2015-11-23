@@ -9,7 +9,7 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -19,7 +19,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-    
+}
+
+extension TodayViewController: NCWidgetProviding {
+
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         tableView.reloadData()
         completionHandler(NCUpdateResult.NewData)
