@@ -15,13 +15,13 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
-            if let contentDirectoryURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit") {
-                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectoryURL.absoluteString))
+            if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit")?.path {
+                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectory))
 
                 // Add some fake data
                 if Static.instance.habits.count == 0 {
 
-                    Static.instance.saveHabit(Habit(name: "Meditate vegetables", repeatsTotal: 2))
+                    Static.instance.saveHabit(Habit(name: "Meditate", repeatsTotal: 2))
                     Static.instance.saveHabit(Habit(name: "Eat vegetables", repeatsTotal: 1))
                     Static.instance.saveHabit(Habit(name: "Drink more water", repeatsTotal: 1))
                     Static.instance.saveHabit(Habit(name: "Exercise", repeatsTotal: 1))

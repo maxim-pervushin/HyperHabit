@@ -15,8 +15,8 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
-            if let contentDirectoryURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit") {
-                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectoryURL.absoluteString))
+            if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit")?.path {
+                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectory))
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }
