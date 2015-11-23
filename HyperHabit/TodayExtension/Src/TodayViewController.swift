@@ -15,29 +15,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     private let dataSource = TodayDataSource(dataManager: App.dataManager)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.reloadData()
-        print("viewDidLoad")
-    }
-
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear")
+        tableView.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        print("widgetPerformUpdateWithCompletionHandler")
         tableView.reloadData()
         completionHandler(NCUpdateResult.NewData)
     }
@@ -46,7 +29,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("dataSource.todayReports.count:\(dataSource.todayReports.count)")
         return dataSource.todayReports.count
     }
 
@@ -57,7 +39,6 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = "\(report.repeatsDone)/\(report.habitRepeatsTotal)"
         return cell
     }
-
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
