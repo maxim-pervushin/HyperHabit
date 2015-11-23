@@ -10,13 +10,21 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
 
+
     private let dataSource = StatisticsDataSource(dataManager: App.dataManager)
+    private var selectedDate: NSDate?
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         calendarView.commitCalendarViewUpdate()
         calendarMenuView.commitMenuViewUpdate()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let statisticsForDateViewController = segue.destinationViewController as? StatisticsForDateViewController {
+            statisticsForDateViewController.date = selectedDate
+        }
     }
 }
 
@@ -49,13 +57,13 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
             return
         }
 
-        let reports = dataSource.reportsForDate(date)
-        print("Show reports:\(reports), for date:\(date)")
+        selectedDate = date
+        performSegueWithIdentifier("ShowStatisticsForDate", sender: self)
     }
 
-    func presentedDateUpdated(date: CVDate) {
-        print("\(date.convertedDate())")
-    }
+//    func presentedDateUpdated(date: CVDate) {
+//        print("\(date.convertedDate())")
+//    }
 
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
         return false

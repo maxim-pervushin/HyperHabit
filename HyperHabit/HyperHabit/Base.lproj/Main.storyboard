@@ -193,11 +193,31 @@
                     <connections>
                         <outlet property="calendarMenuView" destination="nuf-0C-gqU" id="bYf-Py-mfg"/>
                         <outlet property="calendarView" destination="2zR-Bx-AnU" id="s4a-sX-1iX"/>
+                        <segue destination="v2V-ER-56B" kind="show" identifier="ShowStatisticsForDate" id="KcB-1o-3hb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G3-58-J0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="849"/>
+            <point key="canvasLocation" x="1083" y="849"/>
+        </scene>
+        <!--Statistics For Date View Controller-->
+        <scene sceneID="gkn-80-YU6">
+            <objects>
+                <viewController id="v2V-ER-56B" customClass="StatisticsForDateViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o10-9h-J6l"/>
+                        <viewControllerLayoutGuide type="bottom" id="kz0-YW-LSQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N3A-DC-cr5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLE-oV-koJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="849"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="VJd-ua-Jo4">
