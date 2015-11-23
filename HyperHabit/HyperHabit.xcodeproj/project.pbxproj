@@ -7,41 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
-		73BC60683950B8FC587DA93C /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */; };
+		73BC6045AA07A72322CA163E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
 		73BC6107D5D288C7DAA69670 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E6B11747CA26B750B47 /* DataSource.swift */; };
 		73BC611015B9409E9C0D368A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D36DEAA5EA2A8AED39C /* App.swift */; };
+		73BC6193F1E6A4E1A41390EB /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
+		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC63202EA873DDDEFDB237 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A6CC626ACBCF23CE9EB /* Test.swift */; };
-		73BC63267EECFB386E338996 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
+		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
+		73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
-		73BC66D8B73CB71B5BFDF23D /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
-		73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
-		73BC671937D1F9A3080C7722 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
+		73BC65D1874610D81D4C7A4A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
+		73BC664DFB11394969B67431 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
+		73BC665CE8CB105E6935B92F /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */; };
+		73BC6715B2B37DB44131DDBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
 		73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* TodayDataSource.swift */; };
 		73BC67AFAB27DCF035FB4F4D /* TodayDataSourceTestCase+todayReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */; };
 		73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */; };
+		73BC683D03A9A9CA39267AD3 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
+		73BC683D80EB18DDA475AB73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */; };
-		73BC691A378FB1A9B8DA5469 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
 		73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
+		73BC69A320463EA8158B514B /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
+		73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6A24F4E568A6934DF9DF /* TodayDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF236D17F6AA73C6E15 /* TodayDataSourceTestCase.swift */; };
-		73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
 		73BC6A9F690EBDE39F691788 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E6B11747CA26B750B47 /* DataSource.swift */; };
-		73BC6AB242FEA30D86D2DBBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
+		73BC6AF000D6E149BCC6039F /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
+		73BC6B77BE005C91EAD45221 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
 		73BC6BD5B3FB8CC1D2390E69 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E6B11747CA26B750B47 /* DataSource.swift */; };
-		73BC6BF5DE29630F6369BF37 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
-		73BC6C2233DCC8EC6C0520E3 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E21910937FBB8A97778 /* Habit.swift */; };
-		73BC6CB615376A0CFEA59B2B /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6997F91AF8250549156B /* DataProvider.swift */; };
-		73BC6D433646E4A12819128D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
-		73BC6D897516C18AF4408613 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6160814D2BB6AF51F95E /* Report.swift */; };
-		73BC6DA507AC0802F3DE8C61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
+		73BC6C31469750ABD353AF6B /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
+		73BC6DA774E3ABF8C1D6D0E2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */; };
+		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */; };
 		73BC6E0A22E5037689849C88 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69522329E8AE2846B0E1 /* TodayTableViewController.swift */; };
 		73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */; };
 		73BC6EF0AE08FE2E38B98F83 /* DataManagerTestCase+reportsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */; };
-		73BC6FB5C8B061F1F2B6FA5F /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615B6230D2503135736A /* MemoryStorage.swift */; };
+		73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
+		73BC6F2E8DBEC7CDCD0D5437 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
+		73BC6F6EDB055316DBC6B7D2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC676D212721E13748EBCE /* TodayViewController.swift */; };
 		73BC6FE73A72C97A96896B31 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
-		73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6189E79E19037FFF9304 /* DataManager.swift */; };
+		C53ABD001C02F800007F27FE /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
+		C53ABD011C02F800007F27FE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
+		C53ABD021C02F800007F27FE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
+		C53ABD031C02F800007F27FE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
+		C53ABD041C02F805007F27FE /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
+		C53ABD051C02F805007F27FE /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */; };
+		C53ABD061C02F840007F27FE /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
 		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
 		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
@@ -78,11 +89,8 @@
 		C580A5111BFF507200CF4C31 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4F61BFF507200CF4C31 /* CVShape.swift */; };
 		C580A5121BFF507200CF4C31 /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4F71BFF507200CF4C31 /* CVWeekdaySymbolType.swift */; };
 		C5A6581B1C01BBD2008DE843 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A6581A1C01BBD2008DE843 /* NotificationCenter.framework */; };
-		C5A6581E1C01BBD2008DE843 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6581D1C01BBD2008DE843 /* TodayViewController.swift */; };
 		C5A658211C01BBD2008DE843 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A6581F1C01BBD2008DE843 /* MainInterface.storyboard */; };
 		C5A658251C01BBD2008DE843 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5A658181C01BBD2008DE843 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C5E8906D1BFDE5C7004AC6E1 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
-		C5E8906E1BFDE5CA004AC6E1 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,27 +133,31 @@
 
 /* Begin PBXFileReference section */
 		73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTestCase.swift; sourceTree = "<group>"; };
-		73BC615B6230D2503135736A /* MemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
-		73BC6160814D2BB6AF51F95E /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		73BC6189E79E19037FFF9304 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+deleteHabit.swift"; sourceTree = "<group>"; };
 		73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
+		73BC6257F7926F5029E191EA /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
+		73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
 		73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListDataSource.swift; sourceTree = "<group>"; };
 		73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		73BC65F462415533EB6BDC24 /* TodayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSource.swift; sourceTree = "<group>"; };
 		73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
-		73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
+		73BC676D212721E13748EBCE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		73BC68822C48506F70552FE7 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		73BC69522329E8AE2846B0E1 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
-		73BC6997F91AF8250549156B /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		73BC6A6CC626ACBCF23CE9EB /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6CF236D17F6AA73C6E15 /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		73BC6D36DEAA5EA2A8AED39C /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		73BC6D4C142C8511B0A60D84 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+saveHabit.swift"; sourceTree = "<group>"; };
-		73BC6E21910937FBB8A97778 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		73BC6DA8E33A985656DC2D10 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		73BC6E6B11747CA26B750B47 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
+		73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		C53ABCFE1C02F6F6007F27FE /* HyperHabit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HyperHabit.entitlements; sourceTree = "<group>"; };
+		C53ABCFF1C02F71E007F27FE /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C569AC781BFCFCC7003F9995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +199,6 @@
 		C580A4F71BFF507200CF4C31 /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
 		C5A658181C01BBD2008DE843 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A6581A1C01BBD2008DE843 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		C5A6581D1C01BBD2008DE843 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		C5A658201C01BBD2008DE843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C5A658221C01BBD2008DE843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +243,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		73BC62A7B8617BE98E343F33 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				73BC676D212721E13748EBCE /* TodayViewController.swift */,
+				73BC68822C48506F70552FE7 /* App.swift */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
 		73BC62B076B7464B209D3FBD /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,24 +268,24 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
-		73BC64EE8B6D4DAA83E7FE9B /* Data */ = {
+		73BC6777DE781CC087299423 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				73BC6E21910937FBB8A97778 /* Habit.swift */,
-				73BC6160814D2BB6AF51F95E /* Report.swift */,
-				73BC6189E79E19037FFF9304 /* DataManager.swift */,
-				73BC6997F91AF8250549156B /* DataProvider.swift */,
-				73BC6FD667D8D2819B4F3439 /* Storage */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		73BC66404DD027F71129D625 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				73BC6831EA5108AEC695FEA4 /* NSDate+Hyper.swift */,
+				73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		73BC67BCA15B1F9BDC7C9A27 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6DA8E33A985656DC2D10 /* Habit.swift */,
+				73BC6257F7926F5029E191EA /* Report.swift */,
+				73BC6D4C142C8511B0A60D84 /* DataManager.swift */,
+				73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */,
+				73BC6BA2E6B9356F3515D0AB /* Storage */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		73BC67EB292DECC64F2EDADF /* DataManager */ = {
@@ -290,6 +310,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		73BC6BA2E6B9356F3515D0AB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */,
+				73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		73BC6BB5FE85E7F637DF078E /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +327,15 @@
 				73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		73BC6CBEA91F1311512E2812 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				73BC67BCA15B1F9BDC7C9A27 /* Data */,
+				73BC6777DE781CC087299423 /* Extensions */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		73BC6CD326EE046BEDD87844 /* Habits */ = {
@@ -318,15 +356,6 @@
 			path = TodayDataSource;
 			sourceTree = "<group>";
 		};
-		73BC6FD667D8D2819B4F3439 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				73BC615B6230D2503135736A /* MemoryStorage.swift */,
-				73BC6F6C0C1DDDC393687DF8 /* PlistStorage.swift */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		C569AC6A1BFCFCC7003F9995 = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +366,7 @@
 				C5A658191C01BBD2008DE843 /* Frameworks */,
 				C569AC741BFCFCC7003F9995 /* Products */,
 				C580A4DB1BFF507200CF4C31 /* Vendor */,
+				73BC6CBEA91F1311512E2812 /* Common */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,14 +384,13 @@
 		C569AC751BFCFCC7003F9995 /* HyperHabit */ = {
 			isa = PBXGroup;
 			children = (
+				C53ABCFE1C02F6F6007F27FE /* HyperHabit.entitlements */,
 				C569AC761BFCFCC7003F9995 /* AppDelegate.swift */,
 				C569AC781BFCFCC7003F9995 /* ViewController.swift */,
 				C569AC7A1BFCFCC7003F9995 /* Main.storyboard */,
 				C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */,
 				C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */,
 				C569AC821BFCFCC7003F9995 /* Info.plist */,
-				73BC64EE8B6D4DAA83E7FE9B /* Data */,
-				73BC66404DD027F71129D625 /* Extensions */,
 				73BC67F29C9087616D869E8A /* View Controllers */,
 				73BC6D36DEAA5EA2A8AED39C /* App.swift */,
 				73BC6BB5FE85E7F637DF078E /* DataSource */,
@@ -442,9 +471,10 @@
 		C5A6581C1C01BBD2008DE843 /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
-				C5A6581D1C01BBD2008DE843 /* TodayViewController.swift */,
+				C53ABCFF1C02F71E007F27FE /* TodayExtension.entitlements */,
 				C5A6581F1C01BBD2008DE843 /* MainInterface.storyboard */,
 				C5A658221C01BBD2008DE843 /* Info.plist */,
+				73BC62A7B8617BE98E343F33 /* Src */,
 			);
 			path = TodayExtension;
 			sourceTree = "<group>";
@@ -536,6 +566,12 @@
 				TargetAttributes = {
 					C569AC721BFCFCC7003F9995 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = FRM2L78456;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C569AC861BFCFCC7003F9995 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -547,6 +583,12 @@
 					};
 					C5A658171C01BBD2008DE843 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = FRM2L78456;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -622,11 +664,6 @@
 				C580A50C1BFF507200CF4C31 /* CVDate.swift in Sources */,
 				C580A5041BFF507200CF4C31 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				C580A5011BFF507200CF4C31 /* CVCalendarTouchController.swift in Sources */,
-				73BC6A543ABE4759A0A8C9D0 /* Habit.swift in Sources */,
-				73BC6D897516C18AF4408613 /* Report.swift in Sources */,
-				73BC6AB242FEA30D86D2DBBF /* DataManager.swift in Sources */,
-				73BC671600A3B91E8548A28E /* DataProvider.swift in Sources */,
-				C5E8906D1BFDE5C7004AC6E1 /* NSDate+Hyper.swift in Sources */,
 				C580A5121BFF507200CF4C31 /* CVWeekdaySymbolType.swift in Sources */,
 				73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */,
 				C580A50B1BFF507200CF4C31 /* CVCalendarWeekView.swift in Sources */,
@@ -649,12 +686,17 @@
 				C580A4FC1BFF507200CF4C31 /* CVCalendarManager.swift in Sources */,
 				C580A4F91BFF507200CF4C31 /* CVCalendarContentViewController.swift in Sources */,
 				73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */,
-				73BC691A378FB1A9B8DA5469 /* MemoryStorage.swift in Sources */,
-				73BC60683950B8FC587DA93C /* PlistStorage.swift in Sources */,
 				C580A5061BFF507200CF4C31 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				C580A50E1BFF507200CF4C31 /* CVScrollDirection.swift in Sources */,
 				73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */,
 				73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */,
+				73BC6F2E8DBEC7CDCD0D5437 /* Habit.swift in Sources */,
+				73BC6AF000D6E149BCC6039F /* Report.swift in Sources */,
+				73BC6B77BE005C91EAD45221 /* DataManager.swift in Sources */,
+				73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */,
+				73BC6193F1E6A4E1A41390EB /* MemoryStorage.swift in Sources */,
+				73BC665CE8CB105E6935B92F /* PlistStorage.swift in Sources */,
+				73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,12 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BC6C2233DCC8EC6C0520E3 /* Habit.swift in Sources */,
-				73BC671937D1F9A3080C7722 /* Report.swift in Sources */,
 				C580A4D91BFF324300CF4C31 /* TodayDataSource.swift in Sources */,
-				73BC6DA507AC0802F3DE8C61 /* DataManager.swift in Sources */,
-				73BC6CB615376A0CFEA59B2B /* DataProvider.swift in Sources */,
-				73BC603DB5F576E506F50E43 /* NSDate+Hyper.swift in Sources */,
 				73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */,
 				73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */,
 				73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */,
@@ -676,8 +713,13 @@
 				73BC6BD5B3FB8CC1D2390E69 /* DataSource.swift in Sources */,
 				73BC63202EA873DDDEFDB237 /* Test.swift in Sources */,
 				73BC67AFAB27DCF035FB4F4D /* TodayDataSourceTestCase+todayReports.swift in Sources */,
-				73BC6FB5C8B061F1F2B6FA5F /* MemoryStorage.swift in Sources */,
 				73BC6FE73A72C97A96896B31 /* StatisticsDataSource.swift in Sources */,
+				73BC65D1874610D81D4C7A4A /* Habit.swift in Sources */,
+				73BC6C31469750ABD353AF6B /* Report.swift in Sources */,
+				73BC6715B2B37DB44131DDBF /* DataManager.swift in Sources */,
+				73BC6DA774E3ABF8C1D6D0E2 /* DataProvider.swift in Sources */,
+				73BC683D03A9A9CA39267AD3 /* MemoryStorage.swift in Sources */,
+				73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,14 +728,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */,
-				73BC6BF5DE29630F6369BF37 /* Habit.swift in Sources */,
-				73BC6D433646E4A12819128D /* Report.swift in Sources */,
-				C5E8906E1BFDE5CA004AC6E1 /* NSDate+Hyper.swift in Sources */,
-				73BC6FF4FF586A1AAA3928DC /* DataManager.swift in Sources */,
 				C580A4DA1BFF324400CF4C31 /* TodayDataSource.swift in Sources */,
-				73BC63267EECFB386E338996 /* DataProvider.swift in Sources */,
 				73BC6107D5D288C7DAA69670 /* DataSource.swift in Sources */,
-				73BC66D8B73CB71B5BFDF23D /* MemoryStorage.swift in Sources */,
+				73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */,
+				73BC633484A642A7CC0F4B29 /* Report.swift in Sources */,
+				73BC6045AA07A72322CA163E /* DataManager.swift in Sources */,
+				73BC683D80EB18DDA475AB73 /* DataProvider.swift in Sources */,
+				73BC664DFB11394969B67431 /* MemoryStorage.swift in Sources */,
+				73BC69A320463EA8158B514B /* NSDate+Hyper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +743,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5A6581E1C01BBD2008DE843 /* TodayViewController.swift in Sources */,
+				C53ABD031C02F800007F27FE /* DataProvider.swift in Sources */,
+				C53ABD061C02F840007F27FE /* NSDate+Hyper.swift in Sources */,
+				C53ABD041C02F805007F27FE /* MemoryStorage.swift in Sources */,
+				C53ABD001C02F800007F27FE /* Habit.swift in Sources */,
+				C53ABD021C02F800007F27FE /* DataManager.swift in Sources */,
+				73BC6F6EDB055316DBC6B7D2 /* TodayViewController.swift in Sources */,
+				73BC61E73FF89FF8D699E455 /* App.swift in Sources */,
+				C53ABD051C02F805007F27FE /* PlistStorage.swift in Sources */,
+				C53ABD011C02F800007F27FE /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,11 +890,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HyperHabit/HyperHabit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HyperHabit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -852,11 +906,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HyperHabit/HyperHabit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HyperHabit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -911,10 +969,14 @@
 		C5A658261C01BBD3008DE843 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -922,10 +984,14 @@
 		C5A658271C01BBD3008DE843 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperHabit.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -976,6 +1042,7 @@
 				C5A658271C01BBD3008DE843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
