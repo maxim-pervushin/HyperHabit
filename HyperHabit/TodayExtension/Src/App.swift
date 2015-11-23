@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Parse
 
 struct App {
 
@@ -15,8 +16,15 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
+
+
             if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit")?.path {
-                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectory))
+                Parse.enableDataSharingWithApplicationGroupIdentifier("group.hyperhabit", containingApplication: "com.maximpervushin.HyperHabit")
+                // TODO: Move real AppId and ClientKey to config file
+                Parse.setApplicationId("aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg", clientKey: "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z")
+                Static.instance = DataManager(storage: ParseStorage(contentDirectory: contentDirectory))
+
+//                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectory))
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }
