@@ -6,6 +6,8 @@
 import Foundation
 import Parse
 
+// TODO: This class far from perfect. Need to rewrite it ever.
+
 class ParseStorage {
 
     private var _timer: NSTimer!

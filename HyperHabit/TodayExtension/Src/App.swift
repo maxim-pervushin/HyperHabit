@@ -8,6 +8,11 @@ import Parse
 
 struct App {
 
+    static let groupIdentifier = "group.hyperhabit"
+    static let containingApplicationIdentifier = "com.maximpervushin.HyperHabit"
+    static let applicationId = "aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
+    static let clientKey = "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"
+
     static var dataManager: DataManager {
 
         struct Static {
@@ -16,20 +21,28 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
+            if let parseStorage = ParseStorage(groupIdentifier: groupIdentifier, containingApplicationIdentifier: containingApplicationIdentifier, applicationId: applicationId, clientKey: clientKey) {
 
-
-            if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.hyperhabit")?.path {
-                Parse.enableDataSharingWithApplicationGroupIdentifier("group.hyperhabit", containingApplication: "com.maximpervushin.HyperHabit")
-                // TODO: Move real AppId and ClientKey to config file
-                Parse.setApplicationId("aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg", clientKey: "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z")
-                Static.instance = DataManager(storage: ParseStorage(contentDirectory: contentDirectory))
-
-//                Static.instance = DataManager(storage: PlistStorage(contentDirectory: contentDirectory))
+                Static.instance = DataManager(storage: parseStorage)
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }
         }
 
         return Static.instance
+    }
+}
+
+extension ParseStorage {
+
+    convenience init?(groupIdentifier: String, containingApplicationIdentifier: String, applicationId: String, clientKey: String) {
+        if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(groupIdentifier)?.path {
+            Parse.enableDataSharingWithApplicationGroupIdentifier(groupIdentifier, containingApplication: containingApplicationIdentifier)
+            Parse.setApplicationId(applicationId, clientKey: clientKey)
+            self.init(contentDirectory: contentDirectory)
+        } else {
+            print("ERROR: Unable to initialize ParseStorage")
+            return nil
+        }
     }
 }
