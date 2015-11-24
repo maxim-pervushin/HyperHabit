@@ -41,8 +41,20 @@ class TodayTableViewController: UITableViewController {
 
     // MARK: UIViewController
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource.changesObserver = self
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+}
+
+extension TodayTableViewController: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
         tableView.reloadData()
     }
 }

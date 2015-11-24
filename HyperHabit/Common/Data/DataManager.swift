@@ -5,15 +5,18 @@
 
 import Foundation
 
-class DataManager: DataProvider {
+class DataManager {
+
+    static let changedNotification = "DataManagerChangedNotification"
 
     private let storage: DataProvider
 
     init(storage: DataProvider) {
         self.storage = storage
     }
+}
 
-    // MARK: DataProvider
+extension DataManager: DataProvider {
 
     var habits: [Habit] {
         return storage.habits
@@ -41,5 +44,12 @@ class DataManager: DataProvider {
 
     func deleteReport(report: Report) -> Bool {
         return storage.deleteReport(report)
+    }
+}
+
+extension DataManager: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
     }
 }

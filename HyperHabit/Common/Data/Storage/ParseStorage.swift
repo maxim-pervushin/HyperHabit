@@ -7,6 +7,7 @@ import Foundation
 import Parse
 
 // TODO: This class far from perfect. Need to rewrite it ever.
+// TODO: Should be able to fetch data from Parse without re-initialization.
 
 class ParseStorage {
 
@@ -14,7 +15,7 @@ class ParseStorage {
 
     private var _habitsById = [String: Habit]() {
         didSet {
-            print("updated")
+            changed()
         }
     }
 
@@ -34,7 +35,7 @@ class ParseStorage {
 
     private var _reportsById = [String: Report]() {
         didSet {
-            print("updated")
+            changed()
         }
     }
 
@@ -78,6 +79,8 @@ class ParseStorage {
         return contentDirectory.stringByAppendingPathComponent("/reportsToDelete.plist")
     }
 
+    public var changesObserver: ChangesObserver?
+
     init(contentDirectory: String) {
         self.contentDirectory = contentDirectory
         _habitsById = readHabitsFile(habitsFilePath)
@@ -94,7 +97,7 @@ class ParseStorage {
         _timer.fire()
     }
 
-    @objc func timerAction(timer: NSTimer) {
+    @objc private func timerAction(timer: NSTimer) {
         if _saveHabitsAfter <= 0 {
             _saveHabitsAfter = Int.max
             saveHabits()
@@ -108,6 +111,10 @@ class ParseStorage {
         } else {
             _saveReportsAfter--
         }
+    }
+
+    private func changed() {
+        changesObserver?.observableChanged(self)
     }
 
     // MARK: Caches
