@@ -18,7 +18,7 @@ class HabitListTableViewController: UITableViewController {
 
     // MARK: HabitListTableViewController
 
-    private let dataSource = HabitListDataSource()
+    private let dataSource = HabitListDataSource(dataManager: App.dataManager)
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.habits.count
@@ -41,8 +41,22 @@ class HabitListTableViewController: UITableViewController {
 
     // MARK: UIViewController
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource.changesObserver = self
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+}
+
+extension HabitListTableViewController: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
     }
 }

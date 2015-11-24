@@ -14,6 +14,11 @@ class StatisticsViewController: UIViewController {
     private let dataSource = StatisticsDataSource(dataManager: App.dataManager)
     private var selectedDate: NSDate?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource.changesObserver = self
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -24,6 +29,16 @@ class StatisticsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let statisticsForDateViewController = segue.destinationViewController as? StatisticsForDateViewController {
             statisticsForDateViewController.date = selectedDate
+        }
+    }
+}
+
+extension StatisticsViewController: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.calendarView.commitCalendarViewUpdate()
+            self.calendarMenuView.commitMenuViewUpdate()
         }
     }
 }

@@ -5,17 +5,17 @@
 
 import Foundation
 
-class HabitListDataSource {
+class HabitListDataSource: DataSource {
 
     var habits: [Habit] {
-        return App.dataManager.habits
+        return dataManager.habits
     }
 
     func saveHabit(habit: Habit) -> Bool {
-        return App.dataManager.saveHabit(habit)
+        return dataManager.saveHabit(habit)
     }
 
     func deleteHabit(habit: Habit) -> Bool {
-        return App.dataManager.deleteHabit(habit)
+        return dataManager.deleteHabit(habit)
     }
 }
