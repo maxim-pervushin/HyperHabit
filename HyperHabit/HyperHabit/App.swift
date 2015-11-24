@@ -22,33 +22,34 @@ struct App {
         dispatch_once(&Static.onceToken) {
             if let parseStorage = ParseStorage(groupIdentifier: groupIdentifier, applicationId: applicationId, clientKey: clientKey) {
                 Static.instance = DataManager(storage: parseStorage)
+                parseStorage.changesObserver = Static.instance
 
-                // Add some fake data
-                if Static.instance.habits.count == 0 {
-
-                    Static.instance.saveHabit(Habit(name: "Meditate", repeatsTotal: 2))
-                    Static.instance.saveHabit(Habit(name: "Eat vegetables", repeatsTotal: 1))
-                    Static.instance.saveHabit(Habit(name: "Drink more water", repeatsTotal: 1))
-                    Static.instance.saveHabit(Habit(name: "Exercise", repeatsTotal: 1))
-                    Static.instance.saveHabit(Habit(name: "Read", repeatsTotal: 1))
-
-//                    let habits = Static.instance.habits
+//                // Add some fake data
+//                if Static.instance.habits.count == 0 {
 //
-//                    var counter = 0
-//                    var date = NSDate()
-//                    for var i = 0; i < 10; i++ {
-//                        print("Generating reports for: \(date)")
-//                        for habit in habits {
-//                            let report = Report(habit: habit, repeatsDone: Int(arc4random_uniform(UInt32(habit.repeatsTotal))) + 1, date: date)
-//                            Static.instance.saveReport(report)
-//                            counter++
-//                        }
-//                        date = date.previousDay
-//                    }
-//                    print("Fake reports: \(counter)")
-
-                }
-
+//                    Static.instance.saveHabit(Habit(name: "Meditate", repeatsTotal: 2))
+//                    Static.instance.saveHabit(Habit(name: "Eat vegetables", repeatsTotal: 1))
+//                    Static.instance.saveHabit(Habit(name: "Drink more water", repeatsTotal: 1))
+//                    Static.instance.saveHabit(Habit(name: "Exercise", repeatsTotal: 1))
+//                    Static.instance.saveHabit(Habit(name: "Read", repeatsTotal: 1))
+//
+////                    let habits = Static.instance.habits
+////
+////                    var counter = 0
+////                    var date = NSDate()
+////                    for var i = 0; i < 10; i++ {
+////                        print("Generating reports for: \(date)")
+////                        for habit in habits {
+////                            let report = Report(habit: habit, repeatsDone: Int(arc4random_uniform(UInt32(habit.repeatsTotal))) + 1, date: date)
+////                            Static.instance.saveReport(report)
+////                            counter++
+////                        }
+////                        date = date.previousDay
+////                    }
+////                    print("Fake reports: \(counter)")
+//
+//                }
+//
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }

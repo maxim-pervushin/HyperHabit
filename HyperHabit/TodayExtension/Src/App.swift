@@ -22,8 +22,8 @@ struct App {
 
         dispatch_once(&Static.onceToken) {
             if let parseStorage = ParseStorage(groupIdentifier: groupIdentifier, containingApplicationIdentifier: containingApplicationIdentifier, applicationId: applicationId, clientKey: clientKey) {
-
                 Static.instance = DataManager(storage: parseStorage)
+                parseStorage.changesObserver = Static.instance
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }
