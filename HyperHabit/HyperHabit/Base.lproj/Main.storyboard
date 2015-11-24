@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -105,6 +106,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="pAe-oq-hq6" kind="show" id="xX3-Xh-ef9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -116,6 +120,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="W25-oN-UVf">
                             <connections>
                                 <action selector="addButtonAction:" destination="k2B-Im-w65" id="W6u-ik-s1s"/>
+                                <segue destination="pAe-oq-hq6" kind="show" id="CAg-oc-soD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -123,6 +128,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztg-6E-8TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1083" y="139"/>
+        </scene>
+        <!--Habit-->
+        <scene sceneID="l2t-Yh-ch5">
+            <objects>
+                <viewController id="pAe-oq-hq6" customClass="EditHabitViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWr-Y0-8hu"/>
+                        <viewControllerLayoutGuide type="bottom" id="WLh-t2-HzV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lB8-zF-XFm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-p0-qG1">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextFieldEditingChanged:" destination="pAe-oq-hq6" eventType="editingChanged" id="JT1-cx-1q3"/>
+                                </connections>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ek2-AI-Zc1">
+                                <rect key="frame" x="486" y="110" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="repeatsTotalStepperValueChanged:" destination="pAe-oq-hq6" eventType="valueChanged" id="Ba7-jp-B4q"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeats Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whG-df-BwF">
+                                <rect key="frame" x="20" y="114" width="458" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="whG-df-BwF" firstAttribute="leading" secondItem="lB8-zF-XFm" secondAttribute="leadingMargin" id="7tC-Kv-9qW"/>
+                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="trailing" secondItem="lB8-zF-XFm" secondAttribute="trailingMargin" id="DY5-Xv-l6k"/>
+                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="leading" secondItem="whG-df-BwF" secondAttribute="trailing" constant="8" id="Fun-PG-KHI"/>
+                            <constraint firstItem="whG-df-BwF" firstAttribute="centerY" secondItem="ek2-AI-Zc1" secondAttribute="centerY" id="JWX-w1-ytA"/>
+                            <constraint firstItem="dWg-p0-qG1" firstAttribute="trailing" secondItem="lB8-zF-XFm" secondAttribute="trailingMargin" id="Uc4-wt-sWc"/>
+                            <constraint firstItem="dWg-p0-qG1" firstAttribute="leading" secondItem="lB8-zF-XFm" secondAttribute="leadingMargin" id="eHk-Fq-tpc"/>
+                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="top" secondItem="dWg-p0-qG1" secondAttribute="bottom" constant="8" id="j78-0j-sZ4"/>
+                            <constraint firstItem="dWg-p0-qG1" firstAttribute="top" secondItem="gWr-Y0-8hu" secondAttribute="bottom" constant="8" id="wWo-63-qyZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Habit" id="4qW-Cy-jzD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="I8c-dL-G65">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="pAe-oq-hq6" id="cWH-eL-tQx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="dWg-p0-qG1" id="tGM-4Z-53V"/>
+                        <outlet property="repeatsTotalLabel" destination="whG-df-BwF" id="BIy-xb-mQ1"/>
+                        <outlet property="repeatsTotalStepper" destination="ek2-AI-Zc1" id="GcA-57-Dpc"/>
+                        <outlet property="saveButton" destination="I8c-dL-G65" id="vav-W6-kNo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOE-9m-JPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="139"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="pWw-Zb-Jvn">
@@ -306,4 +378,7 @@
             <point key="canvasLocation" x="263" y="-585"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xX3-Xh-ef9"/>
+    </inferredMetricsTieBreakers>
 </document>

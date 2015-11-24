@@ -50,6 +50,16 @@ class HabitListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let editHabitViewController = segue.destinationViewController as? EditHabitViewController {
+            if let selected = tableView.indexPathForSelectedRow {
+                editHabitViewController.editor.habit = dataSource.habits[selected.row]
+            } else {
+                editHabitViewController.editor.habit = nil
+            }
+        }
+    }
 }
 
 extension HabitListTableViewController: ChangesObserver {
