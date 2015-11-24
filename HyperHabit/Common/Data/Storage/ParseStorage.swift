@@ -86,8 +86,8 @@ class ParseStorage {
         _reportsByIdToDelete = readReportsFile(reportsToDeleteFilePath)
 
         loadHabits()
-//        loadReportsCache()
         loadReports()
+
         _timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerAction:", userInfo: nil, repeats: true)
         _timer.fire()
     }
