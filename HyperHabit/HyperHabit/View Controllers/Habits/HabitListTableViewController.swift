@@ -28,6 +28,7 @@ class HabitListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("HabitCell", forIndexPath: indexPath)
         let habit = dataSource.habits[indexPath.row]
         cell.textLabel?.text = habit.name
+        cell.detailTextLabel?.text = "\(habit.repeatsTotal)"
         return cell
     }
 

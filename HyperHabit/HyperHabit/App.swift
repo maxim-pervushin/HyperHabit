@@ -33,23 +33,23 @@ struct App {
 //                    Static.instance.saveHabit(Habit(name: "Exercise", repeatsTotal: 1))
 //                    Static.instance.saveHabit(Habit(name: "Read", repeatsTotal: 1))
 //
-////                    let habits = Static.instance.habits
-////
-////                    var counter = 0
-////                    var date = NSDate()
-////                    for var i = 0; i < 10; i++ {
-////                        print("Generating reports for: \(date)")
-////                        for habit in habits {
-////                            let report = Report(habit: habit, repeatsDone: Int(arc4random_uniform(UInt32(habit.repeatsTotal))) + 1, date: date)
-////                            Static.instance.saveReport(report)
-////                            counter++
-////                        }
-////                        date = date.previousDay
-////                    }
-////                    print("Fake reports: \(counter)")
+//                    let habits = Static.instance.habits
 //
-//                }
-//
+//                    var counter = 0
+//                    var date = NSDate()
+//                    for var i = 0; i < 10; i++ {
+//                        print("Generating reports for: \(date)")
+//                        for habit in habits {
+//                            let report = Report(habit: habit, repeatsDone: Int(arc4random_uniform(UInt32(habit.repeatsTotal))) + 1, date: date)
+//                            Static.instance.saveReport(report)
+//                            counter++
+//                        }
+//                        date = date.previousDay
+//                    }
+//                    print("Fake reports: \(counter)")
+
+                }
+
             } else {
                 print("ERROR: Unable to initialize DataManager")
             }

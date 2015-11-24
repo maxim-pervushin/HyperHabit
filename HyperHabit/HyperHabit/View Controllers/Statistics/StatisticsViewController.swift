@@ -45,7 +45,7 @@ extension StatisticsViewController: ChangesObserver {
 
 extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 
-    // TODO: Find a way to customize DayView background
+    // TODO: Change font. It is 'Avenir' by-default.
 
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
@@ -58,6 +58,15 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     }
 
     // MARK: Optional methods
+
+    func shouldAutoSelectDayOnWeekChange() -> Bool {
+        return false
+    }
+
+    func shouldAutoSelectDayOnMonthChange() -> Bool {
+        return false
+    }
+
 
     func shouldShowWeekdaysOut() -> Bool {
         return true
@@ -104,7 +113,9 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
             allDone += report.repeatsDone
         }
 
-        return allTotal == allDone ? [UIColor.greenColor()] : [UIColor.redColor()]
+        dayView.layer.cornerRadius = 3
+        dayView.backgroundColor = allTotal == allDone ?  UIColor.greenColor() : UIColor.redColor()
+        return []
     }
 
     func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
