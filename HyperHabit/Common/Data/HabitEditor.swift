@@ -30,7 +30,7 @@ class HabitEditor {
 
     var updatedHabit: Habit? {
         guard
-        let name = name,
+        let name = name?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()),
         let repeatsTotal = repeatsTotal
         where name.characters.count > 0 && repeatsTotal > 0 else {
             return nil

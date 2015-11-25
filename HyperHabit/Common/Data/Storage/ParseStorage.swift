@@ -213,7 +213,7 @@ class ParseStorage {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
 
-            var query = PFQuery(className: "Habit")
+            let query = PFQuery(className: "Habit")
             if let objects = try? query.findObjects() {
                 var habitsById = [String: Habit]()
                 for object in objects {
@@ -280,7 +280,7 @@ class ParseStorage {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
 
-            var query = PFQuery(className: "Report")
+            let query = PFQuery(className: "Report")
             if let objects = try? query.findObjects() {
                 var reportsById = [String: Report]()
                 for object in objects {
@@ -357,14 +357,14 @@ extension Habit {
     }
 
     var parseObject: PFObject {
-        var query = PFQuery(className: "Habit")
+        let query = PFQuery(className: "Habit")
         query.whereKey("identifier", equalTo: id)
         if let existingObject = try? query.getFirstObject() {
             existingObject["name"] = name
             existingObject["repeatsTotal"] = repeatsTotal
             return existingObject
         }
-        var newObject = PFObject(className: "Habit")
+        let newObject = PFObject(className: "Habit")
         newObject["identifier"] = id
         newObject["name"] = name
         newObject["repeatsTotal"] = repeatsTotal
@@ -389,7 +389,7 @@ extension Report {
     }
 
     var parseObject: PFObject {
-        var query = PFQuery(className: "Report")
+        let query = PFQuery(className: "Report")
         query.whereKey("identifier", equalTo: id)
         if let existingObject = try? query.getFirstObject() {
             existingObject["habitName"] = habitName
@@ -398,7 +398,7 @@ extension Report {
             existingObject["date_dateComponent"] = date.dateComponent
             return existingObject
         }
-        var newObject = PFObject(className: "Report")
+        let newObject = PFObject(className: "Report")
         newObject["identifier"] = id
         newObject["habitName"] = habitName
         newObject["habitRepeatsTotal"] = habitRepeatsTotal

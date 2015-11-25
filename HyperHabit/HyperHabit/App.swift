@@ -47,8 +47,8 @@ struct App {
 //                        date = date.previousDay
 //                    }
 //                    print("Fake reports: \(counter)")
-
-                }
+//
+//                }
 
             } else {
                 print("ERROR: Unable to initialize DataManager")
