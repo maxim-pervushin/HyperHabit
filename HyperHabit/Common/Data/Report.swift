@@ -27,12 +27,23 @@ class Report: Equatable {
     convenience init(habit: Habit, repeatsDone: Int, date: NSDate) {
         self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
-
 }
 
 extension Report: Hashable {
     var hashValue: Int {
         return id.hashValue ^ habitName.hashValue ^ habitRepeatsTotal.hashValue ^ repeatsDone.hashValue ^ date.dateComponent.hashValue
+    }
+}
+
+extension Report: CustomStringConvertible {
+    var description: String {
+        return "<Report:id=\(id), habitName=\(habitName), habitRepeatsTotal=\(habitRepeatsTotal), repeatsDone:=\(repeatsDone), date=\(date)>"
+    }
+}
+
+extension Report: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "<Report:id=\(id), habitName=\(habitName), habitRepeatsTotal=\(habitRepeatsTotal), repeatsDone:=\(repeatsDone), date=\(date)>"
     }
 }
 

@@ -29,6 +29,18 @@ extension Habit: Hashable {
     }
 }
 
+extension Habit: CustomStringConvertible {
+    var description: String {
+        return "<Habit:id=\(id), name=\(name), repeatsTotal=\(repeatsTotal)>"
+    }
+}
+
+extension Habit: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "<Habit:id=\(id), name=\(name), repeatsTotal=\(repeatsTotal)>"
+    }
+}
+
 // MARK: - Equatable
 
 func ==(lhs: Habit, rhs: Habit) -> Bool {
