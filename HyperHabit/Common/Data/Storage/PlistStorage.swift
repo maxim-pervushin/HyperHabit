@@ -112,6 +112,10 @@ class PlistStorage: DataProvider {
         _reportsById[report.id] = nil
         return saveReportsById()
     }
+
+    func reportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) -> [Report] {
+        return []
+    }
 }
 
 extension Habit {

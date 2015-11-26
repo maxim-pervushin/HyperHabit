@@ -20,4 +20,6 @@ protocol DataProvider {
     func saveReport(report: Report) -> Bool
 
     func deleteReport(report: Report) -> Bool
+
+    func reportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) -> [Report]
 }

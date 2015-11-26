@@ -45,6 +45,10 @@ extension DataManager: DataProvider {
     func deleteReport(report: Report) -> Bool {
         return storage.deleteReport(report)
     }
+
+    func reportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) -> [Report] {
+        return storage.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
+    }
 }
 
 extension DataManager: ChangesObserver {

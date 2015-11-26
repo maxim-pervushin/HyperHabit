@@ -341,6 +341,25 @@ extension ParseStorage: DataProvider {
         _reportsByIdToDelete[report.id] = report
         return writeReports(_reportsById, fileName: reportsFilePath)
     }
+
+    func reportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) -> [Report] {
+        var result = [Report]()
+        let fromTimeInterval = fromDate.timeIntervalSince1970
+        let toTimeInterval = toDate.timeIntervalSince1970
+        for report in _reportsById.values {
+            let reportTimeInterval = report.date.timeIntervalSince1970
+            if reportTimeInterval >= fromTimeInterval && reportTimeInterval <= toTimeInterval {
+                if let habit = habit  {
+                    if habit.name == report.habitName {
+                        result.append(report)
+                    }
+                } else {
+                    result.append(report)
+                }
+            }
+        }
+        return result
+    }
 }
 
 extension Habit {

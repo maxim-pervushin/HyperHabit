@@ -47,4 +47,8 @@ class MemoryStorage: DataProvider {
         _reportsById[report.id] = nil
         return true
     }
+
+    func reportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) -> [Report] {
+        return []
+    }
 }

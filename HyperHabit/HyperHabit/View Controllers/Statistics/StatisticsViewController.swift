@@ -114,7 +114,7 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         }
 
         dayView.layer.cornerRadius = 3
-        dayView.backgroundColor = allTotal == allDone ?  UIColor.greenColor() : UIColor.redColor()
+        dayView.backgroundColor = allTotal == allDone ? UIColor.greenColor() : UIColor.redColor()
         return []
     }
 
