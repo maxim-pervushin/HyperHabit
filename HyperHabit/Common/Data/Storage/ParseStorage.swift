@@ -376,8 +376,11 @@ extension Habit {
     }
 
     var parseObject: PFObject {
-        let query = PFQuery(className: "Habit")
-        query.whereKey("identifier", equalTo: id)
+        let idQuery = PFQuery(className: "Habit")
+        idQuery.whereKey("identifier", equalTo: id)
+        let nameQuery = PFQuery(className: "Habit")
+        nameQuery.whereKey("name", equalTo: name)
+        let query = PFQuery.orQueryWithSubqueries([idQuery, nameQuery])
         if let existingObject = try? query.getFirstObject() {
             existingObject["name"] = name
             existingObject["repeatsTotal"] = repeatsTotal
