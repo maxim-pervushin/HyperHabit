@@ -25,7 +25,7 @@ class Habit: Equatable {
 
 extension Habit: Hashable {
     var hashValue: Int {
-        return id.hashValue ^ name.hashValue ^ repeatsTotal.hashValue
+        return id.hashValue ^ name.hashValue /*^ repeatsTotal.hashValue*/
     }
 }
 
@@ -44,5 +44,5 @@ extension Habit: CustomDebugStringConvertible {
 // MARK: - Equatable
 
 func ==(lhs: Habit, rhs: Habit) -> Bool {
-    return lhs.hashValue == rhs.hashValue
+    return lhs.id == rhs.id && lhs.name == rhs.name
 }
