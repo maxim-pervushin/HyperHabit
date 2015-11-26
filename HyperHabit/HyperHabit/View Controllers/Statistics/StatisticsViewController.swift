@@ -108,7 +108,6 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
     }
 
     func presentedDateUpdated(date: CVDate) {
-//        titleLabel.text = "\(date.convertedDate())"
         updateUI()
     }
 
@@ -128,8 +127,6 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
 
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
         guard let date = dayView.date.convertedDate() else {
-//            dayView.layer.cornerRadius = 3
-//            dayView.backgroundColor = UIColor.whiteColor()
             return []
         }
 
