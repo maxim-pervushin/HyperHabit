@@ -234,8 +234,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-14-2cC">
+                                <rect key="frame" x="0.0" y="72" width="600" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-0C-gqU" customClass="CVCalendarMenuView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="101" width="600" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -246,7 +253,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zR-Bx-AnU" customClass="CVCalendarView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="141" width="600" height="300"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="3wX-sC-PSi">
@@ -261,18 +268,37 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6f0-14-2cC" secondAttribute="trailing" id="0f0-jF-AOT"/>
                             <constraint firstItem="2zR-Bx-AnU" firstAttribute="top" secondItem="nuf-0C-gqU" secondAttribute="bottom" id="4ly-A1-hbz"/>
                             <constraint firstAttribute="trailing" secondItem="2zR-Bx-AnU" secondAttribute="trailing" id="Asb-Rb-pMV"/>
+                            <constraint firstItem="6f0-14-2cC" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="NVy-4P-7EZ"/>
                             <constraint firstAttribute="trailing" secondItem="nuf-0C-gqU" secondAttribute="trailing" id="OL5-N8-lhh"/>
+                            <constraint firstItem="nuf-0C-gqU" firstAttribute="top" secondItem="6f0-14-2cC" secondAttribute="bottom" constant="8" id="P4n-hc-Bog"/>
+                            <constraint firstItem="6f0-14-2cC" firstAttribute="top" secondItem="tFL-hx-SSJ" secondAttribute="bottom" constant="8" id="gtx-Jt-mdE"/>
                             <constraint firstItem="2zR-Bx-AnU" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="iEO-sd-yDN"/>
                             <constraint firstItem="nuf-0C-gqU" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="kLL-O0-s7Q"/>
-                            <constraint firstItem="nuf-0C-gqU" firstAttribute="top" secondItem="tFL-hx-SSJ" secondAttribute="bottom" id="rBm-KW-NH7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sDn-Yw-Mxs"/>
+                    <navigationItem key="navigationItem" id="sDn-Yw-Mxs">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mw9-JY-qVO">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Meditate"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlValueChanged:" destination="8Yb-tq-urg" eventType="valueChanged" id="hcV-6b-LZI"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarMenuView" destination="nuf-0C-gqU" id="bYf-Py-mfg"/>
                         <outlet property="calendarView" destination="2zR-Bx-AnU" id="s4a-sX-1iX"/>
+                        <outlet property="segmentedControl" destination="mw9-JY-qVO" id="6ch-PS-8yE"/>
+                        <outlet property="titleLabel" destination="6f0-14-2cC" id="h4o-td-yds"/>
                         <segue destination="v2V-ER-56B" kind="show" identifier="ShowStatisticsForDate" id="KcB-1o-3hb"/>
                     </connections>
                 </viewController>
@@ -294,6 +320,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kwN-Jl-Lgj">
+                        <nil key="title"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLE-oV-koJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

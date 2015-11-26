@@ -348,7 +348,7 @@ extension ParseStorage: DataProvider {
         let toTimeInterval = toDate.timeIntervalSince1970
         for report in _reportsById.values {
             let reportTimeInterval = report.date.timeIntervalSince1970
-            if reportTimeInterval >= fromTimeInterval && reportTimeInterval <= toTimeInterval {
+            if reportTimeInterval >= fromTimeInterval && reportTimeInterval < toTimeInterval {
                 if let habit = habit  {
                     if habit.name == report.habitName {
                         result.append(report)

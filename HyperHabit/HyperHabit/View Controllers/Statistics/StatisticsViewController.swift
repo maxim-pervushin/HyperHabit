@@ -7,18 +7,43 @@ import UIKit
 
 class StatisticsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
+    @IBAction func segmentedControlValueChanged(sender: AnyObject) {
+        dataSource.loadReportsFiltered(segmentedControl.selectedSegmentIndex == 0 ? nil : Habit(name: "Meditate", repeatsTotal: 0), fromDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!, toDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!.nextMonth!)
+    }
 
     private let dataSource = StatisticsDataSource(dataManager: App.dataManager)
     private var selectedDate: NSDate?
 
+    private func updateUI() {
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            if let monthYear = self.calendarView.presentedDate?.convertedDate()?.monthYear {
+                self.titleLabel.text = monthYear
+            } else {
+                self.titleLabel.text = ""
+            }
+            self.calendarView.contentController.refreshPresentedMonth()
+//            self.calendarView.validated = true
+//            self.calendarView.commitCalendarViewUpdate()
+//            self.calendarView.commitCalendarViewUpdate()
+//            self.calendarMenuView.commitMenuViewUpdate()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.changesObserver = self
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -36,10 +61,7 @@ class StatisticsViewController: UIViewController {
 extension StatisticsViewController: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.calendarView.commitCalendarViewUpdate()
-            self.calendarMenuView.commitMenuViewUpdate()
-        }
+        updateUI()
     }
 }
 
@@ -85,9 +107,10 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         performSegueWithIdentifier("ShowStatisticsForDate", sender: self)
     }
 
-//    func presentedDateUpdated(date: CVDate) {
-//        print("\(date.convertedDate())")
-//    }
+    func presentedDateUpdated(date: CVDate) {
+//        titleLabel.text = "\(date.convertedDate())"
+        updateUI()
+    }
 
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
         return false
@@ -97,11 +120,16 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         guard let date = dayView.date.convertedDate() else  {
             return false
         }
-        return dataSource.reportsForDate(date).count > 0
+
+        let count = dataSource.reportsForDate(date).count
+        dayView.backgroundColor = UIColor.whiteColor()
+        return count > 0
     }
 
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
         guard let date = dayView.date.convertedDate() else {
+//            dayView.layer.cornerRadius = 3
+//            dayView.backgroundColor = UIColor.whiteColor()
             return []
         }
 
@@ -114,7 +142,7 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         }
 
         dayView.layer.cornerRadius = 3
-        dayView.backgroundColor = allTotal == allDone ? UIColor.greenColor() : UIColor.redColor()
+        dayView.backgroundColor = allTotal == allDone ? UIColor.greenColor().colorWithAlphaComponent(0.2) : UIColor.redColor().colorWithAlphaComponent(0.2)
         return []
     }
 
