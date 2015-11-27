@@ -9,17 +9,25 @@ class Habit: Equatable {
     let id: String
     let name: String
     let repeatsTotal: Int
+    let active: Bool
 
-    init(id: String, name: String, repeatsTotal: Int) {
+    init(id: String, name: String, repeatsTotal: Int, active: Bool) {
         self.id = id
         self.name = name
         self.repeatsTotal = repeatsTotal
+        self.active = active
     }
 
-    init(name: String, repeatsTotal: Int) {
-        self.id = "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)"
-        self.name = name
-        self.repeatsTotal = repeatsTotal
+    convenience init(name: String, repeatsTotal: Int, active: Bool) {
+        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", name: name, repeatsTotal: repeatsTotal, active: active)
+    }
+
+    var inactiveHabit: Habit {
+        return Habit(id: id, name: name, repeatsTotal: repeatsTotal, active: false)
+    }
+
+    var activeHabit: Habit {
+        return Habit(id: id, name: name, repeatsTotal: repeatsTotal, active: true)
     }
 }
 

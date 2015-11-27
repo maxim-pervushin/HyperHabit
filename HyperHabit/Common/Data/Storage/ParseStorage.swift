@@ -25,12 +25,6 @@ class ParseStorage {
         }
     }
 
-    private var _habitsByIdToDelete = [String: Habit]() {
-        didSet {
-            _saveHabitsAfter = 2
-        }
-    }
-
     private var _saveHabitsAfter = Int.max
 
     private var _reportsById = [String: Report]() {
@@ -63,10 +57,6 @@ class ParseStorage {
         return contentDirectory.stringByAppendingPathComponent("/habitsToSave.plist")
     }
 
-    private var habitsToDeleteFilePath: String {
-        return contentDirectory.stringByAppendingPathComponent("/habitsToDelete.plist")
-    }
-
     private var reportsFilePath: String {
         return contentDirectory.stringByAppendingPathComponent("/reports.plist")
     }
@@ -85,7 +75,6 @@ class ParseStorage {
         self.contentDirectory = contentDirectory
         _habitsById = readHabitsFile(habitsFilePath)
         _habitsByIdToSave = readHabitsFile(habitsToSaveFilePath)
-        _habitsByIdToDelete = readHabitsFile(habitsToDeleteFilePath)
         _reportsById = readReportsFile(reportsFilePath)
         _reportsByIdToSave = readReportsFile(reportsToSaveFilePath)
         _reportsByIdToDelete = readReportsFile(reportsToDeleteFilePath)
@@ -186,25 +175,6 @@ class ParseStorage {
                     print("unable to save habits")
                 }
             }
-
-            if self._habitsByIdToDelete.count > 0 {
-                let habitsByIdToDelete = self._habitsByIdToDelete
-                var objectsToDelete = [PFObject]()
-                for habit in habitsByIdToDelete.values {
-                    self._habitsByIdToDelete[habit.id] = nil
-                    objectsToDelete.append(habit.parseObject)
-                }
-
-                do {
-                    print("try PFObject.deleteAll(objectsToSave)")
-                    try PFObject.deleteAll(objectsToDelete)
-                } catch {
-                    for habit in habitsByIdToDelete.values {
-                        self._habitsByIdToDelete[habit.id] = nil
-                    }
-                    print("unable to delete habits")
-                }
-            }
         }
     }
 
@@ -301,20 +271,22 @@ class ParseStorage {
 extension ParseStorage: DataProvider {
 
     var habits: [Habit] {
-        return Array(_habitsById.values)
+        return Array(_habitsById.values.filter {
+            return $0.active
+        })
     }
 
     func saveHabit(habit: Habit) -> Bool {
-        _habitsById[habit.id] = habit
-        _habitsByIdToSave[habit.id] = habit
-        _habitsByIdToDelete[habit.id] = nil
+        let activeHabit = habit.activeHabit
+        _habitsById[habit.id] = activeHabit
+        _habitsByIdToSave[habit.id] = activeHabit
         return writeHabits(_habitsById, fileName: habitsFilePath)
     }
 
     func deleteHabit(habit: Habit) -> Bool {
-        _habitsById[habit.id] = nil
-        _habitsByIdToSave[habit.id] = nil
-        _habitsByIdToDelete[habit.id] = habit
+        let inactiveHabit = habit.inactiveHabit
+        _habitsById[habit.id] = inactiveHabit
+        _habitsByIdToSave[habit.id] = inactiveHabit
         return writeHabits(_habitsById, fileName: habitsFilePath)
     }
 
@@ -349,7 +321,7 @@ extension ParseStorage: DataProvider {
         for report in _reportsById.values {
             let reportTimeInterval = report.date.timeIntervalSince1970
             if reportTimeInterval >= fromTimeInterval && reportTimeInterval < toTimeInterval {
-                if let habit = habit  {
+                if let habit = habit {
                     if habit.name == report.habitName {
                         result.append(report)
                     }
@@ -368,8 +340,9 @@ extension Habit {
         if let
         id = parseObject["identifier"] as? String,
         name = parseObject["name"] as? String,
-        repeatsTotal = parseObject["repeatsTotal"] as? Int {
-            self.init(id: id, name: name, repeatsTotal: repeatsTotal)
+        repeatsTotal = parseObject["repeatsTotal"] as? Int,
+        active = parseObject["active"] as? Bool {
+            self.init(id: id, name: name, repeatsTotal: repeatsTotal, active: active)
         } else {
             return nil
         }
@@ -384,12 +357,14 @@ extension Habit {
         if let existingObject = try? query.getFirstObject() {
             existingObject["name"] = name
             existingObject["repeatsTotal"] = repeatsTotal
+            existingObject["active"] = active
             return existingObject
         }
         let newObject = PFObject(className: "Habit")
         newObject["identifier"] = id
         newObject["name"] = name
         newObject["repeatsTotal"] = repeatsTotal
+        newObject["active"] = active
         return newObject
     }
 }

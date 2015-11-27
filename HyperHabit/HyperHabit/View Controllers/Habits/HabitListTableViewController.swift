@@ -10,7 +10,7 @@ class HabitListTableViewController: UITableViewController {
     // MARK: HabitListTableViewController @IB
 
     @IBAction func addButtonAction(sender: AnyObject!) {
-        let newHabit = Habit(name: NSUUID().UUIDString, repeatsTotal: 1)
+        let newHabit = Habit(name: NSUUID().UUIDString, repeatsTotal: 1, active: true)
         if dataSource.saveHabit(newHabit) {
             tableView.reloadData()
         }

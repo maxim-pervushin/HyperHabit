@@ -37,9 +37,9 @@ class HabitEditor {
         }
 
         if let habit = habit {
-            return Habit(id: habit.id, name: name, repeatsTotal: repeatsTotal)
+            return Habit(id: habit.id, name: name, repeatsTotal: repeatsTotal, active: true)
         } else {
-            return Habit(name: name, repeatsTotal: repeatsTotal)
+            return Habit(name: name, repeatsTotal: repeatsTotal, active: true)
         }
     }
 

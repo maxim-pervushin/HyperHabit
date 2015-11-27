@@ -19,12 +19,12 @@ class MemoryStorage: DataProvider {
     }
 
     func saveHabit(habit: Habit) -> Bool {
-        _habitsById[habit.id] = habit
+        _habitsById[habit.id] = habit.activeHabit
         return true
     }
 
     func deleteHabit(habit: Habit) -> Bool {
-        _habitsById[habit.id] = nil
+        _habitsById[habit.id] = habit.inactiveHabit
         return true
     }
 

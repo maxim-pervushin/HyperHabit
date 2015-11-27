@@ -13,7 +13,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     @IBAction func segmentedControlValueChanged(sender: AnyObject) {
-        dataSource.loadReportsFiltered(segmentedControl.selectedSegmentIndex == 0 ? nil : Habit(name: "Meditate", repeatsTotal: 0), fromDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!, toDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!.nextMonth!)
+        dataSource.loadReportsFiltered(segmentedControl.selectedSegmentIndex == 0 ? nil : Habit(name: "Meditate", repeatsTotal: 0, active: true), fromDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!, toDate: self.calendarView.presentedDate!.convertedDate()!.firstDayOfMonth!.nextMonth!)
     }
 
     private let dataSource = StatisticsDataSource(dataManager: App.dataManager)

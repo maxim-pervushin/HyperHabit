@@ -124,8 +124,9 @@ extension Habit {
         if let
         id = packed["id"] as? String,
         name = packed["name"] as? String,
-        repeatsTotal = packed["repeatsTotal"] as? Int {
-            self.init(id: id, name: name, repeatsTotal: repeatsTotal)
+        repeatsTotal = packed["repeatsTotal"] as? Int,
+        active = packed["active"] as? Bool {
+            self.init(id: id, name: name, repeatsTotal: repeatsTotal, active: active)
         } else {
             return nil
         }
@@ -135,7 +136,8 @@ extension Habit {
         return [
                 "id": id,
                 "name": name,
-                "repeatsTotal": repeatsTotal
+                "repeatsTotal": repeatsTotal,
+                "active": active
         ]
     }
 }
