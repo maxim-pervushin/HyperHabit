@@ -4,13 +4,13 @@
 //
 
 import Foundation
-import Parse
 
 // TODO: This class far from perfect. Need to rewrite it ever.
 // TODO: Should be able to fetch data from Parse without re-initialization.
 
 class ParseStorage {
 
+    private let service = ParseService()
     private var _timer: NSTimer!
 
     private var _habitsById = [String: Habit]() {
@@ -157,23 +157,24 @@ class ParseStorage {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
 
-            if self._habitsByIdToSave.count > 0 {
-                let habitsByIdToSave = self._habitsByIdToSave
-                var objectsToSave = [PFObject]()
-                for habit in habitsByIdToSave.values {
-                    self._habitsByIdToSave[habit.id] = nil
-                    objectsToSave.append(habit.parseObject)
-                }
+            if self._habitsByIdToSave.count == 0 {
+                return
+            }
 
-                do {
-                    print("try PFObject.saveAll(objectsToSave)")
-                    try PFObject.saveAll(objectsToSave)
-                } catch {
-                    for habit in habitsByIdToSave.values {
-                        self._habitsByIdToSave[habit.id] = habit
-                    }
-                    print("unable to save habits")
+            let habits = self._habitsByIdToSave.values
+            // Remove selected habits from habits-to-save to avoid save attempt from another thread
+            for habit in habits {
+                self._habitsByIdToSave[habit.id] = nil
+            }
+
+            do {
+                try self.service.saveHabits(Array(habits))
+            } catch {
+                // Put habits-to-save back if something goes wrong
+                for habit in habits {
+                    self._habitsByIdToSave[habit.id] = habit
                 }
+                print("ERROR: Unable to save habits")
             }
         }
     }
@@ -182,20 +183,16 @@ class ParseStorage {
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
-
-            let query = PFQuery(className: "Habit")
-            if let objects = try? query.findObjects() {
+            do {
+                let habits = try self.service.getHabits()
                 var habitsById = [String: Habit]()
-                for object in objects {
-                    if let habit = Habit(parseObject: object) {
-                        habitsById[habit.id] = habit
-                    }
+                for habit in habits {
+                    habitsById[habit.id] = habit
                 }
-
-                if habitsById != self._habitsById {
-                    self._habitsById = habitsById
-                    self.writeHabits(self._habitsById, fileName: self.habitsFilePath)
-                }
+                self._habitsById = habitsById
+                self.writeHabits(self._habitsById, fileName: self.habitsFilePath)
+            } catch {
+                print("ERROR: Unable to load habits")
             }
         }
     }
@@ -205,42 +202,48 @@ class ParseStorage {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
 
-            if self._reportsByIdToSave.count > 0 {
-                let reportsByIdToSave = self._reportsByIdToSave
-                var objectsToSave = [PFObject]()
-                for report in reportsByIdToSave.values {
-                    self._reportsByIdToSave[report.id] = nil
-                    objectsToSave.append(report.parseObject)
-                }
-
-                do {
-                    print("try PFObject.saveAll(objectsToSave)")
-                    try PFObject.saveAll(objectsToSave)
-                } catch {
-                    for report in reportsByIdToSave.values {
-                        self._reportsByIdToSave[report.id] = report
-                    }
-                    print("unable to save reports")
-                }
+            if self._reportsByIdToSave.count == 0 {
+                return
             }
 
-            if self._reportsByIdToDelete.count > 0 {
-                let reportsByIdToDelete = self._reportsByIdToDelete
-                var objectsToDelete = [PFObject]()
-                for report in reportsByIdToDelete.values {
-                    self._reportsByIdToDelete[report.id] = nil
-                    objectsToDelete.append(report.parseObject)
-                }
+            let reports = self._reportsByIdToSave.values
+            // Remove selected reports from reports-to-save to avoid save attempt from another thread
+            for report in reports {
+                self._reportsByIdToSave[report.id] = nil
+            }
 
-                do {
-                    print("try PFObject.deleteAll(objectsToSave)")
-                    try PFObject.deleteAll(objectsToDelete)
-                } catch {
-                    for report in reportsByIdToDelete.values {
-                        self._reportsByIdToDelete[report.id] = report
-                    }
-                    print("unable to delete reports")
+            do {
+                try self.service.saveReports(Array(reports))
+            } catch {
+                // Put reports-to-save back if something goes wrong
+                for report in reports {
+                    self._reportsByIdToSave[report.id] = report
                 }
+                print("ERROR: Unable to save reports")
+            }
+        }
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            () -> Void in
+
+            if self._reportsByIdToDelete.count == 0 {
+                return
+            }
+
+            let reports = self._reportsByIdToDelete.values
+            // Remove selected reports from reports-to-delete to avoid delete attempt from another thread
+            for report in reports {
+                self._reportsByIdToDelete[report.id] = nil
+            }
+
+            do {
+                try self.service.deleteReports(Array(reports))
+            } catch {
+                // Put reports-to-delete back if something goes wrong
+                for report in reports {
+                    self._reportsByIdToDelete[report.id] = report
+                }
+                print("ERROR: Unable to delete reports")
             }
         }
     }
@@ -249,20 +252,16 @@ class ParseStorage {
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
             () -> Void in
-
-            let query = PFQuery(className: "Report")
-            if let objects = try? query.findObjects() {
+            do {
+                let reports = try self.service.getReports()
                 var reportsById = [String: Report]()
-                for object in objects {
-                    if let report = Report(parseObject: object) {
-                        reportsById[report.id] = report
-                    }
+                for report in reports {
+                    reportsById[report.id] = report
                 }
-
-                if reportsById != self._reportsById {
-                    self._reportsById = reportsById
-                    self.writeReports(self._reportsById, fileName: self.reportsFilePath)
-                }
+                self._reportsById = reportsById
+                self.writeReports(self._reportsById, fileName: self.reportsFilePath)
+            } catch {
+                print("ERROR: Unable to load reports")
             }
         }
     }
@@ -331,76 +330,5 @@ extension ParseStorage: DataProvider {
             }
         }
         return result
-    }
-}
-
-extension Habit {
-
-    convenience init?(parseObject: PFObject) {
-        if let
-        id = parseObject["identifier"] as? String,
-        name = parseObject["name"] as? String,
-        repeatsTotal = parseObject["repeatsTotal"] as? Int,
-        active = parseObject["active"] as? Bool {
-            self.init(id: id, name: name, repeatsTotal: repeatsTotal, active: active)
-        } else {
-            return nil
-        }
-    }
-
-    var parseObject: PFObject {
-        let idQuery = PFQuery(className: "Habit")
-        idQuery.whereKey("identifier", equalTo: id)
-        let nameQuery = PFQuery(className: "Habit")
-        nameQuery.whereKey("name", equalTo: name)
-        let query = PFQuery.orQueryWithSubqueries([idQuery, nameQuery])
-        if let existingObject = try? query.getFirstObject() {
-            existingObject["name"] = name
-            existingObject["repeatsTotal"] = repeatsTotal
-            existingObject["active"] = active
-            return existingObject
-        }
-        let newObject = PFObject(className: "Habit")
-        newObject["identifier"] = id
-        newObject["name"] = name
-        newObject["repeatsTotal"] = repeatsTotal
-        newObject["active"] = active
-        return newObject
-    }
-}
-
-extension Report {
-
-    convenience init?(parseObject: PFObject) {
-        if let
-        id = parseObject["identifier"] as? String,
-        habitName = parseObject["habitName"] as? String,
-        habitRepeatsTotal = parseObject["habitRepeatsTotal"] as? Int,
-        repeatsDone = parseObject["repeatsDone"] as? Int,
-        dateComponent = parseObject["date_dateComponent"] as? String,
-        date = NSDate.dateWithDateComponent(dateComponent) {
-            self.init(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
-        } else {
-            return nil
-        }
-    }
-
-    var parseObject: PFObject {
-        let query = PFQuery(className: "Report")
-        query.whereKey("identifier", equalTo: id)
-        if let existingObject = try? query.getFirstObject() {
-            existingObject["habitName"] = habitName
-            existingObject["habitRepeatsTotal"] = habitRepeatsTotal
-            existingObject["repeatsDone"] = repeatsDone
-            existingObject["date_dateComponent"] = date.dateComponent
-            return existingObject
-        }
-        let newObject = PFObject(className: "Report")
-        newObject["identifier"] = id
-        newObject["habitName"] = habitName
-        newObject["habitRepeatsTotal"] = habitRepeatsTotal
-        newObject["repeatsDone"] = repeatsDone
-        newObject["date_dateComponent"] = date.dateComponent
-        return newObject
     }
 }
