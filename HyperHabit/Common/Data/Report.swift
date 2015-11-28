@@ -27,6 +27,14 @@ class Report: Equatable {
     convenience init(habit: Habit, repeatsDone: Int, date: NSDate) {
         self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
+
+    var completedReport: Report {
+        return Report(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: habitRepeatsTotal, date: date)
+    }
+
+    var incompletedReport: Report {
+        return Report(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: 0, date: date)
+    }
 }
 
 extension Report: Hashable {
