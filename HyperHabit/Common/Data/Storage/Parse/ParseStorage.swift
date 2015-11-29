@@ -154,7 +154,7 @@ class ParseStorage {
 
     private func saveHabits() {
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
 
             if self._habitsByIdToSave.count == 0 {
@@ -181,7 +181,7 @@ class ParseStorage {
 
     private func loadHabits() {
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
             do {
                 let habits = try self.service.getHabits()
@@ -199,7 +199,7 @@ class ParseStorage {
 
     private func saveReports() {
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
 
             if self._reportsByIdToSave.count == 0 {
@@ -223,7 +223,7 @@ class ParseStorage {
             }
         }
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
 
             if self._reportsByIdToDelete.count == 0 {
@@ -250,7 +250,7 @@ class ParseStorage {
 
     private func loadReports() {
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
             do {
                 let reports = try self.service.getReports()

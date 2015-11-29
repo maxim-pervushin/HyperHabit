@@ -26,7 +26,7 @@ class StatisticsDataSource: DataSource {
 
     func loadReportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) {
 //        print("loadReportsFiltered(habit: \(habit), fromDate: \(fromDate), toDate: \(toDate)")
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             () -> Void in
             self.reports = self.dataManager.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
             self.changesObserver?.observableChanged(self)
