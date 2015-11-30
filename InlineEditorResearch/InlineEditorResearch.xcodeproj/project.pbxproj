@@ -12,7 +12,9 @@
 		C5F8B7BE1C0C5D1C003904C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F8B7BC1C0C5D1C003904C1 /* Main.storyboard */; };
 		C5F8B7C01C0C5D1C003904C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F8B7BF1C0C5D1C003904C1 /* Assets.xcassets */; };
 		C5F8B7C31C0C5D1C003904C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F8B7C11C0C5D1C003904C1 /* LaunchScreen.storyboard */; };
-		C5F8B7CB1C0C5DE2003904C1 /* EditValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8B7CA1C0C5DE2003904C1 /* EditValueViewController.swift */; };
+		C5F8B7CB1C0C5DE2003904C1 /* EditValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8B7CA1C0C5DE2003904C1 /* EditValueCell.swift */; };
+		C5F8B7CD1C0C63BA003904C1 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8B7CC1C0C63BA003904C1 /* EditorViewController.swift */; };
+		C5F8B7CF1C0C6632003904C1 /* ModalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F8B7CE1C0C6632003904C1 /* ModalSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		C5F8B7BF1C0C5D1C003904C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5F8B7C21C0C5D1C003904C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5F8B7C41C0C5D1C003904C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5F8B7CA1C0C5DE2003904C1 /* EditValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditValueViewController.swift; sourceTree = "<group>"; };
+		C5F8B7CA1C0C5DE2003904C1 /* EditValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditValueCell.swift; sourceTree = "<group>"; };
+		C5F8B7CC1C0C63BA003904C1 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		C5F8B7CE1C0C6632003904C1 /* ModalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,9 @@
 				C5F8B7BF1C0C5D1C003904C1 /* Assets.xcassets */,
 				C5F8B7C11C0C5D1C003904C1 /* LaunchScreen.storyboard */,
 				C5F8B7C41C0C5D1C003904C1 /* Info.plist */,
-				C5F8B7CA1C0C5DE2003904C1 /* EditValueViewController.swift */,
+				C5F8B7CA1C0C5DE2003904C1 /* EditValueCell.swift */,
+				C5F8B7CC1C0C63BA003904C1 /* EditorViewController.swift */,
+				C5F8B7CE1C0C6632003904C1 /* ModalSegue.swift */,
 			);
 			path = InlineEditorResearch;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5F8B7CB1C0C5DE2003904C1 /* EditValueViewController.swift in Sources */,
+				C5F8B7CF1C0C6632003904C1 /* ModalSegue.swift in Sources */,
+				C5F8B7CB1C0C5DE2003904C1 /* EditValueCell.swift in Sources */,
 				C5F8B7BB1C0C5D1C003904C1 /* TableViewController.swift in Sources */,
 				C5F8B7B91C0C5D1C003904C1 /* AppDelegate.swift in Sources */,
+				C5F8B7CD1C0C63BA003904C1 /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
