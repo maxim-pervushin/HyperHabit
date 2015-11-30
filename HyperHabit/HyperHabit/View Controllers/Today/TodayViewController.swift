@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TodayTableViewController: UITableViewController {
+class TodayViewController: UITableViewController {
 
     // MARK: TodayTableViewController
 
@@ -17,33 +17,24 @@ class TodayTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return dataSource.uncompletedReports.count
+            return dataSource.incompletedReports.count
         } else {
             return dataSource.completedReports.count
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReportCell", forIndexPath: indexPath)
-        let report = indexPath.section == 0 ? dataSource.uncompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
-        cell.textLabel?.text = report.habitName
-        cell.detailTextLabel?.text = "\(report.repeatsDone)/\(report.habitRepeatsTotal)"
+        let cell = tableView.dequeueReusableCellWithIdentifier(ReportCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportCell
+        let report = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
+        cell.report = report
         return cell
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        let report = indexPath.section == 0 ? dataSource.uncompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
-        var updatedRepeatsDone = report.repeatsDone + 1
-        if updatedRepeatsDone > report.habitRepeatsTotal {
-            updatedRepeatsDone = 0
-        }
-        let updatedReport = Report(id: report.id, habitName: report.habitName, habitRepeatsTotal: report.habitRepeatsTotal, repeatsDone: updatedRepeatsDone, date: report.date)
+        let updatedReport = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row].completedReport : dataSource.completedReports[indexPath.row].incompletedReport
         if dataSource.saveReport(updatedReport) {
-//            tableView.beginUpdates()
-//            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-//            tableView.endUpdates()
             tableView.reloadData()
         }
     }
@@ -68,7 +59,7 @@ class TodayTableViewController: UITableViewController {
     }
 }
 
-extension TodayTableViewController: ChangesObserver {
+extension TodayViewController: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
         dispatch_async(dispatch_get_main_queue()) {

@@ -32,7 +32,7 @@ class TodayDataSource: DataSource {
         }
     }
 
-    var uncompletedReports: [Report] {
+    var incompletedReports: [Report] {
         return try todayReports.filter {
             return $0.repeatsDone != $0.habitRepeatsTotal
         }

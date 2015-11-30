@@ -17,7 +17,7 @@
 		73BC63202EA873DDDEFDB237 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A6CC626ACBCF23CE9EB /* Test.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
-		73BC63CC9A466959D80CDA86 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* TodayTableViewController.swift */; };
+		73BC63CC9A466959D80CDA86 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* TodayViewController.swift */; };
 		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
 		73BC654909448959DBA56ECC /* StatisticsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */; };
 		73BC65D1874610D81D4C7A4A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
@@ -53,6 +53,7 @@
 		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */; };
 		73BC6E9D0BD28AFF26B6F691 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC640CFC9B3899FAA74291 /* ParseService.swift */; };
+		73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
 		73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */; };
 		73BC6EF0AE08FE2E38B98F83 /* DataManagerTestCase+reportsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */; };
 		73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
@@ -143,6 +144,7 @@
 		C5A6581B1C01BBD2008DE843 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A6581A1C01BBD2008DE843 /* NotificationCenter.framework */; };
 		C5A658211C01BBD2008DE843 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A6581F1C01BBD2008DE843 /* MainInterface.storyboard */; };
 		C5A658251C01BBD2008DE843 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5A658181C01BBD2008DE843 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5F8B7AB1C0C4E7E003904C1 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,7 +193,8 @@
 		73BC620A9FF858BFEB8597B3 /* EditHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6257F7926F5029E191EA /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		73BC63078589D984B029581D /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
+		73BC62C85A2762441A3FF92D /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		73BC63078589D984B029581D /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		73BC640CFC9B3899FAA74291 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
 		73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
@@ -447,10 +450,18 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		73BC69E7296CA9E88F7D3D6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73BC62C85A2762441A3FF92D /* ReportCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		73BC69F8C45209664A97BA3F /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				73BC63078589D984B029581D /* TodayTableViewController.swift */,
+				73BC63078589D984B029581D /* TodayViewController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -572,6 +583,7 @@
 				73BC67F29C9087616D869E8A /* View Controllers */,
 				73BC6D36DEAA5EA2A8AED39C /* App.swift */,
 				73BC6BB5FE85E7F637DF078E /* Data */,
+				73BC69E7296CA9E88F7D3D6B /* Views */,
 			);
 			path = HyperHabit;
 			sourceTree = "<group>";
@@ -892,11 +904,12 @@
 				73BC6DAAF7353CDC03D11D91 /* StatisticsForDateDataSource.swift in Sources */,
 				73BC68F383D84C98A63F8AB2 /* ChangesObserver.swift in Sources */,
 				73BC601BD33E45B9AAC0452A /* EditHabitViewController.swift in Sources */,
-				73BC63CC9A466959D80CDA86 /* TodayTableViewController.swift in Sources */,
+				73BC63CC9A466959D80CDA86 /* TodayViewController.swift in Sources */,
 				73BC6F9FB1AE35BA7BC7F5B5 /* HabitEditor.swift in Sources */,
 				73BC6C92461627921BA60EB0 /* EditHabitDataSource.swift in Sources */,
 				73BC6AF23B44D24D02864EEC /* ParseStorage.swift in Sources */,
 				73BC6E9D0BD28AFF26B6F691 /* ParseService.swift in Sources */,
+				73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +975,7 @@
 				73BC60FC0DC14CE89B9C0290 /* ChangesObserver.swift in Sources */,
 				73BC6846765325FCA0CBA903 /* ParseStorage.swift in Sources */,
 				C5771C901C086706005EC1AB /* ParseService.swift in Sources */,
+				C5F8B7AB1C0C4E7E003904C1 /* ReportCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

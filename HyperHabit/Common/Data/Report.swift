@@ -28,6 +28,10 @@ class Report: Equatable {
         self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
 
+    var completed: Bool {
+        return habitRepeatsTotal == repeatsDone
+    }
+
     var completedReport: Report {
         return Report(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: habitRepeatsTotal, date: date)
     }
