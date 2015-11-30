@@ -15,9 +15,25 @@ class TodayViewController: UIViewController {
 
     private let dataSource = TodayDataSource(dataManager: App.dataManager)
 
+    private var _heightConstraint: NSLayoutConstraint?
+    private var heightConstraint: NSLayoutConstraint {
+        get {
+            if _heightConstraint == nil {
+                _heightConstraint = NSLayoutConstraint(item: tableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: tableView.contentSize.height)
+                tableView.addConstraint(_heightConstraint!)
+            }
+            return _heightConstraint!
+        }
+    }
+
+    private func updateUI() {
+        heightConstraint.constant = tableView.contentSize.height
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
+        updateUI()
     }
 }
 
@@ -25,37 +41,45 @@ extension TodayViewController: NCWidgetProviding {
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         tableView.reloadData()
+        updateUI()
         completionHandler(NCUpdateResult.NewData)
     }
 }
 
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.todayReports.count
+        if section == 0 {
+            return dataSource.incompletedReports.count
+        } else {
+            return dataSource.completedReports.count
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReportCell", forIndexPath: indexPath)
-        let report = dataSource.todayReports[indexPath.row]
-        cell.textLabel?.text = report.habitName
-        cell.detailTextLabel?.text = "\(report.repeatsDone)/\(report.habitRepeatsTotal)"
+        let cell = tableView.dequeueReusableCellWithIdentifier(ReportCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportCell
+        let report = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
+        cell.report = report
         return cell
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        let report = dataSource.todayReports[indexPath.row]
-        var updatedRepeatsDone = report.repeatsDone + 1
-        if updatedRepeatsDone > report.habitRepeatsTotal {
-            updatedRepeatsDone = 0
-        }
-        let updatedReport = Report(id: report.id, habitName: report.habitName, habitRepeatsTotal: report.habitRepeatsTotal, repeatsDone: updatedRepeatsDone, date: report.date)
+        let updatedReport = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row].completedReport : dataSource.completedReports[indexPath.row].incompletedReport
         if dataSource.saveReport(updatedReport) {
-            tableView.beginUpdates()
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            tableView.endUpdates()
+            tableView.reloadData()
         }
+    }
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Completed"
+        }
+        return nil
     }
 }

@@ -26,6 +26,26 @@ class TodayDataSource: DataSource {
         return reports.sort({ $0.habitName > $1.habitName })
     }
 
+    var completedReports: [Report] {
+        do {
+            return try todayReports.filter {
+                return $0.completed
+            }
+        } catch {
+            return []
+        }
+    }
+
+    var incompletedReports: [Report] {
+        do {
+            return try todayReports.filter {
+                return !$0.completed
+            }
+        } catch {
+            return []
+        }
+    }
+
     func saveReport(report: Report) -> Bool {
         return dataManager.saveReport(report)
     }

@@ -27,14 +27,22 @@ class TodayDataSource: DataSource {
     }
 
     var completedReports: [Report] {
-        return try todayReports.filter {
-            return $0.repeatsDone == $0.habitRepeatsTotal
+        do {
+            return try todayReports.filter {
+                return $0.completed
+            }
+        } catch {
+            return []
         }
     }
 
     var incompletedReports: [Report] {
-        return try todayReports.filter {
-            return $0.repeatsDone != $0.habitRepeatsTotal
+        do {
+            return try todayReports.filter {
+                return !$0.completed
+            }
+        } catch {
+            return []
         }
     }
 
