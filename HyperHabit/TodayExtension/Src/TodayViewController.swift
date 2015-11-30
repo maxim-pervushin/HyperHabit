@@ -44,6 +44,10 @@ extension TodayViewController: NCWidgetProviding {
         updateUI()
         completionHandler(NCUpdateResult.NewData)
     }
+
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0, 0, 0, 0)
+    }
 }
 
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {

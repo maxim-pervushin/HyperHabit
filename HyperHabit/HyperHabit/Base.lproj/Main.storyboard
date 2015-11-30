@@ -171,31 +171,12 @@
                                     <action selector="nameTextFieldEditingChanged:" destination="pAe-oq-hq6" eventType="editingChanged" id="JT1-cx-1q3"/>
                                 </connections>
                             </textField>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ek2-AI-Zc1">
-                                <rect key="frame" x="486" y="110" width="94" height="29"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="repeatsTotalStepperValueChanged:" destination="pAe-oq-hq6" eventType="valueChanged" id="Ba7-jp-B4q"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeats Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whG-df-BwF">
-                                <rect key="frame" x="20" y="114" width="458" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="whG-df-BwF" firstAttribute="leading" secondItem="lB8-zF-XFm" secondAttribute="leadingMargin" id="7tC-Kv-9qW"/>
-                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="trailing" secondItem="lB8-zF-XFm" secondAttribute="trailingMargin" id="DY5-Xv-l6k"/>
-                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="leading" secondItem="whG-df-BwF" secondAttribute="trailing" constant="8" id="Fun-PG-KHI"/>
-                            <constraint firstItem="whG-df-BwF" firstAttribute="centerY" secondItem="ek2-AI-Zc1" secondAttribute="centerY" id="JWX-w1-ytA"/>
                             <constraint firstItem="dWg-p0-qG1" firstAttribute="trailing" secondItem="lB8-zF-XFm" secondAttribute="trailingMargin" id="Uc4-wt-sWc"/>
                             <constraint firstItem="dWg-p0-qG1" firstAttribute="leading" secondItem="lB8-zF-XFm" secondAttribute="leadingMargin" id="eHk-Fq-tpc"/>
-                            <constraint firstItem="ek2-AI-Zc1" firstAttribute="top" secondItem="dWg-p0-qG1" secondAttribute="bottom" constant="8" id="j78-0j-sZ4"/>
                             <constraint firstItem="dWg-p0-qG1" firstAttribute="top" secondItem="gWr-Y0-8hu" secondAttribute="bottom" constant="8" id="wWo-63-qyZ"/>
                         </constraints>
                     </view>
@@ -208,8 +189,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="dWg-p0-qG1" id="tGM-4Z-53V"/>
-                        <outlet property="repeatsTotalLabel" destination="whG-df-BwF" id="BIy-xb-mQ1"/>
-                        <outlet property="repeatsTotalStepper" destination="ek2-AI-Zc1" id="GcA-57-Dpc"/>
                         <outlet property="saveButton" destination="I8c-dL-G65" id="vav-W6-kNo"/>
                     </connections>
                 </viewController>

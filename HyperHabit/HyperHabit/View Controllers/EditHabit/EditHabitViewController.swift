@@ -11,15 +11,9 @@ class EditHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var repeatsTotalLabel: UILabel!
-    @IBOutlet weak var repeatsTotalStepper: UIStepper!
 
     @IBAction func nameTextFieldEditingChanged(sender: AnyObject) {
         editor.name = nameTextField.text
-    }
-
-    @IBAction func repeatsTotalStepperValueChanged(sender: AnyObject) {
-        editor.repeatsTotal = Int(repeatsTotalStepper.value)
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
@@ -39,11 +33,6 @@ class EditHabitViewController: UIViewController {
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {
             self.nameTextField.text = self.editor.name
-            if let repeatsTotal = self.editor.repeatsTotal {
-                self.repeatsTotalLabel.text = "\(repeatsTotal)"
-            } else {
-                self.repeatsTotalLabel.text = ""
-            }
             self.saveButton.enabled = self.editor.canSave
         }
     }
