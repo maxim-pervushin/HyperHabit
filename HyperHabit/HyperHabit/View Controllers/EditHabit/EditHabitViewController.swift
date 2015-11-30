@@ -9,8 +9,16 @@ class EditHabitViewController: UIViewController {
 
     // MARK: EditHabitViewController @IB
 
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nameTextField: UITextField!
+
+    @IBOutlet weak var backgroundView: UIView! {
+        didSet {
+            backgroundView?.layer.cornerRadius = 3
+        }
+    }
+
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
 
     @IBAction func nameTextFieldEditingChanged(sender: AnyObject) {
         editor.name = nameTextField.text
@@ -21,8 +29,12 @@ class EditHabitViewController: UIViewController {
             return
         }
         if dataSource.saveHabit(habit) {
-            navigationController?.popViewControllerAnimated(true)
+            dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+
+    @IBAction func cancelButtonAction(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: EditHabitViewController
@@ -40,11 +52,22 @@ class EditHabitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         editor.changesObserver = self
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil, usingBlock: keyboardWillShow)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        nameTextField?.becomeFirstResponder()
         updateUI()
+    }
+
+    // MARK: Keyboard notifications
+
+    private func keyboardWillShow(notification: NSNotification) {
+        if let endRect = (notification.userInfo!["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.CGRectValue() {
+            bottomLayoutConstraint.constant = endRect.height + bottomLayoutConstraint.constant
+            self.view.setNeedsLayout()
+        }
     }
 }
 

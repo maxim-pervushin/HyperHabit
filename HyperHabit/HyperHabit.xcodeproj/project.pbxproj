@@ -14,6 +14,7 @@
 		73BC6193F1E6A4E1A41390EB /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC624CC37B9E64690B9CF2 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */; };
+		73BC6292D2184EA8723FA832 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
 		73BC63202EA873DDDEFDB237 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A6CC626ACBCF23CE9EB /* Test.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
@@ -43,6 +44,7 @@
 		73BC6AF000D6E149BCC6039F /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC6AF23B44D24D02864EEC /* ParseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC609AF32F3CA134A37394 /* ParseStorage.swift */; };
 		73BC6B77BE005C91EAD45221 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
+		73BC6BF6715328CFF92F92BA /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
 		73BC6C28A5F03998A33426DF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5B3DA0184778419277 /* DataSource.swift */; };
 		73BC6C31469750ABD353AF6B /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC6C92461627921BA60EB0 /* EditHabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */; };
@@ -189,6 +191,7 @@
 		73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitDataSource.swift; sourceTree = "<group>"; };
 		73BC609AF32F3CA134A37394 /* ParseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseStorage.swift; sourceTree = "<group>"; };
 		73BC60B290FA194D36D02387 /* DataManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTestCase.swift; sourceTree = "<group>"; };
+		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		73BC61A3105A332B8BF84D14 /* DataManagerTestCase+deleteHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+deleteHabit.swift"; sourceTree = "<group>"; };
 		73BC620A9FF858BFEB8597B3 /* EditHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
@@ -454,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				73BC62C85A2762441A3FF92D /* ReportCell.swift */,
+				73BC6176C0D159A6FC336317 /* LineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -910,6 +914,7 @@
 				73BC6AF23B44D24D02864EEC /* ParseStorage.swift in Sources */,
 				73BC6E9D0BD28AFF26B6F691 /* ParseService.swift in Sources */,
 				73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */,
+				73BC6BF6715328CFF92F92BA /* LineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +981,7 @@
 				73BC6846765325FCA0CBA903 /* ParseStorage.swift in Sources */,
 				C5771C901C086706005EC1AB /* ParseService.swift in Sources */,
 				C5F8B7AB1C0C4E7E003904C1 /* ReportCell.swift in Sources */,
+				73BC6292D2184EA8723FA832 /* LineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
