@@ -5,17 +5,43 @@
 
 import UIKit
 
-class TodayViewController: UIViewController {
+class ReportsByDateViewController: UIViewController {
 
-    // MARK: TodayTableViewController @IB
+    // MARK: ReportsByDateViewController @IB
 
     @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var dateLabelCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak private var longDateLabel: UILabel!
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var previousDayButton: UIButton!
+    @IBOutlet weak private var nextDayButton: UIButton!
 
-    // MARK: TodayTableViewController
+    @IBAction func previousDayButtonAction(sender: AnyObject) {
+        dataSource.previousDate()
+    }
+
+    @IBAction func nextDayButtonAction(sender: AnyObject) {
+        dataSource.nextDate()
+    }
+
+    // MARK: ReportsByDateViewController
 
     private let dataSource = TodayDataSource(dataManager: App.dataManager)
+
+    private func updateUI() {
+        dispatch_async(dispatch_get_main_queue()) {
+            let relativeDateString = self.dataSource.date.longDateRelativeString
+            let dateString = self.dataSource.date.longDateString
+            self.longDateLabel?.hidden = dateString == relativeDateString
+            self.dateLabelCenterConstraint.constant = dateString == relativeDateString ? 0 : -6
+            self.view.layoutIfNeeded()
+            self.dateLabel?.text = relativeDateString
+            self.longDateLabel?.text = dateString
+            self.previousDayButton.hidden = !self.dataSource.hasPreviousDate
+            self.nextDayButton.hidden = !self.dataSource.hasNextDate
+            self.tableView?.reloadData()
+        }
+    }
 
     // MARK: UIViewController
 
@@ -26,11 +52,11 @@ class TodayViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView?.reloadData()
+        updateUI()
     }
 }
 
-extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
+extension ReportsByDateViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
@@ -66,16 +92,11 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return "Incompleted"
     }
-
 }
 
-extension TodayViewController: ChangesObserver {
+extension ReportsByDateViewController: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.dateLabel?.text = NSDate().mediumDateRelativeString
-            self.longDateLabel?.text = NSDate().longDateString
-            self.tableView?.reloadData()
-        }
+        updateUI()
     }
 }

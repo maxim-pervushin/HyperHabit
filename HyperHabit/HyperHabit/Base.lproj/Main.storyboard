@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -31,7 +32,7 @@
         <!--Today-->
         <scene sceneID="ECe-Zr-SxW">
             <objects>
-                <tableViewController id="FeX-3U-2YM" customClass="TodayViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FeX-3U-2YM" customClass="ReportsByDateViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IMa-GQ-p6W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +95,7 @@
         <!--Reports-->
         <scene sceneID="AS2-rS-GAi">
             <objects>
-                <viewController id="mMp-KH-59K" customClass="TodayViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mMp-KH-59K" customClass="ReportsByDateViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KDD-8A-rtX"/>
                         <viewControllerLayoutGuide type="bottom" id="ZTq-TX-xA9"/>
@@ -157,30 +158,59 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkC-zr-rdv">
                                 <rect key="frame" x="0.0" y="20" width="600" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-TT-j1k">
-                                        <rect key="frame" x="278" y="10" width="44" height="20"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgC-md-aPT">
-                                        <rect key="frame" x="278" y="32" width="44" height="15"/>
+                                        <rect key="frame" x="180" y="40" width="240" height="15"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-W5-LYN">
+                                        <rect key="frame" x="428" y="8" width="39" height="39"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CfJ-W5-LYN" secondAttribute="height" multiplier="1:1" id="uc6-Ma-yg9"/>
+                                        </constraints>
+                                        <state key="normal" image="ArrowRight"/>
+                                        <connections>
+                                            <action selector="nextDayButtonAction:" destination="mMp-KH-59K" eventType="touchUpInside" id="vZF-0q-T2s"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-TT-j1k">
+                                        <rect key="frame" x="180" y="18" width="240" height="20"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lx8-ih-UtA">
+                                        <rect key="frame" x="133" y="8" width="39" height="39"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Lx8-ih-UtA" secondAttribute="height" id="8qh-af-Sfv"/>
+                                        </constraints>
+                                        <state key="normal" image="ArrowLeft"/>
+                                        <connections>
+                                            <action selector="previousDayButtonAction:" destination="mMp-KH-59K" eventType="touchUpInside" id="oLv-pv-922"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.47843137250000001" green="0.86274509799999999" blue="0.094117647060000004" alpha="0.76802681589999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="XgC-md-aPT" firstAttribute="leading" secondItem="Dwu-TT-j1k" secondAttribute="leading" id="7uj-6S-UJb"/>
+                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="centerX" secondItem="QkC-zr-rdv" secondAttribute="centerX" id="2vs-VW-c6U"/>
+                                    <constraint firstItem="XgC-md-aPT" firstAttribute="leading" secondItem="Dwu-TT-j1k" secondAttribute="leading" id="3Xo-oG-Afy"/>
+                                    <constraint firstItem="XgC-md-aPT" firstAttribute="top" secondItem="Dwu-TT-j1k" secondAttribute="bottom" constant="2" id="AJl-ao-LTz"/>
+                                    <constraint firstAttribute="bottom" secondItem="CfJ-W5-LYN" secondAttribute="bottom" constant="8" id="AnP-hK-Yt7"/>
                                     <constraint firstAttribute="height" constant="55" id="LPN-7P-SsV"/>
-                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="centerX" secondItem="QkC-zr-rdv" secondAttribute="centerX" id="UiW-dY-dLX"/>
-                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="top" secondItem="QkC-zr-rdv" secondAttribute="top" constant="10" id="dY0-Yo-sgs"/>
-                                    <constraint firstItem="XgC-md-aPT" firstAttribute="top" secondItem="Dwu-TT-j1k" secondAttribute="bottom" constant="2" id="hnb-Zp-M1E"/>
-                                    <constraint firstItem="XgC-md-aPT" firstAttribute="trailing" secondItem="Dwu-TT-j1k" secondAttribute="trailing" id="l5p-a1-CHE"/>
+                                    <constraint firstItem="XgC-md-aPT" firstAttribute="trailing" secondItem="Dwu-TT-j1k" secondAttribute="trailing" id="Np3-1i-cGg"/>
+                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="leading" secondItem="Lx8-ih-UtA" secondAttribute="trailing" constant="8" id="P7H-dD-hlB"/>
+                                    <constraint firstItem="Lx8-ih-UtA" firstAttribute="top" secondItem="QkC-zr-rdv" secondAttribute="top" constant="8" id="Vbh-hg-zgR"/>
+                                    <constraint firstItem="CfJ-W5-LYN" firstAttribute="leading" secondItem="Dwu-TT-j1k" secondAttribute="trailing" constant="8" id="Zpj-nz-TLa"/>
+                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="width" secondItem="QkC-zr-rdv" secondAttribute="width" multiplier="1:2.5" id="fGS-6O-5nV"/>
+                                    <constraint firstItem="Dwu-TT-j1k" firstAttribute="centerY" secondItem="QkC-zr-rdv" secondAttribute="centerY" id="kVz-AK-DaC"/>
+                                    <constraint firstItem="CfJ-W5-LYN" firstAttribute="top" secondItem="QkC-zr-rdv" secondAttribute="top" constant="8" id="v9g-ZK-FTS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lx8-ih-UtA" secondAttribute="bottom" constant="8" id="x7T-7I-wli"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBs-cV-JIo" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -210,7 +240,10 @@
                     <tabBarItem key="tabBarItem" title="Reports" id="9Lb-pf-BVo"/>
                     <connections>
                         <outlet property="dateLabel" destination="Dwu-TT-j1k" id="mxJ-VF-UN6"/>
+                        <outlet property="dateLabelCenterConstraint" destination="kVz-AK-DaC" id="73X-S9-p6c"/>
                         <outlet property="longDateLabel" destination="XgC-md-aPT" id="c2b-Fa-3Uw"/>
+                        <outlet property="nextDayButton" destination="CfJ-W5-LYN" id="DNo-Ms-RP3"/>
+                        <outlet property="previousDayButton" destination="Lx8-ih-UtA" id="Drt-xl-NIL"/>
                         <outlet property="tableView" destination="39M-tL-XhD" id="YfS-tH-ekc"/>
                     </connections>
                 </viewController>
@@ -619,6 +652,10 @@
             <point key="canvasLocation" x="263" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ArrowLeft" width="35" height="35"/>
+        <image name="ArrowRight" width="35" height="35"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nhg-70-b3B"/>
     </inferredMetricsTieBreakers>

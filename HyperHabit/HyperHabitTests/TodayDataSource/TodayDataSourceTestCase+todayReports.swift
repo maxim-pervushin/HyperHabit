@@ -8,14 +8,14 @@ import XCTest
 extension TodayDataSourceTestCase {
 
     func test_todayReports() {
-        XCTAssertEqual([], dataSource.todayReports)
+        XCTAssertEqual([], dataSource.reports)
 
         let habit1 = Habit(name: "Habit 1", repeatsTotal: 1)
         dataSource.dataManager.saveHabit(habit1)
         let habit2 = Habit(name: "Habit 2", repeatsTotal: 2)
         dataSource.dataManager.saveHabit(habit2)
 
-        XCTAssertEqual(2, dataSource.todayReports.count)
+        XCTAssertEqual(2, dataSource.reports.count)
 
     }
 }

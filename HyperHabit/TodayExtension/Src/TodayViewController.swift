@@ -1,5 +1,5 @@
 //
-//  TodayViewController.swift
+//  ReportsByDateViewController.swift
 //  TodayExtension
 //
 //  Created by Maxim Pervushin on 22/11/15.
@@ -13,9 +13,12 @@ class TodayViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var previousDayButton: UIButton!
     private let dataSource = TodayDataSource(dataManager: App.dataManager)
 
     private var _heightConstraint: NSLayoutConstraint?
+    @IBAction func previousDayButtonAction(sender: AnyObject) {
+    }
     private var heightConstraint: NSLayoutConstraint {
         get {
             if _heightConstraint == nil {

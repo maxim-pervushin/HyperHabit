@@ -18,7 +18,7 @@
 		73BC63202EA873DDDEFDB237 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A6CC626ACBCF23CE9EB /* Test.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
-		73BC63CC9A466959D80CDA86 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* TodayViewController.swift */; };
+		73BC63CC9A466959D80CDA86 /* ReportsByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* ReportsByDateViewController.swift */; };
 		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
 		73BC654909448959DBA56ECC /* StatisticsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */; };
 		73BC65D1874610D81D4C7A4A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
@@ -198,7 +198,7 @@
 		73BC623B8A386F257B2335D5 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6257F7926F5029E191EA /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		73BC62C85A2762441A3FF92D /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
-		73BC63078589D984B029581D /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		73BC63078589D984B029581D /* ReportsByDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateViewController.swift; sourceTree = "<group>"; };
 		73BC640CFC9B3899FAA74291 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
 		73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 		73BC69F8C45209664A97BA3F /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				73BC63078589D984B029581D /* TodayViewController.swift */,
+				73BC63078589D984B029581D /* ReportsByDateViewController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -911,7 +911,7 @@
 				73BC6DAAF7353CDC03D11D91 /* StatisticsForDateDataSource.swift in Sources */,
 				73BC68F383D84C98A63F8AB2 /* ChangesObserver.swift in Sources */,
 				73BC601BD33E45B9AAC0452A /* EditHabitViewController.swift in Sources */,
-				73BC63CC9A466959D80CDA86 /* TodayViewController.swift in Sources */,
+				73BC63CC9A466959D80CDA86 /* ReportsByDateViewController.swift in Sources */,
 				73BC6F9FB1AE35BA7BC7F5B5 /* HabitEditor.swift in Sources */,
 				73BC6C92461627921BA60EB0 /* EditHabitDataSource.swift in Sources */,
 				73BC6AF23B44D24D02864EEC /* ParseStorage.swift in Sources */,
