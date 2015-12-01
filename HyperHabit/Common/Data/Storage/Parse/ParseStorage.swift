@@ -300,6 +300,10 @@ extension ParseStorage: DataProvider {
     }
 
     func saveReport(report: Report) -> Bool {
+        if report.repeatsDone == 0 {
+            return deleteReport(report)
+        }
+
         _reportsById[report.id] = report
         _reportsByIdToSave[report.id] = report
         _reportsByIdToDelete[report.id] = nil

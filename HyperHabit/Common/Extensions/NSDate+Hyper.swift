@@ -6,6 +6,53 @@
 import Foundation
 
 extension NSDate {
+    // Short string
+
+    private static var mediumDateRelativeFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateStyle = .MediumStyle
+            Static.formatter.doesRelativeDateFormatting = true
+        }
+
+        return Static.formatter
+    }
+
+    var mediumDateRelativeString: String {
+        return NSDate.mediumDateRelativeFormatter.stringFromDate(self)
+    }
+}
+
+extension NSDate {
+    // Long string
+
+    private static var longDateFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateStyle = .LongStyle
+        }
+
+        return Static.formatter
+    }
+
+    var longDateString: String {
+        return NSDate.longDateFormatter.stringFromDate(self)
+    }
+}
+
+extension NSDate {
     // Date component string
 
     private static var dateComponentFormatter: NSDateFormatter {
