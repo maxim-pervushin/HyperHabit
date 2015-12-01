@@ -49,25 +49,47 @@ class EditHabitViewController: UIViewController {
         }
     }
 
+    private func subscribe() {
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: nil, usingBlock: keyboardWillChangeFrame)
+    }
+
+    private func unsubscribe() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         editor.changesObserver = self
-        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: nil, usingBlock: keyboardWillShow)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         nameTextField?.becomeFirstResponder()
+        subscribe()
         updateUI()
+        self.view.layoutIfNeeded()
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        nameTextField?.resignFirstResponder()
+        unsubscribe()
     }
 
     // MARK: Keyboard notifications
 
-    private func keyboardWillShow(notification: NSNotification) {
-        if let endRect = (notification.userInfo!["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.CGRectValue() {
-            bottomLayoutConstraint.constant = endRect.height + bottomLayoutConstraint.constant
-            self.view.setNeedsLayout()
+    private func keyboardWillChangeFrame(notification: NSNotification) {
+        guard
+        let userInfo = notification.userInfo,
+        endRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue(),
+        duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
+            return
         }
+
+        bottomLayoutConstraint.constant = endRect.height + 20
+        UIView.animateWithDuration(duration, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
 }
 
