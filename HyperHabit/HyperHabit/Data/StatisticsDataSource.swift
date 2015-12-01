@@ -25,7 +25,8 @@ class StatisticsDataSource: DataSource {
     }
 
     func loadReportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) {
-//        print("loadReportsFiltered(habit: \(habit), fromDate: \(fromDate), toDate: \(toDate)")
+        // print("loadReportsFiltered(\(habit), fromDate: \(fromDate), toDate: \(toDate)")
+
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             () -> Void in
             self.reports = self.dataManager.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
@@ -33,3 +34,7 @@ class StatisticsDataSource: DataSource {
         }
     }
 }
+
+//struct StatisticItem {
+//    let status
+//}
