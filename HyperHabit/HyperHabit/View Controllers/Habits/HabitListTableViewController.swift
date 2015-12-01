@@ -21,15 +21,25 @@ class HabitListTableViewController: UITableViewController {
     private let dataSource = HabitListDataSource(dataManager: App.dataManager)
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.habits.count
+        return dataSource.habits.count + 1
+    }
+
+    private func addHabitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCellWithIdentifier("AddHabitCell", forIndexPath: indexPath)
+    }
+
+    private func habitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> HabitCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(HabitCell.defaultReuseIdentifier, forIndexPath: indexPath) as! HabitCell
+        cell.habit = dataSource.habits[indexPath.row]
+        return cell
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HabitCell", forIndexPath: indexPath)
-        let habit = dataSource.habits[indexPath.row]
-        cell.textLabel?.text = habit.name
-        cell.detailTextLabel?.text = "\(habit.repeatsTotal)"
-        return cell
+        if indexPath.row == dataSource.habits.count {
+            return addHabitCell(tableView, forRowAtIndexPath: indexPath)
+        } else {
+            return habitCell(tableView, forRowAtIndexPath: indexPath)
+        }
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -38,6 +48,10 @@ class HabitListTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             tableView.endUpdates()
         }
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     // MARK: UIViewController
@@ -54,8 +68,8 @@ class HabitListTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let editHabitViewController = segue.destinationViewController as? EditHabitViewController {
-            if let selected = tableView.indexPathForSelectedRow {
-                editHabitViewController.editor.habit = dataSource.habits[selected.row]
+            if let selectedRow = tableView.indexPathForSelectedRow?.row where selectedRow < dataSource.habits.count {
+                editHabitViewController.editor.habit = dataSource.habits[selectedRow]
             } else {
                 editHabitViewController.editor.habit = nil
             }

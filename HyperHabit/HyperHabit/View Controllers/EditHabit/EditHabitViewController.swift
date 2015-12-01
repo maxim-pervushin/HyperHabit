@@ -67,7 +67,7 @@ class EditHabitViewController: UIViewController {
         nameTextField?.becomeFirstResponder()
         subscribe()
         updateUI()
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
     }
 
     override func viewWillDisappear(animated: Bool) {

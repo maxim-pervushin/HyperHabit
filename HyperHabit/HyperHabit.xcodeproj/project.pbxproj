@@ -38,6 +38,7 @@
 		73BC68F383D84C98A63F8AB2 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */; };
 		73BC690856B2A16B0027551A /* ParseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC609AF32F3CA134A37394 /* ParseStorage.swift */; };
 		73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
+		73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66A27559D5F70B19A69F /* HabitCell.swift */; };
 		73BC69A320463EA8158B514B /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6A24F4E568A6934DF9DF /* TodayDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF236D17F6AA73C6E15 /* TodayDataSourceTestCase.swift */; };
@@ -206,6 +207,7 @@
 		73BC655AFBF7B48EDDD9DDAF /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		73BC65F462415533EB6BDC24 /* TodayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSource.swift; sourceTree = "<group>"; };
+		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
 		73BC676D212721E13748EBCE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		73BC6877D708F73E911BB63A /* TodayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSource.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 			children = (
 				73BC62C85A2762441A3FF92D /* ReportCell.swift */,
 				73BC6176C0D159A6FC336317 /* LineView.swift */,
+				73BC66A27559D5F70B19A69F /* HabitCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 				73BC6E9D0BD28AFF26B6F691 /* ParseService.swift in Sources */,
 				73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */,
 				73BC6BF6715328CFF92F92BA /* LineView.swift in Sources */,
+				73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
