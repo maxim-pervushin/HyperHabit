@@ -27,7 +27,7 @@
 		73BC66AAEDB65397CE80BD2B /* EditHabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */; };
 		73BC6700D48633F4274A3735 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6877D708F73E911BB63A /* TodayDataSource.swift */; };
 		73BC6715B2B37DB44131DDBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D4C142C8511B0A60D84 /* DataManager.swift */; };
-		73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* TodayDataSource.swift */; };
+		73BC67865C9DEA9C99013D42 /* ReportsByDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */; };
 		73BC67AFAB27DCF035FB4F4D /* TodayDataSourceTestCase+todayReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */; };
 		73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D8979B85F1B1DD2D26E /* DataManagerTestCase+saveHabit.swift */; };
 		73BC683D03A9A9CA39267AD3 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
@@ -116,7 +116,7 @@
 		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
 		C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */; };
 		C5771C901C086706005EC1AB /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC640CFC9B3899FAA74291 /* ParseService.swift */; };
-		C580A4D91BFF324300CF4C31 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* TodayDataSource.swift */; };
+		C580A4D91BFF324300CF4C31 /* ReportsByDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */; };
 		C580A4F81BFF507200CF4C31 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4DD1BFF507200CF4C31 /* CVAuxiliaryView.swift */; };
 		C580A4F91BFF507200CF4C31 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4DE1BFF507200CF4C31 /* CVCalendarContentViewController.swift */; };
 		C580A4FA1BFF507200CF4C31 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4DF1BFF507200CF4C31 /* CVCalendarDayView.swift */; };
@@ -206,7 +206,7 @@
 		73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListDataSource.swift; sourceTree = "<group>"; };
 		73BC655AFBF7B48EDDD9DDAF /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		73BC65F462415533EB6BDC24 /* TodayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSource.swift; sourceTree = "<group>"; };
+		73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateDataSource.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC672AF26F2E0D45102A96 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
 		73BC676D212721E13748EBCE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -487,7 +487,7 @@
 		73BC6BB5FE85E7F637DF078E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				73BC65F462415533EB6BDC24 /* TodayDataSource.swift */,
+				73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */,
 				73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */,
 				73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */,
 			);
@@ -894,7 +894,7 @@
 				C580A5101BFF507200CF4C31 /* CVSet.swift in Sources */,
 				C580A4FC1BFF507200CF4C31 /* CVCalendarManager.swift in Sources */,
 				C580A4F91BFF507200CF4C31 /* CVCalendarContentViewController.swift in Sources */,
-				73BC67865C9DEA9C99013D42 /* TodayDataSource.swift in Sources */,
+				73BC67865C9DEA9C99013D42 /* ReportsByDateDataSource.swift in Sources */,
 				C580A5061BFF507200CF4C31 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				C580A50E1BFF507200CF4C31 /* CVScrollDirection.swift in Sources */,
 				73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */,
@@ -926,7 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C580A4D91BFF324300CF4C31 /* TodayDataSource.swift in Sources */,
+				C580A4D91BFF324300CF4C31 /* ReportsByDateDataSource.swift in Sources */,
 				73BC6EC484757BA832F86037 /* DataManagerTestCase.swift in Sources */,
 				73BC6824A1440971FE04F9BB /* DataManagerTestCase+saveHabit.swift in Sources */,
 				73BC6E09E8C88415EA3AE66D /* DataManagerTestCase+deleteHabit.swift in Sources */,

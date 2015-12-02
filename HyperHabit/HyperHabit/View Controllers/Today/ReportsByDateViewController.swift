@@ -26,7 +26,7 @@ class ReportsByDateViewController: UIViewController {
 
     // MARK: ReportsByDateViewController
 
-    private let dataSource = TodayDataSource(dataManager: App.dataManager)
+    private let dataSource = ReportsByDateDataSource(dataManager: App.dataManager)
 
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {

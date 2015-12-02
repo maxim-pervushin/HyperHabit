@@ -5,7 +5,7 @@
 
 import Foundation
 
-class TodayDataSource: DataSource {
+class ReportsByDateDataSource: DataSource {
 
     var date = NSDate() {
         didSet {

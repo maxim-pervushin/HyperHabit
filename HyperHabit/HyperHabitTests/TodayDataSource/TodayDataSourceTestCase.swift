@@ -8,11 +8,11 @@ import XCTest
 
 class TodayDataSourceTestCase: XCTestCase {
 
-    internal var dataSource = TodayDataSource(dataManager: DataManager(storage: MemoryStorage()))
+    internal var dataSource = ReportsByDateDataSource(dataManager: DataManager(storage: MemoryStorage()))
 
     override func setUp() {
         super.setUp()
-        dataSource = TodayDataSource(dataManager: DataManager(storage: MemoryStorage()))
+        dataSource = ReportsByDateDataSource(dataManager: DataManager(storage: MemoryStorage()))
     }
 
     override func tearDown() {
