@@ -270,9 +270,13 @@ class ParseStorage {
 extension ParseStorage: DataProvider {
 
     var habits: [Habit] {
-        return Array(_habitsById.values.filter {
-            return $0.active
-        })
+        do {
+            return try Array(_habitsById.values.filter {
+                return $0.active
+            })
+        } catch {
+            return []
+        }
     }
 
     func saveHabit(habit: Habit) -> Bool {
@@ -294,16 +298,17 @@ extension ParseStorage: DataProvider {
     }
 
     func reportsForDate(date: NSDate) -> [Report] {
-        return Array(_reportsById.values.filter {
-            return $0.date.dateComponent == date.dateComponent
-        })
+        do {
+            let dateComponent = date.dateComponent
+            return try Array(_reportsById.values.filter {
+                return $0.date.dateComponent == dateComponent
+            })
+        } catch {
+            return []
+        }
     }
 
     func saveReport(report: Report) -> Bool {
-        if report.repeatsDone == 0 {
-            return deleteReport(report)
-        }
-
         _reportsById[report.id] = report
         _reportsByIdToSave[report.id] = report
         _reportsByIdToDelete[report.id] = nil

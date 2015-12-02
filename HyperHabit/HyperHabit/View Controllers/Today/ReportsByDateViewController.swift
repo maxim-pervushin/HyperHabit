@@ -10,8 +10,6 @@ class ReportsByDateViewController: UIViewController {
     // MARK: ReportsByDateViewController @IB
 
     @IBOutlet weak private var dateLabel: UILabel!
-    @IBOutlet weak private var dateLabelCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak private var longDateLabel: UILabel!
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var previousDayButton: UIButton!
     @IBOutlet weak private var nextDayButton: UIButton!
@@ -30,13 +28,7 @@ class ReportsByDateViewController: UIViewController {
 
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {
-            let relativeDateString = self.dataSource.date.longDateRelativeString
-            let dateString = self.dataSource.date.longDateString
-            self.longDateLabel?.hidden = dateString == relativeDateString
-            self.dateLabelCenterConstraint.constant = dateString == relativeDateString ? 0 : -6
-            self.view.layoutIfNeeded()
-            self.dateLabel?.text = relativeDateString
-            self.longDateLabel?.text = dateString
+            self.dateLabel?.text = self.dataSource.date.longDateRelativeString
             self.previousDayButton.hidden = !self.dataSource.hasPreviousDate
             self.nextDayButton.hidden = !self.dataSource.hasNextDate
             self.tableView?.reloadData()
@@ -53,6 +45,27 @@ class ReportsByDateViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        if let datePickerController = segue.destinationViewController as? DatePickerController {
+            datePickerController.datePickerDelegate = self
+            datePickerController.date = dataSource.date
+            datePickerController.maximumDate = NSDate()
+        }
+    }
+}
+
+extension ReportsByDateViewController: DatePickerDelegate {
+
+    func datePickerController(controller: DatePickerController, didPickDate date: NSDate) {
+        dataSource.date = date
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func datePickerControllerDidCancel(controller: DatePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
