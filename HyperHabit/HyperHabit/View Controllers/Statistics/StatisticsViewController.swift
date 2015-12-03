@@ -50,7 +50,6 @@ class StatisticsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadReports()
-//        updateUI()
     }
 
     override func viewDidLayoutSubviews() {
@@ -74,21 +73,11 @@ extension StatisticsViewController: ChangesObserver {
     }
 }
 
-extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
+extension StatisticsViewController: CVCalendarViewDelegate {
 
-    // TODO: Change font. It is 'Avenir' by-default.
-
-    /// Required method to implement!
     func presentationMode() -> CalendarMode {
         return .MonthView
     }
-
-    /// Required method to implement!
-    func firstWeekday() -> Weekday {
-        return .Monday
-    }
-
-    // MARK: Optional methods
 
     func shouldAutoSelectDayOnWeekChange() -> Bool {
         return false
@@ -98,17 +87,17 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         return false
     }
 
-    func didSelectDayView(dayView: CVCalendarDayView) {
+    func presentedDateUpdated(date: CVDate) {
+        loadReports()
+    }
+
+    func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
         guard let date = dayView.date.convertedDate() else  {
             return
         }
 
         selectedDate = date
         performSegueWithIdentifier("ShowStatisticsForDate", sender: self)
-    }
-
-    func presentedDateUpdated(date: CVDate) {
-        loadReports()
     }
 
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
@@ -143,9 +132,51 @@ extension StatisticsViewController: CVCalendarViewDelegate, CVCalendarMenuViewDe
         }
         return []
     }
+}
+
+extension StatisticsViewController: CVCalendarMenuViewDelegate {
+
+    func firstWeekday() -> Weekday {
+        return .Monday
+    }
+
+    func dayOfWeekFont() -> UIFont {
+        return UIFont.systemFontOfSize(12)
+    }
 
     func weekdaySymbolType() -> WeekdaySymbolType {
         return .Short
+    }
+}
+
+extension StatisticsViewController: CVCalendarViewAppearanceDelegate {
+
+    func dayLabelWeekdayFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelPresentWeekdayFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelPresentWeekdayBoldFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelPresentWeekdayHighlightedFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelPresentWeekdaySelectedFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelWeekdayHighlightedFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelWeekdaySelectedFont() -> UIFont {
+        return UIFont.systemFontOfSize(18)
     }
 }
 

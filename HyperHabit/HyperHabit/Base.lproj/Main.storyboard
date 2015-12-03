@@ -584,7 +584,7 @@
             </objects>
             <point key="canvasLocation" x="263" y="849"/>
         </scene>
-        <!--Calendar Delegate-->
+        <!--Calendar Appearance Delegate-->
         <scene sceneID="X4X-oe-h2v">
             <objects>
                 <viewController id="8Yb-tq-urg" customClass="StatisticsViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
@@ -623,6 +623,7 @@
                                     </constraint>
                                 </constraints>
                                 <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="8Yb-tq-urg" id="mrP-WE-MZC"/>
                                     <outlet property="calendarDelegate" destination="8Yb-tq-urg" id="ygW-wL-jwc"/>
                                 </connections>
                             </view>
