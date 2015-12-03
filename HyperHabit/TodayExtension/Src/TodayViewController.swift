@@ -14,7 +14,7 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var previousDayButton: UIButton!
-    private let dataSource = TodayDataSource(dataManager: App.dataManager)
+    private let dataSource = TodayDataSource(dataProvider: App.dataProvider)
 
     private var _heightConstraint: NSLayoutConstraint?
     @IBAction func previousDayButtonAction(sender: AnyObject) {

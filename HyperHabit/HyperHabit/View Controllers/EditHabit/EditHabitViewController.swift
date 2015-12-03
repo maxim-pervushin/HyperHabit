@@ -40,7 +40,7 @@ class EditHabitViewController: UIViewController {
     // MARK: EditHabitViewController
 
     let editor = HabitEditor()
-    let dataSource = EditHabitDataSource(dataManager: App.dataManager)
+    let dataSource = EditHabitDataSource(dataProvider: App.dataProvider)
 
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {

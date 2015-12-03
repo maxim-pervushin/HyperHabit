@@ -29,7 +29,7 @@ class StatisticsDataSource: DataSource {
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             () -> Void in
-            self.reports = self.dataManager.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
+            self.reports = self.dataProvider.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
             self.changesObserver?.observableChanged(self)
         }
     }

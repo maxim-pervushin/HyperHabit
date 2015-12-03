@@ -11,20 +11,27 @@
 		73BC60B20CF2AC052B56E82B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5B3DA0184778419277 /* DataSource.swift */; };
 		73BC60FC0DC14CE89B9C0290 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */; };
 		73BC611015B9409E9C0D368A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D36DEAA5EA2A8AED39C /* App.swift */; };
+		73BC6160EBAB9F9B891656C8 /* Report+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A7DC0981218D5B14 /* Report+PlistObject.swift */; };
 		73BC6161DBAEC3721768F7DC /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FA551DFA3D6119EE412 /* DataManagerTestCase.swift */; };
 		73BC617825FB0496AA288C42 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CB39297976A216AC551 /* DatePickerViewController.swift */; };
 		73BC6193F1E6A4E1A41390EB /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC624CC37B9E64690B9CF2 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */; };
 		73BC6292D2184EA8723FA832 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
+		73BC62B9F812A316CDFD0C08 /* Report+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A7DC0981218D5B14 /* Report+PlistObject.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC638EE857761DC0222AB0 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC63CC9A466959D80CDA86 /* ReportsByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* ReportsByDateViewController.swift */; };
+		73BC641182F74F8A568467BA /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6429DB83704AE23B9801 /* Habit+PlistObject.swift */; };
+		73BC642417A8D2F4E1FFFED7 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65B643EEFC687B5AA2E2 /* PlistCache.swift */; };
 		73BC642E18377985CEC0C1FF /* TodayDataSourceTestCase+todayReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E32FE776F8550DFC61 /* TodayDataSourceTestCase+todayReports.swift */; };
+		73BC643E0AF54E4FDC0A8BB9 /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6429DB83704AE23B9801 /* Habit+PlistObject.swift */; };
 		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
+		73BC64CAD48272C1AEEB4BC8 /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6429DB83704AE23B9801 /* Habit+PlistObject.swift */; };
 		73BC654591B94431612B191D /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CDBAD02AEE257DDFFE4 /* DataManagerTestCase+saveHabit.swift */; };
 		73BC654909448959DBA56ECC /* StatisticsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */; };
 		73BC65D1874610D81D4C7A4A /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
+		73BC65E88F2A3A9C01E9BBF9 /* Report+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A7DC0981218D5B14 /* Report+PlistObject.swift */; };
 		73BC664DFB11394969B67431 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DF94BA4C0568A8481A5 /* MemoryStorage.swift */; };
 		73BC665CE8CB105E6935B92F /* PlistStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */; };
 		73BC666FDE0FBEEFC7F503E0 /* DataManagerTestCase+reportsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6573234012F56EC6DA50 /* DataManagerTestCase+reportsForDate.swift */; };
@@ -51,12 +58,14 @@
 		73BC6C31469750ABD353AF6B /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC6C92461627921BA60EB0 /* EditHabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */; };
 		73BC6D41ADECE2CF00B37FED /* HabitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */; };
+		73BC6D44AC91B55FD63B5324 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65B643EEFC687B5AA2E2 /* PlistCache.swift */; };
 		73BC6D9B79C72EFD240F0041 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C001970E93026D9E938 /* Test.swift */; };
 		73BC6DA774E3ABF8C1D6D0E2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6DAAF7353CDC03D11D91 /* StatisticsForDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */; };
 		73BC6DCDCBCE31EC13F05540 /* DataManagerTestCase+deleteHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6208F8C34DF4BB5B1CB9 /* DataManagerTestCase+deleteHabit.swift */; };
 		73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */; };
 		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
+		73BC6E020697B1DE02096743 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65B643EEFC687B5AA2E2 /* PlistCache.swift */; };
 		73BC6E9C3CF8BDD579A3D827 /* HabitEditorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A2C12703869724D700 /* HabitEditorTestCase.swift */; };
 		73BC6E9D0BD28AFF26B6F691 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC640CFC9B3899FAA74291 /* ParseService.swift */; };
 		73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
@@ -203,6 +212,7 @@
 		73BC63078589D984B029581D /* ReportsByDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateViewController.swift; sourceTree = "<group>"; };
 		73BC640CFC9B3899FAA74291 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Hyper.swift"; sourceTree = "<group>"; };
+		73BC6429DB83704AE23B9801 /* Habit+PlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+PlistObject.swift"; sourceTree = "<group>"; };
 		73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistStorage.swift; sourceTree = "<group>"; };
 		73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsForDateDataSource.swift; sourceTree = "<group>"; };
 		73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListDataSource.swift; sourceTree = "<group>"; };
@@ -210,6 +220,7 @@
 		73BC655AFBF7B48EDDD9DDAF /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		73BC6573234012F56EC6DA50 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
+		73BC65B643EEFC687B5AA2E2 /* PlistCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistCache.swift; sourceTree = "<group>"; };
 		73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateDataSource.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC676D212721E13748EBCE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +228,7 @@
 		73BC68822C48506F70552FE7 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		73BC68DB00D3E7AF11D765F7 /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsForDateViewController.swift; sourceTree = "<group>"; };
+		73BC69C6A7DC0981218D5B14 /* Report+PlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+PlistObject.swift"; sourceTree = "<group>"; };
 		73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesObserver.swift; sourceTree = "<group>"; };
 		73BC6B92DCA06DC34E8F3F1D /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +527,8 @@
 				73BC648C7FB3AD37808D5DB5 /* PlistStorage.swift */,
 				73BC6A9D8FBE6774B1A7CD5A /* ChangesObserver.swift */,
 				73BC6FADC63DD0A65B573BA9 /* Parse */,
+				73BC6429DB83704AE23B9801 /* Habit+PlistObject.swift */,
+				73BC69C6A7DC0981218D5B14 /* Report+PlistObject.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -560,6 +574,7 @@
 			children = (
 				73BC609AF32F3CA134A37394 /* ParseStorage.swift */,
 				73BC640CFC9B3899FAA74291 /* ParseService.swift */,
+				73BC65B643EEFC687B5AA2E2 /* PlistCache.swift */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -935,6 +950,9 @@
 				73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */,
 				73BC6EFF801475798BF910F2 /* DatePickerController.swift in Sources */,
 				73BC617825FB0496AA288C42 /* DatePickerViewController.swift in Sources */,
+				73BC6D44AC91B55FD63B5324 /* PlistCache.swift in Sources */,
+				73BC64CAD48272C1AEEB4BC8 /* Habit+PlistObject.swift in Sources */,
+				73BC65E88F2A3A9C01E9BBF9 /* Report+PlistObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,6 +984,9 @@
 				73BC642E18377985CEC0C1FF /* TodayDataSourceTestCase+todayReports.swift in Sources */,
 				73BC6D9B79C72EFD240F0041 /* Test.swift in Sources */,
 				73BC6E9C3CF8BDD579A3D827 /* HabitEditorTestCase.swift in Sources */,
+				73BC6E020697B1DE02096743 /* PlistCache.swift in Sources */,
+				73BC641182F74F8A568467BA /* Habit+PlistObject.swift in Sources */,
+				73BC6160EBAB9F9B891656C8 /* Report+PlistObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1023,9 @@
 				C5771C901C086706005EC1AB /* ParseService.swift in Sources */,
 				C5F8B7AB1C0C4E7E003904C1 /* ReportCell.swift in Sources */,
 				73BC6292D2184EA8723FA832 /* LineView.swift in Sources */,
+				73BC642417A8D2F4E1FFFED7 /* PlistCache.swift in Sources */,
+				73BC643E0AF54E4FDC0A8BB9 /* Habit+PlistObject.swift in Sources */,
+				73BC62B9F812A316CDFD0C08 /* Report+PlistObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

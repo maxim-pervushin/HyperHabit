@@ -8,8 +8,8 @@ import Foundation
 class TodayDataSource: DataSource {
 
     var todayReports: [Report] {
-        let habits = dataManager.habits
-        var reports = dataManager.reportsForDate(NSDate())
+        let habits = dataProvider.habits
+        var reports = dataProvider.reportsForDate(NSDate())
         for habit in habits {
             var createReport = true
             for report in reports {
@@ -27,26 +27,18 @@ class TodayDataSource: DataSource {
     }
 
     var completedReports: [Report] {
-        do {
-            return try todayReports.filter {
-                return $0.completed
-            }
-        } catch {
-            return []
+        return todayReports.filter {
+            return $0.completed
         }
     }
 
     var incompletedReports: [Report] {
-        do {
-            return try todayReports.filter {
-                return !$0.completed
-            }
-        } catch {
-            return []
+        return todayReports.filter {
+            return !$0.completed
         }
     }
 
     func saveReport(report: Report) -> Bool {
-        return dataManager.saveReport(report)
+        return dataProvider.saveReport(report)
     }
 }

@@ -7,8 +7,9 @@ import UIKit
 
 class StatisticsForDateViewController: UIViewController {
 
-    public var date: NSDate?
-    private let dataSource = StatisticsForDateDataSource(dataManager: App.dataManager)
+    var date: NSDate?
+    
+    private let dataSource = StatisticsForDateDataSource(dataProvider: App.dataProvider)
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

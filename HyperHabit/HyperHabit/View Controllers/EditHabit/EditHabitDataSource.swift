@@ -8,6 +8,6 @@ import Foundation
 class EditHabitDataSource: DataSource {
 
     func saveHabit(habit: Habit) -> Bool {
-        return dataManager.saveHabit(habit)
+        return dataProvider.saveHabit(habit)
     }
 }

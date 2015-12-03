@@ -9,11 +9,11 @@ class DataSource {
 
     internal var changesObserver: ChangesObserver?
 
-    let dataManager: DataManager
+    let dataProvider: DataProvider
 
-    init(dataManager: DataManager) {
-        self.dataManager = dataManager
-        NSNotificationCenter.defaultCenter().addObserverForName(DataManager.changedNotification, object: self.dataManager, queue: nil) {
+    init(dataProvider: DataProvider) {
+        self.dataProvider = dataProvider
+        NSNotificationCenter.defaultCenter().addObserverForName(DataManager.changedNotification, object: nil, queue: nil) {
             (notification: NSNotification) -> Void in
             self.changesObserver?.observableChanged(self)
         }

@@ -8,6 +8,6 @@ import Foundation
 class StatisticsForDateDataSource: DataSource {
 
     func reportsForDate(date: NSDate) -> [Report] {
-        return dataManager.reportsForDate(date)
+        return dataProvider.reportsForDate(date)
     }
 }

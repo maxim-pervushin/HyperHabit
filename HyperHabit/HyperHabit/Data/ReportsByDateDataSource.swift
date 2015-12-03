@@ -30,8 +30,8 @@ class ReportsByDateDataSource: DataSource {
     }
 
     var reports: [Report] {
-        let habits = dataManager.habits
-        var reports = dataManager.reportsForDate(date)
+        let habits = dataProvider.habits
+        var reports = dataProvider.reportsForDate(date)
         for habit in habits {
             var createReport = true
             for report in reports {
@@ -49,26 +49,18 @@ class ReportsByDateDataSource: DataSource {
     }
 
     var completedReports: [Report] {
-        do {
-            return try reports.filter {
-                return $0.completed
-            }
-        } catch {
-            return []
+        return reports.filter {
+            return $0.completed
         }
     }
 
     var incompletedReports: [Report] {
-        do {
-            return try reports.filter {
-                return !$0.completed
-            }
-        } catch {
-            return []
+        return reports.filter {
+            return !$0.completed
         }
     }
 
     func saveReport(report: Report) -> Bool {
-        return dataManager.saveReport(report)
+        return dataProvider.saveReport(report)
     }
 }

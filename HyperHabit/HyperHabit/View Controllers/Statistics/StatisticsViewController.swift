@@ -11,7 +11,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
 
-    private let dataSource = StatisticsDataSource(dataManager: App.dataManager)
+    private let dataSource = StatisticsDataSource(dataProvider: App.dataProvider)
     private var selectedDate: NSDate?
 
     private func updateUI() {

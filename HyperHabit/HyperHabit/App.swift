@@ -12,6 +12,21 @@ struct App {
     static let applicationId = "aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
     static let clientKey = "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"
 
+    static var dataProvider: DataProvider {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: DataProvider! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.instance = ParseStorage(groupIdentifier: groupIdentifier, applicationId: applicationId, clientKey: clientKey)
+        }
+
+        return Static.instance
+    }
+
+    /*
     static var dataManager: DataManager {
 
         struct Static {
@@ -57,6 +72,7 @@ struct App {
 
         return Static.instance
     }
+    */
 }
 
 extension ParseStorage {

@@ -8,14 +8,14 @@ import Foundation
 class HabitListDataSource: DataSource {
 
     var habits: [Habit] {
-        return dataManager.habits
+        return dataProvider.habits
     }
 
     func saveHabit(habit: Habit) -> Bool {
-        return dataManager.saveHabit(habit)
+        return dataProvider.saveHabit(habit)
     }
 
     func deleteHabit(habit: Habit) -> Bool {
-        return dataManager.deleteHabit(habit)
+        return dataProvider.deleteHabit(habit)
     }
 }
