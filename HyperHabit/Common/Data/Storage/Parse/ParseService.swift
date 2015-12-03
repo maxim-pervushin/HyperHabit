@@ -6,6 +6,8 @@
 import Foundation
 import Parse
 
+// TODO: Extract protocol 'Service'.
+
 class ParseService {
 
     func getHabits() throws -> [Habit] {

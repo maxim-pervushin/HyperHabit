@@ -5,8 +5,8 @@
 
 import Foundation
 
-// TODO: This class far from perfect. Need to rewrite it ever.
-// TODO: Should be able to fetch data from Parse without re-initialization.
+// TODO: Make class independent from ParseService and PlistCache.
+// TODO: Rename to DataManager.
 
 class ParseStorage {
 

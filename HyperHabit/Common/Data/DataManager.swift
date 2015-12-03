@@ -5,6 +5,8 @@
 
 import Foundation
 
+// TODO: Remove after 'ParseStorage' refactoring.
+
 class DataManager {
 
     static let changedNotification = "DataManagerChangedNotification"
