@@ -8,10 +8,7 @@ import Parse
 
 struct App {
 
-    static let groupIdentifier = "group.hyperhabit"
-    static let containingApplicationIdentifier = "com.maximpervushin.HyperHabit"
-    static let applicationId = "aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
-    static let clientKey = "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"
+    // MARK: App public
 
     static var dataProvider: DataProvider {
 
@@ -21,13 +18,52 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
+            Static.instance = DataManager(cache: cache, service: service)
+        }
+
+        return Static.instance
+    }
+
+    static var authenticated: Bool {
+        if let parseService = service as? ParseService {
+            return parseService.available
+        }
+        return false
+    }
+
+    // MARK: App private
+
+    private static let groupIdentifier = "group.hyperhabit"
+    private static let applicationId = "aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
+    private static let clientKey = "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"
+
+    private static var cache: Cache {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: Cache! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
             if let contentDirectory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(groupIdentifier)?.path {
-                let cache = PlistCache(contentDirectory: contentDirectory)
-                let service = ParseService(applicationId: applicationId, clientKey: clientKey)
-                Static.instance = DataManager(cache: cache, service: service)
+                Static.instance = PlistCache(contentDirectory: contentDirectory)
             } else {
-                print("ERROR: Unable to initialize ParseStorage")
+                print("ERROR: Unable to initialize cache")
             }
+        }
+
+        return Static.instance
+    }
+
+    private static var service: Service {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: Service! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.instance = ParseService(applicationId: applicationId, clientKey: clientKey)
         }
 
         return Static.instance
