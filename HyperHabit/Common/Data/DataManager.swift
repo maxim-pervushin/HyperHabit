@@ -5,6 +5,8 @@
 
 import Foundation
 
+// TODO: Reload data from service without re-initialization
+
 class DataManager {
 
     // MARK: DataManager public
@@ -53,6 +55,7 @@ class DataManager {
     private func saveHabits() {
 
         if !service.available {
+            print("service: \(service) unavailable")
             return
         }
 
@@ -84,6 +87,7 @@ class DataManager {
     private func loadHabits() {
 
         if !service.available {
+            print("service: \(service) unavailable")
             return
         }
 
@@ -105,6 +109,7 @@ class DataManager {
     private func saveReports() {
 
         if !service.available {
+            print("service: \(service) unavailable")
             return
         }
 
@@ -158,6 +163,7 @@ class DataManager {
     private func loadReports() {
 
         if !service.available {
+            print("service: \(service) unavailable")
             return
         }
 

@@ -5,6 +5,8 @@
 
 import Foundation
 
+// TODO: Add clear function
+
 protocol Cache {
 
     var habitsById: [String:Habit] { get set }

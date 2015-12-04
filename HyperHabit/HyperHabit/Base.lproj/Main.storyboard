@@ -401,7 +401,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-mR-sai">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-mR-sai">
                                 <rect key="frame" x="0.0" y="72" width="600" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="470754218.73442298">
@@ -678,33 +678,68 @@
             </objects>
             <point key="canvasLocation" x="1848" y="849"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="VJd-ua-Jo4">
             <objects>
-                <tableViewController id="q8t-vS-DBt" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oYW-VV-ley">
+                <tableViewController id="q8t-vS-DBt" customClass="SettingsViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="oYW-VV-ley">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2fi-Gv-37c">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2fi-Gv-37c" id="VzD-aJ-vwg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="xBm-4P-QKm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2fi-Gv-37c">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2fi-Gv-37c" id="VzD-aJ-vwg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD5-0j-TNl">
+                                                    <rect key="frame" x="472" y="7" width="120" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="hvy-zV-hOr"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Authenticate"/>
+                                                    <connections>
+                                                        <action selector="toggleAuthenticationButtonAction:" destination="q8t-vS-DBt" eventType="touchUpInside" id="k2o-Ob-IkP"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not authenticated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnX-Z9-5xg">
+                                                    <rect key="frame" x="8" y="11" width="456" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="LnX-Z9-5xg" firstAttribute="centerY" secondItem="VzD-aJ-vwg" secondAttribute="centerY" id="65J-Vs-jDa"/>
+                                                <constraint firstItem="FD5-0j-TNl" firstAttribute="trailing" secondItem="VzD-aJ-vwg" secondAttribute="trailingMargin" id="dZc-td-ijG"/>
+                                                <constraint firstItem="FD5-0j-TNl" firstAttribute="leading" secondItem="LnX-Z9-5xg" secondAttribute="trailing" constant="8" id="f32-SH-teu"/>
+                                                <constraint firstItem="FD5-0j-TNl" firstAttribute="centerY" secondItem="VzD-aJ-vwg" secondAttribute="centerY" id="krM-lC-tXL"/>
+                                                <constraint firstItem="LnX-Z9-5xg" firstAttribute="leading" secondItem="VzD-aJ-vwg" secondAttribute="leadingMargin" id="zgl-Pi-ZHV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="q8t-vS-DBt" id="CUT-lB-47D"/>
                             <outlet property="delegate" destination="q8t-vS-DBt" id="wGw-CG-S3j"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Y7z-zK-sLv"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Y7z-zK-sLv"/>
+                    <connections>
+                        <outlet property="authenticationStatusLabel" destination="LnX-Z9-5xg" id="Vd5-bE-6xL"/>
+                        <outlet property="toggleAuthenticationButton" destination="FD5-0j-TNl" id="KhO-Sx-5KS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOR-D3-I3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
