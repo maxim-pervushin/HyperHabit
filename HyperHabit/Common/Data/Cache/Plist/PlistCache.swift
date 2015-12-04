@@ -5,6 +5,8 @@
 
 import Foundation
 
+// TODO: Extract Cache protocol
+
 class PlistCache {
 
     // MARK: PlistCache public
