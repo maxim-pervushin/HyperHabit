@@ -86,6 +86,9 @@
 		73BC6F9FB1AE35BA7BC7F5B5 /* HabitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */; };
 		73BC6FC7792F42632C7FEB38 /* StatisticsForDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */; };
 		73BC6FE73A72C97A96896B31 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
+		C506575D1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
+		C506575E1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
+		C506575F1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
 		C53ABD001C02F800007F27FE /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		C53ABD011C02F800007F27FE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		C53ABD031C02F800007F27FE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
@@ -236,6 +239,7 @@
 		73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+Parse.swift"; sourceTree = "<group>"; };
 		73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesObserver.swift; sourceTree = "<group>"; };
 		73BC6B92DCA06DC34E8F3F1D /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperHabitBridgingHeader.h; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Parse.swift"; sourceTree = "<group>"; };
 		73BC6C850804E2D3B78DB687 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -251,6 +255,9 @@
 		73BC6EBEDB008DCE20D95068 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditor.swift; sourceTree = "<group>"; };
 		73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		C506575A1C11B3F300DCB557 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
+		C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
+		C506575C1C11B3F300DCB557 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C53ABCFE1C02F6F6007F27FE /* HyperHabit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HyperHabit.entitlements; sourceTree = "<group>"; };
 		C53ABCFF1C02F71E007F27FE /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C53ABD091C032C22007F27FE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -552,6 +559,7 @@
 			children = (
 				73BC67BCA15B1F9BDC7C9A27 /* Data */,
 				73BC6777DE781CC087299423 /* Extensions */,
+				73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -611,6 +619,32 @@
 				73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */,
 			);
 			path = StatisticsForDate;
+			sourceTree = "<group>";
+		};
+		C50657571C11B3F300DCB557 /* DTFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				C50657581C11B3F300DCB557 /* Core */,
+				C506575C1C11B3F300DCB557 /* LICENSE */,
+			);
+			path = DTFoundation;
+			sourceTree = "<group>";
+		};
+		C50657581C11B3F300DCB557 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C50657591C11B3F300DCB557 /* Source */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C50657591C11B3F300DCB557 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C506575A1C11B3F300DCB557 /* DTFolderMonitor.h */,
+				C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		C53ABD081C032C22007F27FE /* Parse */ = {
@@ -682,6 +716,7 @@
 		C580A4DB1BFF507200CF4C31 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C50657571C11B3F300DCB557 /* DTFoundation */,
 				C53ABD081C032C22007F27FE /* Parse */,
 				C580A4DC1BFF507200CF4C31 /* CVCalendar */,
 			);
@@ -938,6 +973,7 @@
 				C580A50C1BFF507200CF4C31 /* CVDate.swift in Sources */,
 				C580A5041BFF507200CF4C31 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				C580A5011BFF507200CF4C31 /* CVCalendarTouchController.swift in Sources */,
+				C506575D1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */,
 				C580A5121BFF507200CF4C31 /* CVWeekdaySymbolType.swift in Sources */,
 				73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */,
 				C580A50B1BFF507200CF4C31 /* CVCalendarWeekView.swift in Sources */,
@@ -1016,6 +1052,7 @@
 				73BC6684A1BFD0F7AF642ACE /* DataManagerTestCase+deleteHabit.swift in Sources */,
 				73BC666EF01D7D96E5190BA9 /* DataManagerTestCase+reportsForDate.swift in Sources */,
 				73BC6425575996C5E5A8ECEA /* TodayDataSourceTestCase.swift in Sources */,
+				C506575E1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */,
 				73BC65AAF0EBC3E75E22C757 /* TodayDataSourceTestCase+todayReports.swift in Sources */,
 				73BC6536368992A54577F092 /* Test.swift in Sources */,
 				73BC64FDDC35129A0B541748 /* HabitEditorTestCase.swift in Sources */,
@@ -1055,6 +1092,7 @@
 				C5F8B7AB1C0C4E7E003904C1 /* ReportCell.swift in Sources */,
 				73BC6292D2184EA8723FA832 /* LineView.swift in Sources */,
 				73BC6BD9F20C2D8AE3F1741E /* Service.swift in Sources */,
+				C506575F1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */,
 				73BC6BAFD3E0BCAAE7745469 /* ParseService.swift in Sources */,
 				73BC689F5B32811D3BF50CE5 /* Report+Parse.swift in Sources */,
 				73BC6DCE32F9C2FADE737A06 /* Habit+Parse.swift in Sources */,
@@ -1155,6 +1193,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = ./Common/HyperHabitBridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1193,6 +1232,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = ./Common/HyperHabitBridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

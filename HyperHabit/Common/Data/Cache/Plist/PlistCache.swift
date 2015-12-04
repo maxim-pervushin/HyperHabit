@@ -13,18 +13,30 @@ class PlistCache {
 
     init(contentDirectory: String) {
         self.contentDirectory = contentDirectory
+        folderMonitor = DTFolderMonitor(forURL: NSURL(fileURLWithPath: contentDirectory, isDirectory: true), block: changed)
+        folderMonitor.startMonitoring()
+    }
+
+    deinit {
+        folderMonitor.stopMonitoring()
     }
 
     // MARK: PlistCache private
 
     private let contentDirectory: NSString
     private let cache = NSCache()
+    private var folderMonitor: DTFolderMonitor!
 
     private let habitsFileName = "habits"
     private let habitsToSaveFileName = "habitsToSave"
     private let reportsFileName = "reports"
     private let reportsToSaveFileName = "reportsToSave"
     private let reportsToDeleteFileName = "reportsToDelete"
+
+    private func changed() {
+        cache.removeAllObjects()
+        NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
+    }
 
     private func readHabitsFile(fileName: String) -> [String:Habit] {
         if let cached = cache.objectForKey(fileName) as? [String:Habit] {

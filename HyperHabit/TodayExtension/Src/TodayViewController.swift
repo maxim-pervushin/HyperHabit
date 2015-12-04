@@ -30,12 +30,27 @@ class TodayViewController: UIViewController {
     }
 
     private func updateUI() {
-        heightConstraint.constant = tableView.contentSize.height
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+            self.heightConstraint.constant = self.tableView.contentSize.height
+        }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource.changesObserver = self
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
+        updateUI()
+    }
+}
+
+extension TodayViewController: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
         updateUI()
     }
 }
