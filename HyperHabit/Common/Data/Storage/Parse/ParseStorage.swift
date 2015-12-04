@@ -55,6 +55,10 @@ class ParseStorage {
 
     private func saveHabits() {
 
+        if !service.available {
+            return
+        }
+
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
 
@@ -82,6 +86,10 @@ class ParseStorage {
 
     private func loadHabits() {
 
+        if !service.available {
+            return
+        }
+
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             do {
                 let habits = try self.service.getHabits()
@@ -98,6 +106,10 @@ class ParseStorage {
     }
 
     private func saveReports() {
+
+        if !service.available {
+            return
+        }
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
 
@@ -147,6 +159,10 @@ class ParseStorage {
     }
 
     private func loadReports() {
+
+        if !service.available {
+            return
+        }
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             do {
