@@ -5,7 +5,8 @@
 
 import Foundation
 
-// TODO: Add clear function
+// TODO: Add clear function.
+// TODO: Add changes observer.
 
 protocol Cache {
 
