@@ -8,6 +8,9 @@ import Parse
 
 class ParseService {
 
+    init(applicationId: String, clientKey: String) {
+        Parse.setApplicationId(applicationId, clientKey: clientKey)
+    }
 }
 
 extension ParseService: Service {
