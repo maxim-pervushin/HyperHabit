@@ -5,8 +5,6 @@
 
 import Foundation
 
-// TODO: Add file monitoring. Something like DTFolderMonitor.
-
 class PlistCache {
 
     // MARK: PlistCache public
