@@ -11,11 +11,11 @@ extension DataManagerTestCase {
 
         XCTAssertEqual([], dataManager.habits)
 
-        let habit1 = Habit(name: "Habit 1", repeatsTotal: 1)
+        let habit1 = Habit(name: "Habit 1", repeatsTotal: 1, active: true)
         dataManager.saveHabit(habit1)
         XCTAssertEqual([habit1], dataManager.habits)
 
-        let habit2 = Habit(name: "Habit 2", repeatsTotal: 2)
+        let habit2 = Habit(name: "Habit 2", repeatsTotal: 2, active: true)
         dataManager.saveHabit(habit2)
         XCTAssertEqual(Test.sortHabits([habit1, habit2]), Test.sortHabits(dataManager.habits))
 

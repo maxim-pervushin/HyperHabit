@@ -28,7 +28,7 @@ extension HabitEditorTestCase {
 
     func test_canSave_withHabit() {
         XCTAssertEqual(false, editor.canSave)
-        editor.habit = Habit(name: "Foo", repeatsTotal: 1)
+        editor.habit = Habit(name: "Foo", repeatsTotal: 1, active: true)
         XCTAssertEqual(false, editor.canSave)
     }
 
@@ -49,7 +49,7 @@ extension HabitEditorTestCase {
 
     func test_canSave_withHabit_nameInvalid() {
         XCTAssertEqual(false, editor.canSave)
-        editor.habit = Habit(name: "Foo", repeatsTotal: 1)
+        editor.habit = Habit(name: "Foo", repeatsTotal: 1, active: true)
         XCTAssertEqual(false, editor.canSave)
 
         editor.name = "Foo"
@@ -79,7 +79,7 @@ extension HabitEditorTestCase {
 
     func test_canSave_withHabit_repeatsTotalInvalid() {
         XCTAssertEqual(false, editor.canSave)
-        editor.habit = Habit(name: "Foo", repeatsTotal: 1)
+        editor.habit = Habit(name: "Foo", repeatsTotal: 1, active: true)
         XCTAssertEqual(false, editor.canSave)
 
         editor.repeatsTotal = 1
@@ -102,7 +102,7 @@ extension HabitEditorTestCase {
 
     func test_canSave_withHabit_validData() {
         XCTAssertEqual(false, editor.canSave)
-        editor.habit = Habit(name: "Foo", repeatsTotal: 1)
+        editor.habit = Habit(name: "Foo", repeatsTotal: 1, active: true)
         XCTAssertEqual(false, editor.canSave)
 
         editor.name = "Bar"

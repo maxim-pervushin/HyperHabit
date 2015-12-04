@@ -10,9 +10,9 @@ extension TodayDataSourceTestCase {
     func test_todayReports() {
         XCTAssertEqual([], dataSource.reports)
 
-        let habit1 = Habit(name: "Habit 1", repeatsTotal: 1)
+        let habit1 = Habit(name: "Habit 1", repeatsTotal: 1, active: true)
         dataSource.dataProvider.saveHabit(habit1)
-        let habit2 = Habit(name: "Habit 2", repeatsTotal: 2)
+        let habit2 = Habit(name: "Habit 2", repeatsTotal: 2, active: true)
         dataSource.dataProvider.saveHabit(habit2)
 
         XCTAssertEqual(2, dataSource.reports.count)
