@@ -5,59 +5,12 @@
 
 import Foundation
 
-// TODO: Extract Cache protocol
-
 class PlistCache {
 
     // MARK: PlistCache public
 
     init(contentDirectory: String) {
         self.contentDirectory = contentDirectory
-    }
-
-    var habitsById: [String:Habit] {
-        get {
-            return readHabitsFile(habitsFileName)
-        }
-        set {
-            writeHabits(newValue, fileName: habitsFileName)
-        }
-    }
-
-    var habitsByIdToSave: [String:Habit] {
-        get {
-            return readHabitsFile(habitsToSaveFileName)
-        }
-        set {
-            writeHabits(newValue, fileName: habitsToSaveFileName)
-        }
-    }
-
-    var reportsById: [String:Report] {
-        get {
-            return readReportsFile(reportsFileName)
-        }
-        set {
-            writeReports(newValue, fileName: reportsFileName)
-        }
-    }
-
-    var reportsByIdToSave: [String:Report] {
-        get {
-            return readReportsFile(reportsToSaveFileName)
-        }
-        set {
-            writeReports(newValue, fileName: reportsToSaveFileName)
-        }
-    }
-
-    var reportsByIdToDelete: [String:Report] {
-        get {
-            return readReportsFile(reportsToDeleteFileName)
-        }
-        set {
-            writeReports(newValue, fileName: reportsToDeleteFileName)
-        }
     }
 
     // MARK: PlistCache private
@@ -134,5 +87,53 @@ class PlistCache {
 
         let filePath = contentDirectory.stringByAppendingPathComponent("/\(fileName).plist")
         return packedReports.writeToFile(filePath, atomically: true)
+    }
+}
+
+extension PlistCache: Cache {
+
+    var habitsById: [String:Habit] {
+        get {
+            return readHabitsFile(habitsFileName)
+        }
+        set {
+            writeHabits(newValue, fileName: habitsFileName)
+        }
+    }
+
+    var habitsByIdToSave: [String:Habit] {
+        get {
+            return readHabitsFile(habitsToSaveFileName)
+        }
+        set {
+            writeHabits(newValue, fileName: habitsToSaveFileName)
+        }
+    }
+
+    var reportsById: [String:Report] {
+        get {
+            return readReportsFile(reportsFileName)
+        }
+        set {
+            writeReports(newValue, fileName: reportsFileName)
+        }
+    }
+
+    var reportsByIdToSave: [String:Report] {
+        get {
+            return readReportsFile(reportsToSaveFileName)
+        }
+        set {
+            writeReports(newValue, fileName: reportsToSaveFileName)
+        }
+    }
+
+    var reportsByIdToDelete: [String:Report] {
+        get {
+            return readReportsFile(reportsToDeleteFileName)
+        }
+        set {
+            writeReports(newValue, fileName: reportsToDeleteFileName)
+        }
     }
 }
