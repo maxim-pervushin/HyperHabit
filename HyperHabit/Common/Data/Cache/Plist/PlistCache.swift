@@ -34,6 +34,7 @@ class PlistCache {
     private func changed() {
         cache.removeAllObjects()
         // TODO: Don't send DataManager.changedNotification from here, use changesObserver
+        // TODO: Move changes observer to 'Cache'
         NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
     }
 
