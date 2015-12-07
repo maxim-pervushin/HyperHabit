@@ -3,6 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
+import UIKit
 import Parse
 import ParseUI
 
@@ -77,11 +78,6 @@ class ParseService: NSObject {
 
 extension ParseService: PFLogInViewControllerDelegate {
 
-    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
-        logInController.dismissViewControllerAnimated(true, completion: nil)
-        changed()
-    }
-
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         logInController.dismissViewControllerAnimated(true, completion: nil)
         changed()
@@ -92,8 +88,13 @@ extension ParseService: PFLogInViewControllerDelegate {
         if let error = error {
             localizedDescription = error.localizedDescription
         }
-        print(localizedDescription)
-        changed()
+        let alertController = UIAlertController(title: "Error", message: localizedDescription, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        logInController.presentViewController(alertController, animated: true, completion: nil)
+    }
+
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        logInController.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
@@ -108,7 +109,9 @@ extension ParseService: PFSignUpViewControllerDelegate {
         if let error = error {
             localizedDescription = error.localizedDescription
         }
-        print(localizedDescription)
+        let alertController = UIAlertController(title: "Error", message: localizedDescription, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        logInController.presentViewController(alertController, animated: true, completion: nil)
     }
 
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
