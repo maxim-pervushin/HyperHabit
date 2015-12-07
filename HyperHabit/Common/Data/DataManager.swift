@@ -17,6 +17,7 @@ class DataManager {
         self.service = service
 
         self.cache.changesObserver = self
+        self.service.changesObserver = self
 
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerAction:", userInfo: nil, repeats: true)
         timer.fire()

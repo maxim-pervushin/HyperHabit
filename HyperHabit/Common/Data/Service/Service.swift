@@ -7,6 +7,8 @@ import Foundation
 
 protocol Service {
 
+    var changesObserver: ChangesObserver? { get set }
+
     var available: Bool { get }
 
     func getHabits() throws -> [Habit]
