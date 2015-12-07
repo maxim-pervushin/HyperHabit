@@ -17,6 +17,8 @@ class DataManager {
         self.cache = cache
         self.service = service
 
+        self.cache.changesObserver = self
+
         loadHabits()
         loadReports()
 
@@ -255,5 +257,12 @@ extension DataManager: DataProvider {
             }
         }
         return result
+    }
+}
+
+extension DataManager: ChangesObserver {
+
+    func observableChanged(observable: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
     }
 }

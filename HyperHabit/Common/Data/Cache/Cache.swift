@@ -5,9 +5,9 @@
 
 import Foundation
 
-// TODO: Add changes observer.
-
 protocol Cache {
+
+    var changesObserver: ChangesObserver? { get set }
 
     var habitsById: [String:Habit] { get set }
 
