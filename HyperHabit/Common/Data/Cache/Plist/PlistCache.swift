@@ -38,64 +38,48 @@ class PlistCache {
         NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
     }
 
-    private func readHabitsFile(fileName: String) -> [String:Habit] {
-        if let cached = cache.objectForKey(fileName) as? [String:Habit] {
-            return cached
-        }
-
+    private func readHabitsFile(fileName: String) -> [Habit] {
         let filePath = contentDirectory.stringByAppendingPathComponent("/\(fileName).plist")
         guard let packedHabits = NSArray(contentsOfFile: filePath) else {
-            return [String: Habit]()
+            return []
         }
-        var result = [String: Habit]()
+        var result = [Habit]()
         for packedHabit in packedHabits {
             if let dictionary = packedHabit as? [String:AnyObject], habit = Habit(packed: dictionary) {
-                result[habit.id] = habit
+                result.append(habit)
             }
         }
-
-        cache.setObject(result, forKey: fileName)
 
         return result
     }
 
-    private func writeHabits(habits: [String:Habit], fileName: String) -> Bool {
-        cache.removeObjectForKey(fileName)
-
+    private func writeHabits(habits: [Habit], fileName: String) -> Bool {
         let packedHabits = NSMutableArray()
-        for habit in habits.values {
+        for habit in habits {
             packedHabits.addObject(habit.packed)
         }
         let filePath = contentDirectory.stringByAppendingPathComponent("/\(fileName).plist")
         return packedHabits.writeToFile(filePath, atomically: true)
     }
 
-    private func readReportsFile(fileName: String) -> [String:Report] {
-        if let cached = cache.objectForKey(fileName) as? [String:Report] {
-            return cached
-        }
-
+    private func readReportsFile(fileName: String) -> [Report] {
         let filePath = contentDirectory.stringByAppendingPathComponent("/\(fileName).plist")
         guard let packedReports = NSArray(contentsOfFile: filePath) else {
-            return [String: Report]()
+            return []
         }
-        var result = [String: Report]()
+        var result = [Report]()
         for packedReport in packedReports {
             if let dictionary = packedReport as? [String:AnyObject], report = Report(packed: dictionary) {
-                result[report.id] = report
+                result.append(report)
             }
         }
-
-        cache.setObject(result, forKey: fileName)
 
         return result
     }
 
-    private func writeReports(reports: [String:Report], fileName: String) -> Bool {
-        cache.removeObjectForKey(fileName)
-
+    private func writeReports(reports: [Report], fileName: String) -> Bool {
         let packedReports = NSMutableArray()
-        for report in reports.values {
+        for report in reports {
             packedReports.addObject(report.packed)
         }
 
@@ -108,46 +92,126 @@ extension PlistCache: Cache {
 
     var habitsById: [String:Habit] {
         get {
-            return readHabitsFile(habitsFileName)
+            let cacheKey = "habitsById"
+            if let cached = cache.objectForKey(cacheKey) as? [String:Habit] {
+                return cached
+            }
+
+            var result = [String: Habit]()
+            let habits = readHabitsFile(habitsFileName)
+            for habit in habits {
+                result[habit.id] = habit
+            }
+            let habitsToSave = readHabitsFile(habitsToSaveFileName)
+            for habit in habitsToSave {
+                result[habit.id] = habit
+            }
+
+            cache.setObject(result, forKey: cacheKey)
+            return result
         }
         set {
-            writeHabits(newValue, fileName: habitsFileName)
+            cache.removeObjectForKey("habitsById")
+            writeHabits(Array(newValue.values), fileName: habitsFileName)
         }
     }
 
     var habitsByIdToSave: [String:Habit] {
         get {
-            return readHabitsFile(habitsToSaveFileName)
+            let cacheKey = "habitsByIdToSave"
+            if let cached = cache.objectForKey(cacheKey) as? [String:Habit] {
+                return cached
+            }
+
+            var result = [String: Habit]()
+            let habitsToSave = readHabitsFile(habitsToSaveFileName)
+            for habit in habitsToSave {
+                result[habit.id] = habit
+            }
+
+            cache.setObject(result, forKey: cacheKey)
+            return result
         }
         set {
-            writeHabits(newValue, fileName: habitsToSaveFileName)
+            cache.removeObjectForKey("habitsById")
+            cache.removeObjectForKey("habitsByIdToSave")
+            writeHabits(Array(newValue.values), fileName: habitsToSaveFileName)
         }
     }
 
     var reportsById: [String:Report] {
         get {
-            return readReportsFile(reportsFileName)
+            let cacheKey = "reportsById"
+            if let cached = cache.objectForKey(cacheKey) as? [String:Report] {
+                return cached
+            }
+
+            var result = [String: Report]()
+            let reports = readReportsFile(reportsFileName)
+            for report in reports {
+                result[report.id] = report
+            }
+            let reportsToSave = readReportsFile(reportsToSaveFileName)
+            for report in reportsToSave {
+                result[report.id] = report
+            }
+            let reportsToDelete = readReportsFile(reportsToDeleteFileName)
+            for report in reportsToDelete {
+                result[report.id] = nil
+            }
+
+            cache.setObject(result, forKey: cacheKey)
+            return result
         }
         set {
-            writeReports(newValue, fileName: reportsFileName)
+            cache.removeObjectForKey("reportsById")
+            writeReports(Array(newValue.values), fileName: reportsFileName)
         }
     }
 
     var reportsByIdToSave: [String:Report] {
         get {
-            return readReportsFile(reportsToSaveFileName)
+            let cacheKey = "reportsByIdToSave"
+            if let cached = cache.objectForKey(cacheKey) as? [String:Report] {
+                return cached
+            }
+
+            var result = [String: Report]()
+            let reportsToSave = readReportsFile(reportsToSaveFileName)
+            for report in reportsToSave {
+                result[report.id] = report
+            }
+
+            cache.setObject(result, forKey: cacheKey)
+            return result
         }
         set {
-            writeReports(newValue, fileName: reportsToSaveFileName)
+            cache.removeObjectForKey("reportsById")
+            cache.removeObjectForKey("reportsByIdToSave")
+            writeReports(Array(newValue.values), fileName: reportsToSaveFileName)
         }
     }
 
     var reportsByIdToDelete: [String:Report] {
         get {
-            return readReportsFile(reportsToDeleteFileName)
+            let cacheKey = "reportsByIdToDelete"
+            if let cached = cache.objectForKey(cacheKey) as? [String:Report] {
+                return cached
+            }
+
+            var result = [String: Report]()
+            let reportsToDelete = readReportsFile(reportsToDeleteFileName)
+            for report in reportsToDelete {
+                result[report.id] = report
+            }
+
+            cache.setObject(result, forKey: cacheKey)
+            return result
         }
         set {
-            writeReports(newValue, fileName: reportsToDeleteFileName)
+            cache.removeObjectForKey("reportsById")
+            cache.removeObjectForKey("reportsByIdToDelete")
+            writeReports(Array(newValue.values), fileName: reportsToDeleteFileName)
         }
     }
 
