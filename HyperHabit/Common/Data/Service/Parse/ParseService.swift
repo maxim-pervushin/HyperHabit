@@ -111,7 +111,7 @@ extension ParseService: PFSignUpViewControllerDelegate {
         }
         let alertController = UIAlertController(title: "Error", message: localizedDescription, preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        logInController.presentViewController(alertController, animated: true, completion: nil)
+        signUpController.presentViewController(alertController, animated: true, completion: nil)
     }
 
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
