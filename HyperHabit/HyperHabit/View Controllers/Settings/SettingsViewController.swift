@@ -16,7 +16,7 @@ class SettingsViewController: UITableViewController {
         if App.authenticated {
             App.logOut(self)
         } else {
-            App.authenticate(self)
+            App.logIn(self)
         }
         updateUI()
     }

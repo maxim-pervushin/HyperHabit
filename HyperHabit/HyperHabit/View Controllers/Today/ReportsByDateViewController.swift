@@ -9,7 +9,7 @@ class ReportsByDateViewController: UIViewController {
 
     // MARK: ReportsByDateViewController @IB
 
-    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var dateButton: UIButton!
     @IBOutlet weak private var tableView: UITableView!
     @IBOutlet weak private var previousDayButton: UIButton!
     @IBOutlet weak private var nextDayButton: UIButton!
@@ -28,7 +28,7 @@ class ReportsByDateViewController: UIViewController {
 
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {
-            self.dateLabel?.text = self.dataSource.date.longDateRelativeString
+            self.dateButton?.setTitle(" \(self.dataSource.date.longDateRelativeString)", forState: .Normal)
             self.previousDayButton.hidden = !self.dataSource.hasPreviousDate
             self.nextDayButton.hidden = !self.dataSource.hasNextDate
             self.tableView?.reloadData()
