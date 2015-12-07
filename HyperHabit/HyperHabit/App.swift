@@ -33,7 +33,7 @@ struct App {
 
     static func authenticate(viewController: UIViewController) {
         if let parseService = service as? ParseService {
-             parseService.authenticate(viewController)
+             parseService.logIn(viewController)
         }
     }
 

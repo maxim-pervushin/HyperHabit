@@ -9,6 +9,8 @@ import ParseUI
 
 class ParseService: NSObject {
 
+    static let requestedCacheCleanNotification = "ParseServiceRequestedCacheCleanNotification"
+
     private var _changesObserver: ChangesObserver?
 
     init(applicationId: String, clientKey: String) {
@@ -19,26 +21,38 @@ class ParseService: NSObject {
         _changesObserver?.observableChanged(self)
     }
 
+    // TODO: Find better way to notificate 'Cache' objects about need in reset.
+    func requestCacheClean() {
+        NSNotificationCenter.defaultCenter().postNotificationName(ParseService.requestedCacheCleanNotification, object: self)
+    }
+}
+
+extension ParseService: ServiceUIAuthentication {
+
     public func logOut(viewController: UIViewController) {
         if !available {
             return
         }
 
-        PFUser.logOut()
         changed()
 
-        // TODO: Add Cancel button
         // Ask user if we should to delete all cached data
         let alertController = UIAlertController(title: "Log Out", message: "Do you want to delete local data?", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Keep", style: .Cancel, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Delete", style: .Default, handler: {
+        alertController.addAction(UIAlertAction(title: "Keep", style: .Default, handler: {
             (action) in
+            PFUser.logOut()
+        }))
+        alertController.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: {
+            (action) in
+            PFUser.logOut()
+            self.requestCacheClean()
 //            App.dataManager.clear()
         }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         viewController.presentViewController(alertController, animated: true, completion: nil)
     }
 
-    public func authenticate(viewController: UIViewController) {
+    public func logIn(viewController: UIViewController) {
         if available {
             return
         }
