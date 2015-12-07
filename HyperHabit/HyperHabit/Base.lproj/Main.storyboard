@@ -215,7 +215,7 @@
                             <constraint firstAttribute="trailing" secondItem="39M-tL-XhD" secondAttribute="trailing" id="taU-3o-axg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Reports" id="9Lb-pf-BVo"/>
+                    <tabBarItem key="tabBarItem" title="Reports" image="Reports" id="9Lb-pf-BVo"/>
                     <navigationItem key="navigationItem" id="qF3-K3-77x">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="n80-fQ-bWA">
@@ -567,7 +567,7 @@
         <scene sceneID="pWw-Zb-Jvn">
             <objects>
                 <navigationController id="ef9-0k-SYs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Statistics" id="LbB-yX-5lk"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="Statistics" id="LbB-yX-5lk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0X-9M-cTE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -746,7 +746,7 @@
         <scene sceneID="1nP-Uy-coG">
             <objects>
                 <navigationController id="ez7-dF-Sqt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="lpt-XL-50D"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="lpt-XL-50D"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="agM-ka-MQ7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -764,7 +764,7 @@
         <scene sceneID="1ht-YF-2WX">
             <objects>
                 <navigationController id="yH8-6k-nvz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Habits" id="m06-JZ-zo5"/>
+                    <tabBarItem key="tabBarItem" title="Habits" image="Habits" id="m06-JZ-zo5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hEB-av-h6p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -783,6 +783,10 @@
         <image name="ArrowDown" width="14" height="7"/>
         <image name="ArrowLeft" width="35" height="35"/>
         <image name="ArrowRight" width="35" height="35"/>
+        <image name="Habits" width="25" height="25"/>
+        <image name="Reports" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
+        <image name="Statistics" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nhg-70-b3B"/>
