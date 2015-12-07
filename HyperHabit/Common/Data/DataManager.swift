@@ -5,7 +5,6 @@
 
 import Foundation
 
-// TODO: Reload data from service without re-initialization
 
 class DataManager {
 
@@ -19,9 +18,6 @@ class DataManager {
 
         self.cache.changesObserver = self
 
-        loadHabits()
-        loadReports()
-
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerAction:", userInfo: nil, repeats: true)
         timer.fire()
     }
@@ -31,20 +27,20 @@ class DataManager {
     private var cache: Cache
     private var service: Service
     private var timer: NSTimer!
-    private var saveHabitsAfter = Int.max
-    private var saveReportsAfter = Int.max
+    private var saveHabitsAfter = 0
+    private var saveReportsAfter = 0
 
     @objc private func timerAction(timer: NSTimer) {
         if saveHabitsAfter <= 0 {
             saveHabitsAfter = Int.max
-            saveHabits()
+            syncHabits()
         } else {
             saveHabitsAfter--
         }
 
         if saveReportsAfter <= 0 {
             saveReportsAfter = Int.max
-            saveReports()
+            syncReports()
         } else {
             saveReportsAfter--
         }
@@ -54,46 +50,39 @@ class DataManager {
         NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
     }
 
-    private func saveHabits() {
+    private func syncHabits() {
 
         if !service.available {
             print("service: \(service) unavailable")
+            self.saveHabitsAfter = 30
             return
         }
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             () -> Void in
 
-            if self.cache.habitsByIdToSave.count == 0 {
-                return
-            }
+            // Save habits
 
-            let habits = self.cache.habitsByIdToSave.values
-            // Remove selected habits from habits-to-save to avoid save attempt from another thread
-            for habit in habits {
-                self.cache.habitsByIdToSave[habit.id] = nil
-            }
-
-            do {
-                try self.service.saveHabits(Array(habits))
-            } catch {
-                // Put habits-to-save back if something goes wrong
+            if self.cache.habitsByIdToSave.count > 0 {
+                let habits = self.cache.habitsByIdToSave.values
+                // Remove selected habits from habits-to-save to avoid save attempt from another thread
                 for habit in habits {
-                    self.cache.habitsByIdToSave[habit.id] = habit
+                    self.cache.habitsByIdToSave[habit.id] = nil
                 }
-                print("ERROR: Unable to save habits")
+
+                do {
+                    try self.service.saveHabits(Array(habits))
+                } catch {
+                    // Put habits-to-save back if something goes wrong
+                    for habit in habits {
+                        self.cache.habitsByIdToSave[habit.id] = habit
+                    }
+                    print("ERROR: Unable to save habits")
+                }
             }
-        }
-    }
 
-    private func loadHabits() {
+            // Load habits
 
-        if !service.available {
-            print("service: \(service) unavailable")
-            return
-        }
-
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             do {
                 let habits = try self.service.getHabits()
                 var habitsById = [String: Habit]()
@@ -105,71 +94,63 @@ class DataManager {
             } catch {
                 print("ERROR: Unable to load habits")
             }
+
+            self.saveHabitsAfter = 30
         }
     }
 
-    private func saveReports() {
+    private func syncReports() {
 
         if !service.available {
             print("service: \(service) unavailable")
+            self.saveReportsAfter = 30
             return
         }
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
 
-            if self.cache.reportsByIdToSave.count == 0 {
-                return
-            }
+            // Save reports
 
-            let reports = self.cache.reportsByIdToSave.values
-            // Remove selected reports from reports-to-save to avoid save attempt from another thread
-            for report in reports {
-                self.cache.reportsByIdToSave[report.id] = nil
-            }
-
-            do {
-                try self.service.saveReports(Array(reports))
-            } catch {
-                // Put reports-to-save back if something goes wrong
+            if self.cache.reportsByIdToSave.count > 0 {
+                let reports = self.cache.reportsByIdToSave.values
+                // Remove selected reports from reports-to-save to avoid save attempt from another thread
                 for report in reports {
-                    self.cache.reportsByIdToSave[report.id] = report
+                    self.cache.reportsByIdToSave[report.id] = nil
                 }
-                print("ERROR: Unable to save reports")
-            }
-        }
 
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-
-            if self.cache.reportsByIdToDelete.count == 0 {
-                return
-            }
-
-            let reports = self.cache.reportsByIdToDelete.values
-            // Remove selected reports from reports-to-delete to avoid delete attempt from another thread
-            for report in reports {
-                self.cache.reportsByIdToDelete[report.id] = nil
+                do {
+                    try self.service.saveReports(Array(reports))
+                } catch {
+                    // Put reports-to-save back if something goes wrong
+                    for report in reports {
+                        self.cache.reportsByIdToSave[report.id] = report
+                    }
+                    print("ERROR: Unable to save reports")
+                }
             }
 
-            do {
-                try self.service.deleteReports(Array(reports))
-            } catch {
-                // Put reports-to-delete back if something goes wrong
+            // Delete reports
+
+            if self.cache.reportsByIdToDelete.count > 0 {
+                let reports = self.cache.reportsByIdToDelete.values
+                // Remove selected reports from reports-to-delete to avoid delete attempt from another thread
                 for report in reports {
-                    self.cache.reportsByIdToDelete[report.id] = report
+                    self.cache.reportsByIdToDelete[report.id] = nil
                 }
-                print("ERROR: Unable to delete reports")
+
+                do {
+                    try self.service.deleteReports(Array(reports))
+                } catch {
+                    // Put reports-to-delete back if something goes wrong
+                    for report in reports {
+                        self.cache.reportsByIdToDelete[report.id] = report
+                    }
+                    print("ERROR: Unable to delete reports")
+                }
             }
-        }
-    }
 
-    private func loadReports() {
+            // Load reports
 
-        if !service.available {
-            print("service: \(service) unavailable")
-            return
-        }
-
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
             do {
                 let reports = try self.service.getReports()
                 var reportsById = [String: Report]()
@@ -181,6 +162,8 @@ class DataManager {
             } catch {
                 print("ERROR: Unable to load reports")
             }
+
+            self.saveReportsAfter = 30
         }
     }
 }
@@ -263,6 +246,12 @@ extension DataManager: DataProvider {
 extension DataManager: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
+        if let _ = observable as? Cache {
+            NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
+        }
+        if let _ = observable as? Service {
+            saveHabitsAfter = 0
+            saveReportsAfter = 0
+        }
     }
 }
