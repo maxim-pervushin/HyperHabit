@@ -115,36 +115,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6S-lF-zsd">
-                                                    <rect key="frame" x="8" y="8" width="27" height="27"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="X6S-lF-zsd" secondAttribute="height" id="Oq9-iq-e67"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Oe-4WP">
-                                                    <rect key="frame" x="43" y="8" width="549" height="27"/>
+                                                    <rect key="frame" x="36" y="12" width="556" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMY-DA-IBD">
+                                                    <rect key="frame" x="8" y="12" width="20" height="20"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="18e-PE-VO6"/>
+                                                        <constraint firstAttribute="height" constant="20" id="7j8-Fq-0yh"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="top" secondItem="X6S-lF-zsd" secondAttribute="top" id="AOM-GA-ysj"/>
-                                                <constraint firstItem="X6S-lF-zsd" firstAttribute="top" secondItem="nIS-cR-udc" secondAttribute="topMargin" id="IKR-YU-Lbt"/>
-                                                <constraint firstItem="X6S-lF-zsd" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" id="OoK-we-ymX"/>
-                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="bottom" secondItem="X6S-lF-zsd" secondAttribute="bottom" id="bJo-cv-ufN"/>
-                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="leading" secondItem="X6S-lF-zsd" secondAttribute="trailing" constant="8" id="e4y-8t-e6p"/>
+                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="leading" secondItem="KMY-DA-IBD" secondAttribute="trailing" constant="8" id="PqR-RZ-k5o"/>
+                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="aBe-S3-wDU"/>
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="trailing" secondItem="nIS-cR-udc" secondAttribute="trailingMargin" id="gGB-ES-w8Z"/>
-                                                <constraint firstItem="X6S-lF-zsd" firstAttribute="bottom" secondItem="nIS-cR-udc" secondAttribute="bottomMargin" id="iuE-Fa-mWf"/>
+                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" id="lh3-2A-BTx"/>
+                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="vz7-kv-bIP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="completedIndicatorView" destination="X6S-lF-zsd" id="sGM-tm-AzA"/>
+                                            <outlet property="checkboxImageView" destination="KMY-DA-IBD" id="LX9-qU-2Fv"/>
                                             <outlet property="habitNameLabel" destination="Kno-Oe-4WP" id="Wen-7C-b6U"/>
                                         </connections>
                                     </tableViewCell>

@@ -10,16 +10,12 @@ class ReportCell: UITableViewCell {
 
     static let defaultReuseIdentifier = "ReportCell"
 
-    @IBOutlet weak var completedIndicatorView: UIView! {
-        didSet {
-            completedIndicatorView?.layer.cornerRadius = 3
-        }
-    }
+    @IBOutlet weak var checkboxImageView: UIImageView!
     @IBOutlet weak var habitNameLabel: UILabel!
-    
+
     var report: Report? {
         didSet {
-            completedIndicatorView?.backgroundColor = report?.completed == true ? UIColor.greenColor() : UIColor.redColor()
+            checkboxImageView?.image = UIImage(named: report?.completed == true ? "CheckboxChecked" : "Checkbox")?.imageWithRenderingMode(.AlwaysTemplate)
             habitNameLabel?.text = report?.habitName
         }
     }

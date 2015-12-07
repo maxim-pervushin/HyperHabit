@@ -134,6 +134,7 @@
 		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
 		C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */; };
+		C57536C11C15A56000976E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C580A4D91BFF324300CF4C31 /* ReportsByDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */; };
 		C580A4F81BFF507200CF4C31 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4DD1BFF507200CF4C31 /* CVAuxiliaryView.swift */; };
 		C580A4F91BFF507200CF4C31 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580A4DE1BFF507200CF4C31 /* CVCalendarContentViewController.swift */; };
@@ -951,6 +952,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57536C11C15A56000976E51 /* Assets.xcassets in Resources */,
 				C5A658211C01BBD2008DE843 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

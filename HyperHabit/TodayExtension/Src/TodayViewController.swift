@@ -97,11 +97,4 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.reloadData()
         }
     }
-
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Completed"
-        }
-        return nil
-    }
 }
