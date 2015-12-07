@@ -5,7 +5,6 @@
 
 import Foundation
 
-// TODO: Add clear function.
 // TODO: Add changes observer.
 
 protocol Cache {
@@ -19,4 +18,6 @@ protocol Cache {
     var reportsByIdToSave: [String:Report] { get set }
 
     var reportsByIdToDelete: [String:Report] { get set }
+
+    func clear()
 }

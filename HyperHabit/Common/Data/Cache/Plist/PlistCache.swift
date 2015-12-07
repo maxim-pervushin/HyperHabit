@@ -150,4 +150,12 @@ extension PlistCache: Cache {
             writeReports(newValue, fileName: reportsToDeleteFileName)
         }
     }
+
+    func clear() {
+        habitsById = [String: Habit]()
+        habitsByIdToSave = [String: Habit]()
+        reportsById = [String: Report]()
+        reportsByIdToSave = [String: Report]()
+        reportsByIdToDelete = [String: Report]()
+    }
 }
