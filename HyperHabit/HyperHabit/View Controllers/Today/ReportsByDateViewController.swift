@@ -49,22 +49,27 @@ class ReportsByDateViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        if let datePickerController = segue.destinationViewController as? DatePickerController {
-            datePickerController.datePickerDelegate = self
-            datePickerController.date = dataSource.date
-            datePickerController.maximumDate = NSDate()
+//        if let datePickerController = segue.destinationViewController as? DatePickerController {
+//            datePickerController.datePickerDelegate = self
+//            datePickerController.date = dataSource.date
+//            datePickerController.maximumDate = NSDate()
+//        }
+        if let pickDateViewController = segue.destinationViewController as? PickDateViewController {
+            pickDateViewController.datePickerDelegate = self
+            pickDateViewController.date = dataSource.date
+            pickDateViewController.maximumDate = NSDate()
         }
     }
 }
 
-extension ReportsByDateViewController: DatePickerDelegate {
+extension ReportsByDateViewController: PickDateViewControllerDelegate {
 
-    func datePickerController(controller: DatePickerController, didPickDate date: NSDate) {
+    func pickDateViewController(controller: PickDateViewController, didPickDate date: NSDate) {
         dataSource.date = date
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    func datePickerControllerDidCancel(controller: DatePickerController) {
+    func pickDateViewControllerDidCancel(controller: PickDateViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

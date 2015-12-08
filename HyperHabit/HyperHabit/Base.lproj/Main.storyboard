@@ -160,7 +160,7 @@
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <segue destination="5Em-OS-hgL" kind="presentation" id="etC-qT-Uey"/>
+                                        <segue destination="fBO-bB-84e" kind="presentation" modalPresentationStyle="overFullScreen" id="kie-R4-iid"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -272,70 +272,115 @@
             </objects>
             <point key="canvasLocation" x="1079" y="-453"/>
         </scene>
-        <!--Date Picker Controller-->
-        <scene sceneID="hGh-nu-M0v">
+        <!--Pick Date View Controller-->
+        <scene sceneID="k0x-ql-L0s">
             <objects>
-                <navigationController id="5Em-OS-hgL" customClass="DatePickerController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dCX-jV-xCA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="IGb-Qz-jf5" kind="relationship" relationship="rootViewController" id="YBy-gu-Sv5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="axk-i2-HAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844" y="-1193"/>
-        </scene>
-        <!--Date Picker View Controller-->
-        <scene sceneID="CpH-hD-SF3">
-            <objects>
-                <viewController id="IGb-Qz-jf5" customClass="DatePickerViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fBO-bB-84e" customClass="PickDateViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hza-6v-v6g"/>
-                        <viewControllerLayoutGuide type="bottom" id="hol-Xz-Xpq"/>
+                        <viewControllerLayoutGuide type="top" id="G2a-Cp-oYA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ppr-U3-hDH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VLD-nW-KAj">
+                    <view key="view" contentMode="scaleToFill" id="mUn-L3-RLf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-mR-sai">
-                                <rect key="frame" x="0.0" y="72" width="600" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-wA-oNl">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-II-9ZT" userLabel="Top Bar View">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wi-yx-X8o">
+                                                <rect key="frame" x="521" y="4" width="31" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Pick">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pickButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="6F6-13-atR"/>
+                                                    <action selector="saveButtonAction:" destination="pAe-oq-hq6" eventType="touchUpInside" id="ebh-lN-zNT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-1Y-t4g">
+                                                <rect key="frame" x="8" y="4" width="50" height="36"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="UNC-B3-ahC"/>
+                                                    <action selector="cancelButtonAction:" destination="pAe-oq-hq6" eventType="touchUpInside" id="yeQ-1j-iIk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1Wi-yx-X8o" firstAttribute="bottom" secondItem="FTG-1Y-t4g" secondAttribute="bottom" id="8rU-q2-2bc"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Wi-yx-X8o" secondAttribute="trailing" constant="8" id="Ht1-Vr-4JN"/>
+                                            <constraint firstAttribute="height" constant="44" id="NIc-35-9PL"/>
+                                            <constraint firstItem="1Wi-yx-X8o" firstAttribute="top" secondItem="FTG-1Y-t4g" secondAttribute="top" id="SFH-xF-vcd"/>
+                                            <constraint firstItem="1Wi-yx-X8o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FTG-1Y-t4g" secondAttribute="trailing" constant="8" id="kMv-Sa-ooI"/>
+                                            <constraint firstItem="FTG-1Y-t4g" firstAttribute="leading" secondItem="auJ-II-9ZT" secondAttribute="leading" constant="8" id="nQz-EF-mIs"/>
+                                            <constraint firstItem="FTG-1Y-t4g" firstAttribute="top" secondItem="auJ-II-9ZT" secondAttribute="top" constant="4" id="okT-9v-yNb"/>
+                                            <constraint firstAttribute="bottom" secondItem="FTG-1Y-t4g" secondAttribute="bottom" constant="4" id="sNy-my-4Ht"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-ta-RpP" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="560" height="1"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="ptb-6H-mYL"/>
+                                        </constraints>
+                                    </view>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JEc-Oa-LEA">
+                                        <rect key="frame" x="0.0" y="44" width="560" height="216"/>
+                                        <animations/>
+                                        <date key="date" timeIntervalSinceReferenceDate="471261701.25481999">
+                                            <!--2015-12-08 10:01:41 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
                                 <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="470754218.73442298">
-                                    <!--2015-12-02 13:03:38 +0000-->
-                                </date>
-                            </datePicker>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="8xC-Z1-SC8"/>
+                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="CU7-BN-4BR"/>
+                                    <constraint firstItem="auJ-II-9ZT" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="D4E-Hk-EY7"/>
+                                    <constraint firstItem="auJ-II-9ZT" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="Ha5-Jb-hQR"/>
+                                    <constraint firstAttribute="trailing" secondItem="auJ-II-9ZT" secondAttribute="trailing" id="kUr-Ur-seh"/>
+                                    <constraint firstAttribute="trailing" secondItem="JEc-Oa-LEA" secondAttribute="trailing" id="lrX-CR-JJb"/>
+                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="top" secondItem="auJ-II-9ZT" secondAttribute="bottom" id="njH-1q-nfD"/>
+                                    <constraint firstAttribute="trailing" secondItem="EHc-ta-RpP" secondAttribute="trailing" id="tIM-L0-6yF"/>
+                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="top" secondItem="auJ-II-9ZT" secondAttribute="bottom" id="ves-Cf-eDv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zVP-mR-sai" firstAttribute="top" secondItem="hza-6v-v6g" secondAttribute="bottom" constant="8" id="CSv-NE-aoq"/>
-                            <constraint firstItem="zVP-mR-sai" firstAttribute="leading" secondItem="VLD-nW-KAj" secondAttribute="leading" id="cbJ-6P-ik9"/>
-                            <constraint firstAttribute="trailing" secondItem="zVP-mR-sai" secondAttribute="trailing" id="pFn-jW-Qaw"/>
+                            <constraint firstItem="2pb-wA-oNl" firstAttribute="trailing" secondItem="mUn-L3-RLf" secondAttribute="trailingMargin" id="875-jw-rek"/>
+                            <constraint firstItem="Ppr-U3-hDH" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="bottom" constant="20" id="Yju-qQ-FGb"/>
+                            <constraint firstItem="2pb-wA-oNl" firstAttribute="top" secondItem="G2a-Cp-oYA" secondAttribute="bottom" constant="8" id="fKT-xF-twL"/>
+                            <constraint firstItem="2pb-wA-oNl" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leadingMargin" id="z2t-dR-xaw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rC0-8g-722">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WnU-ee-6St">
-                            <connections>
-                                <action selector="cancelButtonAction:" destination="IGb-Qz-jf5" id="rEG-c2-g6K"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Pick" style="done" id="g3N-wg-iTz">
-                            <connections>
-                                <action selector="pickButtonAction:" destination="IGb-Qz-jf5" id="9dc-Ju-8LK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="zVP-mR-sai" id="gPd-GW-K4A"/>
+                        <outlet property="datePicker" destination="JEc-Oa-LEA" id="3Ee-lg-9yA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nEa-AU-x3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dd-wa-4py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="-1193"/>
+            <point key="canvasLocation" x="1844" y="-1193"/>
         </scene>
         <!--Habit-->
         <scene sceneID="l2t-Yh-ch5">
@@ -692,6 +737,6 @@
         <image name="Statistics" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nhg-70-b3B"/>
+        <segue reference="sRT-pq-Yfe"/>
     </inferredMetricsTieBreakers>
 </document>

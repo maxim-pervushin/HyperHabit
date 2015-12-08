@@ -14,7 +14,6 @@
 		73BC60B20CF2AC052B56E82B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5B3DA0184778419277 /* DataSource.swift */; };
 		73BC611015B9409E9C0D368A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D36DEAA5EA2A8AED39C /* App.swift */; };
 		73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
-		73BC617825FB0496AA288C42 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CB39297976A216AC551 /* DatePickerViewController.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC624CC6FA66A21BD4CA7E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61ECA4D69A8104AF4498 /* Cache.swift */; };
 		73BC6292D2184EA8723FA832 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
@@ -77,10 +76,10 @@
 		73BC6DB59B5866C2C96B77CB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C850804E2D3B78DB687 /* DataManager.swift */; };
 		73BC6DCE32F9C2FADE737A06 /* Habit+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */; };
 		73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */; };
+		73BC6DD591FCD93496895942 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC617E47287F24838E38B8 /* PickDateViewController.swift */; };
 		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C86B3800C96E0E7824 /* ServiceUIAuthentication.swift */; };
 		73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
-		73BC6EFF801475798BF910F2 /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B92DCA06DC34E8F3F1D /* DatePickerController.swift */; };
 		73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC6F2E8DBEC7CDCD0D5437 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6F3B91197B45DE9C9E9B /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67F341E79819CED21B52 /* DataManagerTestCase.swift */; };
@@ -216,6 +215,7 @@
 		73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitDataSource.swift; sourceTree = "<group>"; };
 		73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditorTestCase.swift; sourceTree = "<group>"; };
 		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		73BC617E47287F24838E38B8 /* PickDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
 		73BC61E8D3B8A144E472A3D5 /* MockDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		73BC61ECA4D69A8104AF4498 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		73BC620A9FF858BFEB8597B3 /* EditHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
@@ -243,12 +243,10 @@
 		73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsForDateViewController.swift; sourceTree = "<group>"; };
 		73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+Parse.swift"; sourceTree = "<group>"; };
 		73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesObserver.swift; sourceTree = "<group>"; };
-		73BC6B92DCA06DC34E8F3F1D /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperHabitBridgingHeader.h; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Parse.swift"; sourceTree = "<group>"; };
 		73BC6C850804E2D3B78DB687 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		73BC6CB39297976A216AC551 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		73BC6CB6C9A13683FB517463 /* Report+PlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+PlistObject.swift"; sourceTree = "<group>"; };
 		73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		73BC6D36DEAA5EA2A8AED39C /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -458,15 +456,6 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		73BC67467974F34661212281 /* DatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				73BC6B92DCA06DC34E8F3F1D /* DatePickerController.swift */,
-				73BC6CB39297976A216AC551 /* DatePickerViewController.swift */,
-			);
-			path = DatePicker;
-			sourceTree = "<group>";
-		};
 		73BC6777DE781CC087299423 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,7 +498,7 @@
 				73BC6F89BF9D0C8C00A29D8A /* StatisticsForDate */,
 				73BC67A723C7CBAC0B46E833 /* EditHabit */,
 				73BC69F8C45209664A97BA3F /* Today */,
-				73BC67467974F34661212281 /* DatePicker */,
+				73BC6CBE455EC023778C5513 /* PickDate */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -558,6 +547,14 @@
 				73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		73BC6CBE455EC023778C5513 /* PickDate */ = {
+			isa = PBXGroup;
+			children = (
+				73BC617E47287F24838E38B8 /* PickDateViewController.swift */,
+			);
+			path = PickDate;
 			sourceTree = "<group>";
 		};
 		73BC6CBEA91F1311512E2812 /* Common */ = {
@@ -1019,8 +1016,6 @@
 				73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */,
 				73BC6BF6715328CFF92F92BA /* LineView.swift in Sources */,
 				73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */,
-				73BC6EFF801475798BF910F2 /* DatePickerController.swift in Sources */,
-				73BC617825FB0496AA288C42 /* DatePickerViewController.swift in Sources */,
 				73BC63738D0525CB7FE2962E /* Service.swift in Sources */,
 				73BC645F8E28727CAB1A1196 /* ParseService.swift in Sources */,
 				73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */,
@@ -1033,6 +1028,7 @@
 				73BC66C1E3EFAF6C4EAA94B3 /* ChangesObserver.swift in Sources */,
 				73BC64D1753EAFB04AAF13C3 /* SettingsViewController.swift in Sources */,
 				73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */,
+				73BC6DD591FCD93496895942 /* PickDateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
