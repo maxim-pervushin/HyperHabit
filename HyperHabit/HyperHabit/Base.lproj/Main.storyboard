@@ -28,87 +28,6 @@
             </objects>
             <point key="canvasLocation" x="-655" y="-126"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="9Ez-RK-h4t">
-            <objects>
-                <tableViewController id="xhi-mT-Xzo" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1cT-Ng-fzg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rS8-yA-4bV">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS8-yA-4bV" id="wif-Mx-YGx">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xhi-mT-Xzo" id="bDH-Yz-Fbw"/>
-                            <outlet property="delegate" destination="xhi-mT-Xzo" id="ZEe-hc-Vvr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="jkg-GX-DZP">
-                        <nil key="title"/>
-                        <view key="titleView" contentMode="scaleToFill" id="dl8-IY-ipS">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TY-GX-FRW">
-                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="5TY-GX-FRW" secondAttribute="height" id="imJ-t2-qfz"/>
-                                    </constraints>
-                                    <state key="normal" image="ArrowLeft">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SND-Wh-5aW">
-                                    <rect key="frame" x="207" y="0.0" width="33" height="33"/>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="SND-Wh-5aW" secondAttribute="height" id="gD2-X3-hOJ"/>
-                                    </constraints>
-                                    <state key="normal" image="ArrowRight">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-Ph-gnB">
-                                    <rect key="frame" x="41" y="0.0" width="158" height="33"/>
-                                    <animations/>
-                                    <state key="normal" title=" Today" image="ArrowDown">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="L2d-Ph-gnB" firstAttribute="top" secondItem="dl8-IY-ipS" secondAttribute="top" id="JsV-x6-p5s"/>
-                                <constraint firstAttribute="bottom" secondItem="SND-Wh-5aW" secondAttribute="bottom" id="NzE-qJ-Dz0"/>
-                                <constraint firstAttribute="bottom" secondItem="5TY-GX-FRW" secondAttribute="bottom" id="PDv-kn-CtT"/>
-                                <constraint firstItem="SND-Wh-5aW" firstAttribute="leading" secondItem="L2d-Ph-gnB" secondAttribute="trailing" constant="8" id="RDn-8E-IKE"/>
-                                <constraint firstAttribute="trailing" secondItem="SND-Wh-5aW" secondAttribute="trailing" id="Rg2-Pe-Zho"/>
-                                <constraint firstItem="5TY-GX-FRW" firstAttribute="top" secondItem="dl8-IY-ipS" secondAttribute="top" id="VJE-Li-YeJ"/>
-                                <constraint firstAttribute="bottom" secondItem="L2d-Ph-gnB" secondAttribute="bottom" id="gLT-KC-ZWx"/>
-                                <constraint firstItem="L2d-Ph-gnB" firstAttribute="leading" secondItem="5TY-GX-FRW" secondAttribute="trailing" constant="8" id="hbp-9N-Dz9"/>
-                                <constraint firstItem="5TY-GX-FRW" firstAttribute="leading" secondItem="dl8-IY-ipS" secondAttribute="leading" id="hrM-Ui-wA3"/>
-                                <constraint firstItem="SND-Wh-5aW" firstAttribute="top" secondItem="dl8-IY-ipS" secondAttribute="top" id="jr0-ZB-mxs"/>
-                            </constraints>
-                        </view>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Li0-d5-7Od" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3" y="-1821"/>
-        </scene>
         <!--Reports-->
         <scene sceneID="wge-uW-4z1">
             <objects>
@@ -125,24 +44,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xiu-f6-G2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="-997"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RjX-fM-VnC">
-            <objects>
-                <navigationController id="2Ai-dr-pl0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gx0-mf-xRR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xhi-mT-Xzo" kind="relationship" relationship="rootViewController" id="476-my-xgq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fVM-Ao-6s4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-823" y="-1821"/>
+            <point key="canvasLocation" x="259" y="-1193"/>
         </scene>
         <!--Reports-->
         <scene sceneID="AS2-rS-GAi">
@@ -288,7 +190,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJd-dC-JDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="WMN-u3-y6K"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="-1003"/>
+            <point key="canvasLocation" x="1079" y="-1193"/>
         </scene>
         <!--Habits-->
         <scene sceneID="l3h-KT-R0u">
@@ -339,6 +241,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Habit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs2-Jy-bhX">
                                             <rect key="frame" x="8" y="8" width="584" height="27"/>
                                             <animations/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.72941176470000002" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -367,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztg-6E-8TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="139"/>
+            <point key="canvasLocation" x="1079" y="-453"/>
         </scene>
         <!--Date Picker Controller-->
         <scene sceneID="hGh-nu-M0v">
@@ -384,7 +287,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axk-i2-HAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="-1003"/>
+            <point key="canvasLocation" x="1844" y="-1193"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="CpH-hD-SF3">
@@ -432,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEa-AU-x3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701" y="-1003"/>
+            <point key="canvasLocation" x="2582" y="-1193"/>
         </scene>
         <!--Habit-->
         <scene sceneID="l2t-Yh-ch5">
@@ -561,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOE-9m-JPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="139"/>
+            <point key="canvasLocation" x="1844" y="-453"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="pWw-Zb-Jvn">
@@ -579,7 +482,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X24-7G-avY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="849"/>
+            <point key="canvasLocation" x="259" y="257"/>
         </scene>
         <!--Calendar Appearance Delegate-->
         <scene sceneID="X4X-oe-h2v">
@@ -651,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G3-58-J0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="849"/>
+            <point key="canvasLocation" x="1079" y="257"/>
         </scene>
         <!--Statistics For Date View Controller-->
         <scene sceneID="gkn-80-YU6">
@@ -673,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLE-oV-koJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="849"/>
+            <point key="canvasLocation" x="1844" y="257"/>
         </scene>
         <!--Settings-->
         <scene sceneID="VJd-ua-Jo4">
@@ -740,7 +643,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOR-D3-I3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1083" y="1587"/>
+            <point key="canvasLocation" x="1079" y="995"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1nP-Uy-coG">
@@ -758,7 +661,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea9-MY-kT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="1587"/>
+            <point key="canvasLocation" x="259" y="995"/>
         </scene>
         <!--Habits-->
         <scene sceneID="1ht-YF-2WX">
@@ -776,7 +679,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXh-8Y-qet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="139"/>
+            <point key="canvasLocation" x="259" y="-453"/>
         </scene>
     </scenes>
     <resources>
