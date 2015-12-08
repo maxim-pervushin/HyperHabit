@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-Ie-MUa">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAc-rL-CWF">
                                         <rect key="frame" x="8" y="5" width="39" height="30"/>
@@ -86,23 +86,32 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b94-3N-9J6">
-                                <rect key="frame" x="0.0" y="40" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="120"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="ywH-uS-bYw"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d24-0E-2Oa" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="d24-0E-2Oa" firstAttribute="leading" secondItem="MPg-8p-LLf" secondAttribute="leading" id="02Y-B0-osN"/>
+                            <constraint firstAttribute="trailing" secondItem="d24-0E-2Oa" secondAttribute="trailing" id="8Aq-ID-B1P"/>
+                            <constraint firstItem="Yka-Ie-MUa" firstAttribute="top" secondItem="d24-0E-2Oa" secondAttribute="bottom" id="8b1-0g-NzS"/>
                             <constraint firstAttribute="trailing" secondItem="b94-3N-9J6" secondAttribute="trailing" id="Y3k-EY-CHk"/>
                             <constraint firstAttribute="trailing" secondItem="Yka-Ie-MUa" secondAttribute="trailing" id="Z9R-mY-h2x"/>
-                            <constraint firstItem="Yka-Ie-MUa" firstAttribute="top" secondItem="MPg-8p-LLf" secondAttribute="top" id="apU-sQ-Alw"/>
                             <constraint firstItem="b94-3N-9J6" firstAttribute="leading" secondItem="MPg-8p-LLf" secondAttribute="leading" id="ctS-3r-12k"/>
-                            <constraint firstItem="b94-3N-9J6" firstAttribute="top" secondItem="MPg-8p-LLf" secondAttribute="topMargin" constant="40" id="lrZ-kc-M0D"/>
+                            <constraint firstItem="b94-3N-9J6" firstAttribute="top" secondItem="MPg-8p-LLf" secondAttribute="topMargin" constant="60" id="lrZ-kc-M0D"/>
+                            <constraint firstItem="Yka-Ie-MUa" firstAttribute="top" secondItem="Hhc-hp-TBa" secondAttribute="bottom" id="olx-f8-dJf"/>
                             <constraint firstItem="Yka-Ie-MUa" firstAttribute="leading" secondItem="MPg-8p-LLf" secondAttribute="leading" id="r3J-Ec-be3"/>
+                            <constraint firstItem="d24-0E-2Oa" firstAttribute="top" secondItem="MPg-8p-LLf" secondAttribute="top" id="yv3-i8-deX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -110,7 +119,7 @@
                         <outlet property="containerTopConstraint" destination="lrZ-kc-M0D" id="Ug6-HE-QdD"/>
                         <outlet property="contentView" destination="b94-3N-9J6" id="Rr4-eG-WKV"/>
                         <outlet property="headerHeightConstraint" destination="Gs4-gB-iWd" id="K5U-LJ-1cx"/>
-                        <outlet property="headerTopConstraint" destination="apU-sQ-Alw" id="eBu-Wq-y2Y"/>
+                        <outlet property="headerTopConstraint" destination="olx-f8-dJf" id="fWr-WN-p4u"/>
                         <outlet property="headerView" destination="Yka-Ie-MUa" id="BML-CG-eeY"/>
                     </connections>
                 </viewController>
