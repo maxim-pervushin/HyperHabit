@@ -31,7 +31,7 @@ class SecondViewController: UIViewController {
         self.view.layoutIfNeeded()
         headerTopConstraint.constant = 0
         view.setNeedsUpdateConstraints()
-        UIView.animateWithDuration(duration / 2, animations: {
+        UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout header
             self.view.layoutIfNeeded()
         }, completion: {
@@ -39,7 +39,7 @@ class SecondViewController: UIViewController {
             self.containerTopConstraint.constant = self.headerHeightConstraint.constant
             self.view.setNeedsUpdateConstraints()
 
-            UIView.animateWithDuration(duration / 2, animations: {
+            UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
                 // Layout content
                 self.view.layoutIfNeeded()
             }, completion: completion)
@@ -58,7 +58,7 @@ class SecondViewController: UIViewController {
         view.layoutIfNeeded()
         containerTopConstraint.constant = -headerHeightConstraint.constant - containerHeightConstraint.constant
         view.setNeedsUpdateConstraints()
-        UIView.animateWithDuration(duration / 2, animations: {
+        UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout content
             self.view.layoutIfNeeded()
         }, completion: {
@@ -66,7 +66,7 @@ class SecondViewController: UIViewController {
             self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
             self.view.setNeedsUpdateConstraints()
 
-            UIView.animateWithDuration(duration / 2, animations: {
+            UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
                 // Layout header
                 self.view.layoutIfNeeded()
             }, completion: completion)
