@@ -10,5 +10,12 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var showThirdButton: UIButton!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let thirdViewController = segue.destinationViewController as? ThirdViewController {
+            thirdViewController.fromRect = showThirdButton.frame
+        }
+    }
 }
 

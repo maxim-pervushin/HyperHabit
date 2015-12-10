@@ -21,18 +21,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eei-yS-svv">
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-Au-q0b">
-                                        <rect key="frame" x="261" y="269" width="38" height="30"/>
-                                        <state key="normal" title="Show"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-Au-q0b">
+                                        <rect key="frame" x="248" y="227" width="65" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="From Top"/>
                                         <connections>
                                             <segue destination="S1G-hG-xN9" kind="show" id="lfD-aY-Qy7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-AZ-SXr">
+                                        <rect key="frame" x="214" y="265" width="132" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="From Button Shape"/>
+                                        <connections>
+                                            <segue destination="PIA-sZ-a1N" kind="show" id="5Lx-0y-WFG"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="ha2-AZ-SXr" firstAttribute="top" secondItem="TbE-Au-q0b" secondAttribute="bottom" constant="8" id="Okh-v7-ImS"/>
                                     <constraint firstItem="TbE-Au-q0b" firstAttribute="centerX" secondItem="eei-yS-svv" secondAttribute="centerX" id="QHi-fl-gL4"/>
-                                    <constraint firstItem="TbE-Au-q0b" firstAttribute="centerY" secondItem="eei-yS-svv" secondAttribute="centerY" id="Zxb-P5-Gim"/>
+                                    <constraint firstItem="ha2-AZ-SXr" firstAttribute="centerY" secondItem="eei-yS-svv" secondAttribute="centerY" id="Ser-Ke-prH"/>
+                                    <constraint firstItem="ha2-AZ-SXr" firstAttribute="centerX" secondItem="eei-yS-svv" secondAttribute="centerX" id="Teo-QI-OMp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -44,10 +55,63 @@
                             <constraint firstItem="eei-yS-svv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="otd-0h-7xH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="showThirdButton" destination="ha2-AZ-SXr" id="I7h-cO-ERD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="695" y="471"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="2Ub-y4-dsr">
+            <objects>
+                <viewController id="PIA-sZ-a1N" customClass="ThirdViewController" customModule="PresentationResearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MZU-La-8Mi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yck-cl-edJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ITa-pT-yFm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xT-fA-J3d">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlX-Eb-eGY">
+                                        <rect key="frame" x="12" y="8" width="39" height="30"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="closeButtonAction:" destination="PIA-sZ-a1N" eventType="touchUpInside" id="c2z-B3-cgf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="DqS-KQ-GXR"/>
+                                    <constraint firstAttribute="height" constant="128" id="HkD-og-EXj"/>
+                                    <constraint firstItem="OlX-Eb-eGY" firstAttribute="top" secondItem="9xT-fA-J3d" secondAttribute="top" constant="8" id="KiO-NB-WGu"/>
+                                    <constraint firstItem="OlX-Eb-eGY" firstAttribute="leading" secondItem="9xT-fA-J3d" secondAttribute="leading" constant="8" id="XC5-nM-wwT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9xT-fA-J3d" firstAttribute="top" secondItem="ITa-pT-yFm" secondAttribute="top" constant="236" id="5dL-mg-awY"/>
+                            <constraint firstItem="9xT-fA-J3d" firstAttribute="leading" secondItem="ITa-pT-yFm" secondAttribute="leading" constant="180" id="AsJ-cS-Y07"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentFromTopConstraint" destination="5dL-mg-awY" id="mni-Aj-mI7"/>
+                        <outlet property="contentHeightConstraint" destination="HkD-og-EXj" id="FWU-0a-g5g"/>
+                        <outlet property="contentLeadingConstraint" destination="AsJ-cS-Y07" id="c1n-dw-I0J"/>
+                        <outlet property="contentView" destination="9xT-fA-J3d" id="uwC-lR-ctB"/>
+                        <outlet property="contentWidthConstraint" destination="DqS-KQ-GXR" id="P7c-NI-smQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpk-m5-qyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1453" y="884"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="oGt-t6-dSv">
@@ -117,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbx-tr-rpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="471"/>
+            <point key="canvasLocation" x="1440" y="-97"/>
         </scene>
     </scenes>
 </document>
