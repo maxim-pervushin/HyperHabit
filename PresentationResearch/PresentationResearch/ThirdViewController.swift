@@ -27,14 +27,13 @@ class ThirdViewController: UIViewController {
         if let fromRect = fromRect {
             contentWidthConstraint.constant = fromRect.size.width
             contentHeightConstraint.constant = fromRect.size.height
-            contentFromTopConstraint.constant = fromRect.origin.y + fromRect.size.height / 2
-            contentLeadingConstraint.constant = fromRect.origin.x + fromRect.size.width / 2
+            contentFromTopConstraint.constant = fromRect.origin.y
+            contentLeadingConstraint.constant = fromRect.origin.x
         }
         view.layoutIfNeeded()
     }
 
     private func performPresentationWithDuration(duration: NSTimeInterval, completion: ((Bool) -> Void)?) {
-        print("performPresentationWithDuration")
         contentWidthConstraint.constant = 200
         contentHeightConstraint.constant = 200
         contentFromTopConstraint.constant = 0
@@ -56,8 +55,8 @@ class ThirdViewController: UIViewController {
         if let fromRect = fromRect {
             contentWidthConstraint.constant = fromRect.size.width
             contentHeightConstraint.constant = fromRect.size.height
-            contentFromTopConstraint.constant = fromRect.origin.y + fromRect.size.height / 2
-            contentLeadingConstraint.constant = fromRect.origin.x + fromRect.size.width / 2
+            contentFromTopConstraint.constant = fromRect.origin.y
+            contentLeadingConstraint.constant = fromRect.origin.x
         }
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout content

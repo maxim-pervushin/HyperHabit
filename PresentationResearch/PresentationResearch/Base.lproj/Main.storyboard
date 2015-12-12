@@ -98,7 +98,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9xT-fA-J3d" firstAttribute="top" secondItem="ITa-pT-yFm" secondAttribute="top" constant="236" id="5dL-mg-awY"/>
-                            <constraint firstItem="9xT-fA-J3d" firstAttribute="leading" secondItem="ITa-pT-yFm" secondAttribute="leading" constant="180" id="AsJ-cS-Y07"/>
+                            <constraint firstItem="9xT-fA-J3d" firstAttribute="left" secondItem="ITa-pT-yFm" secondAttribute="left" constant="180" id="AsJ-cS-Y07"/>
                         </constraints>
                     </view>
                     <connections>

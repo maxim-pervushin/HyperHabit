@@ -28,7 +28,7 @@ class SecondViewController: UIViewController {
 
     private func performPresentationWithDuration(duration: NSTimeInterval, completion: ((Bool) -> Void)?) {
         print("performPresentationWithDuration")
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
         headerTopConstraint.constant = 0
         view.setNeedsUpdateConstraints()
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
