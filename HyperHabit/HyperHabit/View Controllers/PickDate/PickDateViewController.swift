@@ -91,8 +91,8 @@ extension PickDateViewController {
 
     private func prepareForPresentation() {
         view.bringSubviewToFront(headerView)
-        headerTopConstraint.constant = -headerHeightConstraint.constant
-        containerTopConstraint.constant = -headerHeightConstraint.constant - containerHeightConstraint.constant
+        headerTopConstraint.constant = -headerHeightConstraint.constant * 2
+        containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.layoutIfNeeded()
     }
 
@@ -124,14 +124,14 @@ extension PickDateViewController {
 
     private func performDismissalWithDuration(duration: NSTimeInterval, completion: ((Bool) -> Void)?) {
         view.layoutIfNeeded()
-        containerTopConstraint.constant = -headerHeightConstraint.constant - containerHeightConstraint.constant
+        containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.setNeedsUpdateConstraints()
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout content
             self.view.layoutIfNeeded()
         }, completion: {
             _ in
-            self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
+            self.headerTopConstraint.constant = -self.headerHeightConstraint.constant * 2
             self.view.setNeedsUpdateConstraints()
 
             UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {

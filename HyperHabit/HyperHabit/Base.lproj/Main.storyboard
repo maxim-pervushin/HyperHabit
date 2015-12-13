@@ -338,15 +338,25 @@
                                     <constraint firstItem="JEc-Oa-LEA" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="yvu-sX-PR6"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="qow-3b-FUM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="auJ-II-9ZT" firstAttribute="top" secondItem="ynf-Tf-YgH" secondAttribute="bottom" id="99K-At-Lz7"/>
                             <constraint firstItem="auJ-II-9ZT" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="FnJ-Az-s2V"/>
                             <constraint firstItem="auJ-II-9ZT" firstAttribute="top" secondItem="G2a-Cp-oYA" secondAttribute="bottom" id="Mb9-0K-Kes"/>
                             <constraint firstAttribute="trailing" secondItem="auJ-II-9ZT" secondAttribute="trailing" id="NyF-G6-sh7"/>
                             <constraint firstAttribute="trailing" secondItem="2pb-wA-oNl" secondAttribute="trailing" id="OhG-E1-7IZ"/>
                             <constraint firstItem="2pb-wA-oNl" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="Tjp-tw-KOg"/>
                             <constraint firstItem="2pb-wA-oNl" firstAttribute="top" secondItem="G2a-Cp-oYA" secondAttribute="bottom" constant="44" id="eLJ-Yh-rl4"/>
+                            <constraint firstAttribute="trailing" secondItem="ynf-Tf-YgH" secondAttribute="trailing" id="utw-YH-yDv"/>
+                            <constraint firstItem="ynf-Tf-YgH" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="v6L-QO-QzW"/>
                         </constraints>
                     </view>
                     <connections>
