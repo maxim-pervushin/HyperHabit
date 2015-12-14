@@ -22,28 +22,46 @@
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-Au-q0b">
-                                        <rect key="frame" x="248" y="227" width="65" height="30"/>
+                                        <rect key="frame" x="248" y="225" width="65" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="From Top"/>
                                         <connections>
                                             <segue destination="S1G-hG-xN9" kind="show" id="lfD-aY-Qy7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-AZ-SXr">
-                                        <rect key="frame" x="214" y="265" width="132" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-AZ-SXr">
+                                        <rect key="frame" x="235" y="263" width="90" height="34"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="From Button Shape"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="25P-ge-gvv"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit Text"/>
                                         <connections>
                                             <segue destination="PIA-sZ-a1N" kind="show" id="5Lx-0y-WFG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-bm-ECj">
+                                        <rect key="frame" x="492" y="8" width="60" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="VOn-LM-waH"/>
+                                            <constraint firstAttribute="height" constant="30" id="ebz-hT-jf4"/>
+                                        </constraints>
+                                        <state key="normal" title="Animate"/>
+                                        <connections>
+                                            <action selector="animateButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMO-JX-zKq"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CTn-bm-ECj" secondAttribute="trailing" priority="750" constant="8" id="K92-ex-j1R"/>
                                     <constraint firstItem="ha2-AZ-SXr" firstAttribute="top" secondItem="TbE-Au-q0b" secondAttribute="bottom" constant="8" id="Okh-v7-ImS"/>
                                     <constraint firstItem="TbE-Au-q0b" firstAttribute="centerX" secondItem="eei-yS-svv" secondAttribute="centerX" id="QHi-fl-gL4"/>
                                     <constraint firstItem="ha2-AZ-SXr" firstAttribute="centerY" secondItem="eei-yS-svv" secondAttribute="centerY" id="Ser-Ke-prH"/>
                                     <constraint firstItem="ha2-AZ-SXr" firstAttribute="centerX" secondItem="eei-yS-svv" secondAttribute="centerX" id="Teo-QI-OMp"/>
+                                    <constraint firstItem="CTn-bm-ECj" firstAttribute="top" secondItem="eei-yS-svv" secondAttribute="top" constant="8" id="h2p-Yd-3UO"/>
+                                    <constraint firstItem="CTn-bm-ECj" firstAttribute="leading" secondItem="eei-yS-svv" secondAttribute="leading" priority="250" constant="8" id="tEv-v8-8Zi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -56,17 +74,19 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="showThirdButton" destination="ha2-AZ-SXr" id="I7h-cO-ERD"/>
+                        <outlet property="animateButtonLeadingConstraint" destination="tEv-v8-8Zi" id="1Ze-c4-sMV"/>
+                        <outlet property="animateButtonTrailingConstraint" destination="K92-ex-j1R" id="5xr-aU-R2L"/>
+                        <outlet property="editTextButton" destination="ha2-AZ-SXr" id="IDz-Qk-YPq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="695" y="471"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Edit Text View Controller-->
         <scene sceneID="2Ub-y4-dsr">
             <objects>
-                <viewController id="PIA-sZ-a1N" customClass="ThirdViewController" customModule="PresentationResearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PIA-sZ-a1N" customClass="EditTextViewController" customModule="PresentationResearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MZU-La-8Mi"/>
                         <viewControllerLayoutGuide type="bottom" id="Yck-cl-edJ"/>

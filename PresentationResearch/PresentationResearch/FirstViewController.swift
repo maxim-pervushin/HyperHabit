@@ -10,11 +10,25 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    @IBOutlet weak var showThirdButton: UIButton!
+    @IBOutlet weak var editTextButton: UIButton!
+    @IBOutlet weak var animateButtonLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var animateButtonTrailingConstraint: NSLayoutConstraint!
+    
+    @IBAction func animateButtonAction(sender: AnyObject) {
+        view.layoutIfNeeded()
+        let leadingPriority = animateButtonLeadingConstraint.priority
+        animateButtonLeadingConstraint.priority = animateButtonTrailingConstraint.priority
+        animateButtonTrailingConstraint.priority = leadingPriority
+
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5,  options: [.CurveEaseInOut, .TransitionNone], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let thirdViewController = segue.destinationViewController as? ThirdViewController {
-            thirdViewController.fromRect = showThirdButton.frame
+        if let editTextViewController = segue.destinationViewController as? EditTextViewController {
+            editTextViewController.fromRect = editTextButton.frame
         }
     }
 }

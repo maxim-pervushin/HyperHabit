@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class EditTextViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentWidthConstraint: NSLayoutConstraint!
@@ -25,6 +25,7 @@ class ThirdViewController: UIViewController {
     private func prepareForPresentation() {
         view.bringSubviewToFront(contentView)
         if let fromRect = fromRect {
+            print("fromRect: \(fromRect)")
             contentWidthConstraint.constant = fromRect.size.width
             contentHeightConstraint.constant = fromRect.size.height
             contentFromTopConstraint.constant = fromRect.origin.y
@@ -39,7 +40,7 @@ class ThirdViewController: UIViewController {
         contentFromTopConstraint.constant = 0
         contentLeadingConstraint.constant = 0
 
-        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
+        UIView.animateWithDuration(duration, delay: 3, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             self.view.layoutIfNeeded()
         }, completion: completion)
     }
@@ -80,7 +81,7 @@ class ThirdViewController: UIViewController {
     }
 }
 
-extension ThirdViewController: UIViewControllerTransitioningDelegate {
+extension EditTextViewController: UIViewControllerTransitioningDelegate {
 
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
@@ -91,7 +92,7 @@ extension ThirdViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension ThirdViewController: UIViewControllerAnimatedTransitioning {
+extension EditTextViewController: UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 5
@@ -113,7 +114,7 @@ extension ThirdViewController: UIViewControllerAnimatedTransitioning {
         }
 
         // Present
-        if let thirdViewController = toViewController as? ThirdViewController {
+        if let thirdViewController = toViewController as? EditTextViewController {
             thirdViewController.prepareForPresentation()
             containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
             thirdViewController.performPresentationWithDuration(transitionDuration(transitionContext), completion: {
@@ -123,7 +124,7 @@ extension ThirdViewController: UIViewControllerAnimatedTransitioning {
         }
 
         // Dismiss
-        if let thirdViewController = fromViewController as? ThirdViewController {
+        if let thirdViewController = fromViewController as? EditTextViewController {
             thirdViewController.prepareForDismissal()
             thirdViewController.performDismissalWithDuration(transitionDuration(transitionContext), completion: {
                 _ in
