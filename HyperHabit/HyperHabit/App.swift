@@ -9,6 +9,20 @@ struct App {
 
     // MARK: App public
 
+    static var themeManager: ThemeManager {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: ThemeManager! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.instance = ThemeManager()
+        }
+
+        return Static.instance
+    }
+
     static var dataProvider: DataProvider {
 
         struct Static {

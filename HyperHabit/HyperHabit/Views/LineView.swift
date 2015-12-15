@@ -36,8 +36,8 @@ class LineView: UIView {
     override init(frame: CGRect) {
         _frame = CGRectZero
         super.init(frame: frame)
-        // TODO: Load backgroundColor from current theme
-        backgroundColor = UIColor(white: 0, alpha: 0.25)
+//        // TODO: Load backgroundColor from current theme
+//        backgroundColor = UIColor(white: 0, alpha: 0.25)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,7 +47,7 @@ class LineView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // TODO: Load backgroundColor from current theme
-        backgroundColor = UIColor(white: 0, alpha: 0.25)
+//        // TODO: Load backgroundColor from current theme
+//        backgroundColor = UIColor(white: 0, alpha: 0.25)
     }
 }

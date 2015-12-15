@@ -265,14 +265,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00F-HS-q4F" userLabel="Content Top View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7k-Jk-XUD" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00F-HS-q4F" userLabel="Content Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-436" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="PYV-cF-su6"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-wA-oNl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-wA-oNl" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="216"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-ta-RpP" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -301,14 +305,14 @@
                                     <constraint firstItem="JEc-Oa-LEA" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="yvu-sX-PR6"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Header Top View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Header Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="qow-3b-FUM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-II-9ZT" userLabel="Header View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-II-9ZT" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wi-yx-X8o">
@@ -353,10 +357,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ppr-U3-hDH" firstAttribute="top" secondItem="P7k-Jk-XUD" secondAttribute="bottom" id="6gn-F0-Gf1"/>
                             <constraint firstItem="auJ-II-9ZT" firstAttribute="top" secondItem="ynf-Tf-YgH" secondAttribute="bottom" id="99K-At-Lz7"/>
+                            <constraint firstItem="P7k-Jk-XUD" firstAttribute="top" secondItem="mUn-L3-RLf" secondAttribute="top" id="Av1-jj-tUU"/>
+                            <constraint firstAttribute="trailing" secondItem="P7k-Jk-XUD" secondAttribute="trailing" id="DUy-ms-KeP"/>
                             <constraint firstItem="auJ-II-9ZT" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="FnJ-Az-s2V"/>
+                            <constraint firstItem="P7k-Jk-XUD" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="MAe-D6-AFG"/>
                             <constraint firstItem="auJ-II-9ZT" firstAttribute="top" secondItem="G2a-Cp-oYA" secondAttribute="bottom" id="Mb9-0K-Kes"/>
                             <constraint firstAttribute="trailing" secondItem="auJ-II-9ZT" secondAttribute="trailing" id="NyF-G6-sh7"/>
                             <constraint firstAttribute="trailing" secondItem="2pb-wA-oNl" secondAttribute="trailing" id="OhG-E1-7IZ"/>
@@ -372,11 +380,14 @@
                     <connections>
                         <outlet property="containerHeightConstraint" destination="dec-2w-hUd" id="GtM-uL-yi2"/>
                         <outlet property="containerTopConstraint" destination="eLJ-Yh-rl4" id="bbf-FC-T0O"/>
+                        <outlet property="contentTopView" destination="00F-HS-q4F" id="yBF-KU-Ozc"/>
                         <outlet property="contentView" destination="2pb-wA-oNl" id="WUs-0t-IdG"/>
                         <outlet property="datePicker" destination="JEc-Oa-LEA" id="3Ee-lg-9yA"/>
                         <outlet property="headerHeightConstraint" destination="qLx-t9-DM1" id="aTX-nf-KQ4"/>
                         <outlet property="headerTopConstraint" destination="Mb9-0K-Kes" id="cKY-op-ZIS"/>
+                        <outlet property="headerTopView" destination="ynf-Tf-YgH" id="WtC-bQ-IxO"/>
                         <outlet property="headerView" destination="auJ-II-9ZT" id="DAY-9h-7rK"/>
+                        <outlet property="tintView" destination="P7k-Jk-XUD" id="N30-tc-miB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dd-wa-4py" userLabel="First Responder" sceneMemberID="firstResponder"/>

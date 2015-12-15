@@ -16,14 +16,15 @@ class PickDateViewController: UIViewController {
 
     // MARK: DatePickerViewController @IB
 
+    @IBOutlet weak var tintView: UIView!
+    @IBOutlet weak var headerTopView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var contentTopView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
-
     @IBOutlet private weak var datePicker: UIDatePicker!
 
     @IBAction func pickButtonAction(sender: AnyObject) {
@@ -71,9 +72,26 @@ class PickDateViewController: UIViewController {
         }
     }
 
+    private func subscribe() {
+        NSNotificationCenter.defaultCenter().addObserverForName(ThemeManager.changedNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
+            _ in
+            self.setNeedsStatusBarAppearanceUpdate()
+        })
+    }
+
+    private func unsubscribe() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeManager.changedNotification, object: nil)
+    }
+
     private func commonInit() {
         transitioningDelegate = self
         modalPresentationStyle = .Custom
+        modalPresentationCapturesStatusBarAppearance = true
+        subscribe()
+    }
+
+    deinit {
+        unsubscribe()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -85,12 +103,20 @@ class PickDateViewController: UIViewController {
         super.init(coder: aDecoder)
         commonInit()
     }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return App.themeManager.theme.statusBarStyle
+    }
 }
 
 extension PickDateViewController {
 
     private func prepareForPresentation() {
+        view.bringSubviewToFront(tintView)
+        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
+        view.bringSubviewToFront(contentView)
         headerTopConstraint.constant = -headerHeightConstraint.constant * 2
         containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.layoutIfNeeded()
@@ -100,12 +126,12 @@ extension PickDateViewController {
         view.layoutIfNeeded()
         headerTopConstraint.constant = 0
         view.setNeedsUpdateConstraints()
-        view.backgroundColor = UIColor.clearColor()
+        tintView.alpha = 0
 
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout header
             self.view.layoutIfNeeded()
-            self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            self.tintView.alpha = 1
 
         }, completion: {
             _ in
@@ -120,7 +146,11 @@ extension PickDateViewController {
     }
 
     private func prepareForDismissal() {
+        view.bringSubviewToFront(tintView)
+        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
+        view.bringSubviewToFront(contentView)
         headerTopConstraint.constant = 0
         containerTopConstraint.constant = headerHeightConstraint.constant
         view.layoutIfNeeded()
@@ -130,7 +160,7 @@ extension PickDateViewController {
         view.layoutIfNeeded()
         containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.setNeedsUpdateConstraints()
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        tintView.alpha = 1
 
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout content
@@ -144,7 +174,7 @@ extension PickDateViewController {
             UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
                 // Layout header
                 self.view.layoutIfNeeded()
-                self.view.backgroundColor = UIColor.clearColor()
+                self.tintView.alpha = 0
 
             }, completion: completion)
         })
