@@ -265,6 +265,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00F-HS-q4F" userLabel="Content Top View">
+                                <rect key="frame" x="0.0" y="-436" width="600" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="PYV-cF-su6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-wA-oNl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="216"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-ta-RpP" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="g3h-mw-Vjm"/>
+                                        </constraints>
+                                    </view>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JEc-Oa-LEA">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="471261701.25481999">
+                                            <!--2015-12-08 10:01:41 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JEc-Oa-LEA" secondAttribute="bottom" id="0M9-7c-aCZ"/>
+                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="Heq-Sc-MTW"/>
+                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="SEa-4O-QiP"/>
+                                    <constraint firstAttribute="height" constant="216" id="dec-2w-hUd"/>
+                                    <constraint firstAttribute="trailing" secondItem="JEc-Oa-LEA" secondAttribute="trailing" id="e3S-ST-Y2F"/>
+                                    <constraint firstAttribute="trailing" secondItem="EHc-ta-RpP" secondAttribute="trailing" id="mTa-y4-nPl"/>
+                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="tLH-1Z-aOp"/>
+                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="yvu-sX-PR6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Header Top View">
+                                <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="qow-3b-FUM"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-II-9ZT" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
@@ -309,42 +352,6 @@
                                     <constraint firstItem="1Wi-yx-X8o" firstAttribute="bottom" secondItem="FTG-1Y-t4g" secondAttribute="bottom" id="wnC-0p-nlS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pb-wA-oNl">
-                                <rect key="frame" x="0.0" y="64" width="600" height="216"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-ta-RpP" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="g3h-mw-Vjm"/>
-                                        </constraints>
-                                    </view>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JEc-Oa-LEA">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="471261701.25481999">
-                                            <!--2015-12-08 10:01:41 +0000-->
-                                        </date>
-                                    </datePicker>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="JEc-Oa-LEA" secondAttribute="bottom" id="0M9-7c-aCZ"/>
-                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="Heq-Sc-MTW"/>
-                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="SEa-4O-QiP"/>
-                                    <constraint firstAttribute="height" constant="216" id="dec-2w-hUd"/>
-                                    <constraint firstAttribute="trailing" secondItem="JEc-Oa-LEA" secondAttribute="trailing" id="e3S-ST-Y2F"/>
-                                    <constraint firstAttribute="trailing" secondItem="EHc-ta-RpP" secondAttribute="trailing" id="mTa-y4-nPl"/>
-                                    <constraint firstItem="EHc-ta-RpP" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="tLH-1Z-aOp"/>
-                                    <constraint firstItem="JEc-Oa-LEA" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="yvu-sX-PR6"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="qow-3b-FUM"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -354,7 +361,10 @@
                             <constraint firstAttribute="trailing" secondItem="auJ-II-9ZT" secondAttribute="trailing" id="NyF-G6-sh7"/>
                             <constraint firstAttribute="trailing" secondItem="2pb-wA-oNl" secondAttribute="trailing" id="OhG-E1-7IZ"/>
                             <constraint firstItem="2pb-wA-oNl" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="Tjp-tw-KOg"/>
+                            <constraint firstItem="00F-HS-q4F" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="aBd-qj-Ytt"/>
                             <constraint firstItem="2pb-wA-oNl" firstAttribute="top" secondItem="G2a-Cp-oYA" secondAttribute="bottom" constant="44" id="eLJ-Yh-rl4"/>
+                            <constraint firstItem="2pb-wA-oNl" firstAttribute="top" secondItem="00F-HS-q4F" secondAttribute="bottom" id="f4P-ZC-sC5"/>
+                            <constraint firstAttribute="trailing" secondItem="00F-HS-q4F" secondAttribute="trailing" id="tVe-an-AYH"/>
                             <constraint firstAttribute="trailing" secondItem="ynf-Tf-YgH" secondAttribute="trailing" id="utw-YH-yDv"/>
                             <constraint firstItem="ynf-Tf-YgH" firstAttribute="leading" secondItem="mUn-L3-RLf" secondAttribute="leading" id="v6L-QO-QzW"/>
                         </constraints>

@@ -100,9 +100,13 @@ extension PickDateViewController {
         view.layoutIfNeeded()
         headerTopConstraint.constant = 0
         view.setNeedsUpdateConstraints()
+        view.backgroundColor = UIColor.clearColor()
+
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout header
             self.view.layoutIfNeeded()
+            self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+
         }, completion: {
             _ in
             self.containerTopConstraint.constant = self.headerHeightConstraint.constant
@@ -126,9 +130,12 @@ extension PickDateViewController {
         view.layoutIfNeeded()
         containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.setNeedsUpdateConstraints()
+        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+
         UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
             // Layout content
             self.view.layoutIfNeeded()
+
         }, completion: {
             _ in
             self.headerTopConstraint.constant = -self.headerHeightConstraint.constant * 2
@@ -137,6 +144,8 @@ extension PickDateViewController {
             UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
                 // Layout header
                 self.view.layoutIfNeeded()
+                self.view.backgroundColor = UIColor.clearColor()
+
             }, completion: completion)
         })
     }
