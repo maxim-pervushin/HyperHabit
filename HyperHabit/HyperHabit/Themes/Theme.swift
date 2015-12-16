@@ -5,14 +5,16 @@
 
 import UIKit
 
-struct Theme {
+struct Theme: Equatable {
 
+    let identifier: String
     let name: String
     let dark: Bool
     let backgroundColor: UIColor
     let foregroundColor: UIColor
 
-    init(name: String, dark: Bool, backgroundColor: UIColor, foregroundColor: UIColor) {
+    init(identifier: String, name: String, dark: Bool, backgroundColor: UIColor, foregroundColor: UIColor) {
+        self.identifier = identifier
         self.name = name
         self.dark = dark
         self.backgroundColor = backgroundColor
@@ -34,4 +36,10 @@ extension Theme {
     var barBackgroundImage: UIImage {
         return backgroundColor.image
     }
+}
+
+// MARK: - Equatable
+
+func ==(lhs: Theme, rhs: Theme) -> Bool {
+    return lhs.identifier == rhs.identifier
 }

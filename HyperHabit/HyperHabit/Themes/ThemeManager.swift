@@ -13,28 +13,34 @@ class ThemeManager {
 
     var themes: [Theme] {
         return [
-                Theme(name: "Light",
-                        dark: false,
-                        backgroundColor: UIColor.whiteColor(),
-                        foregroundColor: UIColor.blackColor()
-                ),
-                Theme(name: "Sepia",
+                defaultTheme,
+                Theme(identifier: "sepia",
+                        name: "Sepia",
                         dark: false,
                         backgroundColor: UIColor(red: 0.98, green: 0.96, blue: 0.91, alpha: 1),
                         foregroundColor: UIColor(red: 0.38, green: 0.24, blue: 0.13, alpha: 1)
                 ),
-                Theme(name: "Gray",
+                Theme(identifier: "gray",
+                        name: "Gray",
                         dark: true,
                         backgroundColor: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1),
                         foregroundColor: UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
                 ),
-                Theme(name: "Dark",
+                Theme(identifier: "dark",
+                        name: "Dark",
                         dark: true,
                         backgroundColor: UIColor.blackColor(),
                         foregroundColor: UIColor.whiteColor()
                 ),
         ]
     }
+
+    let defaultTheme = Theme(identifier: "light",
+            name: "Light",
+            dark: false,
+            backgroundColor: UIColor.whiteColor(),
+            foregroundColor: UIColor.blackColor()
+    )
 
     var theme: Theme {
         didSet {
@@ -82,8 +88,7 @@ class ThemeManager {
         // UIPickerView.appearance().
 
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
-        TintView.appearance().backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
-//        TintView.appearance().backgroundColor = UIColor.greenColor()
+        TintView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.33)
 
@@ -96,13 +101,36 @@ class ThemeManager {
         }
 
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeManager.changedNotification, object: self, userInfo: nil)
-//        print("Theme updated: \(theme)")
+
+        saveDefaults()
+    }
+
+    private func saveDefaults() {
+        NSUserDefaults.standardUserDefaults().setObject(theme.identifier, forKey: "themeIdentifier")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+
+    private func loadDefaults() {
+        if let themeIdentifier = NSUserDefaults.standardUserDefaults().stringForKey("themeIdentifier") {
+            var currentTheme = defaultTheme
+            for theme in themes {
+                if theme.identifier == themeIdentifier {
+                    currentTheme = theme
+                    break
+                }
+            }
+            theme = currentTheme
+
+        } else {
+            theme = defaultTheme
+        }
     }
 
     init() {
-        self.theme = Theme(name: "Default", dark: false, backgroundColor: UIColor.whiteColor(), foregroundColor: UIColor.blackColor())
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timeout:", userInfo: nil, repeats: true)
-        self.timer.fire()
+        self.theme = defaultTheme
+        self.loadDefaults()
+//        self.timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timeout:", userInfo: nil, repeats: true)
+//        self.timer.fire()
     }
 
     @objc private func timeout(sender: AnyObject?) {
