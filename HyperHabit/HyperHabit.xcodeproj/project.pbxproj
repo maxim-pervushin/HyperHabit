@@ -62,6 +62,7 @@
 		73BC69F8A8B444EA3A24E042 /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D48DE9F032647144031 /* DataManagerTestCase+saveHabit.swift */; };
 		73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6AC78402FA74FBCDA762 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61E8D3B8A144E472A3D5 /* MockDataManager.swift */; };
+		73BC6ADBA352048BC0A955D1 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E72395B3A9152E154E6 /* ThemeCell.swift */; };
 		73BC6AF000D6E149BCC6039F /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC6AF7250DF2F6AF6C7621 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C850804E2D3B78DB687 /* DataManager.swift */; };
 		73BC6B0C27FB42AA4C2EACEC /* ServiceUIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C86B3800C96E0E7824 /* ServiceUIAuthentication.swift */; };
@@ -139,7 +140,6 @@
 		C53ABD4B1C032CF2007F27FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C53ABD3F1C032CDB007F27FE /* libsqlite3.tbd */; };
 		C53ABD4C1C032CF2007F27FE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C53ABD3D1C032CD4007F27FE /* libz.tbd */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
-		C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC781BFCFCC7003F9995 /* ViewController.swift */; };
 		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
 		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
@@ -268,6 +268,7 @@
 		73BC6D5B3DA0184778419277 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		73BC6DA8E33A985656DC2D10 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		73BC6E49AE47A52824875F01 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
+		73BC6E72395B3A9152E154E6 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		73BC6EB6468E4C72B3BB2542 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		73BC6EBEDB008DCE20D95068 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6EC850FB98E0148C8E25 /* UIColor+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hyper.swift"; sourceTree = "<group>"; };
@@ -298,7 +299,6 @@
 		C53ABD3F1C032CDB007F27FE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C569AC731BFCFCC7003F9995 /* HyperHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC761BFCFCC7003F9995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C569AC781BFCFCC7003F9995 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C569AC7B1BFCFCC7003F9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C569AC801BFCFCC7003F9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -545,6 +545,7 @@
 				73BC62C85A2762441A3FF92D /* ReportCell.swift */,
 				73BC6176C0D159A6FC336317 /* LineView.swift */,
 				73BC66A27559D5F70B19A69F /* HabitCell.swift */,
+				73BC6E72395B3A9152E154E6 /* ThemeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -739,7 +740,6 @@
 			children = (
 				C53ABCFE1C02F6F6007F27FE /* HyperHabit.entitlements */,
 				C569AC761BFCFCC7003F9995 /* AppDelegate.swift */,
-				C569AC781BFCFCC7003F9995 /* ViewController.swift */,
 				C569AC7A1BFCFCC7003F9995 /* Main.storyboard */,
 				C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */,
 				C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */,
@@ -1017,7 +1017,6 @@
 				C580A5111BFF507200CF4C31 /* CVShape.swift in Sources */,
 				C580A5091BFF507200CF4C31 /* CVCalendarWeekContentViewController.swift in Sources */,
 				C580A50D1BFF507200CF4C31 /* CVRange.swift in Sources */,
-				C569AC791BFCFCC7003F9995 /* ViewController.swift in Sources */,
 				C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */,
 				C580A5081BFF507200CF4C31 /* CVCalendarViewPresentationMode.swift in Sources */,
 				C580A50C1BFF507200CF4C31 /* CVDate.swift in Sources */,
@@ -1082,6 +1081,7 @@
 				73BC67724D067790E8B7D971 /* TintView.swift in Sources */,
 				73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */,
 				73BC63B57CFD9530C2D61B7E /* PickThemeDataSource.swift in Sources */,
+				73BC6ADBA352048BC0A955D1 /* ThemeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

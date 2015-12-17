@@ -11,7 +11,7 @@ class PickThemeDataSource {
         return App.themeManager.themes.count
     }
 
-    var theme: Theme {
+    var currentTheme: Theme {
         get {
             return App.themeManager.theme
         }

@@ -28,10 +28,26 @@ class PickThemeViewController: UIViewController {
 
     private let dataSource = PickThemeDataSource()
 
+    private func subscribe() {
+        NSNotificationCenter.defaultCenter().addObserverForName(ThemeManager.changedNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
+            _ in
+            self.setNeedsStatusBarAppearanceUpdate()
+        })
+    }
+
+    private func unsubscribe() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeManager.changedNotification, object: nil)
+    }
+
     private func commonInit() {
         transitioningDelegate = self
         modalPresentationStyle = .Custom
         modalPresentationCapturesStatusBarAppearance = true
+        subscribe()
+    }
+
+    deinit {
+        unsubscribe()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -42,6 +58,10 @@ class PickThemeViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return App.themeManager.theme.statusBarStyle
     }
 }
 
@@ -123,10 +143,10 @@ extension PickThemeViewController: UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ThemeCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(ThemeCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ThemeCell
         let theme = dataSource.themeAtIndex(indexPath.row)
-        cell.textLabel?.text = theme.name
-        if theme == dataSource.theme {
+        cell.theme = theme
+        if theme == dataSource.currentTheme {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
@@ -138,8 +158,9 @@ extension PickThemeViewController: UITableViewDataSource {
 extension PickThemeViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dataSource.theme = dataSource.themeAtIndex(indexPath.row)
+        dataSource.currentTheme = dataSource.themeAtIndex(indexPath.row)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.reloadData()
     }
 }
 

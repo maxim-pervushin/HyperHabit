@@ -25,7 +25,7 @@ class PickDateViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePicker: UIDatePicker!
 
     @IBAction func pickButtonAction(sender: AnyObject) {
         datePickerDelegate?.pickDateViewController(self, didPickDate: datePicker.date)

@@ -661,7 +661,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="215"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ThemeCell" textLabel="OxS-Q7-Uju" style="IBUITableViewCellStyleDefault" id="yKw-OD-1ok">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ThemeCell" textLabel="OxS-Q7-Uju" style="IBUITableViewCellStyleDefault" id="yKw-OD-1ok" customClass="ThemeCell" customModule="HyperHabit" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yKw-OD-1ok" id="fbt-to-Xa8">
