@@ -80,6 +80,10 @@ class ThemeManager {
         // Table view cells
         UITableViewCell.appearance().backgroundColor = theme.backgroundColor
 
+        // Table view header footer views
+        UIView.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).backgroundColor = theme.backgroundColor
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = theme.foregroundColor
+
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewCell.self]).textColor = theme.foregroundColor
 
         UIButton.appearance().backgroundColor = UIColor.clearColor()

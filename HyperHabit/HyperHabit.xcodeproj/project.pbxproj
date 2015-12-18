@@ -532,7 +532,7 @@
 				73BC62B076B7464B209D3FBD /* Statistics */,
 				73BC6F89BF9D0C8C00A29D8A /* StatisticsForDate */,
 				73BC67A723C7CBAC0B46E833 /* EditHabit */,
-				73BC69F8C45209664A97BA3F /* Today */,
+				73BC69F8C45209664A97BA3F /* ReportsByDate */,
 				73BC6CBE455EC023778C5513 /* PickDate */,
 				73BC6ED6EB622470EC7D646B /* PickTheme */,
 			);
@@ -550,12 +550,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		73BC69F8C45209664A97BA3F /* Today */ = {
+		73BC69F8C45209664A97BA3F /* ReportsByDate */ = {
 			isa = PBXGroup;
 			children = (
 				73BC63078589D984B029581D /* ReportsByDateViewController.swift */,
 			);
-			path = Today;
+			path = ReportsByDate;
 			sourceTree = "<group>";
 		};
 		73BC6A0BC0BC23FEFB8713FD /* Service */ = {

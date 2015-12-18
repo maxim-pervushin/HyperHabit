@@ -49,11 +49,6 @@ class ReportsByDateViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-//        if let datePickerController = segue.destinationViewController as? DatePickerController {
-//            datePickerController.datePickerDelegate = self
-//            datePickerController.date = dataSource.date
-//            datePickerController.maximumDate = NSDate()
-//        }
         if let pickDateViewController = segue.destinationViewController as? PickDateViewController {
             pickDateViewController.datePickerDelegate = self
             pickDateViewController.date = dataSource.date
@@ -74,7 +69,7 @@ extension ReportsByDateViewController: PickDateViewControllerDelegate {
     }
 }
 
-extension ReportsByDateViewController: UITableViewDataSource, UITableViewDelegate {
+extension ReportsByDateViewController: UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
@@ -95,6 +90,17 @@ extension ReportsByDateViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
 
+}
+
+extension ReportsByDateViewController: UITableViewDelegate {
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Completed"
+        }
+        return "Incompleted"
+    }
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
@@ -102,13 +108,6 @@ extension ReportsByDateViewController: UITableViewDataSource, UITableViewDelegat
         if dataSource.saveReport(updatedReport) {
             tableView.reloadData()
         }
-    }
-
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Completed"
-        }
-        return "Incompleted"
     }
 }
 
