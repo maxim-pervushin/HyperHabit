@@ -16,5 +16,12 @@ class RootViewController: UITableViewController {
         super.viewWillAppear(animated)
         dateLabel.text = NSDate().description
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let datePickerViewController = segue.destinationViewController as? HHDatePickerViewController {
+            datePickerViewController.minDate = NSDate().dateByAddingMonths(-12)
+            datePickerViewController.maxDate = NSDate().dateByAddingMonths(1)
+        }
+    }
 }
 

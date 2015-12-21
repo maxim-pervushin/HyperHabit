@@ -5,7 +5,10 @@
 
 import UIKit
 
-class CalendarPageViewController: UIPageViewController {
+class HHCalendarPageViewController: UIPageViewController {
+
+    var minDate: NSDate?
+    var maxDate: NSDate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +21,15 @@ class CalendarPageViewController: UIPageViewController {
         }
     }
 
-    private func createContentViewController() -> MonthViewController? {
-        return storyboard?.instantiateViewControllerWithIdentifier("MonthViewController") as! MonthViewController
+    private func createContentViewController() -> HHMonthViewController? {
+        return storyboard?.instantiateViewControllerWithIdentifier("MonthViewController") as! HHMonthViewController
     }
 }
 
-extension CalendarPageViewController: UIPageViewControllerDataSource {
+extension HHCalendarPageViewController: UIPageViewControllerDataSource {
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        guard let currentMonthViewController = viewController as? MonthViewController else {
+        guard let currentMonthViewController = viewController as? HHMonthViewController else {
             return nil
         }
         guard let newMonthViewController = createContentViewController() else {
@@ -34,13 +37,18 @@ extension CalendarPageViewController: UIPageViewControllerDataSource {
         }
 
         if let currentMonth = currentMonthViewController.month {
+            if let minDate = minDate where currentMonth < minDate {
+                return nil
+            }
             newMonthViewController.month = currentMonth.dateByAddingMonths(-1)
+            newMonthViewController.minDate = minDate
+            newMonthViewController.maxDate = maxDate
         }
         return newMonthViewController
     }
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard let currentMonthViewController = viewController as? MonthViewController else {
+        guard let currentMonthViewController = viewController as? HHMonthViewController else {
             return nil
         }
         guard let newMonthViewController = createContentViewController() else {
@@ -48,12 +56,17 @@ extension CalendarPageViewController: UIPageViewControllerDataSource {
         }
 
         if let currentMonth = currentMonthViewController.month {
+            if let maxDate = maxDate where currentMonth > maxDate {
+                return nil
+            }
             newMonthViewController.month = currentMonth.dateByAddingMonths(1)
+            newMonthViewController.minDate = minDate
+            newMonthViewController.maxDate = maxDate
         }
         return newMonthViewController
     }
 }
 
-extension CalendarPageViewController: UIPageViewControllerDelegate {
+extension HHCalendarPageViewController: UIPageViewControllerDelegate {
 
 }

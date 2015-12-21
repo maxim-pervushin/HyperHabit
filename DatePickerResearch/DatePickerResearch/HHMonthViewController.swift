@@ -5,11 +5,14 @@
 
 import UIKit
 
-class MonthViewController: UIViewController {
+class HHMonthViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var dayLabels: [UILabel]!
+
+    var minDate: NSDate?
+    var maxDate: NSDate?
 
     var month: NSDate? {
         didSet {
@@ -29,7 +32,8 @@ class MonthViewController: UIViewController {
 
         if let month = month {
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "MMMM, YYYY"
+            // print("standaloneMonthSymbols:\(dateFormatter.standaloneMonthSymbols)")
+            dateFormatter.dateFormat = "LLLL YYYY"
             titleLabel?.text = dateFormatter.stringFromDate(month)
         } else {
             titleLabel?.text = ""
@@ -52,7 +56,7 @@ class MonthViewController: UIViewController {
     }
 }
 
-extension MonthViewController: UICollectionViewDataSource {
+extension HHMonthViewController: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -135,10 +139,18 @@ extension MonthViewController: UICollectionViewDataSource {
         }
         return cell
     }
-
 }
 
-extension MonthViewController: UICollectionViewDelegateFlowLayout {
+extension HHMonthViewController: UICollectionViewDelegate {
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DateCell).date {
+            print("date: \(date)")
+        }
+    }
+}
+
+extension HHMonthViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let side = CGFloat(collectionView.frame.size.width / 7)
