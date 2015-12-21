@@ -10,7 +10,13 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
-    var selectedDate: NSDate?
+    var selectedDate: NSDate? {
+        didSet {
+            if let selectedDate = selectedDate {
+                scrollToDate(selectedDate)
+            }
+        }
+    }
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -26,6 +32,26 @@ class DatePickerViewController: UIViewController {
         didSet {
             collectionView.reloadData()
         }
+    }
+
+    private func scrollToDate(date: NSDate) {
+        if !isViewLoaded() {
+            return
+        }
+
+        let month = date.month()
+        let year = date.year()
+        let section = ((year - configuration.startYear) * 12) + month
+        if section <= collectionView?.numberOfSections() {
+            let indexPath = NSIndexPath(forRow: 1, inSection: section - 1)
+            collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
+            collectionView?.collectionViewLayout.invalidateLayout()
+        }
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        selectedDate = NSDate()
     }
 }
 
@@ -66,9 +92,10 @@ extension DatePickerViewController: UICollectionViewDataSource {
             cell.date = currentDate
 
             if selectedDate == currentDate {
+                print("selectedDate:\(selectedDate)")
                 cell.backgroundColor = configuration.selectedDayBackgroundColor
                 cell.dateLabel.textColor = configuration.selectedDayColor
-            } else  {
+            } else {
                 cell.backgroundColor = UIColor.whiteColor()
                 cell.dateLabel.textColor = configuration.activeDayColor
             }
@@ -166,13 +193,13 @@ struct DatePickerConfiguration {
     var selectedDayBackgroundColor = UIColor.greenColor()
     var weekendDayColor = UIColor.blueColor()
     var activeDayColor = UIColor.blackColor()
-    var inactiveDayColor = UIColor.lightGrayColor()
+    var inactiveDayColor = UIColor.clearColor()
 
     var startYear: Int {
-        return 2014
+        return 2015
     }
 
     var endYear: Int {
-        return 2015
+        return 2016
     }
 }
