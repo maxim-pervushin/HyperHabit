@@ -52,7 +52,7 @@ class ReportsByDateViewController: UIViewController {
         if let pickDateViewController = segue.destinationViewController as? PickDateViewController {
             pickDateViewController.datePickerDelegate = self
             pickDateViewController.date = dataSource.date
-            pickDateViewController.maximumDate = NSDate()
+            pickDateViewController.maxDate = NSDate()
         }
     }
 }

@@ -5,6 +5,8 @@
 
 import UIKit
 
+// TODO: Rename to DatePickerViewController
+
 protocol PickDateViewControllerDelegate: class {
 
     func pickDateViewController(controller: PickDateViewController, didPickDate date: NSDate)
@@ -38,37 +40,36 @@ class PickDateViewController: UIViewController {
     // MARK: DatePickerViewController
 
     weak var datePickerDelegate: PickDateViewControllerDelegate?
+
     var date: NSDate? {
         didSet {
-            updateUI()
+            updateData()
         }
     }
-    var maximumDate: NSDate? {
+
+    var minDate: NSDate? {
         didSet {
-            updateUI()
+            updateData()
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateUI()
+    var maxDate: NSDate? {
+        didSet {
+            updateData()
+        }
     }
 
-    private func updateUI() {
-        if !isViewLoaded() {
-            return
-        }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateData()
+    }
 
-        if let date = date {
-            datePicker.date = date
-        } else {
-            datePicker.date = NSDate()
-        }
-
-        if let maximumDate = maximumDate {
-            datePicker.maximumDate = maximumDate
-        } else {
-            datePicker.maximumDate = nil
+    private func updateData() {
+        for childViewController in childViewControllers {
+            if let calendarPageViewController = childViewController as? CalendarPageViewController {
+                calendarPageViewController.minDate = minDate
+                calendarPageViewController.maxDate = maxDate
+            }
         }
     }
 

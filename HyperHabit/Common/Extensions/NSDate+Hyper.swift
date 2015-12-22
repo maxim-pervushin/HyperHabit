@@ -112,11 +112,11 @@ extension NSDate {
         return dateByAddingTimeInterval(24 * 60 * 60)
     }
 
-    var firstDayOfMonth: NSDate? {
-        let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components([NSCalendarUnit.Year, NSCalendarUnit.Month], fromDate: self)
-        return calendar.dateFromComponents(dateComponents)
-    }
+//    var firstDayOfMonth: NSDate? {
+//        let calendar = NSCalendar.currentCalendar()
+//        let dateComponents = calendar.components([NSCalendarUnit.Year, NSCalendarUnit.Month], fromDate: self)
+//        return calendar.dateFromComponents(dateComponents)
+//    }
 
     var nextMonth: NSDate? {
         return NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: 1, toDate: self, options: [])
