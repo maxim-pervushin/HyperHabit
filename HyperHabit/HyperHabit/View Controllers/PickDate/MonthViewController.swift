@@ -5,18 +5,40 @@
 
 import UIKit
 
-class MonthViewController: UIViewController {
+protocol MonthViewControllerDelegate: class {
 
-    static let defaultStoryboardID = "MonthViewController"
+    func monthViewController(controller: MonthViewController, didPickDate date: NSDate)
+}
+
+class MonthViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var dayLabels: [UILabel]!
 
-    var minDate: NSDate?
-    var maxDate: NSDate?
+    static let defaultStoryboardID = "MonthViewController"
+
+    weak var monthViewControllerDelegate: MonthViewControllerDelegate?
+
+    var minDate: NSDate? {
+        didSet {
+            updateUI()
+        }
+    }
+
+    var maxDate: NSDate? {
+        didSet {
+            updateUI()
+        }
+    }
 
     var month: NSDate? {
+        didSet {
+            updateUI()
+        }
+    }
+
+    var calendar = NSCalendar.currentCalendar() {
         didSet {
             updateUI()
         }
@@ -34,7 +56,6 @@ class MonthViewController: UIViewController {
 
         if let month = month {
             let dateFormatter = NSDateFormatter()
-            // print("standaloneMonthSymbols:\(dateFormatter.standaloneMonthSymbols)")
             dateFormatter.dateFormat = "LLLL YYYY"
             titleLabel?.text = dateFormatter.stringFromDate(month)
         } else {
@@ -55,6 +76,17 @@ class MonthViewController: UIViewController {
             date = calendar.dateByAddingComponents(offsetComponents, toDate: date!, options: [])
         }
 
+        collectionView?.reloadData()
+    }
+
+    private func daysBeforeInMonth(inMonth: NSDate) -> Int {
+        let firstDayWeekday = inMonth.firstDayOfMonth().weekday()
+        return firstDayWeekday >= calendar.firstWeekday ? firstDayWeekday - calendar.firstWeekday : 7 - firstDayWeekday
+    }
+
+    private func daysAfterInMonth(inMonth: NSDate) -> Int {
+        let days = inMonth.numberOfDaysInMonth() + daysBeforeInMonth(inMonth)
+        return days % 7 != 0 ? 7 - days % 7 : 0
     }
 }
 
@@ -65,80 +97,47 @@ extension MonthViewController: UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        let startDate = NSDate(year: configuration.startYear, month: 1, day: 1)
-        guard let startDate = month?.firstDayOfMonth() else {
+        guard let currentMonth = month else {
             return 0
         }
-        let firstDayOfMonth = startDate.dateByAddingMonths(section)
-        let addingPrefixDaysWithMonthDyas = (firstDayOfMonth.numberOfDaysInMonth() + firstDayOfMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
-        let addingSuffixDays = addingPrefixDaysWithMonthDyas % 7
-        var numberOfItems = addingPrefixDaysWithMonthDyas
-        if addingSuffixDays != 0 {
-            numberOfItems = numberOfItems + (7 - addingSuffixDays)
-        }
 
-        return numberOfItems
+        return daysBeforeInMonth(currentMonth) + currentMonth.numberOfDaysInMonth() + daysAfterInMonth(currentMonth)
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DayCell
 
-        guard let calendarStartDate = month?.firstDayOfMonth() else {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DayCell
+        guard let currentMonth = month else {
             return cell
         }
 
-//        let calendarStartDate = NSDate(year: configuration.startYear, month: 1, day: 1)
-        let firstDayOfThisMonth = calendarStartDate.dateByAddingMonths(indexPath.section)
-        let prefixDays = (firstDayOfThisMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
+        let daysBefore = daysBeforeInMonth(currentMonth)
+        let cellDate = currentMonth.firstDayOfMonth().dateByAddingDays(indexPath.row - daysBefore)
+        cell.date = cellDate
 
-        if indexPath.row >= prefixDays {
-//            cell.isCellSelectable = true
-            let currentDate = firstDayOfThisMonth.dateByAddingDays(indexPath.row - prefixDays)
-            let nextMonthFirstDay = firstDayOfThisMonth.dateByAddingDays(firstDayOfThisMonth.numberOfDaysInMonth() - 1)
-
-//            cell.currentDate = currentDate
-//            cell.dateLabel.text = "\(currentDate.day())"
-            cell.date = currentDate
-
-//            if selectedDate == currentDate {
-//                print("selectedDate:\(selectedDate)")
-//                cell.backgroundColor = configuration.selectedDayBackgroundColor
-//                cell.dateLabel.textColor = configuration.selectedDayColor
-//            } else {
-            cell.backgroundColor = UIColor.clearColor()
-            cell.dayLabel.textColor = UIColor.blackColor()
-//            }
-
-
-//            if arrSelectedDates.contains(currentDate) {
-//                cell.selectedForLabelColor(dateSelectionColor)
-//            } else {
-//                cell.deSelectedForLabelColor(weekdayTintColor)
-//
-            if currentDate.isSaturday() {
-                cell.dayLabel.textColor = UIColor.blueColor()
-            }
-            if currentDate.isSunday() {
-                cell.dayLabel.textColor = UIColor.blueColor()
-            }
-            if (currentDate > nextMonthFirstDay) {
-//                    cell.isCellSelectable = false
-                cell.dayLabel.textColor = UIColor.clearColor()
-            }
-//                if currentDate.isToday() {
-//                    cell.setTodayCellColor(todayTintColor)
-//                }
-//
-//            }
+        if let minDate = minDate where cellDate < minDate {
+            cell.dayLabel.textColor = UIColor.lightGrayColor()
+            cell.enabled = false
+        } else if let maxDate = maxDate where cellDate > maxDate {
+            cell.dayLabel.textColor = UIColor.lightGrayColor()
+            cell.enabled = false
+        } else if indexPath.row < daysBefore {
+            cell.dayLabel.textColor = UIColor.lightGrayColor()
+            cell.enabled = false
+        } else if indexPath.row >= daysBefore + currentMonth.numberOfDaysInMonth() {
+            cell.dayLabel.textColor = UIColor.lightGrayColor()
+            cell.enabled = false
+        } else if cellDate == NSDate() {
+            cell.dayLabel.textColor = UIColor.redColor()
+            cell.enabled = true
+        } else if cellDate.isSaturday() || cellDate.isSunday() {
+            cell.dayLabel.textColor = UIColor.darkGrayColor()
+            cell.enabled = true
         } else {
-//            cell.isCellSelectable = false
-            let previousDay = firstDayOfThisMonth.dateByAddingDays(-(prefixDays - indexPath.row))
-//            cell.currentDate = previousDay
-//            cell.dayLabel.text = "\(previousDay.day())"
-            cell.date = previousDay
-            cell.dayLabel.textColor = UIColor.clearColor()
-//            cell.lblDay.layer.backgroundColor = UIColor.whiteColor().CGColor
+            cell.dayLabel.textColor = UIColor.blackColor()
+            cell.enabled = true
         }
+
         return cell
     }
 }
@@ -146,8 +145,12 @@ extension MonthViewController: UICollectionViewDataSource {
 extension MonthViewController: UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DayCell).date {
-            print("date: \(date)")
+        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DayCell where cell.enabled else {
+            return
+        }
+
+        if let date = cell.date {
+            monthViewControllerDelegate?.monthViewController(self, didPickDate: date)
         }
     }
 }
@@ -171,3 +174,4 @@ extension MonthViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+

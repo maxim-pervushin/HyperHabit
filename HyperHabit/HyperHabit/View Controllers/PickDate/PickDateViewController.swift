@@ -69,6 +69,7 @@ class PickDateViewController: UIViewController {
             if let calendarPageViewController = childViewController as? CalendarPageViewController {
                 calendarPageViewController.minDate = minDate
                 calendarPageViewController.maxDate = maxDate
+                calendarPageViewController.calendarPageViewControllerDelegate = self
             }
         }
     }
@@ -234,5 +235,12 @@ extension PickDateViewController: UIViewControllerAnimatedTransitioning {
     }
 
     func animationEnded(transitionCompleted: Bool) {
+    }
+}
+
+extension PickDateViewController: CalendarPageViewControllerDelegate {
+
+    func calendarPageViewController(controller: CalendarPageViewController, didPickDate date: NSDate) {
+        datePickerDelegate?.pickDateViewController(self, didPickDate: date)
     }
 }
