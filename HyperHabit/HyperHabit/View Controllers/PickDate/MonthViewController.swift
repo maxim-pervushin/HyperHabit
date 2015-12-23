@@ -127,7 +127,7 @@ extension MonthViewController: UICollectionViewDataSource {
         } else if indexPath.row >= daysBefore + currentMonth.numberOfDaysInMonth() {
             cell.dayLabel.textColor = UIColor.lightGrayColor()
             cell.enabled = false
-        } else if cellDate == NSDate() {
+        } else if cellDate.dateByIgnoringTime() == NSDate().dateByIgnoringTime() {
             cell.dayLabel.textColor = UIColor.redColor()
             cell.enabled = true
         } else if cellDate.isSaturday() || cellDate.isSunday() {
