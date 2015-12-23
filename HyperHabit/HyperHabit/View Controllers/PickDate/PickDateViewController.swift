@@ -67,6 +67,7 @@ class PickDateViewController: UIViewController {
     private func updateData() {
         for childViewController in childViewControllers {
             if let calendarPageViewController = childViewController as? CalendarPageViewController {
+                calendarPageViewController.date = date
                 calendarPageViewController.minDate = minDate
                 calendarPageViewController.maxDate = maxDate
                 calendarPageViewController.calendarPageViewControllerDelegate = self

@@ -14,6 +14,12 @@ class CalendarPageViewController: UIPageViewController {
 
     weak var calendarPageViewControllerDelegate: CalendarPageViewControllerDelegate?
 
+    var date: NSDate? {
+        didSet {
+            updateUI()
+        }
+    }
+
     var minDate: NSDate? {
         didSet {
             updateUI()
@@ -31,6 +37,7 @@ class CalendarPageViewController: UIPageViewController {
 
         if let contentViewController = createContentViewController() {
             contentViewController.month = NSDate()
+            contentViewController.date = date
             contentViewController.minDate = minDate
             contentViewController.maxDate = maxDate
             contentViewController.monthViewControllerDelegate = self
@@ -51,6 +58,7 @@ class CalendarPageViewController: UIPageViewController {
 
         for viewController in viewControllers {
             if let monthViewController = viewController as? MonthViewController {
+                monthViewController.date = date
                 monthViewController.minDate = minDate
                 monthViewController.maxDate = maxDate
             }
@@ -77,6 +85,7 @@ extension CalendarPageViewController: UIPageViewControllerDataSource {
                 return nil
             }
             newMonthViewController.month = currentMonth.dateByAddingMonths(-1)
+            newMonthViewController.date = date
             newMonthViewController.minDate = minDate
             newMonthViewController.maxDate = maxDate
             newMonthViewController.monthViewControllerDelegate = self
@@ -97,6 +106,7 @@ extension CalendarPageViewController: UIPageViewControllerDataSource {
                 return nil
             }
             newMonthViewController.month = currentMonth.dateByAddingMonths(1)
+            newMonthViewController.date = date
             newMonthViewController.minDate = minDate
             newMonthViewController.maxDate = maxDate
             newMonthViewController.monthViewControllerDelegate = self

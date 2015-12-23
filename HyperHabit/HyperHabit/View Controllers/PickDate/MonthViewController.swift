@@ -38,6 +38,12 @@ class MonthViewController: UIViewController {
         }
     }
 
+    var date: NSDate? {
+        didSet {
+            updateUI()
+        }
+    }
+
     var calendar = NSCalendar.currentCalendar() {
         didSet {
             updateUI()
@@ -127,6 +133,9 @@ extension MonthViewController: UICollectionViewDataSource {
         } else if indexPath.row >= daysBefore + currentMonth.numberOfDaysInMonth() {
             cell.dayLabel.textColor = UIColor.lightGrayColor()
             cell.enabled = false
+        } else if let date = date where cellDate.dateByIgnoringTime() == date.dateByIgnoringTime() {
+            cell.dayLabel.textColor = UIColor.greenColor()
+            cell.enabled = true
         } else if cellDate.dateByIgnoringTime() == NSDate().dateByIgnoringTime() {
             cell.dayLabel.textColor = UIColor.redColor()
             cell.enabled = true
