@@ -15,18 +15,21 @@ class MonthCollectionReusableView: UICollectionReusableView {
 
     var month: NSDate? {
         didSet {
-            if let month = month {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "MMMM, YYYY"
-                titleLabel?.text = dateFormatter.stringFromDate(month)
-            } else {
-                titleLabel?.text = ""
-            }
             updateUI()
         }
     }
 
     func updateUI() {
+
+        // TODO: Move to extension
+
+        if let month = month {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "LLLL YYYY"
+            titleLabel?.text = dateFormatter.stringFromDate(month)
+        } else {
+            titleLabel?.text = ""
+        }
 
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day], fromDate: NSDate())

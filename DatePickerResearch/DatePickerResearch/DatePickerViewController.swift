@@ -10,14 +10,6 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
-    var selectedDate: NSDate? {
-        didSet {
-            if let selectedDate = selectedDate {
-                scrollToDate(selectedDate)
-            }
-        }
-    }
-
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBAction func cancelButtonAction(sender: AnyObject) {
@@ -28,10 +20,46 @@ class DatePickerViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    var selectedDate: NSDate? {
+        didSet {
+            if let selectedDate = selectedDate {
+                scrollToDate(selectedDate)
+            }
+        }
+    }
+
+    var minDate: NSDate {
+        didSet {
+            updateUI()
+        }
+    }
+
+    var minYear: Int {
+        return NSCalendar.currentCalendar().components([.Year], fromDate: minDate).year
+    }
+
+    var maxDate: NSDate {
+        didSet {
+            updateUI()
+        }
+    }
+
+    var maxYear: Int {
+        return NSCalendar.currentCalendar().components([.Year], fromDate: maxDate).year
+    }
+
     var configuration = DatePickerConfiguration() {
         didSet {
-            collectionView.reloadData()
+            updateUI()
         }
+    }
+
+    private func updateUI() {
+        if !isViewLoaded() {
+            return
+        }
+
+        collectionView.reloadData()
     }
 
     private func scrollToDate(date: NSDate) {
@@ -41,7 +69,7 @@ class DatePickerViewController: UIViewController {
 
         let month = date.month()
         let year = date.year()
-        let section = ((year - configuration.startYear) * 12) + month
+        let section = ((year - minYear) * 12) + month
         if section <= collectionView?.numberOfSections() {
             let indexPath = NSIndexPath(forRow: 1, inSection: section - 1)
             collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
@@ -53,17 +81,29 @@ class DatePickerViewController: UIViewController {
         super.viewWillAppear(animated)
         selectedDate = NSDate()
     }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        minDate = NSDate(timeIntervalSince1970: 0)
+        maxDate = NSDate()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required override init?(coder aDecoder: NSCoder) {
+        minDate = NSDate(timeIntervalSince1970: 0)
+        maxDate = NSDate()
+        super.init(coder: aDecoder)
+    }
 }
 
 extension DatePickerViewController: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        let numberOfSections = 12 * (configuration.endYear - configuration.startYear)
+        let numberOfSections = 12 * (maxYear - minYear)
         return numberOfSections
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let startDate = NSDate(year: configuration.startYear, month: 1, day: 1)
+        let startDate = NSDate(year: minYear, month: 1, day: 1)
         let firstDayOfMonth = startDate.dateByAddingMonths(section)
         let addingPrefixDaysWithMonthDyas = (firstDayOfMonth.numberOfDaysInMonth() + firstDayOfMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
         let addingSuffixDays = addingPrefixDaysWithMonthDyas % 7
@@ -78,7 +118,7 @@ extension DatePickerViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DateCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DateCell
 
-        let calendarStartDate = NSDate(year: configuration.startYear, month: 1, day: 1)
+        let calendarStartDate = NSDate(year: minYear, month: 1, day: 1)
         let firstDayOfThisMonth = calendarStartDate.dateByAddingMonths(indexPath.section)
         let prefixDays = (firstDayOfThisMonth.weekday() - NSCalendar.currentCalendar().firstWeekday)
 
@@ -136,22 +176,16 @@ extension DatePickerViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: MonthCollectionReusableView.defaultHeaderReuseIdentifier, forIndexPath: indexPath) as! MonthCollectionReusableView
 
-        let startDate = NSDate(year: configuration.startYear, month: 1, day: 1)
-        let firstDayOfMonth = startDate.dateByAddingMonths(indexPath.section)
+        let firstDayOfMonth = minDate.dateByAddingMonths(indexPath.section)
 
         header.month = firstDayOfMonth
-//        header.titleLabel.text = firstDayOfMonth.monthNameFull()
-//        header.updateUI()
-//        header.titleLabel.textColor = monthTitleColor
-//        header.updateWeekdaysLabelColor(weekdayTintColor)
-//        header.updateWeekendLabelColor(weekendTintColor)
-
         return header
     }
 
 }
 
 extension DatePickerViewController: UICollectionViewDelegate {
+
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DateCell).date {
             selectedDate = date
@@ -167,6 +201,12 @@ extension DatePickerViewController: UICollectionViewDelegateFlowLayout {
         return CGSizeMake(side, side)
     }
 
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width = collectionView.frame.size.width
+        let height = CGFloat(width / 7)
+        return CGSizeMake(width, height)
+    }
+
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsZero
     }
@@ -178,28 +218,23 @@ extension DatePickerViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0
     }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let cellSide = CGFloat(collectionView.frame.size.width / 7)
-        return CGSizeMake(collectionView.frame.size.width, 1.5 * cellSide)
-    }
 }
 
 struct DatePickerConfiguration {
 
-    var startDate: NSDate?
-    var endDate: NSDate?
+//    var minDate: NSDate?
+//    var maxDate: NSDate?
     var selectedDayColor = UIColor.redColor()
     var selectedDayBackgroundColor = UIColor.greenColor()
     var weekendDayColor = UIColor.blueColor()
     var activeDayColor = UIColor.blackColor()
     var inactiveDayColor = UIColor.clearColor()
 
-    var startYear: Int {
-        return 2015
-    }
-
-    var endYear: Int {
-        return 2016
-    }
+//    var minYear: Int {
+//        return 2015
+//    }
+//
+//    var endYear: Int {
+//        return 2016
+//    }
 }

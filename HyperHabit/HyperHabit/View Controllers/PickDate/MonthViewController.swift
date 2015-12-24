@@ -14,6 +14,8 @@ class MonthViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewToBottomConstraint: NSLayoutConstraint!
     @IBOutlet var dayLabels: [UILabel]!
 
     static let defaultStoryboardID = "MonthViewController"
@@ -83,6 +85,21 @@ class MonthViewController: UIViewController {
         }
 
         collectionView?.reloadData()
+
+//        print("collectionView?.numberOfItemsInSection(0):\(collectionView?.numberOfItemsInSection(0))")
+//        collectionView?.collectionViewLayout.collectionViewContentSize()
+        if let numberOfItems = collectionView?.numberOfItemsInSection(0) {
+            let numberOfRows = CGFloat(numberOfItems / 7)
+            let side = CGFloat(view.frame.size.width / 7)
+            let requiredHeight = numberOfRows * side
+
+            view.layoutIfNeeded()
+            collectionViewHeightConstraint.constant = requiredHeight
+            collectionViewHeightConstraint.priority = 999
+//            collectionViewToBottomConstraint.priority = 990
+            view.layoutIfNeeded()
+            print("side:\(side), numberOfRows:\(numberOfRows), requiredHeight:\(requiredHeight)")
+        }
     }
 
     private func daysBeforeInMonth(inMonth: NSDate) -> Int {
