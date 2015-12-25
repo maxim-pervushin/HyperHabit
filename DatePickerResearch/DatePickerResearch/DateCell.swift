@@ -4,20 +4,40 @@
 //
 
 import UIKit
+import QuartzCore
 
-class DateCell: UICollectionViewCell {
+class DayCell: UICollectionViewCell {
 
-    static let defaultReuseIdentifier = "DateCell"
+    static let defaultReuseIdentifier = "DayCell"
 
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var highlightView: UIView!
+    @IBOutlet weak var dayLabel: UILabel!
 
     var date: NSDate? {
         didSet {
-            if let date = date {
-                dateLabel?.text = "\(date.day())"
-            } else {
-                dateLabel?.text = ""
-            }
+            updateUI()
         }
+    }
+
+    var highlightColor = UIColor.clearColor() {
+        didSet {
+            updateUI()
+        }
+    }
+
+    private func updateUI() {
+        if let date = date {
+            dayLabel.text = "\(date.day())"
+        } else {
+            dayLabel.text = ""
+        }
+        highlightView.backgroundColor = highlightColor
+        bringSubviewToFront(dayLabel)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        highlightView.layer.cornerRadius = max(highlightView.frame.size.height, highlightView.frame.size.width) / 2
+
     }
 }

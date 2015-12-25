@@ -21,6 +21,10 @@ class RootViewController: UITableViewController {
         if let datePickerViewController = segue.destinationViewController as? HHDatePickerViewController {
             datePickerViewController.minDate = NSDate().dateByAddingMonths(-12)
             datePickerViewController.maxDate = NSDate().dateByAddingMonths(1)
+        } else if let datePickerViewController = segue.destinationViewController as? DatePickerViewController {
+            datePickerViewController.minDate = NSDate(year: 2015, month: 1, day: 3)
+            datePickerViewController.maxDate = NSDate(year: 2016, month: 2, day: 2)
+            datePickerViewController.selectedDate = NSDate().dateByAddingDays(2)
         }
     }
 }

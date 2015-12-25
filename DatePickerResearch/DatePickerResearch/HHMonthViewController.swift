@@ -79,7 +79,7 @@ extension HHMonthViewController: UICollectionViewDataSource {
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DateCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DateCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DayCell
 
         guard let calendarStartDate = month?.firstDayOfMonth() else {
             return cell
@@ -104,7 +104,7 @@ extension HHMonthViewController: UICollectionViewDataSource {
 //                cell.dateLabel.textColor = configuration.selectedDayColor
 //            } else {
             cell.backgroundColor = UIColor.whiteColor()
-            cell.dateLabel.textColor = UIColor.blackColor()
+            cell.dayLabel?.textColor = UIColor.blackColor()
 //            }
 
 
@@ -114,14 +114,14 @@ extension HHMonthViewController: UICollectionViewDataSource {
 //                cell.deSelectedForLabelColor(weekdayTintColor)
 //
             if currentDate.isSaturday() {
-                cell.dateLabel.textColor = UIColor.blueColor()
+                cell.dayLabel?.textColor = UIColor.blueColor()
             }
             if currentDate.isSunday() {
-                cell.dateLabel.textColor = UIColor.blueColor()
+                cell.dayLabel?.textColor = UIColor.blueColor()
             }
             if (currentDate > nextMonthFirstDay) {
 //                    cell.isCellSelectable = false
-                cell.dateLabel.textColor = UIColor.clearColor()
+                cell.dayLabel?.textColor = UIColor.clearColor()
             }
 //                if currentDate.isToday() {
 //                    cell.setTodayCellColor(todayTintColor)
@@ -134,7 +134,7 @@ extension HHMonthViewController: UICollectionViewDataSource {
 //            cell.currentDate = previousDay
 //            cell.dateLabel.text = "\(previousDay.day())"
             cell.date = previousDay
-            cell.dateLabel.textColor = UIColor.clearColor()
+            cell.dayLabel?.textColor = UIColor.clearColor()
 //            cell.lblDay.layer.backgroundColor = UIColor.whiteColor().CGColor
         }
         return cell
@@ -144,7 +144,7 @@ extension HHMonthViewController: UICollectionViewDataSource {
 extension HHMonthViewController: UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DateCell).date {
+        if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DayCell).date {
             print("date: \(date)")
         }
     }

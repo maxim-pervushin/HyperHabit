@@ -10,6 +10,7 @@
 		73BC60D6070943C1FF396E01 /* MonthCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65566A78CC86C64DDAED /* MonthCollectionReusableView.swift */; };
 		73BC6385F4C368C2BDF81CCE /* NSDate+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C5C40D6E7A37250E39F /* NSDate+DatePicker.swift */; };
 		73BC68B2D261412C0D8816E1 /* HHDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67612AA95B18A52813F2 /* HHDatePickerViewController.swift */; };
+		73BC6A99EEBC771E225B5C32 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65CA304E9320E37075CE /* LineView.swift */; };
 		73BC6AF6B20005E984C55C13 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6049188ECA6884A21D63 /* DateCell.swift */; };
 		73BC6B8996DA309478CEC3B0 /* HHMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62A9142D7AD73C472336 /* HHMonthViewController.swift */; };
 		73BC6E32531AF9ECAAFA6D48 /* HHCalendarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6430B9AE3C81F113F005 /* HHCalendarPageViewController.swift */; };
@@ -26,6 +27,7 @@
 		73BC62A9142D7AD73C472336 /* HHMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHMonthViewController.swift; sourceTree = "<group>"; };
 		73BC6430B9AE3C81F113F005 /* HHCalendarPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHCalendarPageViewController.swift; sourceTree = "<group>"; };
 		73BC65566A78CC86C64DDAED /* MonthCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionReusableView.swift; sourceTree = "<group>"; };
+		73BC65CA304E9320E37075CE /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		73BC67612AA95B18A52813F2 /* HHDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDatePickerViewController.swift; sourceTree = "<group>"; };
 		73BC6C5C40D6E7A37250E39F /* NSDate+DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+DatePicker.swift"; sourceTree = "<group>"; };
 		C5EAC8D21C27E9210008CF91 /* DatePickerResearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePickerResearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				73BC67612AA95B18A52813F2 /* HHDatePickerViewController.swift */,
 				73BC62A9142D7AD73C472336 /* HHMonthViewController.swift */,
 				73BC6430B9AE3C81F113F005 /* HHCalendarPageViewController.swift */,
+				73BC65CA304E9320E37075CE /* LineView.swift */,
 			);
 			path = DatePickerResearch;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				73BC68B2D261412C0D8816E1 /* HHDatePickerViewController.swift in Sources */,
 				73BC6B8996DA309478CEC3B0 /* HHMonthViewController.swift in Sources */,
 				73BC6E32531AF9ECAAFA6D48 /* HHCalendarPageViewController.swift in Sources */,
+				73BC6A99EEBC771E225B5C32 /* LineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
