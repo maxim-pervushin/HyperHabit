@@ -1,3 +1,4 @@
 
 TODO: Themes.
 TODO: Themes. Automatically select theme depending on display brightness and local time
+TODO: Delegates. Avoid delegates, use blocks.

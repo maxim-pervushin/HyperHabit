@@ -13,6 +13,7 @@
 		73BC60AAB1271E1F3C0EF6F1 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
 		73BC60B20CF2AC052B56E82B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5B3DA0184778419277 /* DataSource.swift */; };
 		73BC611015B9409E9C0D368A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D36DEAA5EA2A8AED39C /* App.swift */; };
+		73BC612F988CB3CC606E3367 /* MonthCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */; };
 		73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */; };
@@ -54,11 +55,11 @@
 		73BC67B00A6B4D4FF63B1F3D /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC680E466617DF5ACC29B1 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC600B5E0E7B25BD297789 /* ThemeManager.swift */; };
 		73BC683D80EB18DDA475AB73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
+		73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */; };
 		73BC689F5B32811D3BF50CE5 /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */; };
 		73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
 		73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66A27559D5F70B19A69F /* HabitCell.swift */; };
-		73BC699CFBF2512476D97F0A /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC610A18DD3D7F0761A58C /* MonthViewController.swift */; };
 		73BC69A320463EA8158B514B /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC69B05D467112C7BCA258 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
 		73BC69F8A8B444EA3A24E042 /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D48DE9F032647144031 /* DataManagerTestCase+saveHabit.swift */; };
@@ -89,7 +90,6 @@
 		73BC6DD591FCD93496895942 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC617E47287F24838E38B8 /* PickDateViewController.swift */; };
 		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C86B3800C96E0E7824 /* ServiceUIAuthentication.swift */; };
-		73BC6E3C7421383D20635CC2 /* CalendarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4A58A2E87FF5337020 /* CalendarPageViewController.swift */; };
 		73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
 		73BC6EC793B067F7439B771A /* UIColor+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EC850FB98E0148C8E25 /* UIColor+Hyper.swift */; };
 		73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
@@ -226,7 +226,6 @@
 		73BC60162A44EDC7BC71CFF5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC603928F193F9B3D10622 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitDataSource.swift; sourceTree = "<group>"; };
-		73BC610A18DD3D7F0761A58C /* MonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeViewController.swift; sourceTree = "<group>"; };
 		73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditorTestCase.swift; sourceTree = "<group>"; };
 		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
@@ -248,6 +247,8 @@
 		73BC655AFBF7B48EDDD9DDAF /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateDataSource.swift; sourceTree = "<group>"; };
+		73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionReusableView.swift; sourceTree = "<group>"; };
+		73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionReusableView.swift; sourceTree = "<group>"; };
 		73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC66B2361EC437AD3D5179 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -275,7 +276,6 @@
 		73BC6D5B3DA0184778419277 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		73BC6DA8E33A985656DC2D10 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		73BC6E49AE47A52824875F01 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
-		73BC6E4A58A2E87FF5337020 /* CalendarPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPageViewController.swift; sourceTree = "<group>"; };
 		73BC6E72395B3A9152E154E6 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		73BC6EB6468E4C72B3BB2542 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		73BC6EBEDB008DCE20D95068 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
@@ -598,9 +598,9 @@
 			isa = PBXGroup;
 			children = (
 				73BC617E47287F24838E38B8 /* PickDateViewController.swift */,
-				73BC6E4A58A2E87FF5337020 /* CalendarPageViewController.swift */,
-				73BC610A18DD3D7F0761A58C /* MonthViewController.swift */,
 				73BC63C7B79CF01FDEDB078B /* DayCell.swift */,
+				73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */,
+				73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */,
 			);
 			path = PickDate;
 			sourceTree = "<group>";
@@ -1102,10 +1102,10 @@
 				73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */,
 				73BC63B57CFD9530C2D61B7E /* PickThemeDataSource.swift in Sources */,
 				73BC6ADBA352048BC0A955D1 /* ThemeCell.swift in Sources */,
-				73BC6E3C7421383D20635CC2 /* CalendarPageViewController.swift in Sources */,
-				73BC699CFBF2512476D97F0A /* MonthViewController.swift in Sources */,
 				73BC6D703398D835462EB01E /* DayCell.swift in Sources */,
 				73BC64CCEDA3AA754B9606E2 /* NSDate+HyperHabit.swift in Sources */,
+				73BC612F988CB3CC606E3367 /* MonthCollectionReusableView.swift in Sources */,
+				73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
