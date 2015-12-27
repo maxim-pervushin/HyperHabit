@@ -102,7 +102,7 @@ class PickDateViewController: UIViewController {
 
         let month = date.month()
         let year = date.year()
-        let section = 12 * (year - minYear) + month - 1
+        let section = 12 * (year - minYear) + (month - minMonth)
         let row = date.day() + daysBeforeInMonth(date) - 1
         return NSIndexPath(forRow: row, inSection: section)
     }
