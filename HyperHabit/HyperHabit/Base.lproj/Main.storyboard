@@ -687,7 +687,7 @@
                         <viewControllerLayoutGuide type="top" id="tFL-hx-SSJ"/>
                         <viewControllerLayoutGuide type="bottom" id="JcE-s3-jKH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="377-AG-Yfk">
+                    <view key="view" contentMode="scaleToFill" id="377-AG-Yfk" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

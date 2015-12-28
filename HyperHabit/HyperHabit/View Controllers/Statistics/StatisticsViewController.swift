@@ -7,9 +7,13 @@ import UIKit
 
 class StatisticsViewController: UIViewController {
 
+    // MARK: StatisticsViewController @IB
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
+
+    // MARK: StatisticsViewController
 
     private let dataSource = StatisticsDataSource(dataProvider: App.dataProvider)
     private var selectedDate: NSDate?
@@ -109,12 +113,12 @@ extension StatisticsViewController: CVCalendarViewDelegate {
             return []
         }
 
-        let reports = dataSource.reportsForDate(date)
-        if reports.count == 0 {
-            dayView.backgroundColor = UIColor.whiteColor()
+        if date.dateByIgnoringTime() > NSDate().dateByIgnoringTime() {
+            dayView.backgroundColor = UIColor.clearColor()
             return []
         }
 
+        let reports = dataSource.reportsForDate(date)
         var allTotal = 0
         var allDone = 0
         for report in reports {
@@ -137,7 +141,24 @@ extension StatisticsViewController: CVCalendarViewDelegate {
 extension StatisticsViewController: CVCalendarMenuViewDelegate {
 
     func firstWeekday() -> Weekday {
-        return .Monday
+        switch NSCalendar.currentCalendar().firstWeekday {
+        case 0:
+            return .Sunday
+        case 1:
+            return .Monday
+        case 2:
+            return .Tuesday
+        case 3:
+            return .Wednesday
+        case 4:
+            return .Thursday
+        case 5:
+            return .Friday
+        case 6:
+            return .Saturday
+        default:
+            return .Sunday
+        }
     }
 
     func dayOfWeekFont() -> UIFont {
@@ -150,6 +171,14 @@ extension StatisticsViewController: CVCalendarMenuViewDelegate {
 }
 
 extension StatisticsViewController: CVCalendarViewAppearanceDelegate {
+
+    func spaceBetweenWeekViews() -> CGFloat {
+        return 0
+    }
+
+    func spaceBetweenDayViews() -> CGFloat {
+        return 0
+    }
 
     func dayLabelWeekdayFont() -> UIFont {
         return UIFont.systemFontOfSize(18)
@@ -177,6 +206,34 @@ extension StatisticsViewController: CVCalendarViewAppearanceDelegate {
 
     func dayLabelWeekdaySelectedFont() -> UIFont {
         return UIFont.systemFontOfSize(18)
+    }
+
+    func dayLabelWeekdayInTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelWeekdayOutTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelWeekdayHighlightedTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelWeekdaySelectedTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelPresentWeekdayTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelPresentWeekdayHighlightedTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
+    }
+
+    func dayLabelPresentWeekdaySelectedTextColor() -> UIColor {
+        return App.themeManager.theme.foregroundColor
     }
 }
 

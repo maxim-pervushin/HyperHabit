@@ -89,12 +89,28 @@ class ThemeManager {
         UIButton.appearance().backgroundColor = UIColor.clearColor()
         UIButton.appearance().setTitleColor(theme.foregroundColor, forState: .Normal)
 
-        // UIPickerView.appearance().
-
+        // BackgroundView
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
+        UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundView.self]).textColor = theme.foregroundColor
+
+        // TintView
         TintView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
+        // LineView
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.33)
+
+
+        // CVCalendar
+        CVAuxiliaryView.appearance().backgroundColor = UIColor.clearColor()
+
+        CVCalendarMenuView.appearance().backgroundColor = UIColor.clearColor()
+        UILabel.appearanceWhenContainedInInstancesOfClasses([CVCalendarMenuView.self]).textColor = theme.foregroundColor
+
+        CVCalendarView.appearance().backgroundColor = UIColor.clearColor()
+        CVCalendarDayView.appearance().backgroundColor = UIColor.clearColor()
+
+        UILabel.appearanceWhenContainedInInstancesOfClasses([CVCalendarDayView.self]).textColor = theme.foregroundColor
+
 
         // Hack to apply new appearance immediately
         for window in UIApplication.sharedApplication().windows {
