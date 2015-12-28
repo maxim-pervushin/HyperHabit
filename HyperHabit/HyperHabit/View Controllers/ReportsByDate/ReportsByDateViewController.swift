@@ -9,10 +9,10 @@ class ReportsByDateViewController: UIViewController {
 
     // MARK: ReportsByDateViewController @IB
 
-    @IBOutlet weak private var dateButton: UIButton!
-    @IBOutlet weak private var tableView: UITableView!
-    @IBOutlet weak private var previousDayButton: UIButton!
-    @IBOutlet weak private var nextDayButton: UIButton!
+    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var previousDayButton: UIButton!
+    @IBOutlet weak var nextDayButton: UIButton!
 
     @IBAction func previousDayButtonAction(sender: AnyObject) {
         dataSource.previousDate()
@@ -57,9 +57,9 @@ class ReportsByDateViewController: UIViewController {
                 }
                 datePickerViewController.dismissViewControllerAnimated(true, completion: nil)
             }
-            datePickerViewController.selectedDate = dataSource.date
-            datePickerViewController.minDate = NSDate().dateByAddingMonths(-2)
+//            datePickerViewController.minDate = NSDate().dateByAddingMonths(-2)
             datePickerViewController.maxDate = NSDate()
+            datePickerViewController.selectedDate = dataSource.date
         }
     }
 }
@@ -91,9 +91,9 @@ extension ReportsByDateViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 1 {
-            return "Completed"
+            return "Complete"
         }
-        return "Incompleted"
+        return "Incomplete"
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -35,6 +35,9 @@ class DatePickerViewController: UIViewController {
     var selectedDate: NSDate? {
         didSet {
             updateUI()
+            if let selectedDate = selectedDate {
+                scrollToDate(selectedDate, animated: false)
+            }
         }
     }
 
@@ -57,25 +60,25 @@ class DatePickerViewController: UIViewController {
     }
 
     private var minYear: Int {
-        return NSCalendar.currentCalendar().components([.Year], fromDate: minDate).year
+        return calendar.components([.Year], fromDate: minDate).year
     }
 
     private var minMonth: Int {
-        return NSCalendar.currentCalendar().components([.Month], fromDate: minDate).month
+        return calendar.components([.Month], fromDate: minDate).month
     }
 
     private var maxYear: Int {
-        return NSCalendar.currentCalendar().components([.Year], fromDate: maxDate).year
+        return calendar.components([.Year], fromDate: maxDate).year
     }
 
     private var maxMonth: Int {
-        return NSCalendar.currentCalendar().components([.Month], fromDate: maxDate).month
+        return calendar.components([.Month], fromDate: maxDate).month
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        scrollToDate(NSDate(), animated: false)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        scrollToDate(NSDate(), animated: false)
+//    }
 
     private func updateUI() {
         if !isViewLoaded() {
@@ -86,7 +89,7 @@ class DatePickerViewController: UIViewController {
     }
 
     private func indexPathForDate(date: NSDate) -> NSIndexPath? {
-        if date < minDate || date > maxDate {
+        if date.dateByIgnoringTime() < minDate.dateByIgnoringTime() || date.dateByIgnoringTime() > maxDate.dateByIgnoringTime() {
             return nil
         }
 
@@ -106,8 +109,8 @@ class DatePickerViewController: UIViewController {
             return
         }
 
+        collectionView.layoutIfNeeded()
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredVertically, animated: animated)
-        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func daysBeforeInMonth(inMonth: NSDate) -> Int {
@@ -154,6 +157,13 @@ class DatePickerViewController: UIViewController {
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return App.themeManager.theme.statusBarStyle
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedDate = selectedDate {
+            scrollToDate(selectedDate, animated: false)
+        }
     }
 }
 
