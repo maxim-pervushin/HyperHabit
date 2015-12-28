@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="1079" y="-453"/>
         </scene>
-        <!--Pick Date View Controller-->
+        <!--Date Picker View Controller-->
         <scene sceneID="k0x-ql-L0s">
             <objects>
-                <viewController id="fBO-bB-84e" customClass="PickDateViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fBO-bB-84e" customClass="DatePickerViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G2a-Cp-oYA"/>
                         <viewControllerLayoutGuide type="bottom" id="Ppr-U3-hDH"/>
@@ -473,8 +473,7 @@
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="pickButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="6F6-13-atR"/>
-                                            <action selector="saveButtonAction:" destination="pAe-oq-hq6" eventType="touchUpInside" id="ebh-lN-zNT"/>
+                                            <action selector="todayButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="zBF-R5-04y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-1Y-t4g">

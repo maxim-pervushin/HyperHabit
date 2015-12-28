@@ -5,16 +5,7 @@
 
 import UIKit
 
-// TODO: Rename to DatePickerViewController
-
-protocol PickDateViewControllerDelegate: class {
-
-    func pickDateViewController(controller: PickDateViewController, didPickDate date: NSDate)
-
-    func pickDateViewControllerDidCancel(controller: PickDateViewController)
-}
-
-class PickDateViewController: UIViewController {
+class DatePickerViewController: UIViewController {
 
     // MARK: DatePickerViewController @IB
 
@@ -29,18 +20,17 @@ class PickDateViewController: UIViewController {
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    @IBAction func pickButtonAction(sender: AnyObject) {
-//        datePickerDelegate?.pickDateViewController(self, didPickDate: datePicker.date)
+    @IBAction func todayButtonAction(sender: AnyObject) {
         scrollToDate(NSDate(), animated: true)
     }
 
     @IBAction func cancelButtonAction(sender: AnyObject) {
-        datePickerDelegate?.pickDateViewControllerDidCancel(self)
+        finished?(nil)
     }
 
     // MARK: DatePickerViewController
 
-    weak var datePickerDelegate: PickDateViewControllerDelegate?
+    var finished: ((NSDate?) -> ())?
 
     var selectedDate: NSDate? {
         didSet {
@@ -167,7 +157,7 @@ class PickDateViewController: UIViewController {
     }
 }
 
-extension PickDateViewController {
+extension DatePickerViewController {
 
     private func prepareForPresentation() {
         view.bringSubviewToFront(tintView)
@@ -239,7 +229,7 @@ extension PickDateViewController {
     }
 }
 
-extension PickDateViewController: UIViewControllerTransitioningDelegate {
+extension DatePickerViewController: UIViewControllerTransitioningDelegate {
 
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
@@ -250,7 +240,7 @@ extension PickDateViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension PickDateViewController: UIViewControllerAnimatedTransitioning {
+extension DatePickerViewController: UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
@@ -271,7 +261,7 @@ extension PickDateViewController: UIViewControllerAnimatedTransitioning {
             return
         }
 
-        if let pickDateViewController = toViewController as? PickDateViewController {
+        if let pickDateViewController = toViewController as? DatePickerViewController {
             pickDateViewController.prepareForPresentation()
             containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
             pickDateViewController.performPresentationWithDuration(transitionDuration(transitionContext), completion: {
@@ -280,7 +270,7 @@ extension PickDateViewController: UIViewControllerAnimatedTransitioning {
             })
         }
 
-        if let pickDateViewController = fromViewController as? PickDateViewController {
+        if let pickDateViewController = fromViewController as? DatePickerViewController {
             pickDateViewController.prepareForDismissal()
             pickDateViewController.performDismissalWithDuration(transitionDuration(transitionContext), completion: {
                 _ in
@@ -294,7 +284,7 @@ extension PickDateViewController: UIViewControllerAnimatedTransitioning {
     }
 }
 
-extension PickDateViewController: UICollectionViewDataSource {
+extension DatePickerViewController: UICollectionViewDataSource {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 12 * (maxYear - minYear + 1) - minMonth - (12 - maxMonth) + 1
@@ -350,17 +340,18 @@ extension PickDateViewController: UICollectionViewDataSource {
     }
 }
 
-extension PickDateViewController: UICollectionViewDelegate {
+extension DatePickerViewController: UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DayCell).date {
             selectedDate = date
-            datePickerDelegate?.pickDateViewController(self, didPickDate: date)
+//            datePickerDelegate?.pickDateViewController(self, didPickDate: date)
+            finished?(date)
         }
     }
 }
 
-extension PickDateViewController: UICollectionViewDelegateFlowLayout {
+extension DatePickerViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let side = CGFloat(collectionView.frame.size.width / 7)

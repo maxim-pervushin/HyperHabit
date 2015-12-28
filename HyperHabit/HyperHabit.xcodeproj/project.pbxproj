@@ -87,7 +87,7 @@
 		73BC6DB59B5866C2C96B77CB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C850804E2D3B78DB687 /* DataManager.swift */; };
 		73BC6DCE32F9C2FADE737A06 /* Habit+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */; };
 		73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */; };
-		73BC6DD591FCD93496895942 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC617E47287F24838E38B8 /* PickDateViewController.swift */; };
+		73BC6DD591FCD93496895942 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC617E47287F24838E38B8 /* DatePickerViewController.swift */; };
 		73BC6DD5B264DE8AF31C60F9 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C86B3800C96E0E7824 /* ServiceUIAuthentication.swift */; };
 		73BC6EA1BADE193C6E7D2D28 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C85A2762441A3FF92D /* ReportCell.swift */; };
@@ -229,7 +229,7 @@
 		73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeViewController.swift; sourceTree = "<group>"; };
 		73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditorTestCase.swift; sourceTree = "<group>"; };
 		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
-		73BC617E47287F24838E38B8 /* PickDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
+		73BC617E47287F24838E38B8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		73BC61E8D3B8A144E472A3D5 /* MockDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		73BC61ECA4D69A8104AF4498 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		73BC620A9FF858BFEB8597B3 /* EditHabitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
@@ -597,7 +597,7 @@
 		73BC6CBE455EC023778C5513 /* PickDate */ = {
 			isa = PBXGroup;
 			children = (
-				73BC617E47287F24838E38B8 /* PickDateViewController.swift */,
+				73BC617E47287F24838E38B8 /* DatePickerViewController.swift */,
 				73BC63C7B79CF01FDEDB078B /* DayCell.swift */,
 				73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */,
 				73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */,
@@ -1093,7 +1093,7 @@
 				73BC66C1E3EFAF6C4EAA94B3 /* ChangesObserver.swift in Sources */,
 				73BC64D1753EAFB04AAF13C3 /* SettingsViewController.swift in Sources */,
 				73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */,
-				73BC6DD591FCD93496895942 /* PickDateViewController.swift in Sources */,
+				73BC6DD591FCD93496895942 /* DatePickerViewController.swift in Sources */,
 				73BC680E466617DF5ACC29B1 /* ThemeManager.swift in Sources */,
 				73BC6B18E86FB2EFF0D0369A /* Theme.swift in Sources */,
 				73BC6B1F5FBC74A3E6903A7D /* BackgroundView.swift in Sources */,
