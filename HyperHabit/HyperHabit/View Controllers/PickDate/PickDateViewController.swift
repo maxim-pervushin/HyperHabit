@@ -117,6 +117,7 @@ class PickDateViewController: UIViewController {
         }
 
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredVertically, animated: animated)
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func daysBeforeInMonth(inMonth: NSDate) -> Int {
