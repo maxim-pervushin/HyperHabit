@@ -68,13 +68,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Oe-4WP">
-                                                    <rect key="frame" x="36" y="12" width="556" height="20"/>
+                                                    <rect key="frame" x="44" y="12" width="548" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMY-DA-IBD">
-                                                    <rect key="frame" x="8" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="18e-PE-VO6"/>
                                                         <constraint firstAttribute="height" constant="20" id="7j8-Fq-0yh"/>
@@ -85,7 +85,7 @@
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="leading" secondItem="KMY-DA-IBD" secondAttribute="trailing" constant="8" id="PqR-RZ-k5o"/>
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="aBe-S3-wDU"/>
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="trailing" secondItem="nIS-cR-udc" secondAttribute="trailingMargin" id="gGB-ES-w8Z"/>
-                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" id="lh3-2A-BTx"/>
+                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" constant="8" id="lh3-2A-BTx"/>
                                                 <constraint firstItem="KMY-DA-IBD" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="vz7-kv-bIP"/>
                                             </constraints>
                                         </tableViewCellContentView>
