@@ -75,11 +75,6 @@ class DatePickerViewController: UIViewController {
         return calendar.components([.Month], fromDate: maxDate).month
     }
 
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        scrollToDate(NSDate(), animated: false)
-//    }
-
     private func updateUI() {
         if !isViewLoaded() {
             return
@@ -168,6 +163,8 @@ class DatePickerViewController: UIViewController {
 }
 
 extension DatePickerViewController {
+
+    // TODO: Would be great to move all this transition-related stuff somewhere. Somehow...
 
     private func prepareForPresentation() {
         view.bringSubviewToFront(tintView)
@@ -355,7 +352,6 @@ extension DatePickerViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let date = (collectionView.cellForItemAtIndexPath(indexPath) as! DayCell).date {
             selectedDate = date
-//            datePickerDelegate?.pickDateViewController(self, didPickDate: date)
             finished?(date)
         }
     }
