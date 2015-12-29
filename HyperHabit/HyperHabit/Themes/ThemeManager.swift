@@ -87,7 +87,8 @@ class ThemeManager {
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewCell.self]).textColor = theme.foregroundColor
 
         UIButton.appearance().backgroundColor = UIColor.clearColor()
-        UIButton.appearance().setTitleColor(theme.foregroundColor, forState: .Normal)
+        UIButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
+        UIButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
 
         // BackgroundView
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
