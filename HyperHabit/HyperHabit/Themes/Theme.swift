@@ -36,6 +36,14 @@ extension Theme {
     var barBackgroundImage: UIImage {
         return backgroundColor.image
     }
+
+    var textColor: UIColor {
+        return foregroundColor
+    }
+
+    var inactiveTextColor: UIColor {
+        return foregroundColor.colorWithAlphaComponent(0.2)
+    }
 }
 
 // MARK: - Equatable

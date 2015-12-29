@@ -97,8 +97,8 @@ class ThemeManager {
         TintView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
         // LineView
-        LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.33)
-
+        LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
+        LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
         // CVCalendar
         CVAuxiliaryView.appearance().backgroundColor = UIColor.clearColor()

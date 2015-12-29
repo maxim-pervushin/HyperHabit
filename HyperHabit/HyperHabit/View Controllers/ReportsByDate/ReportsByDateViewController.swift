@@ -37,9 +37,43 @@ class ReportsByDateViewController: UIViewController {
 
     // MARK: UIViewController
 
+    private func subscribe() {
+        NSNotificationCenter.defaultCenter().addObserverForName(ThemeManager.changedNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
+            _ in
+            self.setNeedsStatusBarAppearanceUpdate()
+        })
+    }
+
+    private func unsubscribe() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeManager.changedNotification, object: nil)
+    }
+
+    private func commonInit() {
+        subscribe()
+    }
+
+    deinit {
+        unsubscribe()
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        commonInit()
+    }
+
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.changesObserver = self
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return App.themeManager.theme.statusBarStyle
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -88,13 +122,6 @@ extension ReportsByDateViewController: UITableViewDataSource {
 }
 
 extension ReportsByDateViewController: UITableViewDelegate {
-
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Complete"
-        }
-        return "Incomplete"
-    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

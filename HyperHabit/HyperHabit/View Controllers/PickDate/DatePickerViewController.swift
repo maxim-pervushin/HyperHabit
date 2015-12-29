@@ -315,11 +315,11 @@ extension DatePickerViewController: UICollectionViewDataSource {
         if indexPath.row < daysBefore || indexPath.row >= daysBefore + currentMonth.numberOfDaysInMonth() {
             cell.dayLabel.textColor = UIColor.clearColor()
         } else if cellDate < minDate || cellDate > maxDate {
-            cell.dayLabel.textColor = UIColor.lightGrayColor()
+            cell.dayLabel.textColor = App.themeManager.theme.inactiveTextColor
         } else if cellDate.isSaturday() || cellDate.isSunday() {
             cell.dayLabel.textColor = UIColor.blueColor()
         } else {
-            cell.dayLabel.textColor = UIColor.blackColor()
+            cell.dayLabel.textColor = App.themeManager.theme.textColor
         }
 
         if let selectedDate = selectedDate where cellDate.dateByIgnoringTime() == selectedDate.dateByIgnoringTime()

@@ -9,16 +9,18 @@ class EditHabitViewController: UIViewController {
 
     // MARK: EditHabitViewController @IB
 
+    @IBOutlet weak var tintView: UIView!
+    @IBOutlet weak var headerTopView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentTopView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var nameTextField: UITextField!
-
-    @IBOutlet weak var backgroundView: UIView! {
-        didSet {
-            backgroundView?.layer.cornerRadius = 3
-        }
-    }
-
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
 
     @IBAction func nameTextFieldEditingChanged(sender: AnyObject) {
         editor.name = nameTextField.text
@@ -50,11 +52,14 @@ class EditHabitViewController: UIViewController {
     }
 
     private func subscribe() {
-        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: nil, usingBlock: keyboardWillChangeFrame)
+        NSNotificationCenter.defaultCenter().addObserverForName(ThemeManager.changedNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
+            _ in
+            self.setNeedsStatusBarAppearanceUpdate()
+        })
     }
 
     private func unsubscribe() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeManager.changedNotification, object: nil)
     }
 
     override func viewDidLoad() {
@@ -65,7 +70,6 @@ class EditHabitViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         nameTextField?.becomeFirstResponder()
-        subscribe()
         updateUI()
         view.layoutIfNeeded()
     }
@@ -73,23 +77,32 @@ class EditHabitViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         nameTextField?.resignFirstResponder()
+    }
+
+
+    private func commonInit() {
+        transitioningDelegate = self
+        modalPresentationStyle = .Custom
+        modalPresentationCapturesStatusBarAppearance = true
+        subscribe()
+    }
+
+    deinit {
         unsubscribe()
     }
 
-    // MARK: Keyboard notifications
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        commonInit()
+    }
 
-    private func keyboardWillChangeFrame(notification: NSNotification) {
-        guard
-        let userInfo = notification.userInfo,
-        endRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue(),
-        duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
-            return
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
 
-        bottomLayoutConstraint.constant = endRect.height + 20
-        UIView.animateWithDuration(duration, animations: {
-            self.view.layoutIfNeeded()
-        })
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return App.themeManager.theme.statusBarStyle
     }
 }
 
@@ -97,5 +110,134 @@ extension EditHabitViewController: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
         updateUI()
+    }
+}
+
+extension EditHabitViewController {
+
+    // TODO: Would be great to move all this transition-related stuff somewhere. Somehow...
+
+    private func prepareForPresentation() {
+        view.bringSubviewToFront(tintView)
+        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentTopView)
+        view.bringSubviewToFront(headerView)
+        view.bringSubviewToFront(contentView)
+        headerTopConstraint.constant = -headerHeightConstraint.constant * 2
+        contentViewTopConstraint.constant = (-headerHeightConstraint.constant - contentViewHeightConstraint.constant) * 2
+        view.layoutIfNeeded()
+    }
+
+    private func performPresentationWithDuration(duration: NSTimeInterval, completion: ((Bool) -> Void)?) {
+        view.layoutIfNeeded()
+        headerTopConstraint.constant = 0
+        view.setNeedsUpdateConstraints()
+        tintView.alpha = 0
+
+        UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
+            // Layout header
+            self.view.layoutIfNeeded()
+            self.tintView.alpha = 1
+
+        }, completion: {
+            _ in
+            self.contentViewTopConstraint.constant = self.headerHeightConstraint.constant
+            self.view.setNeedsUpdateConstraints()
+
+            UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
+                // Layout content
+                self.view.layoutIfNeeded()
+            }, completion: completion)
+        })
+    }
+
+    private func prepareForDismissal() {
+        view.bringSubviewToFront(tintView)
+        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentTopView)
+        view.bringSubviewToFront(headerView)
+        view.bringSubviewToFront(contentView)
+        headerTopConstraint.constant = 0
+        contentViewTopConstraint.constant = headerHeightConstraint.constant
+        view.layoutIfNeeded()
+    }
+
+    private func performDismissalWithDuration(duration: NSTimeInterval, completion: ((Bool) -> Void)?) {
+        view.layoutIfNeeded()
+        contentViewTopConstraint.constant = (-headerHeightConstraint.constant - contentViewHeightConstraint.constant) * 2
+        view.setNeedsUpdateConstraints()
+        tintView.alpha = 1
+
+        UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
+            // Layout content
+            self.view.layoutIfNeeded()
+
+        }, completion: {
+            _ in
+            self.headerTopConstraint.constant = -self.headerHeightConstraint.constant * 2
+            self.view.setNeedsUpdateConstraints()
+
+            UIView.animateWithDuration(duration / 2, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5, options: [.CurveEaseInOut, .TransitionNone], animations: {
+                // Layout header
+                self.view.layoutIfNeeded()
+                self.tintView.alpha = 0
+
+            }, completion: completion)
+        })
+    }
+}
+
+extension EditHabitViewController: UIViewControllerTransitioningDelegate {
+
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+}
+
+extension EditHabitViewController: UIViewControllerAnimatedTransitioning {
+
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        return 0.5
+    }
+
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+
+        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) else {
+            print("Invalid fromViewController")
+            return
+        }
+        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
+            print("Invalid toViewController")
+            return
+        }
+        guard let contentView = transitionContext.containerView() else {
+            print("Invalid containerView")
+            return
+        }
+
+        if let editHabitViewController = toViewController as? EditHabitViewController {
+            editHabitViewController.prepareForPresentation()
+            contentView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
+            editHabitViewController.performPresentationWithDuration(transitionDuration(transitionContext), completion: {
+                _ in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+            })
+        }
+
+        if let editHabitViewController = fromViewController as? EditHabitViewController {
+            editHabitViewController.prepareForDismissal()
+            editHabitViewController.performDismissalWithDuration(transitionDuration(transitionContext), completion: {
+                _ in
+                fromViewController.view.removeFromSuperview()
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+            })
+        }
+    }
+
+    func animationEnded(transitionCompleted: Bool) {
     }
 }
