@@ -61,6 +61,7 @@
 		73BC69B05D467112C7BCA258 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
 		73BC69F8A8B444EA3A24E042 /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D48DE9F032647144031 /* DataManagerTestCase+saveHabit.swift */; };
 		73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
+		73BC6A525EFDBCA7346B8E93 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */; };
 		73BC6A7A6EB973C9DC64433A /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C46521AD2197F75E92 /* Cache.swift */; };
 		73BC6A801BBCBD8FD5308643 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62C46521AD2197F75E92 /* Cache.swift */; };
 		73BC6AC78402FA74FBCDA762 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61E8D3B8A144E472A3D5 /* MockDataManager.swift */; };
@@ -76,6 +77,7 @@
 		73BC6C28A5F03998A33426DF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5B3DA0184778419277 /* DataSource.swift */; };
 		73BC6C31469750ABD353AF6B /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC6C92461627921BA60EB0 /* EditHabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */; };
+		73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */; };
 		73BC6D3D8E8D60D95FB440A7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C850804E2D3B78DB687 /* DataManager.swift */; };
 		73BC6D41ADECE2CF00B37FED /* HabitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */; };
 		73BC6D4CD1A62104B8B7B558 /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC649D9156A711A874C64E /* Habit+PlistObject.swift */; };
@@ -249,6 +251,7 @@
 		73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateDataSource.swift; sourceTree = "<group>"; };
 		73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionReusableView.swift; sourceTree = "<group>"; };
 		73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionReusableView.swift; sourceTree = "<group>"; };
+		73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC66B2361EC437AD3D5179 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -554,6 +557,7 @@
 				73BC6176C0D159A6FC336317 /* LineView.swift */,
 				73BC66A27559D5F70B19A69F /* HabitCell.swift */,
 				73BC6E72395B3A9152E154E6 /* ThemeCell.swift */,
+				73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1106,6 +1110,7 @@
 				73BC612F988CB3CC606E3367 /* MonthCollectionReusableView.swift in Sources */,
 				73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */,
 				73BC6A801BBCBD8FD5308643 /* Cache.swift in Sources */,
+				73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,6 +1191,7 @@
 				73BC6B0C27FB42AA4C2EACEC /* ServiceUIAuthentication.swift in Sources */,
 				73BC6EC793B067F7439B771A /* UIColor+Hyper.swift in Sources */,
 				73BC6A7A6EB973C9DC64433A /* Cache.swift in Sources */,
+				73BC6A525EFDBCA7346B8E93 /* CheckboxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

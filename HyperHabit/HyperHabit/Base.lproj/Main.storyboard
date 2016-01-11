@@ -102,30 +102,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Oe-4WP">
-                                                    <rect key="frame" x="53" y="14" width="539" height="22"/>
+                                                    <rect key="frame" x="56" y="14" width="536" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMY-DA-IBD">
-                                                    <rect key="frame" x="16" y="12" width="25" height="25"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ct-Ff8" customClass="CheckboxView" customModule="HyperHabit" customModuleProvider="target">
+                                                    <rect key="frame" x="12" y="10" width="29" height="29"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="KMY-DA-IBD" secondAttribute="height" multiplier="1:1" id="veA-Tt-ZKF"/>
+                                                        <constraint firstAttribute="width" secondItem="e0A-ct-Ff8" secondAttribute="height" multiplier="1:1" id="Mg8-be-Isu"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="leading" secondItem="KMY-DA-IBD" secondAttribute="trailing" constant="12" id="PqR-RZ-k5o"/>
+                                                <constraint firstItem="e0A-ct-Ff8" firstAttribute="top" secondItem="nIS-cR-udc" secondAttribute="topMargin" constant="2" id="2fb-ny-8gW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e0A-ct-Ff8" secondAttribute="bottom" constant="2" id="HAY-Bw-mBC"/>
+                                                <constraint firstItem="Kno-Oe-4WP" firstAttribute="leading" secondItem="e0A-ct-Ff8" secondAttribute="trailing" constant="15" id="R9Z-XL-zfu"/>
+                                                <constraint firstItem="e0A-ct-Ff8" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" constant="4" id="a8H-hC-r2o"/>
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="aBe-S3-wDU"/>
                                                 <constraint firstItem="Kno-Oe-4WP" firstAttribute="trailing" secondItem="nIS-cR-udc" secondAttribute="trailingMargin" id="gGB-ES-w8Z"/>
-                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="leading" secondItem="nIS-cR-udc" secondAttribute="leadingMargin" constant="8" id="lh3-2A-BTx"/>
-                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="centerY" secondItem="nIS-cR-udc" secondAttribute="centerY" id="vz7-kv-bIP"/>
-                                                <constraint firstItem="KMY-DA-IBD" firstAttribute="top" secondItem="nIS-cR-udc" secondAttribute="top" constant="12" id="yWZ-8H-qqw"/>
-                                                <constraint firstAttribute="bottom" secondItem="KMY-DA-IBD" secondAttribute="bottom" constant="12" id="zaa-yR-cn6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="checkboxImageView" destination="KMY-DA-IBD" id="LX9-qU-2Fv"/>
+                                            <outlet property="checkboxView" destination="e0A-ct-Ff8" id="XiR-lg-yEZ"/>
                                             <outlet property="habitNameLabel" destination="Kno-Oe-4WP" id="Wen-7C-b6U"/>
                                         </connections>
                                     </tableViewCell>

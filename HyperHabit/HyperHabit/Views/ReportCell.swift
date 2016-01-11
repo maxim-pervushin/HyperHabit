@@ -10,12 +10,13 @@ class ReportCell: UITableViewCell {
 
     static let defaultReuseIdentifier = "ReportCell"
 
-    @IBOutlet weak var checkboxImageView: UIImageView!
+    @IBOutlet weak var checkboxView: CheckboxView!
     @IBOutlet weak var habitNameLabel: UILabel!
 
     var report: Report? {
         didSet {
-            checkboxImageView?.image = UIImage(named: report?.completed == true ? "CheckboxChecked" : "Checkbox")?.imageWithRenderingMode(.AlwaysTemplate)
+//            checkboxImageView?.image = UIImage(named: report?.completed == true ? "CheckboxChecked" : "Checkbox")?.imageWithRenderingMode(.AlwaysTemplate)
+            checkboxView?.checked = report?.completed == true ? true : false
             habitNameLabel?.text = report?.habitName
         }
     }
