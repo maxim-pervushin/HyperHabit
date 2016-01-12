@@ -30,7 +30,7 @@ import UIKit
             let internalRectSide = borderRectSide - borderRectSide / 4
             let internalRect = CGRectMake(center.x - internalRectSide / 2, center.y - internalRectSide / 2, internalRectSide, internalRectSide)
             CGContextAddEllipseInRect(ctx, internalRect)
-            CGContextSetFillColor(ctx, CGColorGetComponents(tintColor.colorWithAlphaComponent(0.75).CGColor))
+            CGContextSetFillColor(ctx, CGColorGetComponents(tintColor.CGColor))
             CGContextFillPath(ctx)
         }
 

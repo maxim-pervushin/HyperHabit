@@ -33,10 +33,4 @@ class DayCell: UICollectionViewCell {
         highlightView.backgroundColor = highlightColor
         bringSubviewToFront(dayLabel)
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        highlightView.layer.cornerRadius = max(highlightView.frame.size.height, highlightView.frame.size.width) / 2
-
-    }
 }

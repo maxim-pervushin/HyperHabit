@@ -29,8 +29,8 @@ class ThemeManager {
                 Theme(identifier: "dark",
                         name: "Dark",
                         dark: true,
-                        backgroundColor: UIColor.blackColor(),
-                        foregroundColor: UIColor.whiteColor()
+                        backgroundColor: UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1),
+                        foregroundColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
                 ),
         ]
     }
@@ -38,8 +38,8 @@ class ThemeManager {
     let defaultTheme = Theme(identifier: "light",
             name: "Light",
             dark: false,
-            backgroundColor: UIColor.whiteColor(),
-            foregroundColor: UIColor.blackColor()
+            backgroundColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1),
+            foregroundColor: UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
     )
 
     var theme: Theme {
