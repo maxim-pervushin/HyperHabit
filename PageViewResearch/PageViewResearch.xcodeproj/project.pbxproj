@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73BC61BB5A1057A339BE9538 /* NSDate+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */; };
+		73BC651F4950D9DDD8B716A2 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66E309B3D4958441E00E /* DayCell.swift */; };
+		73BC69DE051B19BB95C26A3A /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC629030E7A4207219810D /* EmptyCell.swift */; };
+		73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6266CFFA186B1FA54D38 /* TextCell.swift */; };
+		73BC69E17E0A3CC0DA6095FB /* InactiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */; };
+		73BC6AD6135D6F086029B79F /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */; };
 		73BC6F15620BD05F9A2DAA70 /* MXMPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */; };
 		C5AC40401C458CEE006EC6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC403F1C458CEE006EC6A5 /* AppDelegate.swift */; };
 		C5AC40421C458CEE006EC6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC40411C458CEE006EC6A5 /* ViewController.swift */; };
@@ -17,6 +23,12 @@
 
 /* Begin PBXFileReference section */
 		73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMPageView.swift; sourceTree = "<group>"; };
+		73BC6266CFFA186B1FA54D38 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		73BC629030E7A4207219810D /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		73BC66E309B3D4958441E00E /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
+		73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InactiveDayCell.swift; sourceTree = "<group>"; };
+		73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helpers.swift"; sourceTree = "<group>"; };
 		C5AC403C1C458CEE006EC6A5 /* PageViewResearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageViewResearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AC403F1C458CEE006EC6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5AC40411C458CEE006EC6A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +49,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73BC616C1327FCF61BE667DD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				73BC66E309B3D4958441E00E /* DayCell.swift */,
+				73BC6266CFFA186B1FA54D38 /* TextCell.swift */,
+				73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */,
+				73BC629030E7A4207219810D /* EmptyCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C5AC40331C458CEE006EC6A5 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +86,9 @@
 				C5AC40481C458CEE006EC6A5 /* LaunchScreen.storyboard */,
 				C5AC404B1C458CEE006EC6A5 /* Info.plist */,
 				73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */,
+				73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */,
+				73BC616C1327FCF61BE667DD /* Cells */,
+				73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */,
 			);
 			path = PageViewResearch;
 			sourceTree = "<group>";
@@ -141,6 +167,12 @@
 				C5AC40421C458CEE006EC6A5 /* ViewController.swift in Sources */,
 				C5AC40401C458CEE006EC6A5 /* AppDelegate.swift in Sources */,
 				73BC6F15620BD05F9A2DAA70 /* MXMPageView.swift in Sources */,
+				73BC61BB5A1057A339BE9538 /* NSDate+Helpers.swift in Sources */,
+				73BC651F4950D9DDD8B716A2 /* DayCell.swift in Sources */,
+				73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */,
+				73BC6AD6135D6F086029B79F /* MonthCell.swift in Sources */,
+				73BC69E17E0A3CC0DA6095FB /* InactiveDayCell.swift in Sources */,
+				73BC69DE051B19BB95C26A3A /* EmptyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
