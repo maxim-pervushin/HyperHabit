@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
-    
+
 //    private let startDate = NSDate(timeIntervalSince1970: 0)
 
     var calendar = NSCalendar.currentCalendar() {
@@ -107,10 +107,12 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = min(collectionView.frame.size.width, collectionView.frame.size.height)
-        let height = MonthCell.calculateHeight(month(indexPath), width: width, calendar: calendar)
-        return CGSizeMake(width, height)
+//        let width = min(collectionView.frame.size.width, collectionView.frame.size.height)
+//        let height = MonthCell.calculateHeight(month(indexPath), width: width, calendar: calendar)
+//        return CGSizeMake(width, height)
 //        return collectionView.frame.size
+
+        return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width)
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -131,5 +133,36 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSizeZero
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
+
+        struct Previous {
+            static var section = 0
+            static var row = 0
+        }
+
+        if let collectionView = scrollView as? UICollectionView {
+            let center = collectionView.center
+            let offset = collectionView.contentOffset
+            if let indexPath = collectionView.indexPathForItemAtPoint(CGPointMake(center.x + offset.x, center.y + offset.y)) {
+                if Previous.section != indexPath.section || Previous.row != indexPath.row {
+                    print("indexPath: \(indexPath)");
+                    Previous.section = indexPath.section
+                    Previous.row = indexPath.row
+
+                    let width = collectionView.frame.size.width
+                    let height = MonthCell.calculateHeight(month(indexPath), width: width, calendar: calendar)
+                    print("height: \(height)")
+//                    view.layoutIfNeeded()
+//                    collectionViewHeightConstraint.constant = height
+//                    view.layoutIfNeeded()
+
+                }
+            }
+        }
     }
 }
