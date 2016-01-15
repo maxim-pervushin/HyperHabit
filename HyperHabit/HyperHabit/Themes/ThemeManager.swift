@@ -48,7 +48,7 @@ class ThemeManager {
         }
     }
 
-    private func update() {
+    func update() {
 
         UIView.appearance().tintColor = theme.foregroundColor
 
@@ -160,10 +160,8 @@ class ThemeManager {
     }
 
     init() {
-        self.theme = defaultTheme
-        self.loadDefaults()
-//        self.timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timeout:", userInfo: nil, repeats: true)
-//        self.timer.fire()
+        theme = defaultTheme
+        loadDefaults()
     }
 
     @objc private func timeout(sender: AnyObject?) {

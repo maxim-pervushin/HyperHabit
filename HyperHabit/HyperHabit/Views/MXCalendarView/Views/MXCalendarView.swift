@@ -123,6 +123,12 @@ extension MXCalendarView: UICollectionViewDataSource {
         dateSelectedHandler?(date: date)
     }
 
+    private func cellConfiguration(cell: UICollectionViewCell) {
+        if let dayCell = cell as? MXDayCell {
+            print("configure:\(dayCell.date)")
+        }
+    }
+
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXMonthCell.defaultIdentifier, forIndexPath: indexPath) as! MXMonthCell
         cell.monthView?.calendar = calendar
@@ -131,6 +137,7 @@ extension MXCalendarView: UICollectionViewDataSource {
         cell.monthView?.selectedDate = selectedDate
         cell.monthView?.month = month(indexPath)
         cell.monthView?.dateSelectedHandler = dateSelected
+        cell.monthView?.cellConfigurationHandler = cellConfiguration
         return cell
     }
 }

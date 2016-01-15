@@ -22,6 +22,7 @@ class MXMonthView: UIView {
     }
 
     var dateSelectedHandler: ((date:NSDate) -> ())?
+    var cellConfigurationHandler: ((cell:UICollectionViewCell) -> ())?
 
     var month: NSDate? {
         didSet {
@@ -120,6 +121,7 @@ extension MXMonthView {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXDayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXDayCell
         cell.date = date
         cell.selectedDate = selectedDate
+        cellConfigurationHandler?(cell: cell)
         return cell
     }
 
