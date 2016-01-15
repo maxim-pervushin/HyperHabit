@@ -152,7 +152,6 @@ extension NSDate {
         return (today.isEqualToDate(otherDate))
 
     }
-
 }
 
 func ==(lhs: NSDate, rhs: NSDate) -> Bool {

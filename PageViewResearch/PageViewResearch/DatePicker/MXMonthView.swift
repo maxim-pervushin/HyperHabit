@@ -1,30 +1,15 @@
 //
-// Created by Maxim Pervushin on 13/01/16.
+// Created by Maxim Pervushin on 15/01/16.
 // Copyright (c) 2016 Maxim Pervushin. All rights reserved.
 //
 
 import UIKit
 
-class MonthCell: UICollectionViewCell {
+class MXMonthView: UIView {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    // MARK: MXMonthView @IB
+
     @IBOutlet weak var collectionView: UICollectionView!
-
-    static let defaultIdentifier = "MonthCell"
-
-    static func calculateHeight(month: NSDate, width: CGFloat, calendar: NSCalendar) -> CGFloat {
-        let cellSide = width / 7
-        let days = daysBeforeInMonth(month, calendar: calendar) + month.numberOfDaysInMonth() + daysAfterInMonth(month, calendar: calendar)
-        let rows = days / 7
-        let height = CGFloat(rows + 1) * cellSide
-
-//        print("");
-//        print("title:\(titleFormatter.stringFromDate(month))");
-//        print("width:\(width), cellSide:\(cellSide), days:\(days), rows:\(rows), height:\(height)");
-//        print("daysBeforeInMonth(month):\(daysBeforeInMonth(month, calendar: calendar)), daysAfterInMonth(month):\(daysAfterInMonth(month, calendar: calendar)), month.numberOfDaysInMonth():\(month.numberOfDaysInMonth())");
-
-        return height
-    }
 
     static private func daysBeforeInMonth(inMonth: NSDate, calendar: NSCalendar) -> Int {
         let firstDayWeekday = inMonth.firstDayOfMonth().weekday()
@@ -36,16 +21,17 @@ class MonthCell: UICollectionViewCell {
         return days % 7 != 0 ? 7 - days % 7 : 0
     }
 
+    var dateSelectedHandler: ((date:NSDate) -> ())?
 
     var month: NSDate? {
         didSet {
             collectionView.reloadData()
-            titleLabel?.text = monthTitle()
         }
     }
 
     var startDate: NSDate?
     var endDate: NSDate?
+    var selectedDate: NSDate?
 
     var calendar = NSCalendar.currentCalendar() {
         didSet {
@@ -95,7 +81,7 @@ class MonthCell: UICollectionViewCell {
 
     private func monthTitle() -> String {
         if let month = month {
-            return MonthCell.titleFormatter.stringFromDate(month)
+            return MXMonthView.titleFormatter.stringFromDate(month)
         }
         return ""
     }
@@ -105,17 +91,52 @@ class MonthCell: UICollectionViewCell {
         while index > 6 {
             index -= 7
         }
-        let title = MonthCell.dayFormatter.shortWeekdaySymbols[index]
+        let title = MXMonthView.dayFormatter.shortWeekdaySymbols[index]
         return title
     }
 }
 
-extension MonthCell: UICollectionViewDataSource {
+extension MXMonthView {
+
+    // MARK: Custom cells
+
+    private func monthTitleCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXTextCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXTextCell
+        cell.text = monthTitle()
+        return cell
+    }
+
+    private func dayTitleCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXTextCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXTextCell
+        cell.text = dayTitle(indexPath.row)
+        return cell
+    }
+
+    private func emptyCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCellWithReuseIdentifier(MXEmptyCell.defaultReuseIdentifier, forIndexPath: indexPath)
+    }
+
+    private func dayCell(collectionView: UICollectionView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXDayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXDayCell
+        cell.date = date
+        cell.selectedDate = selectedDate
+        return cell
+    }
+
+    private func inactiveDayCell(collectionView: UICollectionView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXInactiveDayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXInactiveDayCell
+        cell.date = date
+        return cell
+    }
+}
+
+extension MXMonthView: UICollectionViewDataSource {
 
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         guard let _ = month else {
             return 0
         }
+
         return 3
     }
 
@@ -128,37 +149,9 @@ extension MonthCell: UICollectionViewDataSource {
             return 1
         } else if section == 1 {
             return 7
+        } else {
+            return daysBeforeInMonth(month) + month.numberOfDaysInMonth() + daysAfterInMonth(month)
         }
-
-        return daysBeforeInMonth(month) + month.numberOfDaysInMonth() + daysAfterInMonth(month)
-    }
-
-    private func monthTitleCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TextCell.defaultReuseIdentifier, forIndexPath: indexPath) as! TextCell
-        cell.text = monthTitle()
-        return cell
-    }
-
-    private func dayTitleCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TextCell.defaultReuseIdentifier, forIndexPath: indexPath) as! TextCell
-        cell.text = dayTitle(indexPath.row)
-        return cell
-    }
-
-    private func emptyCell(collectionView: UICollectionView, indexPath: NSIndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCellWithReuseIdentifier(EmptyCell.defaultReuseIdentifier, forIndexPath: indexPath)
-    }
-
-    private func dayCell(collectionView: UICollectionView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! DayCell
-        cell.date = date
-        return cell
-    }
-
-    private func inactiveDayCell(collectionView: UICollectionView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(InactiveDayCell.defaultReuseIdentifier, forIndexPath: indexPath) as! InactiveDayCell
-        cell.date = date
-        return cell
     }
 
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -192,10 +185,18 @@ extension MonthCell: UICollectionViewDataSource {
     }
 }
 
-extension MonthCell: UICollectionViewDelegate {
+extension MXMonthView: UICollectionViewDelegate {
+
+    public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+
+        if let dayCell = collectionView.cellForItemAtIndexPath(indexPath) as? MXDayCell, date = dayCell.date {
+            dateSelectedHandler?(date: date)
+        }
+    }
 }
 
-extension MonthCell: UICollectionViewDelegateFlowLayout {
+extension MXMonthView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let side = collectionView.frame.size.width / 7

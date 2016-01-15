@@ -1,26 +1,68 @@
 //
-//  ViewController.swift
-//  PageViewResearch
-//
-//  Created by Maxim Pervushin on 12/01/16.
-//  Copyright © 2016 Maxim Pervushin. All rights reserved.
+// Created by Maxim Pervushin on 14/01/16.
+// Copyright (c) 2016 Maxim Pervushin. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MXCalendarView: UIView {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    // MARK: MXCalendarView @IB
+
+    @IBOutlet weak var collectionView: UICollectionView?
+
+    // MARK: MXCalendarView public
+
+    var dateSelectedHandler: ((date:NSDate) -> ())?
 
     var calendar = NSCalendar.currentCalendar() {
         didSet {
-            collectionView.reloadData()
+            collectionView?.reloadData()
         }
     }
 
-    let startDate = NSDate().dateByAddingMonths(-4).dateByAddingDays(5)
-    let endDate = NSDate()
+    var startDate = NSDate(timeIntervalSince1970: 0) {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+
+    var endDate = NSDate() {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+
+    var selectedDate: NSDate? {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+
+    func scrollToDate(date: NSDate, animated: Bool) {
+        if let indexPath = indexPathForDate(date) {
+            collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: animated)
+        }
+    }
+
+    // MARK: MXCalendarView private
+
+    private func indexPathForDate(date: NSDate) -> NSIndexPath? {
+        guard let collectionView = collectionView else {
+            return nil
+        }
+        let adjustedDate = date.dateByIgnoringTime()
+        if adjustedDate < startDate || adjustedDate > endDate {
+            return nil
+        }
+        let section = adjustedDate.year() - startYear
+        var row = adjustedDate.month() - 1
+        if section == 0 {
+            row -= startMonth
+        }
+
+        return NSIndexPath(forRow: row, inSection: section)
+    }
 
     private var startYear: Int {
         return calendar.component(.Year, fromDate: startDate)
@@ -38,25 +80,14 @@ class ViewController: UIViewController {
         return calendar.component(.Month, fromDate: endDate)
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        print("startDate:\(startDate), endDate:\(endDate)");
-        print("startYear:\(startYear), endYear:\(endYear)");
-        print("startMonth:\(startMonth), endMonth:\(endMonth)");
-
-        let lastSection = numberOfSectionsInCollectionView(collectionView) - 1
-        let lastRow = collectionView(collectionView, numberOfItemsInSection: lastSection) - 1
-        let indexPath = NSIndexPath(forRow: lastRow, inSection: lastSection)
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: false)
-
-//        view.layoutIfNeeded()
-//        collectionViewHeightConstraint.constant = collectionView.frame.size.width
-//        view.layoutIfNeeded()
+    private func updateUI() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.collectionView?.reloadData()
+        }
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension MXCalendarView: UICollectionViewDataSource {
 
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return endYear - startYear + 1
@@ -75,13 +106,21 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     private func month(indexPath: NSIndexPath) -> NSDate {
+        guard let collectionView = collectionView else {
+            return NSDate(timeIntervalSince1970: 0)
+        }
         var monthToAdd = indexPath.row
         if indexPath.section > 0 {
             for section in 0 ... indexPath.section - 1 {
-                monthToAdd += collectionView(collectionView, numberOfItemsInSection: section)
+                monthToAdd += collectionView.numberOfItemsInSection(section)
             }
         }
         return startDate.firstDayOfMonth().dateByAddingMonths(monthToAdd)
+    }
+
+    private func dateSelected(date: NSDate) {
+        selectedDate = date
+        dateSelectedHandler?(date: date)
     }
 
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -89,21 +128,14 @@ extension ViewController: UICollectionViewDataSource {
         cell.monthView?.calendar = calendar
         cell.monthView?.startDate = startDate
         cell.monthView?.endDate = endDate
+        cell.monthView?.selectedDate = selectedDate
         cell.monthView?.month = month(indexPath)
-        cell.monthView?.dateSelectedHandler = dateSelectedHandler
+        cell.monthView?.dateSelectedHandler = dateSelected
         return cell
     }
-
-    private func dateSelectedHandler(date: NSDate) {
-        print("dateSelected: \(date)")
-    }
 }
 
-extension ViewController: UICollectionViewDelegate {
-
-}
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension MXCalendarView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width)

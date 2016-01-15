@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73BC60D782CD6439412071EA /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68BD00536EB7CEEF6FC6 /* ViewController2.swift */; };
 		73BC61BB5A1057A339BE9538 /* NSDate+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */; };
-		73BC651F4950D9DDD8B716A2 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66E309B3D4958441E00E /* DayCell.swift */; };
-		73BC69DE051B19BB95C26A3A /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC629030E7A4207219810D /* EmptyCell.swift */; };
+		73BC651F4950D9DDD8B716A2 /* MXDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66E309B3D4958441E00E /* MXDayCell.swift */; };
+		73BC665BFD96A4CD417A8264 /* MXCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC677708CC105ADCC18C41 /* MXCalendarView.swift */; };
+		73BC69DE051B19BB95C26A3A /* MXEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC629030E7A4207219810D /* MXEmptyCell.swift */; };
 		73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6266CFFA186B1FA54D38 /* TextCell.swift */; };
-		73BC69E17E0A3CC0DA6095FB /* InactiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */; };
-		73BC6AD6135D6F086029B79F /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */; };
+		73BC6AD6135D6F086029B79F /* MXMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA3F47B405D4E8A8AE /* MXMonthCell.swift */; };
+		73BC6C80BBBCE7DA069AA334 /* MXMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61549FCB34A5F0C5FE43 /* MXMonthView.swift */; };
+		73BC6E676C4E8178128043AB /* MXInactiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */; };
 		73BC6F15620BD05F9A2DAA70 /* MXMPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */; };
 		C5AC40401C458CEE006EC6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC403F1C458CEE006EC6A5 /* AppDelegate.swift */; };
 		C5AC40421C458CEE006EC6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC40411C458CEE006EC6A5 /* ViewController.swift */; };
@@ -22,12 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73BC61549FCB34A5F0C5FE43 /* MXMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMonthView.swift; sourceTree = "<group>"; };
+		73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXInactiveDayCell.swift; sourceTree = "<group>"; };
 		73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMPageView.swift; sourceTree = "<group>"; };
 		73BC6266CFFA186B1FA54D38 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
-		73BC629030E7A4207219810D /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
-		73BC66E309B3D4958441E00E /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
-		73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
-		73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InactiveDayCell.swift; sourceTree = "<group>"; };
+		73BC629030E7A4207219810D /* MXEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXEmptyCell.swift; sourceTree = "<group>"; };
+		73BC66E309B3D4958441E00E /* MXDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXDayCell.swift; sourceTree = "<group>"; };
+		73BC677708CC105ADCC18C41 /* MXCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCalendarView.swift; sourceTree = "<group>"; };
+		73BC67AA3F47B405D4E8A8AE /* MXMonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMonthCell.swift; sourceTree = "<group>"; };
+		73BC68BD00536EB7CEEF6FC6 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helpers.swift"; sourceTree = "<group>"; };
 		C5AC403C1C458CEE006EC6A5 /* PageViewResearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageViewResearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AC403F1C458CEE006EC6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +58,22 @@
 		73BC616C1327FCF61BE667DD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				73BC66E309B3D4958441E00E /* DayCell.swift */,
+				73BC66E309B3D4958441E00E /* MXDayCell.swift */,
 				73BC6266CFFA186B1FA54D38 /* TextCell.swift */,
-				73BC67AA3F47B405D4E8A8AE /* MonthCell.swift */,
-				73BC629030E7A4207219810D /* EmptyCell.swift */,
+				73BC67AA3F47B405D4E8A8AE /* MXMonthCell.swift */,
+				73BC629030E7A4207219810D /* MXEmptyCell.swift */,
+				73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		73BC669C02135A5549B48FB5 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				73BC677708CC105ADCC18C41 /* MXCalendarView.swift */,
+				73BC61549FCB34A5F0C5FE43 /* MXMonthView.swift */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		C5AC40331C458CEE006EC6A5 = {
@@ -88,7 +104,8 @@
 				73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */,
 				73BC6FB55875E9D1A8DC1122 /* NSDate+Helpers.swift */,
 				73BC616C1327FCF61BE667DD /* Cells */,
-				73BC6E69250FC3CFF9EC7F76 /* InactiveDayCell.swift */,
+				73BC669C02135A5549B48FB5 /* DatePicker */,
+				73BC68BD00536EB7CEEF6FC6 /* ViewController2.swift */,
 			);
 			path = PageViewResearch;
 			sourceTree = "<group>";
@@ -168,11 +185,14 @@
 				C5AC40401C458CEE006EC6A5 /* AppDelegate.swift in Sources */,
 				73BC6F15620BD05F9A2DAA70 /* MXMPageView.swift in Sources */,
 				73BC61BB5A1057A339BE9538 /* NSDate+Helpers.swift in Sources */,
-				73BC651F4950D9DDD8B716A2 /* DayCell.swift in Sources */,
+				73BC651F4950D9DDD8B716A2 /* MXDayCell.swift in Sources */,
 				73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */,
-				73BC6AD6135D6F086029B79F /* MonthCell.swift in Sources */,
-				73BC69E17E0A3CC0DA6095FB /* InactiveDayCell.swift in Sources */,
-				73BC69DE051B19BB95C26A3A /* EmptyCell.swift in Sources */,
+				73BC6AD6135D6F086029B79F /* MXMonthCell.swift in Sources */,
+				73BC69DE051B19BB95C26A3A /* MXEmptyCell.swift in Sources */,
+				73BC665BFD96A4CD417A8264 /* MXCalendarView.swift in Sources */,
+				73BC60D782CD6439412071EA /* ViewController2.swift in Sources */,
+				73BC6E676C4E8178128043AB /* MXInactiveDayCell.swift in Sources */,
+				73BC6C80BBBCE7DA069AA334 /* MXMonthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
