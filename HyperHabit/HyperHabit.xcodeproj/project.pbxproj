@@ -108,6 +108,13 @@
 		C506575D1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
 		C506575E1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
 		C506575F1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */; };
+		C51CB18B1C4914B500D597E6 /* MXDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1861C4914B500D597E6 /* MXDayCell.swift */; };
+		C51CB18C1C4914B500D597E6 /* MXEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1871C4914B500D597E6 /* MXEmptyCell.swift */; };
+		C51CB18D1C4914B500D597E6 /* MXInactiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1881C4914B500D597E6 /* MXInactiveDayCell.swift */; };
+		C51CB18E1C4914B500D597E6 /* MXMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1891C4914B500D597E6 /* MXMonthCell.swift */; };
+		C51CB18F1C4914B500D597E6 /* MXTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB18A1C4914B500D597E6 /* MXTextCell.swift */; };
+		C51CB1921C49153700D597E6 /* MXCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1901C49153700D597E6 /* MXCalendarView.swift */; };
+		C51CB1931C49153700D597E6 /* MXMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB1911C49153700D597E6 /* MXMonthView.swift */; };
 		C53ABD001C02F800007F27FE /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		C53ABD011C02F800007F27FE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		C53ABD031C02F800007F27FE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
@@ -292,6 +299,13 @@
 		C506575A1C11B3F300DCB557 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		C506575C1C11B3F300DCB557 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C51CB1861C4914B500D597E6 /* MXDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXDayCell.swift; sourceTree = "<group>"; };
+		C51CB1871C4914B500D597E6 /* MXEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXEmptyCell.swift; sourceTree = "<group>"; };
+		C51CB1881C4914B500D597E6 /* MXInactiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXInactiveDayCell.swift; sourceTree = "<group>"; };
+		C51CB1891C4914B500D597E6 /* MXMonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMonthCell.swift; sourceTree = "<group>"; };
+		C51CB18A1C4914B500D597E6 /* MXTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXTextCell.swift; sourceTree = "<group>"; };
+		C51CB1901C49153700D597E6 /* MXCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCalendarView.swift; sourceTree = "<group>"; };
+		C51CB1911C49153700D597E6 /* MXMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMonthView.swift; sourceTree = "<group>"; };
 		C53ABCFE1C02F6F6007F27FE /* HyperHabit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HyperHabit.entitlements; sourceTree = "<group>"; };
 		C53ABCFF1C02F71E007F27FE /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C53ABD091C032C22007F27FE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -496,6 +510,15 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
+		73BC6670C23DCB5CB0C946D2 /* MXCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6A6E2C09F2C4D61B0F44 /* Cells */,
+				73BC6B7CA401EB7C3077534E /* Views */,
+			);
+			path = MXCalendarView;
+			sourceTree = "<group>";
+		};
 		73BC66E1A2890E36EA163ADA /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +595,7 @@
 				73BC66A27559D5F70B19A69F /* HabitCell.swift */,
 				73BC6E72395B3A9152E154E6 /* ThemeCell.swift */,
 				73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */,
+				73BC6670C23DCB5CB0C946D2 /* MXCalendarView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -594,12 +618,33 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		73BC6A6E2C09F2C4D61B0F44 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C51CB1861C4914B500D597E6 /* MXDayCell.swift */,
+				C51CB1871C4914B500D597E6 /* MXEmptyCell.swift */,
+				C51CB1881C4914B500D597E6 /* MXInactiveDayCell.swift */,
+				C51CB1891C4914B500D597E6 /* MXMonthCell.swift */,
+				C51CB18A1C4914B500D597E6 /* MXTextCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		73BC6B3124E71F5695668207 /* HabitEditor */ = {
 			isa = PBXGroup;
 			children = (
 				73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */,
 			);
 			path = HabitEditor;
+			sourceTree = "<group>";
+		};
+		73BC6B7CA401EB7C3077534E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C51CB1901C49153700D597E6 /* MXCalendarView.swift */,
+				C51CB1911C49153700D597E6 /* MXMonthView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		73BC6BB5FE85E7F637DF078E /* Data */ = {
@@ -1058,6 +1103,7 @@
 				C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */,
 				C580A5081BFF507200CF4C31 /* CVCalendarViewPresentationMode.swift in Sources */,
 				C580A50C1BFF507200CF4C31 /* CVDate.swift in Sources */,
+				C51CB18D1C4914B500D597E6 /* MXInactiveDayCell.swift in Sources */,
 				C580A5041BFF507200CF4C31 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				C580A5011BFF507200CF4C31 /* CVCalendarTouchController.swift in Sources */,
 				C506575D1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */,
@@ -1076,7 +1122,9 @@
 				73BC611015B9409E9C0D368A /* App.swift in Sources */,
 				C580A5051BFF507200CF4C31 /* CVCalendarViewAppearance.swift in Sources */,
 				C580A4F81BFF507200CF4C31 /* CVAuxiliaryView.swift in Sources */,
+				C51CB18C1C4914B500D597E6 /* MXEmptyCell.swift in Sources */,
 				C580A4FF1BFF507200CF4C31 /* CVCalendarMonthContentViewController.swift in Sources */,
+				C51CB18E1C4914B500D597E6 /* MXMonthCell.swift in Sources */,
 				C580A5101BFF507200CF4C31 /* CVSet.swift in Sources */,
 				C580A4FC1BFF507200CF4C31 /* CVCalendarManager.swift in Sources */,
 				C580A4F91BFF507200CF4C31 /* CVCalendarContentViewController.swift in Sources */,
@@ -1091,7 +1139,9 @@
 				73BC6F1BD06F75588CE9E931 /* NSDate+Hyper.swift in Sources */,
 				73BC6C28A5F03998A33426DF /* DataSource.swift in Sources */,
 				73BC654909448959DBA56ECC /* StatisticsForDateViewController.swift in Sources */,
+				C51CB18B1C4914B500D597E6 /* MXDayCell.swift in Sources */,
 				73BC6DAAF7353CDC03D11D91 /* StatisticsForDateDataSource.swift in Sources */,
+				C51CB1931C49153700D597E6 /* MXMonthView.swift in Sources */,
 				73BC601BD33E45B9AAC0452A /* EditHabitViewController.swift in Sources */,
 				73BC63CC9A466959D80CDA86 /* ReportsByDateViewController.swift in Sources */,
 				73BC6F9FB1AE35BA7BC7F5B5 /* HabitEditor.swift in Sources */,
@@ -1107,6 +1157,7 @@
 				73BC66B35670341D6E8B3E9A /* Report+PlistObject.swift in Sources */,
 				73BC66A210D43A9516BEE8CD /* Habit+PlistObject.swift in Sources */,
 				73BC6D3D8E8D60D95FB440A7 /* DataManager.swift in Sources */,
+				C51CB18F1C4914B500D597E6 /* MXTextCell.swift in Sources */,
 				73BC66C1E3EFAF6C4EAA94B3 /* ChangesObserver.swift in Sources */,
 				73BC64D1753EAFB04AAF13C3 /* SettingsViewController.swift in Sources */,
 				73BC6DDC36C14242551D334A /* ServiceUIAuthentication.swift in Sources */,
@@ -1122,6 +1173,7 @@
 				73BC6D703398D835462EB01E /* DayCell.swift in Sources */,
 				73BC64CCEDA3AA754B9606E2 /* NSDate+HyperHabit.swift in Sources */,
 				73BC612F988CB3CC606E3367 /* MonthCollectionReusableView.swift in Sources */,
+				C51CB1921C49153700D597E6 /* MXCalendarView.swift in Sources */,
 				73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */,
 				73BC6A801BBCBD8FD5308643 /* Cache.swift in Sources */,
 				73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */,

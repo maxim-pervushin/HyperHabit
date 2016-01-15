@@ -12,7 +12,7 @@
 		73BC651F4950D9DDD8B716A2 /* MXDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66E309B3D4958441E00E /* MXDayCell.swift */; };
 		73BC665BFD96A4CD417A8264 /* MXCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC677708CC105ADCC18C41 /* MXCalendarView.swift */; };
 		73BC69DE051B19BB95C26A3A /* MXEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC629030E7A4207219810D /* MXEmptyCell.swift */; };
-		73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6266CFFA186B1FA54D38 /* TextCell.swift */; };
+		73BC69E04F8341A20BCE1936 /* MXTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6266CFFA186B1FA54D38 /* MXTextCell.swift */; };
 		73BC6AD6135D6F086029B79F /* MXMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA3F47B405D4E8A8AE /* MXMonthCell.swift */; };
 		73BC6C80BBBCE7DA069AA334 /* MXMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61549FCB34A5F0C5FE43 /* MXMonthView.swift */; };
 		73BC6E676C4E8178128043AB /* MXInactiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */; };
@@ -28,7 +28,7 @@
 		73BC61549FCB34A5F0C5FE43 /* MXMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMonthView.swift; sourceTree = "<group>"; };
 		73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXInactiveDayCell.swift; sourceTree = "<group>"; };
 		73BC61FF1FBBD86E86A1B7F8 /* MXMPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXMPageView.swift; sourceTree = "<group>"; };
-		73BC6266CFFA186B1FA54D38 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		73BC6266CFFA186B1FA54D38 /* MXTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXTextCell.swift; sourceTree = "<group>"; };
 		73BC629030E7A4207219810D /* MXEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXEmptyCell.swift; sourceTree = "<group>"; };
 		73BC66E309B3D4958441E00E /* MXDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXDayCell.swift; sourceTree = "<group>"; };
 		73BC677708CC105ADCC18C41 /* MXCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXCalendarView.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				73BC66E309B3D4958441E00E /* MXDayCell.swift */,
-				73BC6266CFFA186B1FA54D38 /* TextCell.swift */,
+				73BC6266CFFA186B1FA54D38 /* MXTextCell.swift */,
 				73BC67AA3F47B405D4E8A8AE /* MXMonthCell.swift */,
 				73BC629030E7A4207219810D /* MXEmptyCell.swift */,
 				73BC61EF7E1FC9632D3B5E0A /* MXInactiveDayCell.swift */,
@@ -186,7 +186,7 @@
 				73BC6F15620BD05F9A2DAA70 /* MXMPageView.swift in Sources */,
 				73BC61BB5A1057A339BE9538 /* NSDate+Helpers.swift in Sources */,
 				73BC651F4950D9DDD8B716A2 /* MXDayCell.swift in Sources */,
-				73BC69E04F8341A20BCE1936 /* TextCell.swift in Sources */,
+				73BC69E04F8341A20BCE1936 /* MXTextCell.swift in Sources */,
 				73BC6AD6135D6F086029B79F /* MXMonthCell.swift in Sources */,
 				73BC69DE051B19BB95C26A3A /* MXEmptyCell.swift in Sources */,
 				73BC665BFD96A4CD417A8264 /* MXCalendarView.swift in Sources */,

@@ -92,7 +92,7 @@ class ReportsByDateViewController: UIViewController {
                 datePickerViewController.dismissViewControllerAnimated(true, completion: nil)
             }
 //            datePickerViewController.minDate = NSDate().dateByAddingMonths(-2)
-            datePickerViewController.maxDate = NSDate()
+            datePickerViewController.endDate = NSDate()
             datePickerViewController.selectedDate = dataSource.date
         }
     }
