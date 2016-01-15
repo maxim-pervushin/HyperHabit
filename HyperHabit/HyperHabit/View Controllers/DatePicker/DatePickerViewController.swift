@@ -21,7 +21,6 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var calendarView: MXCalendarView!
 
     @IBAction func todayButtonAction(sender: AnyObject) {
-//        scrollToDate(NSDate(), animated: true)
         calendarView?.scrollToDate(NSDate(), animated: true)
     }
 
@@ -104,6 +103,11 @@ class DatePickerViewController: UIViewController {
         return App.themeManager.theme.statusBarStyle
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        calendarView?.dateSelectedHandler = dateSelected
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
@@ -116,6 +120,10 @@ class DatePickerViewController: UIViewController {
         } else {
             calendarView?.scrollToDate(NSDate(), animated: false)
         }
+    }
+
+    private func dateSelected(date: NSDate) {
+        finished?(date)
     }
 }
 
