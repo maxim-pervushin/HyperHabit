@@ -13,11 +13,56 @@ class MXInactiveDayCell: UICollectionViewCell {
 
     var date: NSDate? {
         didSet {
-            if let date = date {
-                dateLabel.text = "\(date.day())"
-            } else {
-                dateLabel.text = ""
-            }
+            updateUI()
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        updateAppearance()
+    }
+
+    private var _defaultBackgroundColor: UIColor?
+    private var _defaultTextColor: UIColor?
+
+    private func updateUI() {
+        if let date = date {
+            dateLabel.text = "\(date.day())"
+        } else {
+            dateLabel.text = ""
+        }
+        updateAppearance()
+    }
+
+    private func updateAppearance() {
+        backgroundColor = _defaultBackgroundColor
+        dateLabel?.textColor = _defaultTextColor
+    }
+}
+
+extension MXInactiveDayCell {
+
+    // MARK: - UIAppearance
+
+    dynamic var defaultTextColor: UIColor? {
+        // UI_APPEARANCE_SELECTOR
+        get {
+            return _defaultTextColor
+        }
+        set {
+            _defaultTextColor = newValue
+            updateAppearance()
+        }
+    }
+
+    dynamic var defaultBackgroundColor: UIColor? {
+        // UI_APPEARANCE_SELECTOR
+        get {
+            return _defaultBackgroundColor
+        }
+        set {
+            _defaultBackgroundColor = newValue
+            updateAppearance()
         }
     }
 }
