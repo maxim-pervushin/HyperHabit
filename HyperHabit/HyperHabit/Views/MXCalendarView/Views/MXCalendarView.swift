@@ -154,7 +154,7 @@ extension MXCalendarView: UICollectionViewDelegate {
 extension MXCalendarView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width + 1)
+        return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width)
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

@@ -5,7 +5,7 @@
 
 import UIKit
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: ThemedTableViewController {
 
     // MARK: SettingsViewController @IB
 

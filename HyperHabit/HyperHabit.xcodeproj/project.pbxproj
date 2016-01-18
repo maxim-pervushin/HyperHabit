@@ -16,6 +16,7 @@
 		73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
 		73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */; };
+		73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC661ACFB808416536F6B0 /* ThemedViewController.swift */; };
 		73BC6292D2184EA8723FA832 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC63738D0525CB7FE2962E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC603928F193F9B3D10622 /* Service.swift */; };
@@ -233,6 +234,7 @@
 		73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateDataSource.swift; sourceTree = "<group>"; };
 		73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionReusableView.swift; sourceTree = "<group>"; };
 		73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionReusableView.swift; sourceTree = "<group>"; };
+		73BC661ACFB808416536F6B0 /* ThemedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedViewController.swift; sourceTree = "<group>"; };
 		73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 				73BC69E7296CA9E88F7D3D6B /* Views */,
 				73BC6620C9A12DA50F8C2ED2 /* Themes */,
 				73BC6FEB6953855B28CEED92 /* Extensions */,
+				73BC661ACFB808416536F6B0 /* ThemedViewController.swift */,
 			);
 			path = HyperHabit;
 			sourceTree = "<group>";
@@ -1052,6 +1055,7 @@
 				73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */,
 				73BC6A801BBCBD8FD5308643 /* Cache.swift in Sources */,
 				73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */,
+				73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -598,7 +598,7 @@
         <!--Statistics-->
         <scene sceneID="pWw-Zb-Jvn">
             <objects>
-                <navigationController id="ef9-0k-SYs" sceneMemberID="viewController">
+                <navigationController id="ef9-0k-SYs" customClass="ThemedNavigationController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="Statistics" id="LbB-yX-5lk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0X-9M-cTE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -625,14 +625,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-YS-v4N" customClass="MXCalendarView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="451"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-zt-rwx">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="451"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ik9-zt-rwx" secondAttribute="height" multiplier="1:1" id="YU4-PZ-bge"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QJN-za-r0D">
                                             <size key="itemSize" width="250" height="250"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -641,7 +638,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MXMonthCell" id="HcG-nT-sPw" customClass="MXMonthCell" customModule="HyperHabit" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="183" width="250" height="250"/>
+                                                <rect key="frame" x="0.0" y="108" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -787,7 +784,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="JYF-YS-v4N" secondAttribute="height" id="6sE-Z9-7hp"/>
                                     <constraint firstItem="ik9-zt-rwx" firstAttribute="top" secondItem="JYF-YS-v4N" secondAttribute="top" id="ZdR-n8-lkY"/>
                                     <constraint firstItem="ik9-zt-rwx" firstAttribute="leading" secondItem="JYF-YS-v4N" secondAttribute="leading" id="ncQ-wb-smy"/>
                                     <constraint firstAttribute="bottom" secondItem="ik9-zt-rwx" secondAttribute="bottom" id="xLK-Le-nK9"/>
@@ -801,8 +797,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JYF-YS-v4N" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="Hxe-ar-yiS"/>
-                            <constraint firstItem="JYF-YS-v4N" firstAttribute="width" secondItem="JYF-YS-v4N" secondAttribute="height" id="N2W-C7-9Nm"/>
                             <constraint firstItem="JYF-YS-v4N" firstAttribute="top" secondItem="377-AG-Yfk" secondAttribute="top" constant="100" id="P1N-qw-2Vc"/>
+                            <constraint firstItem="JcE-s3-jKH" firstAttribute="top" secondItem="JYF-YS-v4N" secondAttribute="bottom" id="rC9-3D-QVn"/>
                             <constraint firstAttribute="trailing" secondItem="JYF-YS-v4N" secondAttribute="trailing" id="uc7-82-dLE"/>
                         </constraints>
                     </view>

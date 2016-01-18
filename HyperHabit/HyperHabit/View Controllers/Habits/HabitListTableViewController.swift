@@ -5,7 +5,7 @@
 
 import UIKit
 
-class HabitListTableViewController: UITableViewController {
+class HabitListTableViewController: ThemedTableViewController {
 
     // MARK: HabitListTableViewController
 

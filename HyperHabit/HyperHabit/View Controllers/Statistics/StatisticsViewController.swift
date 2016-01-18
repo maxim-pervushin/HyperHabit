@@ -5,7 +5,7 @@
 
 import UIKit
 
-class StatisticsViewController: UIViewController {
+class StatisticsViewController: UIViewController, Themed {
 
     // MARK: StatisticsViewController @IB
 
@@ -27,6 +27,25 @@ class StatisticsViewController: UIViewController {
         calendarView?.cellConfigurationHandler = calendarViewCellConfiguration
         calendarView?.willDisplayMonthHandler = calendarViewWillDisplayMonth
         dataSource.changedHandler = updateUI
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return App.themeManager.theme.statusBarStyle
+    }
+
+    deinit {
+        themedDeinit()
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        themedInit()
+    }
+
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        themedInit()
     }
 
     private func updateUI() {
