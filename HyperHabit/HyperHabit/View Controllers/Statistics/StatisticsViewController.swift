@@ -18,13 +18,15 @@ class StatisticsViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-         calendarView?.scrollToDate(NSDate(), animated: false)
+        calendarView?.scrollToDate(NSDate(), animated: false)
+        updateUI()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView?.cellConfigurationHandler = calendarViewCellConfiguration
         calendarView?.willDisplayMonthHandler = calendarViewWillDisplayMonth
+        dataSource.changedHandler = updateUI
     }
 
     private func updateUI() {
@@ -38,11 +40,19 @@ class StatisticsViewController: UIViewController {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
             if reports.count > 0 {
-                let completedCount = try! reports.reduce(0, combine: { if $1.completed { return $0 + 1 } else { return $0 } })
+                let completedCount = try! reports.reduce(0, combine: {
+                    if $1.completed {
+                        return $0 + 1
+                    } else {
+                        return $0
+                    }
+                })
                 if completedCount == reports.count {
                     cell.backgroundColor = UIColor.greenColor()
-                } else {
+                } else if completedCount >= reports.count / 2 {
                     cell.backgroundColor = UIColor.yellowColor()
+                } else {
+                    cell.backgroundColor = UIColor.redColor()
                 }
             } else {
                 cell.backgroundColor = UIColor.clearColor()
@@ -51,7 +61,13 @@ class StatisticsViewController: UIViewController {
     }
 
     private func calendarViewWillDisplayMonth(month: NSDate) {
-        dataSource.loadReportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
+        guard let dataSourceMonth = dataSource.month else {
+            dataSource.month = month
+            return
+        }
+        if dataSourceMonth.year() != month.year() || dataSourceMonth.month() != month.month() {
+            dataSource.month = month
+        }
     }
 }
 

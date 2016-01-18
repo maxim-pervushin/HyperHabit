@@ -19,25 +19,25 @@ class MXCalendarView: UIView {
 
     var calendar = NSCalendar.currentCalendar() {
         didSet {
-            collectionView?.reloadData()
+            updateUI()
         }
     }
 
     var startDate = NSDate(timeIntervalSince1970: 0) {
         didSet {
-            collectionView?.reloadData()
+            updateUI()
         }
     }
 
     var endDate = NSDate() {
         didSet {
-            collectionView?.reloadData()
+            updateUI()
         }
     }
 
     var selectedDate: NSDate? {
         didSet {
-            collectionView?.reloadData()
+            updateUI()
         }
     }
 
@@ -154,7 +154,7 @@ extension MXCalendarView: UICollectionViewDelegate {
 extension MXCalendarView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width)
+        return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.width + 1)
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

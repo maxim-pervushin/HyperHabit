@@ -5,9 +5,30 @@
 
 import Foundation
 
-class StatisticsDataSource: DataSource {
+class StatisticsDataSource/*: DataSource*/ {
 
-    private(set) var reports = [Report]()
+    private let dataProvider: DataProvider
+    private var reports = [Report]()
+
+    var changedHandler: (Void -> Void)?
+
+    var month: NSDate? {
+        didSet {
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                () -> Void in
+                if let month = self.month {
+                    self.reports = self.dataProvider.reportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
+                } else {
+                    self.reports = []
+                }
+                self.changedHandler?()
+            }
+        }
+    }
+
+    init(dataProvider: DataProvider) {
+        self.dataProvider = dataProvider
+    }
 
     func reportsForDate(date: NSDate) -> [Report] {
         var result = [Report]()
@@ -17,13 +38,5 @@ class StatisticsDataSource: DataSource {
             }
         }
         return result
-    }
-
-    func loadReportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
-            () -> Void in
-            self.reports = self.dataProvider.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
-            self.changesObserver?.observableChanged(self)
-        }
     }
 }
