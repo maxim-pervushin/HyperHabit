@@ -101,17 +101,6 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
-        // CVCalendar TODO: Remove CVCalendar from project
-        CVAuxiliaryView.appearance().backgroundColor = UIColor.clearColor()
-
-        CVCalendarMenuView.appearance().backgroundColor = UIColor.clearColor()
-        UILabel.appearanceWhenContainedInInstancesOfClasses([CVCalendarMenuView.self]).textColor = theme.foregroundColor
-
-        CVCalendarView.appearance().backgroundColor = UIColor.clearColor()
-        CVCalendarDayView.appearance().backgroundColor = UIColor.clearColor()
-
-        UILabel.appearanceWhenContainedInInstancesOfClasses([CVCalendarDayView.self]).textColor = theme.foregroundColor
-
         // MXCalendarView
 
         MXDayCell.appearance().defaultTextColor = theme.foregroundColor

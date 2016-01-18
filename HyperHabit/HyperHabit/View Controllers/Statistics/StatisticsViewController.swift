@@ -9,64 +9,49 @@ class StatisticsViewController: UIViewController {
 
     // MARK: StatisticsViewController @IB
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
+    @IBOutlet weak var calendarView: MXCalendarView!
 
     // MARK: StatisticsViewController
 
     private let dataSource = StatisticsDataSource(dataProvider: App.dataProvider)
     private var selectedDate: NSDate?
 
-    private func updateUI() {
-        dispatch_async(dispatch_get_main_queue()) {
-            () -> Void in
-            if let monthYear = self.calendarView.presentedDate?.convertedDate()?.monthYear {
-                self.titleLabel.text = monthYear
-            } else {
-                self.titleLabel.text = ""
-            }
-            self.calendarView.contentController.refreshPresentedMonth()
-        }
-    }
-
-    private func loadReports() {
-        let calendar = NSCalendar.currentCalendar()
-
-        let components = calendar.components([.Year, .Month, .WeekOfMonth], fromDate: calendarView.presentedDate.convertedDate()!)
-
-        // Start of the month.
-        components.day = 1
-        let monthStartDate = calendar.dateFromComponents(components)!
-
-        // Start of the next month.
-        components.month += 1
-        let monthEndDate = calendar.dateFromComponents(components)!
-
-        dataSource.loadReportsFiltered(nil, fromDate: monthStartDate, toDate: monthEndDate)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+         calendarView?.scrollToDate(NSDate(), animated: false)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.changesObserver = self
+        calendarView?.cellConfigurationHandler = calendarViewCellConfiguration
+        calendarView?.willDisplayMonthHandler = calendarViewWillDisplayMonth
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        loadReports()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        calendarView.commitCalendarViewUpdate()
-        calendarMenuView.commitMenuViewUpdate()
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let statisticsForDateViewController = segue.destinationViewController as? StatisticsForDateViewController {
-            statisticsForDateViewController.date = selectedDate
+    private func updateUI() {
+        dispatch_async(dispatch_get_main_queue()) {
+            () -> Void in
+            self.calendarView?.updateUI()
         }
+    }
+
+    private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
+        if let dayCell = cell as? MXDayCell, let date = dayCell.date {
+            let reports = dataSource.reportsForDate(date)
+            if reports.count > 0 {
+                let completedCount = try! reports.reduce(0, combine: { if $1.completed { return $0 + 1 } else { return $0 } })
+                if completedCount == reports.count {
+                    cell.backgroundColor = UIColor.greenColor()
+                } else {
+                    cell.backgroundColor = UIColor.yellowColor()
+                }
+            } else {
+                cell.backgroundColor = UIColor.clearColor()
+            }
+        }
+    }
+
+    private func calendarViewWillDisplayMonth(month: NSDate) {
+        dataSource.loadReportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
     }
 }
 
@@ -74,166 +59,6 @@ extension StatisticsViewController: ChangesObserver {
 
     func observableChanged(observable: AnyObject) {
         updateUI()
-    }
-}
-
-extension StatisticsViewController: CVCalendarViewDelegate {
-
-    func presentationMode() -> CalendarMode {
-        return .MonthView
-    }
-
-    func shouldAutoSelectDayOnWeekChange() -> Bool {
-        return false
-    }
-
-    func shouldAutoSelectDayOnMonthChange() -> Bool {
-        return false
-    }
-
-    func presentedDateUpdated(date: CVDate) {
-        loadReports()
-    }
-
-    func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
-        guard let date = dayView.date.convertedDate() else  {
-            return
-        }
-
-        selectedDate = date
-        performSegueWithIdentifier("ShowStatisticsForDate", sender: self)
-    }
-
-    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
-        return true
-    }
-
-    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
-        guard let date = dayView.date.convertedDate() else {
-            return []
-        }
-
-        if date.dateByIgnoringTime() > NSDate().dateByIgnoringTime() {
-            dayView.backgroundColor = UIColor.clearColor()
-            return []
-        }
-
-        let reports = dataSource.reportsForDate(date)
-        var allTotal = 0
-        var allDone = 0
-        for report in reports {
-            allTotal += report.habitRepeatsTotal
-            allDone += report.repeatsDone
-        }
-
-        dayView.layer.cornerRadius = 3
-        if allDone == 0 {
-            dayView.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.2)
-        } else if allDone == allTotal {
-            dayView.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.2)
-        } else {
-            dayView.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.2)
-        }
-        return []
-    }
-}
-
-extension StatisticsViewController: CVCalendarMenuViewDelegate {
-
-    func firstWeekday() -> Weekday {
-        switch NSCalendar.currentCalendar().firstWeekday {
-        case 0:
-            return .Sunday
-        case 1:
-            return .Monday
-        case 2:
-            return .Tuesday
-        case 3:
-            return .Wednesday
-        case 4:
-            return .Thursday
-        case 5:
-            return .Friday
-        case 6:
-            return .Saturday
-        default:
-            return .Sunday
-        }
-    }
-
-    func dayOfWeekFont() -> UIFont {
-        return UIFont.systemFontOfSize(12)
-    }
-
-    func weekdaySymbolType() -> WeekdaySymbolType {
-        return .Short
-    }
-}
-
-extension StatisticsViewController: CVCalendarViewAppearanceDelegate {
-
-    func spaceBetweenWeekViews() -> CGFloat {
-        return 0
-    }
-
-    func spaceBetweenDayViews() -> CGFloat {
-        return 0
-    }
-
-    func dayLabelWeekdayFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelPresentWeekdayFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelPresentWeekdayBoldFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelPresentWeekdayHighlightedFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelPresentWeekdaySelectedFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelWeekdayHighlightedFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelWeekdaySelectedFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-
-    func dayLabelWeekdayInTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelWeekdayOutTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelWeekdayHighlightedTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelWeekdaySelectedTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelPresentWeekdayTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelPresentWeekdayHighlightedTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
-    }
-
-    func dayLabelPresentWeekdaySelectedTextColor() -> UIColor {
-        return App.themeManager.theme.foregroundColor
     }
 }
 

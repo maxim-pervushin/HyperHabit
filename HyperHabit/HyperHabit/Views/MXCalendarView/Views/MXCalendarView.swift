@@ -13,7 +13,9 @@ class MXCalendarView: UIView {
 
     // MARK: MXCalendarView public
 
-    var dateSelectedHandler: ((date:NSDate) -> ())?
+    var dateSelectedHandler: ((date:NSDate) -> Void)?
+    var cellConfigurationHandler: ((cell:UICollectionViewCell) -> Void)?
+    var willDisplayMonthHandler: ((month:NSDate) -> Void)?
 
     var calendar = NSCalendar.currentCalendar() {
         didSet {
@@ -42,6 +44,12 @@ class MXCalendarView: UIView {
     func scrollToDate(date: NSDate, animated: Bool) {
         if let indexPath = indexPathForDate(date) {
             collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: animated)
+        }
+    }
+
+    public func updateUI() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.collectionView?.reloadData()
         }
     }
 
@@ -79,12 +87,6 @@ class MXCalendarView: UIView {
     private var endMonth: Int {
         return calendar.component(.Month, fromDate: endDate)
     }
-
-    private func updateUI() {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.collectionView?.reloadData()
-        }
-    }
 }
 
 extension MXCalendarView: UICollectionViewDataSource {
@@ -105,7 +107,7 @@ extension MXCalendarView: UICollectionViewDataSource {
         }
     }
 
-    private func month(indexPath: NSIndexPath) -> NSDate {
+    private func monthAtIndexPath(indexPath: NSIndexPath) -> NSDate {
         guard let collectionView = collectionView else {
             return NSDate(timeIntervalSince1970: 0)
         }
@@ -125,7 +127,7 @@ extension MXCalendarView: UICollectionViewDataSource {
 
     private func cellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell {
-            print("configure:\(dayCell.date)")
+            cellConfigurationHandler?(cell: dayCell)
         }
     }
 
@@ -135,10 +137,17 @@ extension MXCalendarView: UICollectionViewDataSource {
         cell.monthView?.startDate = startDate
         cell.monthView?.endDate = endDate
         cell.monthView?.selectedDate = selectedDate
-        cell.monthView?.month = month(indexPath)
+        cell.monthView?.month = monthAtIndexPath(indexPath)
         cell.monthView?.dateSelectedHandler = dateSelected
         cell.monthView?.cellConfigurationHandler = cellConfiguration
         return cell
+    }
+}
+
+extension MXCalendarView: UICollectionViewDelegate {
+
+    public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        willDisplayMonthHandler?(month: monthAtIndexPath(indexPath))
     }
 }
 

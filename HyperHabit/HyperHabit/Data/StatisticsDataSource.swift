@@ -7,11 +7,7 @@ import Foundation
 
 class StatisticsDataSource: DataSource {
 
-    private(set) var reports = [Report]() /*{
-        didSet {
-            print("\(reports)")
-        }
-    }*/
+    private(set) var reports = [Report]()
 
     func reportsForDate(date: NSDate) -> [Report] {
         var result = [Report]()
@@ -20,13 +16,10 @@ class StatisticsDataSource: DataSource {
                 result.append(report)
             }
         }
-//        print("reportsForDate(date: \(date.dateComponent) -> \(result)")
         return result
     }
 
     func loadReportsFiltered(habit: Habit?, fromDate: NSDate, toDate: NSDate) {
-        // print("loadReportsFiltered(\(habit), fromDate: \(fromDate), toDate: \(toDate)")
-
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
             () -> Void in
             self.reports = self.dataProvider.reportsFiltered(habit, fromDate: fromDate, toDate: toDate)
@@ -34,7 +27,3 @@ class StatisticsDataSource: DataSource {
         }
     }
 }
-
-//struct StatisticItem {
-//    let status
-//}
