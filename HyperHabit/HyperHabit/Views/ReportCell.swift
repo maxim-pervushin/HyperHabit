@@ -4,11 +4,8 @@
 //
 
 import UIKit
-import QuartzCore
 
-class ReportCell: UITableViewCell {
-
-    static let defaultReuseIdentifier = "ReportCell"
+class ReportCell: UITableViewCell, MXReusableView {
 
     @IBOutlet weak var checkboxView: CheckboxView!
     @IBOutlet weak var habitNameLabel: UILabel!

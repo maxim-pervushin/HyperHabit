@@ -130,7 +130,7 @@ extension MXCalendarView: UICollectionViewDataSource {
     }
 
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXMonthCell.defaultIdentifier, forIndexPath: indexPath) as! MXMonthCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MXMonthCell.defaultReuseIdentifier, forIndexPath: indexPath) as! MXMonthCell
         cell.monthView?.calendar = calendar
         cell.monthView?.startDate = startDate
         cell.monthView?.endDate = endDate

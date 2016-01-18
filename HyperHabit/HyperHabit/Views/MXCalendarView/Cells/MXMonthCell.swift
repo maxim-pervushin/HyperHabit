@@ -5,10 +5,8 @@
 
 import UIKit
 
-class MXMonthCell: UICollectionViewCell {
+class MXMonthCell: UICollectionViewCell, MXReusableView {
 
     @IBOutlet weak var monthView: MXMonthView!
-
-    static let defaultIdentifier = "MXMonthCell"
 
 }

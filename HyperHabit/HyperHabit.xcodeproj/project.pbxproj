@@ -154,6 +154,8 @@
 		C53ABD4A1C032CEC007F27FE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53ABD321C032CA6007F27FE /* SystemConfiguration.framework */; };
 		C53ABD4B1C032CF2007F27FE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C53ABD3F1C032CDB007F27FE /* libsqlite3.tbd */; };
 		C53ABD4C1C032CF2007F27FE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C53ABD3D1C032CD4007F27FE /* libz.tbd */; };
+		C545BDAB1C4CE93900C630F4 /* MXReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B25A00325EA5FB64842 /* MXReusableView.swift */; };
+		C545BDAC1C4CE93A00C630F4 /* MXReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B25A00325EA5FB64842 /* MXReusableView.swift */; };
 		C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC761BFCFCC7003F9995 /* AppDelegate.swift */; };
 		C569AC7C1BFCFCC7003F9995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7A1BFCFCC7003F9995 /* Main.storyboard */; };
 		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
@@ -278,6 +280,7 @@
 		73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsForDateViewController.swift; sourceTree = "<group>"; };
 		73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+Parse.swift"; sourceTree = "<group>"; };
 		73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesObserver.swift; sourceTree = "<group>"; };
+		73BC6B25A00325EA5FB64842 /* MXReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXReusableView.swift; sourceTree = "<group>"; };
 		73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperHabitBridgingHeader.h; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Parse.swift"; sourceTree = "<group>"; };
@@ -596,6 +599,7 @@
 				73BC6E72395B3A9152E154E6 /* ThemeCell.swift */,
 				73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */,
 				73BC6670C23DCB5CB0C946D2 /* MXCalendarView */,
+				73BC6E9857F17F2B1A977434 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -626,6 +630,7 @@
 				C51CB1881C4914B500D597E6 /* MXInactiveDayCell.swift */,
 				C51CB1891C4914B500D597E6 /* MXMonthCell.swift */,
 				C51CB18A1C4914B500D597E6 /* MXTextCell.swift */,
+				73BC6B25A00325EA5FB64842 /* MXReusableView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -716,6 +721,13 @@
 				73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		73BC6E9857F17F2B1A977434 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		73BC6ED6EB622470EC7D646B /* PickTheme */ = {
@@ -1152,6 +1164,7 @@
 				73BC63738D0525CB7FE2962E /* Service.swift in Sources */,
 				73BC645F8E28727CAB1A1196 /* ParseService.swift in Sources */,
 				73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */,
+				C545BDAC1C4CE93A00C630F4 /* MXReusableView.swift in Sources */,
 				73BC64E424F16B66E9C3F03A /* Habit+Parse.swift in Sources */,
 				73BC69B05D467112C7BCA258 /* PlistCache.swift in Sources */,
 				73BC66B35670341D6E8B3E9A /* Report+PlistObject.swift in Sources */,
@@ -1253,6 +1266,7 @@
 				73BC6DCE32F9C2FADE737A06 /* Habit+Parse.swift in Sources */,
 				73BC60AAB1271E1F3C0EF6F1 /* PlistCache.swift in Sources */,
 				73BC6F9872138F86CA87E69D /* Report+PlistObject.swift in Sources */,
+				C545BDAB1C4CE93900C630F4 /* MXReusableView.swift in Sources */,
 				73BC6D4CD1A62104B8B7B558 /* Habit+PlistObject.swift in Sources */,
 				73BC6AF7250DF2F6AF6C7621 /* DataManager.swift in Sources */,
 				73BC6D9CF53D8F33005B437C /* ChangesObserver.swift in Sources */,

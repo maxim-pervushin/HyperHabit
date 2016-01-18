@@ -5,9 +5,7 @@
 
 import UIKit
 
-class MXTextCell: UICollectionViewCell {
-
-    static let defaultReuseIdentifier = "MXTextCell"
+class MXTextCell: UICollectionViewCell, MXReusableView {
 
     @IBOutlet weak var textLabel: UILabel!
 

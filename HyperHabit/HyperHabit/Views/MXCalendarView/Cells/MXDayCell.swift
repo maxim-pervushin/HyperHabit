@@ -5,9 +5,7 @@
 
 import UIKit
 
-class MXDayCell: UICollectionViewCell {
-
-    static let defaultReuseIdentifier = "MXDayCell"
+class MXDayCell: UICollectionViewCell, MXReusableView {
 
     @IBOutlet weak var dateLabel: UILabel!
 

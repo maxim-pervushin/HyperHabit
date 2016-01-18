@@ -5,9 +5,7 @@
 
 import UIKit
 
-class ThemeCell: UITableViewCell {
-
-    static let defaultReuseIdentifier = "ThemeCell"
+class ThemeCell: UITableViewCell, MXReusableView {
 
     var theme: Theme? {
         didSet {

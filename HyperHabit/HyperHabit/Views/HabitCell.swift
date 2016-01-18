@@ -5,9 +5,7 @@
 
 import UIKit
 
-class HabitCell: UITableViewCell {
-
-    static let defaultReuseIdentifier = "HabitCell"
+class HabitCell: UITableViewCell, MXReusableView {
 
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -17,3 +15,5 @@ class HabitCell: UITableViewCell {
         }
     }
 }
+
+

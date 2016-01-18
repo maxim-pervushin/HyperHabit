@@ -5,7 +5,5 @@
 
 import UIKit
 
-class MXEmptyCell: UICollectionViewCell {
-
-    static let defaultReuseIdentifier = "MXEmptyCell"
+class MXEmptyCell: UICollectionViewCell, MXReusableView {
 }
