@@ -24,6 +24,10 @@ struct Theme: Equatable {
 
 extension Theme {
 
+    static var pixelSize: CGFloat {
+        return 1.0 / UIScreen.mainScreen().scale
+    }
+
     var statusBarStyle: UIStatusBarStyle {
         return dark ? .LightContent : .Default
     }
@@ -33,8 +37,34 @@ extension Theme {
         return .Black
     }
 
-    var barBackgroundImage: UIImage {
-        return backgroundColor.image
+    var topBarBackgroundImage: UIImage {
+        let rect = CGRectMake(0, 0, 5, 5)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, backgroundColor.CGColor)
+        CGContextFillRect(context, rect)
+        CGContextSetFillColorWithColor(context, foregroundColor.colorWithAlphaComponent(0.25).CGColor)
+        CGContextSetShouldAntialias(context, false)
+        CGContextFillRect(context, CGRectMake(0, rect.size.height - Theme.pixelSize, 5, Theme.pixelSize))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 1, 0), resizingMode: .Stretch)
+    }
+
+    var bottomBarBackgroundImage: UIImage {
+        let rect = CGRectMake(0, 0, 5, 5)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, backgroundColor.CGColor)
+        CGContextFillRect(context, rect)
+
+        CGContextSetFillColorWithColor(context, foregroundColor.colorWithAlphaComponent(0.25).CGColor)
+
+        CGContextSetShouldAntialias(context, false)
+        CGContextFillRect(context, CGRectMake(0, 0, 5, Theme.pixelSize))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image.resizableImageWithCapInsets(UIEdgeInsetsMake(1, 0, 0, 0), resizingMode: .Stretch)
     }
 
     var textColor: UIColor {

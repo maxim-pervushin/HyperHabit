@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73BC600FA3D1823DFF3E43DC /* UIColor+HyperHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EE0A09AB6BBC21410A6 /* UIColor+HyperHabit.swift */; };
 		73BC601BD33E45B9AAC0452A /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC620A9FF858BFEB8597B3 /* EditHabitViewController.swift */; };
 		73BC60927BD09A1378E6CF20 /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC649D9156A711A874C64E /* Habit+PlistObject.swift */; };
 		73BC60AAB1271E1F3C0EF6F1 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
@@ -270,6 +271,7 @@
 		73BC6EB6468E4C72B3BB2542 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		73BC6EBEDB008DCE20D95068 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6EC850FB98E0148C8E25 /* UIColor+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hyper.swift"; sourceTree = "<group>"; };
+		73BC6EE0A09AB6BBC21410A6 /* UIColor+HyperHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HyperHabit.swift"; sourceTree = "<group>"; };
 		73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditor.swift; sourceTree = "<group>"; };
 		73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		C506575A1C11B3F300DCB557 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			isa = PBXGroup;
 			children = (
 				73BC68C909B5D6F55841462D /* NSDate+HyperHabit.swift */,
+				73BC6EE0A09AB6BBC21410A6 /* UIColor+HyperHabit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */,
 				73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */,
 				73BC670559A637730119FE30 /* BackgroundImageView.swift in Sources */,
+				73BC600FA3D1823DFF3E43DC /* UIColor+HyperHabit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

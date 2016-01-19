@@ -55,19 +55,19 @@ class ThemeManager {
         // Navigation bars
         let titleTextAttributes = [
                 NSForegroundColorAttributeName: theme.foregroundColor,
-//                NSFontAttributeName: theme.fontOfSize(25)
         ]
         UINavigationBar.appearance().barStyle = theme.barStyle
         UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(theme.barBackgroundImage, forBarPosition: .Any, barMetrics: .Default)
-//        UINavigationBar.appearance().tintColor = theme.backgroundColor
+//        UINavigationBar.appearance().setBackgroundImage(theme.backgroundColor.pixelImage, forBarPosition: .Any, barMetrics: .Default)
+        UINavigationBar.appearance().setBackgroundImage(theme.topBarBackgroundImage, forBarPosition: .Any, barMetrics: .Default)
         UINavigationBar.appearance().barTintColor = theme.backgroundColor
         UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
-//        UINavigationBar.appearance().setTitleVerticalPositionAdjustment(2, forBarMetrics: .Default)
 
         // Tab bars
         UITabBar.appearance().barStyle = theme.barStyle
         UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().backgroundImage = theme.backgroundColor.pixelImage
+        UITabBar.appearance().backgroundImage = theme.bottomBarBackgroundImage
         UITabBar.appearance().barTintColor = theme.backgroundColor
 
 //        UITabBarItem.appearance().
