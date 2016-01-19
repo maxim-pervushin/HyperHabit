@@ -58,7 +58,6 @@ class ThemeManager {
         ]
         UINavigationBar.appearance().barStyle = theme.barStyle
         UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().setBackgroundImage(theme.backgroundColor.pixelImage, forBarPosition: .Any, barMetrics: .Default)
         UINavigationBar.appearance().setBackgroundImage(theme.topBarBackgroundImage, forBarPosition: .Any, barMetrics: .Default)
         UINavigationBar.appearance().barTintColor = theme.backgroundColor
         UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
@@ -66,19 +65,14 @@ class ThemeManager {
         // Tab bars
         UITabBar.appearance().barStyle = theme.barStyle
         UITabBar.appearance().shadowImage = UIImage()
-//        UITabBar.appearance().backgroundImage = theme.backgroundColor.pixelImage
         UITabBar.appearance().backgroundImage = theme.bottomBarBackgroundImage
         UITabBar.appearance().barTintColor = theme.backgroundColor
-
-//        UITabBarItem.appearance().
-
 
         // Table views
         UITableView.appearance().backgroundColor = theme.backgroundColor
         UITableView.appearance().separatorColor = theme.foregroundColor.colorWithAlphaComponent(0.33)
 
         // Table view cells
-//        UITableViewCell.appearance().backgroundColor = theme.backgroundColor
         UITableViewCell.appearance().backgroundColor = UIColor.clearColor()
 
         // Table view header footer views

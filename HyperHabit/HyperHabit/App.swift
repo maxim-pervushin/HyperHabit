@@ -44,6 +44,13 @@ struct App {
         return false
     }
 
+    static var username: String {
+        if let parseService = service as? ParseService {
+            return parseService.username
+        }
+        return ""
+    }
+
     static func logIn(viewController: UIViewController) {
         if let parseService = service as? ParseService {
              parseService.logIn(viewController)

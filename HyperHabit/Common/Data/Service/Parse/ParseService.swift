@@ -148,6 +148,13 @@ extension ParseService: Service {
         return PFUser.currentUser() != nil
     }
 
+    var username: String {
+        if let username = PFUser.currentUser()?.username {
+            return username
+        }
+        return ""
+    }
+
     func getHabits() throws -> [Habit] {
         let query = PFQuery(className: "Habit")
         var habits = [Habit]()

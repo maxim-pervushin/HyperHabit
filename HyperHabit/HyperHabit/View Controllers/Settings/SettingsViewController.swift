@@ -5,14 +5,15 @@
 
 import UIKit
 
-class SettingsViewController: ThemedTableViewController {
+class SettingsViewController: ThemedViewController {
 
     // MARK: SettingsViewController @IB
 
-    @IBOutlet weak var authenticationStatusLabel: UILabel!
-    @IBOutlet weak var toggleAuthenticationButton: UIButton!
+    @IBOutlet weak var themeNameLabel: UILabel?
+    @IBOutlet weak var authenticationStatusLabel: UILabel?
+    @IBOutlet weak var toggleAuthenticationLabel: UILabel?
 
-    @IBAction func toggleAuthenticationButtonAction(sender: AnyObject) {
+    @IBAction func toggleAuthenticationAction(sender: AnyObject) {
         if App.authenticated {
             App.logOut(self)
         } else {
@@ -25,12 +26,14 @@ class SettingsViewController: ThemedTableViewController {
 
     private func updateUI() {
         if App.authenticated {
-            authenticationStatusLabel.text = "Authenticated"
-            toggleAuthenticationButton.setTitle("Log Out", forState: .Normal)
+            authenticationStatusLabel?.text = App.username
+            toggleAuthenticationLabel?.text = "Log Out"
         } else {
-            authenticationStatusLabel.text = "Not Authenticated"
-            toggleAuthenticationButton.setTitle("Authenticate", forState: .Normal)
+            authenticationStatusLabel?.text = "Not Authenticated"
+            toggleAuthenticationLabel?.text = "Log In"
         }
+
+        themeNameLabel?.text = App.themeManager.theme.name
     }
 
     override func viewWillAppear(animated: Bool) {

@@ -11,6 +11,8 @@ protocol Service {
 
     var available: Bool { get }
 
+    var username: String { get }
+
     func getHabits() throws -> [Habit]
 
     func saveHabits(habits: [Habit]) throws
