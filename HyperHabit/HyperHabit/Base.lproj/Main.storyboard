@@ -728,10 +728,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-YS-v4N" customClass="MXCalendarView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="600" height="451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-zt-rwx">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="451"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QJN-za-r0D">
                                             <size key="itemSize" width="250" height="250"/>
@@ -741,7 +741,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MXMonthCell" id="HcG-nT-sPw" customClass="MXMonthCell" customModule="HyperHabit" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="250" height="250"/>
+                                                <rect key="frame" x="0.0" y="158" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -767,6 +767,10 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foL-Dm-7xN" customClass="MXAccessoryView" customModule="HyperHabit" customModuleProvider="target">
+                                                                                        <rect key="frame" x="2" y="2" width="46" height="46"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                    </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="11111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[99]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXU-U3-bBE">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -777,12 +781,17 @@
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             </view>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="foL-Dm-7xN" secondAttribute="trailing" constant="2" id="2nf-6V-8xq"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="nXU-U3-bBE" secondAttribute="bottom" id="C1c-Uk-ba1"/>
+                                                                                <constraint firstItem="foL-Dm-7xN" firstAttribute="top" secondItem="wBV-NP-rVs" secondAttribute="top" constant="2" id="EsA-Bt-8AL"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="nXU-U3-bBE" secondAttribute="trailing" id="GKD-aC-BvC"/>
                                                                                 <constraint firstItem="nXU-U3-bBE" firstAttribute="leading" secondItem="wBV-NP-rVs" secondAttribute="leading" id="TLC-eM-M6V"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="foL-Dm-7xN" secondAttribute="bottom" constant="2" id="ZEf-eo-HLZ"/>
                                                                                 <constraint firstItem="nXU-U3-bBE" firstAttribute="top" secondItem="wBV-NP-rVs" secondAttribute="top" id="n9G-uX-xqN"/>
+                                                                                <constraint firstItem="foL-Dm-7xN" firstAttribute="leading" secondItem="wBV-NP-rVs" secondAttribute="leading" constant="2" id="nYU-sQ-jSa"/>
                                                                             </constraints>
                                                                             <connections>
+                                                                                <outlet property="accessoryView" destination="foL-Dm-7xN" id="Zlw-5c-a3h"/>
                                                                                 <outlet property="dateLabel" destination="nXU-U3-bBE" id="vbS-Uz-Axl"/>
                                                                             </connections>
                                                                         </collectionViewCell>
@@ -900,7 +909,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JYF-YS-v4N" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="Hxe-ar-yiS"/>
-                            <constraint firstItem="JYF-YS-v4N" firstAttribute="top" secondItem="377-AG-Yfk" secondAttribute="top" constant="100" id="P1N-qw-2Vc"/>
+                            <constraint firstItem="JYF-YS-v4N" firstAttribute="top" secondItem="377-AG-Yfk" secondAttribute="top" id="P1N-qw-2Vc"/>
                             <constraint firstItem="JcE-s3-jKH" firstAttribute="top" secondItem="JYF-YS-v4N" secondAttribute="bottom" id="rC9-3D-QVn"/>
                             <constraint firstAttribute="trailing" secondItem="JYF-YS-v4N" secondAttribute="trailing" id="uc7-82-dLE"/>
                         </constraints>

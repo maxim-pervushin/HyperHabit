@@ -62,6 +62,7 @@
 		73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66A27559D5F70B19A69F /* HabitCell.swift */; };
 		73BC69A320463EA8158B514B /* NSDate+Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6425AF4E3FD550BE1F6F /* NSDate+Hyper.swift */; };
 		73BC69B05D467112C7BCA258 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
+		73BC69B6EA0E0376559AEF78 /* MXAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4623CA84A16655859E /* MXAccessoryView.swift */; };
 		73BC69F8A8B444EA3A24E042 /* DataManagerTestCase+saveHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D48DE9F032647144031 /* DataManagerTestCase+saveHabit.swift */; };
 		73BC6A13933747D2E11B9038 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6A525EFDBCA7346B8E93 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */; };
@@ -254,6 +255,7 @@
 		73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+Parse.swift"; sourceTree = "<group>"; };
 		73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangesObserver.swift; sourceTree = "<group>"; };
 		73BC6B25A00325EA5FB64842 /* MXReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXReusableView.swift; sourceTree = "<group>"; };
+		73BC6B4623CA84A16655859E /* MXAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAccessoryView.swift; sourceTree = "<group>"; };
 		73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperHabitBridgingHeader.h; sourceTree = "<group>"; };
 		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
 		73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Parse.swift"; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				C51CB1891C4914B500D597E6 /* MXMonthCell.swift */,
 				C51CB18A1C4914B500D597E6 /* MXTextCell.swift */,
 				73BC6B25A00325EA5FB64842 /* MXReusableView.swift */,
+				73BC6B4623CA84A16655859E /* MXAccessoryView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1064,6 +1067,7 @@
 				73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */,
 				73BC670559A637730119FE30 /* BackgroundImageView.swift in Sources */,
 				73BC600FA3D1823DFF3E43DC /* UIColor+HyperHabit.swift in Sources */,
+				73BC69B6EA0E0376559AEF78 /* MXAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

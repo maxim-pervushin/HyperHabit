@@ -7,7 +7,8 @@ import UIKit
 
 class MXDayCell: UICollectionViewCell, MXReusableView {
 
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var accessoryView: MXAccessoryView?
 
     var date: NSDate? {
         didSet {
@@ -35,9 +36,9 @@ class MXDayCell: UICollectionViewCell, MXReusableView {
 
     private func updateUI() {
         if let date = date {
-            dateLabel.text = "\(date.day())"
+            dateLabel?.text = "\(date.day())"
         } else {
-            dateLabel.text = ""
+            dateLabel?.text = ""
         }
 
         updateAppearance()
@@ -60,6 +61,10 @@ class MXDayCell: UICollectionViewCell, MXReusableView {
         } else {
             backgroundColor = _defaultBackgroundColor
             dateLabel?.textColor = _defaultTextColor
+        }
+
+        if let dateLabel = dateLabel {
+            bringSubviewToFront(dateLabel)
         }
     }
 }

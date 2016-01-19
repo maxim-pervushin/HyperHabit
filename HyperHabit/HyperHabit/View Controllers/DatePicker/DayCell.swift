@@ -31,6 +31,6 @@ class DayCell: UICollectionViewCell {
             dayLabel.text = ""
         }
         highlightView.backgroundColor = highlightColor
-bringSubviewToFront(dayLabel)
-}
+        bringSubviewToFront(dayLabel)
+    }
 }

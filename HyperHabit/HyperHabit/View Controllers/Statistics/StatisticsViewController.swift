@@ -59,12 +59,6 @@ class StatisticsViewController: UIViewController, Themed {
     private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
-
-            let string = "\(date.year()).\(date.month()).\(date.day())"
-            if string == "2015.12.31" {
-                print("configure: \(date.year()).\(date.month()).\(date.day())")
-                print("\(reports)")
-            }
             if reports.count > 0 {
                 let completedCount = try! reports.reduce(0, combine: {
                     if $1.completed {
@@ -74,14 +68,14 @@ class StatisticsViewController: UIViewController, Themed {
                     }
                 })
                 if completedCount == reports.count {
-                    cell.backgroundColor = UIColor.greenColor()
+                    dayCell.accessoryView?.color = UIColor.greenColor()
                 } else if completedCount >= reports.count / 2 {
-                    cell.backgroundColor = UIColor.yellowColor()
+                    dayCell.accessoryView?.color = UIColor.yellowColor()
                 } else {
-                    cell.backgroundColor = UIColor.redColor()
+                    dayCell.accessoryView?.color = UIColor.redColor()
                 }
             } else {
-                cell.backgroundColor = UIColor.clearColor()
+                dayCell.accessoryView?.color = UIColor.clearColor()
             }
         }
     }
