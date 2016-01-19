@@ -47,6 +47,7 @@
 		73BC66C0ABD2B9E465DF2108 /* Report+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CB6C9A13683FB517463 /* Report+PlistObject.swift */; };
 		73BC66C1E3EFAF6C4EAA94B3 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */; };
 		73BC6700D48633F4274A3735 /* TodayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6877D708F73E911BB63A /* TodayDataSource.swift */; };
+		73BC670559A637730119FE30 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DCA49864BE9D3395712 /* BackgroundImageView.swift */; };
 		73BC67134B75A49EE1904446 /* Habit+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */; };
 		73BC67724D067790E8B7D971 /* TintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6535C50D1EA1106C5654 /* TintView.swift */; };
 		73BC67865C9DEA9C99013D42 /* ReportsByDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */; };
@@ -263,6 +264,7 @@
 		73BC6D48DE9F032647144031 /* DataManagerTestCase+saveHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+saveHabit.swift"; sourceTree = "<group>"; };
 		73BC6D5B3DA0184778419277 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		73BC6DA8E33A985656DC2D10 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		73BC6DCA49864BE9D3395712 /* BackgroundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		73BC6E49AE47A52824875F01 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
 		73BC6E72395B3A9152E154E6 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		73BC6EB6468E4C72B3BB2542 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			children = (
 				73BC6CCBE6B9A781C9347D47 /* BackgroundView.swift */,
 				73BC6535C50D1EA1106C5654 /* TintView.swift */,
+				73BC6DCA49864BE9D3395712 /* BackgroundImageView.swift */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -1056,6 +1059,7 @@
 				73BC6A801BBCBD8FD5308643 /* Cache.swift in Sources */,
 				73BC6CBF55DBA058B91822C1 /* CheckboxView.swift in Sources */,
 				73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */,
+				73BC670559A637730119FE30 /* BackgroundImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

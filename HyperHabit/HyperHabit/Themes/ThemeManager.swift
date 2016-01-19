@@ -78,7 +78,8 @@ class ThemeManager {
         UITableView.appearance().separatorColor = theme.foregroundColor.colorWithAlphaComponent(0.33)
 
         // Table view cells
-        UITableViewCell.appearance().backgroundColor = theme.backgroundColor
+//        UITableViewCell.appearance().backgroundColor = theme.backgroundColor
+        UITableViewCell.appearance().backgroundColor = UIColor.clearColor()
 
         // Table view header footer views
         UIView.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).backgroundColor = theme.backgroundColor
@@ -93,6 +94,10 @@ class ThemeManager {
         // BackgroundView
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundView.self]).textColor = theme.foregroundColor
+
+        // BackgroundImageView
+        BackgroundImageView.appearance().backgroundColor = theme.backgroundColor
+        UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
 
         // TintView
         TintView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.5)

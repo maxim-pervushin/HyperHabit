@@ -9,10 +9,13 @@ class ReportsByDateViewController: ThemedViewController {
 
     // MARK: ReportsByDateViewController @IB
 
-    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var previousDayContainer: UIView!
+    @IBOutlet weak var nextDayContainer: UIView!
+    @IBOutlet weak var previousDayImage: UIImageView!
+    @IBOutlet weak var nextDayImage: UIImageView!
+    @IBOutlet weak var pickDayImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var previousDayButton: UIButton!
-    @IBOutlet weak var nextDayButton: UIButton!
 
     @IBAction func previousDayButtonAction(sender: AnyObject) {
         dataSource.previousDate()
@@ -21,16 +24,16 @@ class ReportsByDateViewController: ThemedViewController {
     @IBAction func nextDayButtonAction(sender: AnyObject) {
         dataSource.nextDate()
     }
-
+    
     // MARK: ReportsByDateViewController
 
     private let dataSource = ReportsByDateDataSource(dataProvider: App.dataProvider)
 
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {
-            self.dateButton?.setTitle(" \(self.dataSource.date.longDateRelativeString)", forState: .Normal)
-            self.previousDayButton.hidden = !self.dataSource.hasPreviousDate
-            self.nextDayButton.hidden = !self.dataSource.hasNextDate
+            self.dateLabel?.text = "\(self.dataSource.date.longDateRelativeString)"
+            self.previousDayContainer.hidden = !self.dataSource.hasPreviousDate
+            self.nextDayContainer.hidden = !self.dataSource.hasNextDate
             self.tableView?.reloadData()
         }
     }
@@ -39,6 +42,9 @@ class ReportsByDateViewController: ThemedViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        previousDayImage?.image = UIImage(named: "ArrowLeft")!.imageWithRenderingMode(.AlwaysTemplate)
+        nextDayImage?.image = UIImage(named: "ArrowRight")!.imageWithRenderingMode(.AlwaysTemplate)
+        pickDayImage?.image = UIImage(named: "ArrowDown")!.imageWithRenderingMode(.AlwaysTemplate)
         dataSource.changesObserver = self
     }
 

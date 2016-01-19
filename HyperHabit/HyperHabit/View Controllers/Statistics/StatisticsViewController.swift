@@ -49,6 +49,7 @@ class StatisticsViewController: UIViewController, Themed {
     }
 
     private func updateUI() {
+        print("updateUI")
         dispatch_async(dispatch_get_main_queue()) {
             () -> Void in
             self.calendarView?.updateUI()
@@ -58,6 +59,12 @@ class StatisticsViewController: UIViewController, Themed {
     private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
+
+            let string = "\(date.year()).\(date.month()).\(date.day())"
+            if string == "2015.12.31" {
+                print("configure: \(date.year()).\(date.month()).\(date.day())")
+                print("\(reports)")
+            }
             if reports.count > 0 {
                 let completedCount = try! reports.reduce(0, combine: {
                     if $1.completed {
@@ -80,13 +87,7 @@ class StatisticsViewController: UIViewController, Themed {
     }
 
     private func calendarViewWillDisplayMonth(month: NSDate) {
-        guard let dataSourceMonth = dataSource.month else {
-            dataSource.month = month
-            return
-        }
-        if dataSourceMonth.year() != month.year() || dataSourceMonth.month() != month.month() {
-            dataSource.month = month
-        }
+        dataSource.month = month
     }
 }
 

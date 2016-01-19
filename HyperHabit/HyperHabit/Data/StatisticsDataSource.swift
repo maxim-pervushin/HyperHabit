@@ -5,38 +5,42 @@
 
 import Foundation
 
-class StatisticsDataSource/*: DataSource*/ {
+class StatisticsDataSource {
 
     private let dataProvider: DataProvider
-    private var reports = [Report]()
+    private let cache = NSCache()
 
     var changedHandler: (Void -> Void)?
 
     var month: NSDate? {
         didSet {
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
-                () -> Void in
-                if let month = self.month {
-                    self.reports = self.dataProvider.reportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
-                } else {
-                    self.reports = []
+            if let month = month {
+                let key = "\(month.year())-\(month.month())"
+                if nil == cache.objectForKey(key) {
+                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                        () -> Void in
+                        let reports = self.dataProvider.reportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
+                        self.cache.setObject(reports, forKey: key)
+                        print("loaded: \(key)")
+                        self.changedHandler?()
+                    }
                 }
-                self.changedHandler?()
             }
         }
+    }
+
+    func reportsForDate(date: NSDate) -> [Report] {
+//        guard let month = month else {
+//            return []
+//        }
+        let key = "\(date.year())-\(date.month())"
+        guard let cached = cache.objectForKey(key) as? [Report] else {
+            return []
+        }
+        return cached.filter({ $0.date.day() == date.day() })
     }
 
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
-    }
-
-    func reportsForDate(date: NSDate) -> [Report] {
-        var result = [Report]()
-        for report in reports {
-            if report.date.dateComponent == date.dateComponent {
-                result.append(report)
-            }
-        }
-        return result
     }
 }
