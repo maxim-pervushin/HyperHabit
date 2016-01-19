@@ -59,7 +59,7 @@ class StatisticsViewController: UIViewController, Themed {
     private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
-            if reports.count > 0 {
+            if reports.counfontfontddt > 0 {
                 let completedCount = try! reports.reduce(0, combine: {
                     if $1.completed {
                         return $0 + 1

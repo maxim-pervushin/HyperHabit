@@ -18,7 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        drawView1.colors = [UIColor.orangeColor()]
+        let visibleColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        let invisibleColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+
+        drawView1.colors = [visibleColor, visibleColor/*, visibleColor, visibleColor*/, invisibleColor, invisibleColor]
+
+//        drawView1.colors = [UIColor.orangeColor()]
         drawView2.colors = [UIColor.redColor(), UIColor.blueColor()]
         drawView3.colors = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor()]
         drawView4.colors = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
