@@ -59,24 +59,11 @@ class StatisticsViewController: UIViewController, Themed {
     private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
-            if reports.counfontfontddt > 0 {
-                let completedCount = try! reports.reduce(0, combine: {
-                    if $1.completed {
-                        return $0 + 1
-                    } else {
-                        return $0
-                    }
-                })
-                if completedCount == reports.count {
-                    dayCell.accessoryView?.color = UIColor.greenColor()
-                } else if completedCount >= reports.count / 2 {
-                    dayCell.accessoryView?.color = UIColor.yellowColor()
-                } else {
-                    dayCell.accessoryView?.color = UIColor.redColor()
-                }
-            } else {
-                dayCell.accessoryView?.color = UIColor.clearColor()
-            }
+            let completedCount = try! reports.reduce(0, combine: {
+                return $1.completed ? $0 + 1 : $0
+            })
+            dayCell.accessoryView?.maxValue = reports.count
+            dayCell.accessoryView?.value = completedCount
         }
     }
 
