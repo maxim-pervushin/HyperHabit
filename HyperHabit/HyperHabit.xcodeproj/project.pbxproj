@@ -27,7 +27,7 @@
 		73BC64047F0D9071820BD160 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC670CD39754C6B82C92D7 /* ParseService.swift */; };
 		73BC6425575996C5E5A8ECEA /* TodayDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */; };
 		73BC645F8E28727CAB1A1196 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC670CD39754C6B82C92D7 /* ParseService.swift */; };
-		73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */; };
+		73BC6496642535D409208C57 /* HabitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BEDE3C796DA6CF31B32 /* HabitListViewController.swift */; };
 		73BC64CCEDA3AA754B9606E2 /* NSDate+HyperHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68C909B5D6F55841462D /* NSDate+HyperHabit.swift */; };
 		73BC64D1753EAFB04AAF13C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66D0E11539D097D3B21A /* SettingsViewController.swift */; };
 		73BC64E424F16B66E9C3F03A /* Habit+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */; };
@@ -253,7 +253,7 @@
 		73BC6B25A00325EA5FB64842 /* MXReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXReusableView.swift; sourceTree = "<group>"; };
 		73BC6B4623CA84A16655859E /* MXAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAccessoryView.swift; sourceTree = "<group>"; };
 		73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperHabitBridgingHeader.h; sourceTree = "<group>"; };
-		73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListTableViewController.swift; sourceTree = "<group>"; };
+		73BC6BEDE3C796DA6CF31B32 /* HabitListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListViewController.swift; sourceTree = "<group>"; };
 		73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+Parse.swift"; sourceTree = "<group>"; };
 		73BC6C850804E2D3B78DB687 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73BC6CB6C9A13683FB517463 /* Report+PlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Report+PlistObject.swift"; sourceTree = "<group>"; };
@@ -622,7 +622,7 @@
 		73BC6CD326EE046BEDD87844 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				73BC6BEDE3C796DA6CF31B32 /* HabitListTableViewController.swift */,
+				73BC6BEDE3C796DA6CF31B32 /* HabitListViewController.swift */,
 				73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */,
 			);
 			path = Habits;
@@ -1006,7 +1006,7 @@
 				C569AC771BFCFCC7003F9995 /* AppDelegate.swift in Sources */,
 				C51CB18D1C4914B500D597E6 /* MXInactiveDayCell.swift in Sources */,
 				C506575D1C11B3F300DCB557 /* DTFolderMonitor.m in Sources */,
-				73BC6496642535D409208C57 /* HabitListTableViewController.swift in Sources */,
+				73BC6496642535D409208C57 /* HabitListViewController.swift in Sources */,
 				73BC6DD0D1BC4B545D2721DE /* HabitListDataSource.swift in Sources */,
 				73BC611015B9409E9C0D368A /* App.swift in Sources */,
 				C51CB18C1C4914B500D597E6 /* MXEmptyCell.swift in Sources */,

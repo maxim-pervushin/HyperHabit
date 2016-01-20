@@ -307,88 +307,6 @@
             </objects>
             <point key="canvasLocation" x="271" y="-1189"/>
         </scene>
-        <!--Habits-->
-        <scene sceneID="l3h-KT-R0u">
-            <objects>
-                <tableViewController id="k2B-Im-w65" customClass="HabitListTableViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="aJM-Sm-Sax" customClass="BackgroundImageTableView" customModule="HyperHabit" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" id="sjU-Fg-MPq" customClass="HabitCell" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sjU-Fg-MPq" id="7ar-vZ-3U8">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp1-9T-fxy">
-                                            <rect key="frame" x="20" y="8" width="572" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b79-li-D85" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="49" width="560" height="1"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" placeholder="YES" id="dvx-2R-JxI"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="b79-li-D85" secondAttribute="trailing" constant="20" id="1ku-yN-T3j"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Xp1-9T-fxy" secondAttribute="bottom" id="OXV-hU-Khb"/>
-                                        <constraint firstItem="b79-li-D85" firstAttribute="leading" secondItem="7ar-vZ-3U8" secondAttribute="leading" constant="20" id="h81-WY-3Tm"/>
-                                        <constraint firstItem="Xp1-9T-fxy" firstAttribute="leading" secondItem="7ar-vZ-3U8" secondAttribute="leading" constant="20" id="hO5-m6-npz"/>
-                                        <constraint firstItem="Xp1-9T-fxy" firstAttribute="trailing" secondItem="7ar-vZ-3U8" secondAttribute="trailingMargin" id="qa9-eX-Mak"/>
-                                        <constraint firstItem="Xp1-9T-fxy" firstAttribute="top" secondItem="7ar-vZ-3U8" secondAttribute="topMargin" id="wGT-gW-fLP"/>
-                                        <constraint firstAttribute="bottom" secondItem="b79-li-D85" secondAttribute="bottom" id="zUF-Ji-XIR"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="Xp1-9T-fxy" id="X0g-n0-zPL"/>
-                                    <segue destination="3Dy-km-eTD" kind="presentation" modalPresentationStyle="overFullScreen" id="Ki5-zA-cli"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddHabitCell" id="Ecu-D2-jvQ">
-                                <rect key="frame" x="0.0" y="142" width="600" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ecu-D2-jvQ" id="tzG-GM-3p6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Habit..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs2-Jy-bhX">
-                                            <rect key="frame" x="8" y="8" width="584" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Qs2-Jy-bhX" firstAttribute="top" secondItem="tzG-GM-3p6" secondAttribute="topMargin" id="2iX-Q5-JUh"/>
-                                        <constraint firstItem="Qs2-Jy-bhX" firstAttribute="leading" secondItem="tzG-GM-3p6" secondAttribute="leadingMargin" id="EWq-Ci-Mvn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Qs2-Jy-bhX" secondAttribute="bottom" id="LYL-Gf-epT"/>
-                                        <constraint firstItem="Qs2-Jy-bhX" firstAttribute="trailing" secondItem="tzG-GM-3p6" secondAttribute="trailingMargin" id="UJJ-de-cfL"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="3Dy-km-eTD" kind="presentation" modalPresentationStyle="overFullScreen" id="vmV-Nc-ZRn"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="k2B-Im-w65" id="mRd-Ps-bPL"/>
-                            <outlet property="delegate" destination="k2B-Im-w65" id="Kye-jY-HFi"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Habits" id="2pN-aD-S6c"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ztg-6E-8TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1079" y="-453"/>
-        </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="k0x-ql-L0s">
             <objects>
@@ -1058,7 +976,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmR-rd-OWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776" y="-453"/>
+            <point key="canvasLocation" x="1844" y="-453"/>
         </scene>
         <!--Statistics For Date View Controller-->
         <scene sceneID="gkn-80-YU6">
@@ -1084,19 +1002,120 @@
         <!--Habits-->
         <scene sceneID="1ht-YF-2WX">
             <objects>
-                <navigationController id="yH8-6k-nvz" sceneMemberID="viewController">
+                <navigationController id="yH8-6k-nvz" customClass="ThemedNavigationController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Habits" image="Habits" id="m06-JZ-zo5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hEB-av-h6p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="k2B-Im-w65" kind="relationship" relationship="rootViewController" id="m78-3v-E8e"/>
+                        <segue destination="uQ8-qB-YVs" kind="relationship" relationship="rootViewController" id="AYg-X7-QzG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXh-8Y-qet" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="259" y="-453"/>
+        </scene>
+        <!--Habits-->
+        <scene sceneID="z5F-Gr-rJh">
+            <objects>
+                <viewController id="uQ8-qB-YVs" customClass="HabitListViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mM9-ks-uht"/>
+                        <viewControllerLayoutGuide type="bottom" id="MEo-5k-doI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fnn-31-OCB" customClass="BackgroundImageView" customModule="HyperHabit" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pyC-xv-y8Z">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddHabitCell" id="NXL-1P-k5r">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NXL-1P-k5r" id="1BY-qO-Bnp">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Habit..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-fg-pAL">
+                                                    <rect key="frame" x="8" y="8" width="584" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VYc-fg-pAL" secondAttribute="bottom" id="VH4-oe-bco"/>
+                                                <constraint firstItem="VYc-fg-pAL" firstAttribute="top" secondItem="1BY-qO-Bnp" secondAttribute="topMargin" id="gtH-RD-22I"/>
+                                                <constraint firstItem="VYc-fg-pAL" firstAttribute="leading" secondItem="1BY-qO-Bnp" secondAttribute="leadingMargin" id="hD2-8H-4WA"/>
+                                                <constraint firstItem="VYc-fg-pAL" firstAttribute="trailing" secondItem="1BY-qO-Bnp" secondAttribute="trailingMargin" id="uIc-If-bPq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="3Dy-km-eTD" kind="presentation" modalPresentationStyle="overFullScreen" id="SUf-js-Z8o"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" id="jvW-GD-spx" customClass="HabitCell" customModule="HyperHabit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jvW-GD-spx" id="wFp-EU-aL7">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK4-99-I6i">
+                                                    <rect key="frame" x="20" y="8" width="572" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1s-b6-Hmy" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="49" width="560" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" placeholder="YES" id="z1U-tH-gsk"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="z1s-b6-Hmy" secondAttribute="trailing" constant="20" id="89Q-7A-lLS"/>
+                                                <constraint firstItem="QK4-99-I6i" firstAttribute="trailing" secondItem="wFp-EU-aL7" secondAttribute="trailingMargin" id="ISV-tg-dAo"/>
+                                                <constraint firstItem="QK4-99-I6i" firstAttribute="top" secondItem="wFp-EU-aL7" secondAttribute="topMargin" id="Tuo-2e-X2d"/>
+                                                <constraint firstAttribute="bottom" secondItem="z1s-b6-Hmy" secondAttribute="bottom" id="XWf-Bl-3iT"/>
+                                                <constraint firstItem="z1s-b6-Hmy" firstAttribute="leading" secondItem="wFp-EU-aL7" secondAttribute="leading" constant="20" id="ipJ-DL-cPC"/>
+                                                <constraint firstItem="QK4-99-I6i" firstAttribute="leading" secondItem="wFp-EU-aL7" secondAttribute="leading" constant="20" id="mac-3e-AAO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QK4-99-I6i" secondAttribute="bottom" id="w30-3A-x1L"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="QK4-99-I6i" id="fHY-mM-Ro3"/>
+                                            <segue destination="3Dy-km-eTD" kind="presentation" modalPresentationStyle="overFullScreen" id="fyM-51-hE1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uQ8-qB-YVs" id="Luz-BW-oys"/>
+                                    <outlet property="delegate" destination="uQ8-qB-YVs" id="5XO-nb-skB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pyC-xv-y8Z" firstAttribute="top" secondItem="fnn-31-OCB" secondAttribute="top" id="0Ax-bp-tYS"/>
+                            <constraint firstAttribute="trailing" secondItem="pyC-xv-y8Z" secondAttribute="trailing" id="Afx-68-X48"/>
+                            <constraint firstAttribute="bottom" secondItem="pyC-xv-y8Z" secondAttribute="bottom" id="PzS-Xn-Dmg"/>
+                            <constraint firstItem="pyC-xv-y8Z" firstAttribute="leading" secondItem="fnn-31-OCB" secondAttribute="leading" id="lUC-TM-Eme"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Habits" id="bau-bf-7lr"/>
+                    <connections>
+                        <outlet property="tableView" destination="pyC-xv-y8Z" id="t6P-py-1X8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvy-9s-qU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-453"/>
         </scene>
         <!--Theme Picker View Controller-->
         <scene sceneID="9Fn-br-3fX">
@@ -1431,7 +1450,7 @@
         <image name="Statistics" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vmV-Nc-ZRn"/>
+        <segue reference="SUf-js-Z8o"/>
         <segue reference="nYI-Zg-3CQ"/>
     </inferredMetricsTieBreakers>
 </document>
