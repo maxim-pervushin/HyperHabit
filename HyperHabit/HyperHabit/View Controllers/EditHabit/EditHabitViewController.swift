@@ -119,10 +119,10 @@ extension EditHabitViewController {
 
     private func prepareForPresentation() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = -headerHeightConstraint.constant * 2
         contentViewTopConstraint.constant = (-headerHeightConstraint.constant - contentViewHeightConstraint.constant) * 2
         view.layoutIfNeeded()
@@ -153,10 +153,10 @@ extension EditHabitViewController {
 
     private func prepareForDismissal() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = 0
         contentViewTopConstraint.constant = headerHeightConstraint.constant
         view.layoutIfNeeded()

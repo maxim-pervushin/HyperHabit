@@ -91,6 +91,8 @@ class ThemeManager {
         UIButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
         UIButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
 
+        UITextField.appearance().textColor = theme.foregroundColor
+
         // BackgroundView
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundView.self]).textColor = theme.foregroundColor
