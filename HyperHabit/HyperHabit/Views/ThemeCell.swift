@@ -7,9 +7,11 @@ import UIKit
 
 class ThemeCell: UITableViewCell, MXReusableView {
 
+    @IBOutlet weak var themeNameLabel: UILabel!
+
     var theme: Theme? {
         didSet {
-            textLabel?.text = theme?.name
+            themeNameLabel?.text = theme?.name
         }
     }
 }

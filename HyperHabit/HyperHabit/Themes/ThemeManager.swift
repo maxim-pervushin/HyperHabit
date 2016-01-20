@@ -32,6 +32,12 @@ class ThemeManager {
                         backgroundColor: UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1),
                         foregroundColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
                 ),
+                Theme(identifier: "debug",
+                        name: "Debug",
+                        dark: true,
+                        backgroundColor: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1),
+                        foregroundColor: UIColor(red: 0.95, green: 0, blue: 0, alpha: 1)
+                ),
         ]
     }
 

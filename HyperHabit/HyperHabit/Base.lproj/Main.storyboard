@@ -728,7 +728,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-YS-v4N" customClass="MXCalendarView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="74" width="600" height="551"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-zt-rwx">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
@@ -896,6 +896,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="JYF-YS-v4N" secondAttribute="height" multiplier="600:551" id="H6K-kB-Bdb"/>
                                     <constraint firstItem="ik9-zt-rwx" firstAttribute="top" secondItem="JYF-YS-v4N" secondAttribute="top" id="ZdR-n8-lkY"/>
                                     <constraint firstItem="ik9-zt-rwx" firstAttribute="leading" secondItem="JYF-YS-v4N" secondAttribute="leading" id="ncQ-wb-smy"/>
                                     <constraint firstAttribute="bottom" secondItem="ik9-zt-rwx" secondAttribute="bottom" id="xLK-Le-nK9"/>
@@ -909,8 +910,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JYF-YS-v4N" firstAttribute="leading" secondItem="377-AG-Yfk" secondAttribute="leading" id="Hxe-ar-yiS"/>
-                            <constraint firstItem="JYF-YS-v4N" firstAttribute="top" secondItem="377-AG-Yfk" secondAttribute="top" id="P1N-qw-2Vc"/>
-                            <constraint firstItem="JcE-s3-jKH" firstAttribute="top" secondItem="JYF-YS-v4N" secondAttribute="bottom" id="rC9-3D-QVn"/>
+                            <constraint firstItem="JYF-YS-v4N" firstAttribute="top" secondItem="tFL-hx-SSJ" secondAttribute="bottom" constant="10" id="prq-Ck-jlf"/>
                             <constraint firstAttribute="trailing" secondItem="JYF-YS-v4N" secondAttribute="trailing" id="uc7-82-dLE"/>
                         </constraints>
                     </view>
@@ -1098,18 +1098,54 @@
             </objects>
             <point key="canvasLocation" x="259" y="-453"/>
         </scene>
-        <!--Pick Theme View Controller-->
+        <!--Theme Picker View Controller-->
         <scene sceneID="9Fn-br-3fX">
             <objects>
-                <viewController id="nVs-Vt-C6e" customClass="PickThemeViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nVs-Vt-C6e" customClass="ThemePickerViewController" customModule="HyperHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2yV-ct-CZU"/>
                         <viewControllerLayoutGuide type="bottom" id="aS2-p7-hOa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GZd-oC-3Gv">
+                    <view key="view" contentMode="scaleToFill" id="GZd-oC-3Gv" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-qX-yBf" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-KA-xLR" userLabel="Header Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="QJk-nF-1ts"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDS-IU-cIP" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHX-MP-7Db">
+                                        <rect key="frame" x="8" y="4" width="50" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonAction:" destination="nVs-Vt-C6e" eventType="touchUpInside" id="X4B-Z1-dL8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eHX-MP-7Db" secondAttribute="bottom" constant="4" id="2pR-8Q-Q9N"/>
+                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="top" secondItem="NDS-IU-cIP" secondAttribute="top" constant="4" id="FJi-Dg-NJf"/>
+                                    <constraint firstAttribute="height" constant="44" id="Xfu-3P-HMR"/>
+                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="leading" secondItem="NDS-IU-cIP" secondAttribute="leading" constant="8" id="q0o-av-SkG"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-Qx-kOM" userLabel="Content Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-436" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1117,14 +1153,7 @@
                                     <constraint firstAttribute="height" constant="500" id="sSY-aa-Hbx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-KA-xLR" userLabel="Header Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="QJk-nF-1ts"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-Wx-ymW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-Wx-ymW" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="216"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-Fi-tFC" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -1134,26 +1163,43 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="mvM-aV-xu8"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oy2-Lb-fqk">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oy2-Lb-fqk">
                                         <rect key="frame" x="0.0" y="1" width="600" height="215"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ThemeCell" textLabel="hwX-nd-dYP" style="IBUITableViewCellStyleDefault" id="Z3A-4h-ZVE" customClass="ThemeCell" customModule="HyperHabit" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ThemeCell" id="Z3A-4h-ZVE" customClass="ThemeCell" customModule="HyperHabit" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="600" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z3A-4h-ZVE" id="rnA-K2-8ad">
-                                                    <rect key="frame" x="0.0" y="0.0" width="561" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="561" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hwX-nd-dYP">
-                                                            <rect key="frame" x="15" y="0.0" width="546" height="43"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ThemeName]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-9i-nWu">
+                                                            <rect key="frame" x="20" y="14" width="521" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPv-ce-RHu" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="49" width="521" height="1"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" placeholder="YES" id="K9N-kE-zTT"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="iPv-ce-RHu" firstAttribute="leading" secondItem="rnA-K2-8ad" secondAttribute="leading" constant="20" id="05W-eP-Cm1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iPv-ce-RHu" secondAttribute="trailing" constant="20" id="6V4-9i-6oB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GVq-9i-nWu" secondAttribute="trailing" constant="20" id="LLc-Xd-FUp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iPv-ce-RHu" secondAttribute="bottom" id="rFt-1h-Ccy"/>
+                                                        <constraint firstItem="GVq-9i-nWu" firstAttribute="leading" secondItem="rnA-K2-8ad" secondAttribute="leading" constant="20" id="vsX-Si-FWx"/>
+                                                        <constraint firstItem="GVq-9i-nWu" firstAttribute="centerY" secondItem="rnA-K2-8ad" secondAttribute="centerY" id="xHg-vJ-zPg"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="themeNameLabel" destination="GVq-9i-nWu" id="Qbm-3e-h4h"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -1174,37 +1220,7 @@
                                     <constraint firstAttribute="trailing" secondItem="oy2-Lb-fqk" secondAttribute="trailing" id="vnA-So-Tp2"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDS-IU-cIP" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHX-MP-7Db">
-                                        <rect key="frame" x="8" y="4" width="50" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="disabled">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelButtonAction:" destination="nVs-Vt-C6e" eventType="touchUpInside" id="X4B-Z1-dL8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="eHX-MP-7Db" secondAttribute="bottom" constant="4" id="2pR-8Q-Q9N"/>
-                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="top" secondItem="NDS-IU-cIP" secondAttribute="top" constant="4" id="FJi-Dg-NJf"/>
-                                    <constraint firstAttribute="height" constant="44" id="Xfu-3P-HMR"/>
-                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="leading" secondItem="NDS-IU-cIP" secondAttribute="leading" constant="8" id="q0o-av-SkG"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-qX-yBf" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gjc-qX-yBf" secondAttribute="trailing" id="1s0-QC-rgf"/>
                             <constraint firstItem="Gjc-qX-yBf" firstAttribute="top" secondItem="GZd-oC-3Gv" secondAttribute="top" id="4F3-6w-vxK"/>
@@ -1230,7 +1246,7 @@
                         <outlet property="contentTopView" destination="7W7-Qx-kOM" id="DU3-3E-S7p"/>
                         <outlet property="contentView" destination="RR6-Wx-ymW" id="yMH-Zi-kuD"/>
                         <outlet property="headerHeightConstraint" destination="Xfu-3P-HMR" id="Fzb-D5-c7s"/>
-                        <outlet property="headerTopConstraint" destination="VLp-La-9uX" id="0vL-sF-OEv"/>
+                        <outlet property="headerTopConstraint" destination="7Vb-Rj-NMO" id="we0-GO-sQW"/>
                         <outlet property="headerTopView" destination="9A0-KA-xLR" id="2wi-qd-pVC"/>
                         <outlet property="headerView" destination="NDS-IU-cIP" id="hoE-kH-ocd"/>
                         <outlet property="tableView" destination="oy2-Lb-fqk" id="hvk-iD-Xhh"/>

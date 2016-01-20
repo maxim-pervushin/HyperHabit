@@ -5,11 +5,9 @@
 
 import UIKit
 
-// TODO: Fix invalid presentation animation
+class ThemePickerViewController: ThemedViewController {
 
-class PickThemeViewController: UIViewController {
-
-    // MARK: PickThemeViewController @IB
+    // MARK: ThemePickerViewController @IB
 
     @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var headerTopView: UIView!
@@ -26,30 +24,14 @@ class PickThemeViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    // MARK: PickThemeViewController
+    // MARK: ThemePickerViewController
 
-    private let dataSource = PickThemeDataSource()
-
-    private func subscribe() {
-        NSNotificationCenter.defaultCenter().addObserverForName(ThemeManager.changedNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
-            _ in
-            self.setNeedsStatusBarAppearanceUpdate()
-        })
-    }
-
-    private func unsubscribe() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeManager.changedNotification, object: nil)
-    }
+    private let dataSource = ThemePickerDataSource()
 
     private func commonInit() {
         transitioningDelegate = self
         modalPresentationStyle = .Custom
         modalPresentationCapturesStatusBarAppearance = true
-        subscribe()
-    }
-
-    deinit {
-        unsubscribe()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -62,18 +44,21 @@ class PickThemeViewController: UIViewController {
         commonInit()
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return App.themeManager.theme.statusBarStyle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        containerHeightConstraint.constant = tableView.rowHeight * CGFloat(tableView.numberOfRowsInSection(0))
+        view.layoutIfNeeded()
     }
 }
 
-extension PickThemeViewController {
+extension ThemePickerViewController {
+
     private func prepareForPresentation() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = -headerHeightConstraint.constant * 2
         containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.layoutIfNeeded()
@@ -104,10 +89,10 @@ extension PickThemeViewController {
 
     private func prepareForDismissal() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = 0
         containerTopConstraint.constant = headerHeightConstraint.constant
         view.layoutIfNeeded()
@@ -138,7 +123,7 @@ extension PickThemeViewController {
     }
 }
 
-extension PickThemeViewController: UITableViewDataSource {
+extension ThemePickerViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.numberOfThemes
@@ -157,7 +142,7 @@ extension PickThemeViewController: UITableViewDataSource {
     }
 }
 
-extension PickThemeViewController: UITableViewDelegate {
+extension ThemePickerViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         dataSource.currentTheme = dataSource.themeAtIndex(indexPath.row)
@@ -166,7 +151,7 @@ extension PickThemeViewController: UITableViewDelegate {
     }
 }
 
-extension PickThemeViewController: UIViewControllerTransitioningDelegate {
+extension ThemePickerViewController: UIViewControllerTransitioningDelegate {
 
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
@@ -177,7 +162,7 @@ extension PickThemeViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension PickThemeViewController: UIViewControllerAnimatedTransitioning {
+extension ThemePickerViewController: UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
@@ -198,7 +183,7 @@ extension PickThemeViewController: UIViewControllerAnimatedTransitioning {
             return
         }
 
-        if let pickThemeViewController = toViewController as? PickThemeViewController {
+        if let pickThemeViewController = toViewController as? ThemePickerViewController {
             pickThemeViewController.prepareForPresentation()
             containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
             pickThemeViewController.performPresentationWithDuration(transitionDuration(transitionContext), completion: {
@@ -207,7 +192,7 @@ extension PickThemeViewController: UIViewControllerAnimatedTransitioning {
             })
         }
 
-        if let pickThemeViewController = fromViewController as? PickThemeViewController {
+        if let pickThemeViewController = fromViewController as? ThemePickerViewController {
             pickThemeViewController.prepareForDismissal()
             pickThemeViewController.performDismissalWithDuration(transitionDuration(transitionContext), completion: {
                 _ in

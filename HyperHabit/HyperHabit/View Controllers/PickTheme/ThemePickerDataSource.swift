@@ -5,7 +5,7 @@
 
 import Foundation
 
-class PickThemeDataSource {
+class ThemePickerDataSource {
 
     var numberOfThemes: Int {
         return App.themeManager.themes.count

@@ -133,10 +133,10 @@ extension DatePickerViewController {
 
     private func prepareForPresentation() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = -headerHeightConstraint.constant * 2
         containerTopConstraint.constant = (-headerHeightConstraint.constant - containerHeightConstraint.constant) * 2
         view.layoutIfNeeded()
@@ -167,10 +167,10 @@ extension DatePickerViewController {
 
     private func prepareForDismissal() {
         view.bringSubviewToFront(tintView)
-        view.bringSubviewToFront(headerTopView)
+        view.bringSubviewToFront(contentView)
         view.bringSubviewToFront(contentTopView)
         view.bringSubviewToFront(headerView)
-        view.bringSubviewToFront(contentView)
+        view.bringSubviewToFront(headerTopView)
         headerTopConstraint.constant = 0
         containerTopConstraint.constant = headerHeightConstraint.constant
         view.layoutIfNeeded()

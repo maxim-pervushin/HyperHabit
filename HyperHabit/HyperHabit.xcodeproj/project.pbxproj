@@ -16,13 +16,13 @@
 		73BC612F988CB3CC606E3367 /* MonthCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */; };
 		73BC613D096CE754EE3CE0CF /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC61E73FF89FF8D699E455 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68822C48506F70552FE7 /* App.swift */; };
-		73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */; };
+		73BC6212A920CB533B710A22 /* ThemePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC611F827C14DFD8429CF3 /* ThemePickerViewController.swift */; };
 		73BC6268400F4E8CA058205E /* ThemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC661ACFB808416536F6B0 /* ThemedViewController.swift */; };
 		73BC6292D2184EA8723FA832 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6176C0D159A6FC336317 /* LineView.swift */; };
 		73BC633484A642A7CC0F4B29 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6257F7926F5029E191EA /* Report.swift */; };
 		73BC63738D0525CB7FE2962E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC603928F193F9B3D10622 /* Service.swift */; };
 		73BC63969986AD18784BFFB0 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
-		73BC63B57CFD9530C2D61B7E /* PickThemeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66EDA2A91CE6B0D41736 /* PickThemeDataSource.swift */; };
+		73BC63B57CFD9530C2D61B7E /* ThemePickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66EDA2A91CE6B0D41736 /* ThemePickerDataSource.swift */; };
 		73BC63CC9A466959D80CDA86 /* ReportsByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63078589D984B029581D /* ReportsByDateViewController.swift */; };
 		73BC64047F0D9071820BD160 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC670CD39754C6B82C92D7 /* ParseService.swift */; };
 		73BC6425575996C5E5A8ECEA /* TodayDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */; };
@@ -211,7 +211,7 @@
 		73BC60162A44EDC7BC71CFF5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC603928F193F9B3D10622 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitDataSource.swift; sourceTree = "<group>"; };
-		73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeViewController.swift; sourceTree = "<group>"; };
+		73BC611F827C14DFD8429CF3 /* ThemePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePickerViewController.swift; sourceTree = "<group>"; };
 		73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditorTestCase.swift; sourceTree = "<group>"; };
 		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		73BC617E47287F24838E38B8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		73BC66B2361EC437AD3D5179 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		73BC66D0E11539D097D3B21A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		73BC66EDA2A91CE6B0D41736 /* PickThemeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeDataSource.swift; sourceTree = "<group>"; };
+		73BC66EDA2A91CE6B0D41736 /* ThemePickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePickerDataSource.swift; sourceTree = "<group>"; };
 		73BC670CD39754C6B82C92D7 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		73BC676D212721E13748EBCE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		73BC67C86B3800C96E0E7824 /* ServiceUIAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceUIAuthentication.swift; sourceTree = "<group>"; };
@@ -662,8 +662,8 @@
 		73BC6ED6EB622470EC7D646B /* PickTheme */ = {
 			isa = PBXGroup;
 			children = (
-				73BC611F827C14DFD8429CF3 /* PickThemeViewController.swift */,
-				73BC66EDA2A91CE6B0D41736 /* PickThemeDataSource.swift */,
+				73BC611F827C14DFD8429CF3 /* ThemePickerViewController.swift */,
+				73BC66EDA2A91CE6B0D41736 /* ThemePickerDataSource.swift */,
 			);
 			path = PickTheme;
 			sourceTree = "<group>";
@@ -1048,8 +1048,8 @@
 				73BC6B1F5FBC74A3E6903A7D /* BackgroundView.swift in Sources */,
 				73BC6FD9B843E25B32513064 /* UIColor+Hyper.swift in Sources */,
 				73BC67724D067790E8B7D971 /* TintView.swift in Sources */,
-				73BC6212A920CB533B710A22 /* PickThemeViewController.swift in Sources */,
-				73BC63B57CFD9530C2D61B7E /* PickThemeDataSource.swift in Sources */,
+				73BC6212A920CB533B710A22 /* ThemePickerViewController.swift in Sources */,
+				73BC63B57CFD9530C2D61B7E /* ThemePickerDataSource.swift in Sources */,
 				73BC6ADBA352048BC0A955D1 /* ThemeCell.swift in Sources */,
 				73BC6D703398D835462EB01E /* DayCell.swift in Sources */,
 				73BC64CCEDA3AA754B9606E2 /* NSDate+HyperHabit.swift in Sources */,
