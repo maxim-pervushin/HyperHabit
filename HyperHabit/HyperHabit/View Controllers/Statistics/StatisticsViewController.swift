@@ -19,14 +19,14 @@ class StatisticsViewController: UIViewController, Themed {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         calendarView?.scrollToDate(NSDate(), animated: false)
-        updateUI()
+//        updateUI()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource.changedHandler = updateUI
         calendarView?.cellConfigurationHandler = calendarViewCellConfiguration
         calendarView?.willDisplayMonthHandler = calendarViewWillDisplayMonth
-        dataSource.changedHandler = updateUI
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -49,7 +49,6 @@ class StatisticsViewController: UIViewController, Themed {
     }
 
     private func updateUI() {
-        print("updateUI")
         dispatch_async(dispatch_get_main_queue()) {
             () -> Void in
             self.calendarView?.updateUI()
@@ -71,11 +70,3 @@ class StatisticsViewController: UIViewController, Themed {
         dataSource.month = month
     }
 }
-
-extension StatisticsViewController: ChangesObserver {
-
-    func observableChanged(observable: AnyObject) {
-        updateUI()
-    }
-}
-

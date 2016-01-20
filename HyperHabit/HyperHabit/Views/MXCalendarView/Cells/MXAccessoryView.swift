@@ -40,7 +40,7 @@ import UIKit
             let startAngle = segmentSize * CGFloat(currentSegment) + rotation
             let endAngle = segmentSize * CGFloat(currentSegment + 1) + rotation
             CGContextAddArc(ctx, center.x, center.y, radius, startAngle, endAngle, 0)
-            CGContextSetStrokeColorWithColor(ctx, (currentSegment <= value ? _activeSegmentColor : _inactiveSegmentColor).CGColor)
+            CGContextSetStrokeColorWithColor(ctx, (currentSegment < value ? _activeSegmentColor : _inactiveSegmentColor).CGColor)
             CGContextStrokePath(ctx)
         }
     }

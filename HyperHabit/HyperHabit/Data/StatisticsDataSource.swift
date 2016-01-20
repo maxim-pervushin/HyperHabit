@@ -10,7 +10,11 @@ class StatisticsDataSource {
     private let dataProvider: DataProvider
     private let cache = NSCache()
 
-    var changedHandler: (Void -> Void)?
+    var changedHandler: (Void -> Void)? {
+        didSet {
+            changedHandler?()
+        }
+    }
 
     var month: NSDate? {
         didSet {
@@ -21,7 +25,6 @@ class StatisticsDataSource {
                         () -> Void in
                         let reports = self.dataProvider.reportsFiltered(nil, fromDate: month, toDate: month.dateByAddingMonths(1))
                         self.cache.setObject(reports, forKey: key)
-                        print("loaded: \(key)")
                         self.changedHandler?()
                     }
                 }
@@ -42,5 +45,22 @@ class StatisticsDataSource {
 
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
+        subscribe()
+    }
+
+    deinit {
+        unsubscribe()
+    }
+
+    private func subscribe() {
+        NSNotificationCenter.defaultCenter().addObserverForName(DataManager.changedNotification, object: nil, queue: nil) {
+            (notification: NSNotification) -> Void in
+            self.cache.removeAllObjects()
+            self.changedHandler?()
+        }
+    }
+
+    private func unsubscribe() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: DataManager.changedNotification, object: nil)
     }
 }

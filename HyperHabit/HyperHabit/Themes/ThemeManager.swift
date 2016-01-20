@@ -110,7 +110,7 @@ class ThemeManager {
         MXDayCell.appearance().selectedDateBackgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.35)
 
         MXAccessoryView.appearance().activeSegmentColor = theme.foregroundColor
-        MXAccessoryView.appearance().inactiveSegmentColor = theme.backgroundColor
+        MXAccessoryView.appearance().inactiveSegmentColor = UIColor.clearColor()
 
         MXInactiveDayCell.appearance().defaultTextColor = theme.foregroundColor.colorWithAlphaComponent(0.35)
         MXInactiveDayCell.appearance().defaultBackgroundColor = UIColor.clearColor()
