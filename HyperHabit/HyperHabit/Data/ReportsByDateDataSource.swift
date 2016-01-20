@@ -22,11 +22,11 @@ class ReportsByDateDataSource: DataSource {
     }
 
     func previousDate() {
-        date = date.previousDay
+        date = date.dateByAddingDays(-1)
     }
 
     func nextDate() {
-        date = date.nextDay
+        date = date.dateByAddingDays(1)
     }
 
     var reports: [Report] {

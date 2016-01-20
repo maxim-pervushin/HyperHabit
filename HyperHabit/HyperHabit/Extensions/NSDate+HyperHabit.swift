@@ -7,35 +7,31 @@ import Foundation
 
 extension NSDate {
 
-    func sharedCalendar(){
-
-    }
-
-    func firstDayOfMonth () -> NSDate {
+    func firstDayOfMonth() -> NSDate {
         let calendar = NSCalendar.currentCalendar()
-        let dateComponent = calendar.components([.Year, .Month, .Day ], fromDate: self)
+        let dateComponent = calendar.components([.Year, .Month, .Day], fromDate: self)
         dateComponent.day = 1
         return calendar.dateFromComponents(dateComponent)!
     }
 
-    convenience init(year : Int, month : Int, day : Int) {
+    convenience init(year: Int, month: Int, day: Int) {
 
         let calendar = NSCalendar.currentCalendar()
         let dateComponent = NSDateComponents()
         dateComponent.year = year
         dateComponent.month = month
         dateComponent.day = day
-        self.init(timeInterval:0, sinceDate:calendar.dateFromComponents(dateComponent)!)
+        self.init(timeInterval: 0, sinceDate: calendar.dateFromComponents(dateComponent)!)
     }
 
-    func dateByAddingMonths(months : Int ) -> NSDate {
+    func dateByAddingMonths(months: Int) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let dateComponent = NSDateComponents()
         dateComponent.month = months
         return calendar.dateByAddingComponents(dateComponent, toDate: self, options: NSCalendarOptions.MatchNextTime)!
     }
 
-    func dateByAddingDays(days : Int ) -> NSDate {
+    func dateByAddingDays(days: Int) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let dateComponent = NSDateComponents()
         dateComponent.day = days
@@ -92,67 +88,52 @@ extension NSDate {
 
     func dateByIgnoringTime() -> NSDate {
         let calendar = NSCalendar.currentCalendar()
-        let dateComponent = calendar.components([.Year, .Month, .Day ], fromDate: self)
+        let dateComponent = calendar.components([.Year, .Month, .Day], fromDate: self)
         return calendar.dateFromComponents(dateComponent)!
     }
 
-    func monthNameFull() -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MMMM YYYY"
-        return dateFormatter.stringFromDate(self)
-    }
-
-    func isSunday() -> Bool
-    {
+    func isSunday() -> Bool {
         return (self.getWeekday() == 1)
     }
 
-    func isMonday() -> Bool
-    {
+    func isMonday() -> Bool {
         return (self.getWeekday() == 2)
     }
 
-    func isTuesday() -> Bool
-    {
+    func isTuesday() -> Bool {
         return (self.getWeekday() == 3)
     }
 
-    func isWednesday() -> Bool
-    {
+    func isWednesday() -> Bool {
         return (self.getWeekday() == 4)
     }
 
-    func isThursday() -> Bool
-    {
+    func isThursday() -> Bool {
         return (self.getWeekday() == 5)
     }
 
-    func isFriday() -> Bool
-    {
+    func isFriday() -> Bool {
         return (self.getWeekday() == 6)
     }
 
-    func isSaturday() -> Bool
-    {
+    func isSaturday() -> Bool {
         return (self.getWeekday() == 7)
     }
 
     func getWeekday() -> Int {
         let calendar = NSCalendar.currentCalendar()
-        return calendar.components( .Weekday, fromDate: self).weekday
+        return calendar.components(.Weekday, fromDate: self).weekday
     }
 
     func isToday() -> Bool {
         let cal = NSCalendar.currentCalendar()
-        var components = cal.components([.Era, .Year, .Month, .Day], fromDate:NSDate())
+        var components = cal.components([.Era, .Year, .Month, .Day], fromDate: NSDate())
         let today = cal.dateFromComponents(components)!
 
-        components = cal.components([.Era, .Year, .Month, .Day], fromDate:self);
+        components = cal.components([.Era, .Year, .Month, .Day], fromDate: self);
         let otherDate = cal.dateFromComponents(components)!
         return (today.isEqualToDate(otherDate))
-
     }
-
 }
 
 func ==(lhs: NSDate, rhs: NSDate) -> Bool {
@@ -173,4 +154,104 @@ func >(lhs: NSDate, rhs: NSDate) -> Bool {
 
 func >=(lhs: NSDate, rhs: NSDate) -> Bool {
     return rhs.compare(lhs) == NSComparisonResult.OrderedAscending || rhs.compare(lhs) == NSComparisonResult.OrderedSame
+}
+
+extension NSDate {
+
+    private static var longDateRelativeFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateStyle = .LongStyle
+            Static.formatter.doesRelativeDateFormatting = true
+        }
+
+        return Static.formatter
+    }
+
+    var longDateRelativeString: String {
+        return NSDate.longDateRelativeFormatter.stringFromDate(self)
+    }
+}
+
+extension NSDate {
+    // Long string
+
+    private static var longDateFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateStyle = .LongStyle
+        }
+
+        return Static.formatter
+    }
+
+    var longDateString: String {
+        return NSDate.longDateFormatter.stringFromDate(self)
+    }
+}
+
+extension NSDate {
+    // Date component string
+
+    private static var dateComponentFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateFormat = "yyyy-MM-dd"
+        }
+
+        return Static.formatter
+    }
+
+    static func dateWithDateComponent(dateComponent: String) -> NSDate? {
+        return dateComponentFormatter.dateFromString(dateComponent)
+    }
+
+    var dateComponent: String {
+        return NSDate.dateComponentFormatter.stringFromDate(self)
+    }
+}
+
+extension NSDate {
+
+    private static var monthYearFormatter: NSDateFormatter {
+
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var formatter: NSDateFormatter! = nil
+        }
+
+        dispatch_once(&Static.onceToken) {
+            Static.formatter = NSDateFormatter()
+            Static.formatter.dateFormat = "MMMM, yyyy"
+        }
+
+        return Static.formatter
+    }
+
+    static func dateWithMonthYear(monthYear: String) -> NSDate? {
+        return monthYearFormatter.dateFromString(monthYear)
+    }
+
+    var monthYear: String {
+        return NSDate.monthYearFormatter.stringFromDate(self)
+    }
+
 }
