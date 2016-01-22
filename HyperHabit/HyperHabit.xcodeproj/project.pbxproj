@@ -99,6 +99,7 @@
 		73BC6F2E8DBEC7CDCD0D5437 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DA8E33A985656DC2D10 /* Habit.swift */; };
 		73BC6F3B91197B45DE9C9E9B /* DataManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67F341E79819CED21B52 /* DataManagerTestCase.swift */; };
 		73BC6F6EDB055316DBC6B7D2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC676D212721E13748EBCE /* TodayViewController.swift */; };
+		73BC6F9058CF16C24FD4A515 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615F160ED6CDA6EA8B5E /* LogInViewController.swift */; };
 		73BC6F9872138F86CA87E69D /* Report+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CB6C9A13683FB517463 /* Report+PlistObject.swift */; };
 		73BC6F9FB1AE35BA7BC7F5B5 /* HabitEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */; };
 		73BC6FC7792F42632C7FEB38 /* StatisticsForDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */; };
@@ -213,6 +214,7 @@
 		73BC60555FA961657F7E2071 /* EditHabitDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHabitDataSource.swift; sourceTree = "<group>"; };
 		73BC611F827C14DFD8429CF3 /* ThemePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePickerViewController.swift; sourceTree = "<group>"; };
 		73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditorTestCase.swift; sourceTree = "<group>"; };
+		73BC615F160ED6CDA6EA8B5E /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73BC6176C0D159A6FC336317 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		73BC617E47287F24838E38B8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		73BC61E8D3B8A144E472A3D5 /* MockDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				73BC69F8C45209664A97BA3F /* ReportsByDate */,
 				73BC6CBE455EC023778C5513 /* DatePicker */,
 				73BC6ED6EB622470EC7D646B /* PickTheme */,
+				73BC6A7C9E53E281C4F0B435 /* Log In */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -569,6 +572,14 @@
 				73BC6B4623CA84A16655859E /* MXAccessoryView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		73BC6A7C9E53E281C4F0B435 /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				73BC615F160ED6CDA6EA8B5E /* LogInViewController.swift */,
+			);
+			path = "Log In";
 			sourceTree = "<group>";
 		};
 		73BC6B3124E71F5695668207 /* HabitEditor */ = {
@@ -1062,6 +1073,7 @@
 				73BC670559A637730119FE30 /* BackgroundImageView.swift in Sources */,
 				73BC600FA3D1823DFF3E43DC /* UIColor+HyperHabit.swift in Sources */,
 				73BC69B6EA0E0376559AEF78 /* MXAccessoryView.swift in Sources */,
+				73BC6F9058CF16C24FD4A515 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

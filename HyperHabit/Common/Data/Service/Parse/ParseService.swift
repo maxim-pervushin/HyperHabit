@@ -58,7 +58,7 @@ extension ParseService: ServiceUIAuthentication {
         }
 
         let logInController = PFLogInViewController()
-//        logInController.fields = (.UsernameAndPassword | .LogInButton | .SignUpButton | .PasswordForgotten | .DismissButton | .Facebook | .Twitter)
+        logInController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten, .DismissButton, .Facebook, .Twitter]
         logInController.delegate = self
 //        if let view = logInController.view as? PFLogInView {
 //            view.backgroundColor = App.themeManager.currentTheme.backgroundColor

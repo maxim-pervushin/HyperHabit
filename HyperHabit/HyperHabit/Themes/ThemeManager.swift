@@ -108,6 +108,12 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
+        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
+        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor.greenColor()
+
+        UIButton.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
+
         // MXCalendarView
 
         MXDayCell.appearance().defaultTextColor = theme.foregroundColor
@@ -122,7 +128,6 @@ class ThemeManager {
 
         MXInactiveDayCell.appearance().defaultTextColor = theme.foregroundColor.colorWithAlphaComponent(0.35)
         MXInactiveDayCell.appearance().defaultBackgroundColor = UIColor.clearColor()
-
 
         // Hack to apply new appearance immediately
         for window in UIApplication.sharedApplication().windows {
