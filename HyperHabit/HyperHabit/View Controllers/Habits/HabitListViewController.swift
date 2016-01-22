@@ -15,51 +15,12 @@ class HabitListViewController: ThemedViewController {
 
     private let dataSource = HabitListDataSource(dataProvider: App.dataProvider)
 
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return dataSource.habits.count + 1
-//    }
-//
-//    private func addHabitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        return tableView.dequeueReusableCellWithIdentifier("AddHabitCell", forIndexPath: indexPath)
-//    }
-//
-//    private func habitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> HabitCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier(HabitCell.defaultReuseIdentifier, forIndexPath: indexPath) as! HabitCell
-//        cell.habit = dataSource.habits[indexPath.row]
-//        return cell
-//    }
-//
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        if indexPath.row == dataSource.habits.count {
-//            return addHabitCell(tableView, forRowAtIndexPath: indexPath)
-//        } else {
-//            return habitCell(tableView, forRowAtIndexPath: indexPath)
-//        }
-//    }
-//
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete && dataSource.deleteHabit(dataSource.habits[indexPath.row]) {
-//            tableView.beginUpdates()
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-//            tableView.endUpdates()
-//        }
-//    }
-//
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//    }
-
     // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.changesObserver = self
     }
-
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        tableView.reloadData()
-//    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let editHabitViewController = segue.destinationViewController as? EditHabitViewController {
