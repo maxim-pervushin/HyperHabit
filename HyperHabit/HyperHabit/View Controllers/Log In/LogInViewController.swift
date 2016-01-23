@@ -6,4 +6,22 @@
 import UIKit
 
 class LogInViewController: ThemedViewController {
+
+    // MARK: LogInViewController @IB
+
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextView: UITextField!
+
+    @IBAction func logInButtonAction(sender: AnyObject) {
+    }
+
+    @IBAction func forgotPasswordButtonAction(sender: AnyObject) {
+    }
+
+    @IBAction func cancelButtonAction(sender: AnyObject) {
+    }
+
+    // MARK: LogInViewController
+
+
 }

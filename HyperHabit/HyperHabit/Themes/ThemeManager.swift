@@ -108,7 +108,7 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
-        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
+//        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
         UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor.greenColor()
 
