@@ -56,12 +56,13 @@ class ThemeManager {
 
     func update() {
 
-        UIView.appearance().tintColor = theme.foregroundColor
+//        UIView.appearance().tintColor = theme.foregroundColor
 
         // Navigation bars
         let titleTextAttributes = [
                 NSForegroundColorAttributeName: theme.foregroundColor,
         ]
+        UINavigationBar.appearance().tintColor = theme.foregroundColor
         UINavigationBar.appearance().barStyle = theme.barStyle
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(theme.topBarBackgroundImage, forBarPosition: .Any, barMetrics: .Default)
@@ -69,6 +70,7 @@ class ThemeManager {
         UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
 
         // Tab bars
+        UITabBar.appearance().tintColor = theme.foregroundColor
         UITabBar.appearance().barStyle = theme.barStyle
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = theme.bottomBarBackgroundImage
@@ -91,13 +93,16 @@ class ThemeManager {
         UIButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
         UIButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
 
-        UITextField.appearance().textColor = theme.foregroundColor
+        // Label
+        Label.appearance().textColor = theme.foregroundColor
 
         // BackgroundView
+        BackgroundView.appearance().tintColor = theme.foregroundColor
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundView.self]).textColor = theme.foregroundColor
 
         // BackgroundImageView
+        BackgroundImageView.appearance().tintColor = theme.foregroundColor
         BackgroundImageView.appearance().backgroundColor = theme.backgroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
 
@@ -108,11 +113,17 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
-//        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
+//        UITextField.appearance().textColor = theme.foregroundColor
+
+        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
         UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = UIColor.greenColor()
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
         UIButton.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
+
+        // Cells
+        ReportCell.appearance().tintColor = theme.foregroundColor
+
 
         // MXCalendarView
 

@@ -51,6 +51,22 @@ struct App {
         return ""
     }
 
+    static func logInWithUsername(username: String, password: String, block: Bool -> Void) {
+        if let parseService = service as? ParseService {
+            parseService.logInWithUsername(username, password: password, block: block)
+        } else {
+            block(false)
+        }
+    }
+
+    static func resetPasswordWithUsername(username: String, block: Bool -> Void) {
+        if let parseService = service as? ParseService {
+            parseService.resetPasswordWithUsername(username, block: block)
+        } else {
+            block(false)
+        }
+    }
+
     static func logIn(viewController: UIViewController) {
         if let parseService = service as? ParseService {
              parseService.logIn(viewController)

@@ -56,6 +56,7 @@
 		73BC680E466617DF5ACC29B1 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC600B5E0E7B25BD297789 /* ThemeManager.swift */; };
 		73BC683D80EB18DDA475AB73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC688A7B6EF43B6939AB76 /* LineCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65FCA0FC58AF2270FFD2 /* LineCollectionReusableView.swift */; };
+		73BC68934F30C6C40A0B947B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FA62589C8A31831322E /* Label.swift */; };
 		73BC689F5B32811D3BF50CE5 /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */; };
 		73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
@@ -276,6 +277,7 @@
 		73BC6EE0A09AB6BBC21410A6 /* UIColor+HyperHabit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HyperHabit.swift"; sourceTree = "<group>"; };
 		73BC6F6F4EC241889A7EEFBB /* HabitEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEditor.swift; sourceTree = "<group>"; };
 		73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		73BC6FA62589C8A31831322E /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		C506575A1C11B3F300DCB557 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		C506575B1C11B3F300DCB557 /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		C506575C1C11B3F300DCB557 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 				73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */,
 				73BC6670C23DCB5CB0C946D2 /* MXCalendarView */,
 				73BC621C25AA1DECFD4352C6 /* TextField.swift */,
+				73BC6FA62589C8A31831322E /* Label.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				73BC69B6EA0E0376559AEF78 /* MXAccessoryView.swift in Sources */,
 				73BC6F9058CF16C24FD4A515 /* LogInViewController.swift in Sources */,
 				73BC662D541534BBEB57845D /* TextField.swift in Sources */,
+				73BC68934F30C6C40A0B947B /* Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

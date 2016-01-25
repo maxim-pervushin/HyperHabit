@@ -88,6 +88,20 @@ extension ParseService: ServiceUIAuthentication {
         logInController.signUpController?.delegate = self
         viewController.presentViewController(logInController, animated: true, completion: nil)
     }
+
+    func logInWithUsername(username: String, password: String, block: Bool -> Void) {
+        PFUser.logInWithUsernameInBackground(username, password: password) {
+            user, error in
+            block(nil != user)
+        }
+    }
+
+    func resetPasswordWithUsername(username: String, block: Bool -> Void) {
+        PFUser.requestPasswordResetForEmailInBackground(username) {
+            success, error in
+            block(success)
+        }
+    }
 }
 
 extension ParseService: PFLogInViewControllerDelegate {
