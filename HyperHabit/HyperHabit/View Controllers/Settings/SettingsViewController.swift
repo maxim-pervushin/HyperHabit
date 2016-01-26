@@ -17,7 +17,8 @@ class SettingsViewController: ThemedViewController {
         if App.authenticated {
             App.logOut(self)
         } else {
-            App.logIn(self)
+//             App.logIn(self)
+            performSegueWithIdentifier("ShowLogIn", sender: self)
         }
         updateUI()
     }
@@ -40,4 +41,14 @@ class SettingsViewController: ThemedViewController {
         super.viewWillAppear(animated)
         updateUI()
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let logInViewController = segue.destinationViewController as? LogInViewController {
+            logInViewController.completionHandler = {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+        super.prepareForSegue(segue, sender: sender)
+    }
+
 }

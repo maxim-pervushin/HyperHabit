@@ -89,17 +89,29 @@ extension ParseService: ServiceUIAuthentication {
         viewController.presentViewController(logInController, animated: true, completion: nil)
     }
 
-    func logInWithUsername(username: String, password: String, block: Bool -> Void) {
-        PFUser.logInWithUsernameInBackground(username, password: password) {
-            user, error in
-            block(nil != user)
+
+    func signUpWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
+        let user = PFUser()
+        user.username = username
+        user.email = username
+        user.password = password
+        user.signUpInBackgroundWithBlock() {
+            success, error in
+            block(success, error)
         }
     }
 
-    func resetPasswordWithUsername(username: String, block: Bool -> Void) {
+    func logInWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
+        PFUser.logInWithUsernameInBackground(username, password: password) {
+            user, error in
+            block(nil != user, error)
+        }
+    }
+
+    func resetPasswordWithUsername(username: String, block: (Bool, NSError?) -> Void) {
         PFUser.requestPasswordResetForEmailInBackground(username) {
             success, error in
-            block(success)
+            block(success, error)
         }
     }
 }

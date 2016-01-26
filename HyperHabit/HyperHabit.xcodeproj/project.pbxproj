@@ -60,6 +60,7 @@
 		73BC689F5B32811D3BF50CE5 /* Report+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C12FB020C0B3154BAF8 /* Report+Parse.swift */; };
 		73BC68B92DB07109CD8DE1F5 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65627503815AE1B8EBD6 /* StatisticsViewController.swift */; };
 		73BC6926D8043A8D2884A763 /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CF8F185EB061DBD7877 /* StatisticsDataSource.swift */; };
+		73BC6932C0FC20C7F350B289 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6469ADBEE9810A61186F /* SignUpViewController.swift */; };
 		73BC6933E1377E3482644CA4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66A27559D5F70B19A69F /* HabitCell.swift */; };
 		73BC69B05D467112C7BCA258 /* PlistCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC639BF7B0771327C1EA25 /* PlistCache.swift */; };
 		73BC69B6EA0E0376559AEF78 /* MXAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4623CA84A16655859E /* MXAccessoryView.swift */; };
@@ -229,6 +230,7 @@
 		73BC63078589D984B029581D /* ReportsByDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsByDateViewController.swift; sourceTree = "<group>"; };
 		73BC639BF7B0771327C1EA25 /* PlistCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistCache.swift; sourceTree = "<group>"; };
 		73BC63C7B79CF01FDEDB078B /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		73BC6469ADBEE9810A61186F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		73BC649D9156A711A874C64E /* Habit+PlistObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+PlistObject.swift"; sourceTree = "<group>"; };
 		73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsForDateDataSource.swift; sourceTree = "<group>"; };
 		73BC64E2FFE2AE41A58AFF22 /* HabitListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitListDataSource.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				73BC6CBE455EC023778C5513 /* DatePicker */,
 				73BC6ED6EB622470EC7D646B /* PickTheme */,
 				73BC6A7C9E53E281C4F0B435 /* Log In */,
+				73BC6DDE941BD29273A34200 /* Sign Up */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -674,6 +677,14 @@
 				73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		73BC6DDE941BD29273A34200 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6469ADBEE9810A61186F /* SignUpViewController.swift */,
+			);
+			path = "Sign Up";
 			sourceTree = "<group>";
 		};
 		73BC6ED6EB622470EC7D646B /* PickTheme */ = {
@@ -1082,6 +1093,7 @@
 				73BC6F9058CF16C24FD4A515 /* LogInViewController.swift in Sources */,
 				73BC662D541534BBEB57845D /* TextField.swift in Sources */,
 				73BC68934F30C6C40A0B947B /* Label.swift in Sources */,
+				73BC6932C0FC20C7F350B289 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

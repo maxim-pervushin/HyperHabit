@@ -51,19 +51,27 @@ struct App {
         return ""
     }
 
-    static func logInWithUsername(username: String, password: String, block: Bool -> Void) {
+    static func signUpWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
         if let parseService = service as? ParseService {
-            parseService.logInWithUsername(username, password: password, block: block)
+            parseService.signUpWithUsername(username, password: password, block: block)
         } else {
-            block(false)
+            block(false, nil)
         }
     }
 
-    static func resetPasswordWithUsername(username: String, block: Bool -> Void) {
+    static func logInWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
+        if let parseService = service as? ParseService {
+            parseService.logInWithUsername(username, password: password, block: block)
+        } else {
+            block(false, nil)
+        }
+    }
+
+    static func resetPasswordWithUsername(username: String, block: (Bool, NSError?) -> Void) {
         if let parseService = service as? ParseService {
             parseService.resetPasswordWithUsername(username, block: block)
         } else {
-            block(false)
+            block(false, nil)
         }
     }
 

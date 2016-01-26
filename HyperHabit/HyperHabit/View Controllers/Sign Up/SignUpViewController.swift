@@ -1,21 +1,21 @@
 //
-// Created by Maxim Pervushin on 22/01/16.
+// Created by Maxim Pervushin on 26/01/16.
 // Copyright (c) 2016 Maxim Pervushin. All rights reserved.
 //
 
 import UIKit
 
-class LogInViewController: ThemedViewController {
+class SignUpViewController: ThemedViewController {
 
-    // MARK: LogInViewController @IB
+    // MARK: SignUpViewController @IB
 
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var containerToBottomConstraint: NSLayoutConstraint!
 
-    @IBAction func logInButtonAction(sender: AnyObject) {
+    @IBAction func signUpButtonAction(sender: AnyObject) {
         if let username = userNameTextField.text, password = passwordTextField.text {
-            App.logInWithUsername(username, password: password, block: {
+            App.signUpWithUsername(username, password: password, block: {
                 success, error in
 
                 if let error = error {
@@ -29,51 +29,17 @@ class LogInViewController: ThemedViewController {
         }
     }
 
-    @IBAction func signUpButtonAction(sender: AnyObject) {
-        performSegueWithIdentifier("ShowSignUp", sender: self)
-    }
-
-    @IBAction func forgotPasswordButtonAction(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Reset Password", message: "Please enter the email address for your account.", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
-            _ in
-
-            if let textField = alertController.textFields?.first,
-            let email = textField.text {
-                App.resetPasswordWithUsername(email) {
-                    success, error in
-                    if let error = error {
-                        self.showError(error)
-                    }
-                }
-            }
-        }))
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        alertController.addTextFieldWithConfigurationHandler(){
-            textField in
-
-            textField.placeholder = "Email"
-        }
-        presentViewController(alertController, animated: true, completion: nil)
-    }
-
     @IBAction func cancelButtonAction(sender: AnyObject) {
-        if userNameTextField.isFirstResponder() {
-            userNameTextField.resignFirstResponder()
-        }
-        if passwordTextField.isFirstResponder() {
-            passwordTextField.resignFirstResponder()
-        }
         completionHandler?()
     }
 
-    // MARK: LogInViewController
+    // MARK: SignUpViewController
 
     var completionHandler: (Void -> Void)?
 
     private func showError(error: NSError) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
         presentViewController(alertController, animated: true, completion: nil)
     }
 
@@ -94,7 +60,7 @@ class LogInViewController: ThemedViewController {
         let endFrameValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
-        setContainerBottomOffset(endFrameValue.CGRectValue().height - 80)
+        setContainerBottomOffset(endFrameValue.CGRectValue().height)
     }
 
     private func keyboardWillHideNotification(notification: NSNotification) {
@@ -128,14 +94,4 @@ class LogInViewController: ThemedViewController {
     deinit {
         unsubscribe()
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let signUpViewController = segue.destinationViewController as? SignUpViewController {
-            signUpViewController.completionHandler = {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
-        super.prepareForSegue(segue, sender: sender)
-    }
-
 }
