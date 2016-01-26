@@ -71,7 +71,6 @@ class DataManager {
     private func syncHabits() {
 
         if !service.available {
-            print("service: \(service) unavailable")
             self.saveHabitsAfter = 30
             return
         }
@@ -120,7 +119,6 @@ class DataManager {
     private func syncReports() {
 
         if !service.available {
-            print("service: \(service) unavailable")
             self.saveReportsAfter = 30
             return
         }
