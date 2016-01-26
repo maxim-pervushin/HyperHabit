@@ -14,16 +14,37 @@ class SettingsViewController: ThemedViewController {
     @IBOutlet weak var toggleAuthenticationLabel: UILabel?
 
     @IBAction func toggleAuthenticationAction(sender: AnyObject) {
-        if App.authenticated {
-            App.logOut(self)
-        } else {
-//             App.logIn(self)
-            performSegueWithIdentifier("ShowLogIn", sender: self)
-        }
-        updateUI()
+        App.authenticated ? logOut() : logIn()
     }
 
     // MARK: SettingsViewController
+
+    private let dataSource = SettingsDataSource()
+
+    private func logOut() {
+        let alert = UIAlertController(title: "Log Out", message: "Do you want to delete local data?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Keep", style: .Default, handler: {
+            _ in
+            App.logOut() {
+                success, error in
+                self.updateUI()
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: {
+            _ in
+            App.logOut() {
+                success, error in
+                self.dataSource.clearCache()
+                self.updateUI()
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
+    }
+
+    private func logIn() {
+        performSegueWithIdentifier("ShowLogIn", sender: self)
+    }
 
     private func updateUI() {
         if App.authenticated {
@@ -46,6 +67,7 @@ class SettingsViewController: ThemedViewController {
         if let logInViewController = segue.destinationViewController as? LogInViewController {
             logInViewController.completionHandler = {
                 self.dismissViewControllerAnimated(true, completion: nil)
+                self.updateUI()
             }
         }
         super.prepareForSegue(segue, sender: sender)

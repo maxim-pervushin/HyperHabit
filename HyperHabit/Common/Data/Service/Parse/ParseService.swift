@@ -21,74 +21,13 @@ class ParseService: NSObject {
         _changesObserver?.observableChanged(self)
     }
 
-    // TODO: Find better way to notificate 'Cache' objects about need in reset.
-    func requestCacheClean() {
-        NSNotificationCenter.defaultCenter().postNotificationName(ParseService.requestedCacheCleanNotification, object: self)
-    }
+//    // TODO: Find better way to notificate 'Cache' objects about need in reset.
+//    func requestCacheClean() {
+//        NSNotificationCenter.defaultCenter().postNotificationName(ParseService.requestedCacheCleanNotification, object: self)
+//    }
 }
 
-extension ParseService: ServiceUIAuthentication {
-
-    public func logOut(viewController: UIViewController) {
-        if !available {
-            return
-        }
-
-        changed()
-
-        // Ask user if we should to delete all cached data
-        let alertController = UIAlertController(title: "Log Out", message: "Do you want to delete local data?", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Keep", style: .Default, handler: {
-            (action) in
-            PFUser.logOut()
-        }))
-        alertController.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: {
-            (action) in
-            PFUser.logOut()
-            self.requestCacheClean()
-//            App.dataManager.clear()
-        }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        viewController.presentViewController(alertController, animated: true, completion: nil)
-    }
-
-    public func logIn(viewController: UIViewController) {
-        if available {
-            return
-        }
-
-        let logInController = PFLogInViewController()
-        logInController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten, .DismissButton, .Facebook, .Twitter]
-        logInController.delegate = self
-//        if let view = logInController.view as? PFLogInView {
-//            view.backgroundColor = App.themeManager.currentTheme.backgroundColor
-//            view.usernameField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.usernameField?.separatorStyle = .None
-//            view.passwordField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.passwordField?.separatorStyle = .None
-//        }
-//        if let logoImageView = logInController.logInView?.logo as? UIImageView {
-//            logoImageView.image = UIImage(named: "Background")
-//        }
-//        if let view = logInController.signUpController?.view as? PFSignUpView {
-//            view.backgroundColor = App.themeManager.currentTheme.backgroundColor
-//            view.usernameField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.usernameField?.separatorStyle = .None
-//            view.passwordField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.passwordField?.separatorStyle = .None
-//            view.emailField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.emailField?.separatorStyle = .None
-//            view.additionalField?.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.25)
-//            view.additionalField?.separatorStyle = .None
-//        }
-//        if let logoImageView = logInController.signUpController?.signUpView?.logo as? UIImageView {
-//            logoImageView.image = UIImage(named: "Background")
-//        }
-        logInController.signUpController?.emailAsUsername = true
-        logInController.signUpController?.delegate = self
-        viewController.presentViewController(logInController, animated: true, completion: nil)
-    }
-
+extension ParseService: ServiceAuthentication {
 
     func signUpWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
         let user = PFUser()
@@ -108,54 +47,22 @@ extension ParseService: ServiceUIAuthentication {
         }
     }
 
+    func logOut(block: (Bool, NSError?) -> Void) {
+        if !available {
+            return
+        }
+
+        PFUser.logOutInBackgroundWithBlock() {
+            error in
+            block(error == nil, error)
+        }
+    }
+
     func resetPasswordWithUsername(username: String, block: (Bool, NSError?) -> Void) {
         PFUser.requestPasswordResetForEmailInBackground(username) {
             success, error in
             block(success, error)
         }
-    }
-}
-
-extension ParseService: PFLogInViewControllerDelegate {
-
-    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        logInController.dismissViewControllerAnimated(true, completion: nil)
-        changed()
-    }
-
-    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        var localizedDescription = "Unknown error"
-        if let error = error {
-            localizedDescription = error.localizedDescription
-        }
-        let alertController = UIAlertController(title: "Error", message: localizedDescription, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        logInController.presentViewController(alertController, animated: true, completion: nil)
-    }
-
-    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
-        logInController.dismissViewControllerAnimated(true, completion: nil)
-    }
-}
-
-extension ParseService: PFSignUpViewControllerDelegate {
-
-    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        signUpController.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        var localizedDescription = "Unknown error"
-        if let error = error {
-            localizedDescription = error.localizedDescription
-        }
-        let alertController = UIAlertController(title: "Error", message: localizedDescription, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        signUpController.presentViewController(alertController, animated: true, completion: nil)
-    }
-
-    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
-        signUpController.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

@@ -51,39 +51,37 @@ struct App {
         return ""
     }
 
+    // MARK: App authentication
+
     static func signUpWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
-        if let parseService = service as? ParseService {
-            parseService.signUpWithUsername(username, password: password, block: block)
+        if let authentication = service as? ServiceAuthentication {
+            authentication.signUpWithUsername(username, password: password, block: block)
         } else {
             block(false, nil)
         }
     }
 
     static func logInWithUsername(username: String, password: String, block: (Bool, NSError?) -> Void) {
-        if let parseService = service as? ParseService {
-            parseService.logInWithUsername(username, password: password, block: block)
+        if let authentication = service as? ServiceAuthentication {
+            authentication.logInWithUsername(username, password: password, block: block)
+        } else {
+            block(false, nil)
+        }
+    }
+
+    static func logOut(block: (Bool, NSError?) -> Void) {
+        if let authentication = service as? ServiceAuthentication {
+            authentication.logOut(block)
         } else {
             block(false, nil)
         }
     }
 
     static func resetPasswordWithUsername(username: String, block: (Bool, NSError?) -> Void) {
-        if let parseService = service as? ParseService {
-            parseService.resetPasswordWithUsername(username, block: block)
+        if let authentication = service as? ServiceAuthentication {
+            authentication.resetPasswordWithUsername(username, block: block)
         } else {
             block(false, nil)
-        }
-    }
-
-    static func logIn(viewController: UIViewController) {
-        if let parseService = service as? ParseService {
-             parseService.logIn(viewController)
-        }
-    }
-
-    static func logOut(viewController: UIViewController) {
-        if let parseService = service as? ParseService {
-             parseService.logOut(viewController)
         }
     }
 

@@ -184,6 +184,10 @@ class DataManager {
             self.saveReportsAfter = 30
         }
     }
+
+    func clearCache() {
+        cache.clear()
+    }
 }
 
 extension DataManager: DataProvider {
