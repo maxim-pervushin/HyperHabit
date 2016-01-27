@@ -20,16 +20,18 @@ extension Habit {
         }
     }
 
-    var parseObject: PFObject {
+    func getParseObjectForUser(user: PFUser) -> PFObject {
         let idQuery = PFQuery(className: "Habit")
         idQuery.whereKey("identifier", equalTo: id)
         let nameQuery = PFQuery(className: "Habit")
         nameQuery.whereKey("name", equalTo: name)
         let query = PFQuery.orQueryWithSubqueries([idQuery, nameQuery])
+        query.whereKey("user", equalTo: user)
         if let existingObject = try? query.getFirstObject() {
             existingObject["name"] = name
             existingObject["repeatsTotal"] = repeatsTotal
             existingObject["active"] = active
+            existingObject["user"] = user
             return existingObject
         }
         let newObject = PFObject(className: "Habit")
@@ -37,6 +39,7 @@ extension Habit {
         newObject["name"] = name
         newObject["repeatsTotal"] = repeatsTotal
         newObject["active"] = active
+        newObject["user"] = user
         return newObject
     }
 }

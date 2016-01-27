@@ -7,8 +7,6 @@ import Foundation
 
 protocol Service {
 
-    var changesObserver: ChangesObserver? { get set }
-
     var available: Bool { get }
 
     var username: String { get }
@@ -22,5 +20,4 @@ protocol Service {
     func saveReports(reports: [Report]) throws
 
     func deleteReports(reports: [Report]) throws
-
 }

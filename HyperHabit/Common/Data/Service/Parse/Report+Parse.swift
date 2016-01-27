@@ -22,9 +22,10 @@ extension Report {
         }
     }
 
-    var parseObject: PFObject {
+    func getParseObjectForUser(user: PFUser) -> PFObject {
         let query = PFQuery(className: "Report")
         query.whereKey("identifier", equalTo: id)
+        query.whereKey("user", equalTo: user)
         if let existingObject = try? query.getFirstObject() {
             existingObject["habitName"] = habitName
             existingObject["habitRepeatsTotal"] = habitRepeatsTotal
@@ -38,6 +39,7 @@ extension Report {
         newObject["habitRepeatsTotal"] = habitRepeatsTotal
         newObject["repeatsDone"] = repeatsDone
         newObject["date_dateComponent"] = date.dateComponent
+        newObject["user"] = user
         return newObject
     }
 }

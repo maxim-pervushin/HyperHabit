@@ -7,24 +7,13 @@ import UIKit
 import Parse
 import ParseUI
 
+// TODO: Load data after successfull authentication
+
 class ParseService: NSObject {
-
-    static let requestedCacheCleanNotification = "ParseServiceRequestedCacheCleanNotification"
-
-    private var _changesObserver: ChangesObserver?
 
     init(applicationId: String, clientKey: String) {
         Parse.setApplicationId(applicationId, clientKey: clientKey)
     }
-
-    func changed() {
-        _changesObserver?.observableChanged(self)
-    }
-
-//    // TODO: Find better way to notificate 'Cache' objects about need in reset.
-//    func requestCacheClean() {
-//        NSNotificationCenter.defaultCenter().postNotificationName(ParseService.requestedCacheCleanNotification, object: self)
-//    }
 }
 
 extension ParseService: ServiceAuthentication {
@@ -68,15 +57,6 @@ extension ParseService: ServiceAuthentication {
 
 extension ParseService: Service {
 
-    var changesObserver: ChangesObserver? {
-        get {
-            return _changesObserver
-        }
-        set {
-            _changesObserver = newValue
-        }
-    }
-
     var available: Bool {
         return PFUser.currentUser() != nil
     }
@@ -89,7 +69,11 @@ extension ParseService: Service {
     }
 
     func getHabits() throws -> [Habit] {
+        guard let user = PFUser.currentUser() else {
+            return []
+        }
         let query = PFQuery(className: "Habit")
+        query.whereKey("user", equalTo: user)
         var habits = [Habit]()
         if let objects = try? query.findObjects() {
             for object in objects {
@@ -102,16 +86,23 @@ extension ParseService: Service {
     }
 
     func saveHabits(habits: [Habit]) throws {
+        guard let user = PFUser.currentUser() else {
+            return
+        }
         var objects = [PFObject]()
         for habit in habits {
-            objects.append(habit.parseObject)
+            objects.append(habit.getParseObjectForUser(user))
         }
 
         try PFObject.saveAll(objects)
     }
 
     func getReports() throws -> [Report] {
+        guard let user = PFUser.currentUser() else {
+            return []
+        }
         let query = PFQuery(className: "Report")
+        query.whereKey("user", equalTo: user)
         var reports = [Report]()
         if let objects = try? query.findObjects() {
             for object in objects {
@@ -124,18 +115,24 @@ extension ParseService: Service {
     }
 
     func saveReports(reports: [Report]) throws {
+        guard let user = PFUser.currentUser() else {
+            return
+        }
         var objects = [PFObject]()
         for report in reports {
-            objects.append(report.parseObject)
+            objects.append(report.getParseObjectForUser(user))
         }
 
         try PFObject.saveAll(objects)
     }
 
     func deleteReports(reports: [Report]) throws {
+        guard let user = PFUser.currentUser() else {
+            return
+        }
         var objects = [PFObject]()
         for report in reports {
-            objects.append(report.parseObject)
+            objects.append(report.getParseObjectForUser(user))
         }
 
         try PFObject.deleteAll(objects)

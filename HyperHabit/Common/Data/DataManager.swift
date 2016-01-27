@@ -17,16 +17,9 @@ class DataManager {
         self.service = service
 
         self.cache.changesObserver = self
-        self.service.changesObserver = self
 
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerAction:", userInfo: nil, repeats: true)
         timer.fire()
-
-        subscribe()
-    }
-
-    deinit {
-        unsubscribe()
     }
 
     // MARK: DataManager private
@@ -36,17 +29,6 @@ class DataManager {
     private var timer: NSTimer!
     private var saveHabitsAfter = 0
     private var saveReportsAfter = 0
-
-    private func subscribe() {
-        NSNotificationCenter.defaultCenter().addObserverForName(ParseService.requestedCacheCleanNotification, object: nil, queue: nil, usingBlock: {
-            _ in
-            self.cache.clear()
-        })
-    }
-
-    private func unsubscribe() {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 
     @objc private func timerAction(timer: NSTimer) {
         if saveHabitsAfter <= 0 {
@@ -268,10 +250,6 @@ extension DataManager: ChangesObserver {
     func observableChanged(observable: AnyObject) {
         if let _ = observable as? Cache {
             NSNotificationCenter.defaultCenter().postNotificationName(DataManager.changedNotification, object: self)
-        }
-        if let _ = observable as? Service {
-            saveHabitsAfter = 0
-            saveReportsAfter = 0
         }
     }
 }
