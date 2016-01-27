@@ -90,6 +90,7 @@
 		73BC6D4CD1A62104B8B7B558 /* Habit+PlistObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC649D9156A711A874C64E /* Habit+PlistObject.swift */; };
 		73BC6D703398D835462EB01E /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC63C7B79CF01FDEDB078B /* DayCell.swift */; };
 		73BC6D9CF53D8F33005B437C /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */; };
+		73BC6D9D918C662E358F95EE /* ParseServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC662BFD523DF876656A69 /* ParseServiceConfig.swift */; };
 		73BC6DA774E3ABF8C1D6D0E2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F900A999B2AC02A5DE8 /* DataProvider.swift */; };
 		73BC6DAAF7353CDC03D11D91 /* StatisticsForDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64CBFCB8EB14D0D3659E /* StatisticsForDateDataSource.swift */; };
 		73BC6DB59B5866C2C96B77CB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C850804E2D3B78DB687 /* DataManager.swift */; };
@@ -164,6 +165,7 @@
 		C569AC7E1BFCFCC7003F9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C569AC811BFCFCC7003F9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7F1BFCFCC7003F9995 /* LaunchScreen.storyboard */; };
 		C569AC971BFCFCC7003F9995 /* HyperHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */; };
+		C57352CF1C58D25900F49538 /* ParseServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC662BFD523DF876656A69 /* ParseServiceConfig.swift */; };
 		C574FC151C4F9C3500CC44E1 /* NSDate+HyperHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68C909B5D6F55841462D /* NSDate+HyperHabit.swift */; };
 		C57536C11C15A56000976E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569AC7D1BFCFCC7003F9995 /* Assets.xcassets */; };
 		C580A4D91BFF324300CF4C31 /* ReportsByDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F462415533EB6BDC24 /* ReportsByDateDataSource.swift */; };
@@ -244,6 +246,7 @@
 		73BC660831409FB7E10AA6CD /* ServiceAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAuthentication.swift; sourceTree = "<group>"; };
 		73BC660BC4EB0AB85BBC79ED /* MonthCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionReusableView.swift; sourceTree = "<group>"; };
 		73BC661ACFB808416536F6B0 /* ThemedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedViewController.swift; sourceTree = "<group>"; };
+		73BC662BFD523DF876656A69 /* ParseServiceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseServiceConfig.swift; sourceTree = "<group>"; };
 		73BC66368BDECB7E1D5F4889 /* CheckboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		73BC6679FD4B9BBFE5CA4A9D /* TodayDataSourceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDataSourceTestCase.swift; sourceTree = "<group>"; };
 		73BC66A27559D5F70B19A69F /* HabitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -460,6 +463,14 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		73BC6431E776AD98BB446AC9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				73BC662BFD523DF876656A69 /* ParseServiceConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		73BC6620C9A12DA50F8C2ED2 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +649,7 @@
 				73BC67BCA15B1F9BDC7C9A27 /* Data */,
 				73BC6777DE781CC087299423 /* Extensions */,
 				73BC6BCE98489069C405A154 /* HyperHabitBridgingHeader.h */,
+				73BC6431E776AD98BB446AC9 /* Config */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1098,6 +1110,7 @@
 				73BC6932C0FC20C7F350B289 /* SignUpViewController.swift in Sources */,
 				73BC649DE9839518BBEFFA12 /* ServiceAuthentication.swift in Sources */,
 				73BC6B51F9E2B40CF222AAC4 /* SettingsDataSource.swift in Sources */,
+				73BC6D9D918C662E358F95EE /* ParseServiceConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1184,7 @@
 				73BC60AAB1271E1F3C0EF6F1 /* PlistCache.swift in Sources */,
 				73BC6F9872138F86CA87E69D /* Report+PlistObject.swift in Sources */,
 				C545BDAB1C4CE93900C630F4 /* MXReusableView.swift in Sources */,
+				C57352CF1C58D25900F49538 /* ParseServiceConfig.swift in Sources */,
 				73BC6D4CD1A62104B8B7B558 /* Habit+PlistObject.swift in Sources */,
 				73BC6AF7250DF2F6AF6C7621 /* DataManager.swift in Sources */,
 				73BC6D9CF53D8F33005B437C /* ChangesObserver.swift in Sources */,

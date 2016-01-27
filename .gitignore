@@ -31,3 +31,4 @@ Carthage/Build
 Podfile.lock
 Pods/
 Framework
+ParseServiceConfig.swift

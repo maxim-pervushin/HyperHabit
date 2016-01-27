@@ -88,8 +88,6 @@ struct App {
     // MARK: App private
 
     private static let groupIdentifier = "group.hyperhabit"
-    private static let applicationId = "aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
-    private static let clientKey = "UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"
 
     private static var cache: Cache {
 
@@ -117,7 +115,7 @@ struct App {
         }
 
         dispatch_once(&Static.onceToken) {
-            Static.instance = ParseService(applicationId: applicationId, clientKey: clientKey)
+            Static.instance = ParseService(applicationId: ParseServiceConfig.applicationId, clientKey: ParseServiceConfig.clientKey)
         }
 
         return Static.instance
