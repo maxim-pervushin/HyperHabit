@@ -26,6 +26,12 @@ class HabitEditor {
         }
     }
 
+    var definition: String? {
+        didSet {
+            changesObserver?.observableChanged(self)
+        }
+    }
+
     var repeatsTotal: Int? {
         didSet {
             changesObserver?.observableChanged(self)
@@ -41,9 +47,9 @@ class HabitEditor {
         }
 
         if let habit = habit {
-            return Habit(id: habit.id, name: name, repeatsTotal: repeatsTotal, active: true)
+            return Habit(id: habit.id, name: name, definition: definition == nil ? "" : definition!, repeatsTotal: repeatsTotal, active: true)
         } else {
-            return Habit(name: name, repeatsTotal: repeatsTotal, active: true)
+            return Habit(name: name, definition: definition == nil ? "" : definition!, repeatsTotal: repeatsTotal, active: true)
         }
     }
 

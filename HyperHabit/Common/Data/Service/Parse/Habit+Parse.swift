@@ -12,9 +12,10 @@ extension Habit {
         if let
         id = parseObject["identifier"] as? String,
         name = parseObject["name"] as? String,
+        definition = parseObject["definition"] as? String,
         repeatsTotal = parseObject["repeatsTotal"] as? Int,
         active = parseObject["active"] as? Bool {
-            self.init(id: id, name: name, repeatsTotal: repeatsTotal, active: active)
+            self.init(id: id, name: name, definition: definition, repeatsTotal: repeatsTotal, active: active)
         } else {
             return nil
         }
@@ -29,6 +30,7 @@ extension Habit {
         query.whereKey("user", equalTo: user)
         if let existingObject = try? query.getFirstObject() {
             existingObject["name"] = name
+            existingObject["definition"] = definition
             existingObject["repeatsTotal"] = repeatsTotal
             existingObject["active"] = active
             existingObject["user"] = user
@@ -37,6 +39,7 @@ extension Habit {
         let newObject = PFObject(className: "Habit")
         newObject["identifier"] = id
         newObject["name"] = name
+        newObject["definition"] = definition
         newObject["repeatsTotal"] = repeatsTotal
         newObject["active"] = active
         newObject["user"] = user

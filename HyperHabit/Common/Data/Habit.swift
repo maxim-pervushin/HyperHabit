@@ -8,32 +8,34 @@ import Foundation
 class Habit: Equatable {
     let id: String
     let name: String
+    let definition: String
     let repeatsTotal: Int
     let active: Bool
 
-    init(id: String, name: String, repeatsTotal: Int, active: Bool) {
+    init(id: String, name: String, definition: String, repeatsTotal: Int, active: Bool) {
         self.id = id
         self.name = name
+        self.definition = definition
         self.repeatsTotal = repeatsTotal
         self.active = active
     }
 
-    convenience init(name: String, repeatsTotal: Int, active: Bool) {
-        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", name: name, repeatsTotal: repeatsTotal, active: active)
+    convenience init(name: String, definition: String, repeatsTotal: Int, active: Bool) {
+        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", name: name, definition: definition, repeatsTotal: repeatsTotal, active: active)
     }
 
     var inactiveHabit: Habit {
-        return Habit(id: id, name: name, repeatsTotal: repeatsTotal, active: false)
+        return Habit(id: id, name: name, definition: definition, repeatsTotal: repeatsTotal, active: false)
     }
 
     var activeHabit: Habit {
-        return Habit(id: id, name: name, repeatsTotal: repeatsTotal, active: true)
+        return Habit(id: id, name: name, definition: definition, repeatsTotal: repeatsTotal, active: true)
     }
 }
 
 extension Habit: Hashable {
     var hashValue: Int {
-        return id.hashValue ^ name.hashValue /*^ repeatsTotal.hashValue*/
+        return id.hashValue ^ name.hashValue
     }
 }
 
