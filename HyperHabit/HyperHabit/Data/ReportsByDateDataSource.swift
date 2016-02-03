@@ -36,7 +36,7 @@ class ReportsByDateDataSource: DataSource {
             var createReport = true
             for report in reports {
                 // TODO: Find better solution
-                if report.habitName == habit.name {
+                if report.habitName == habit.name && report.habitDefinition == habit.definition {
                     createReport = false
                     break;
                 }
@@ -61,6 +61,11 @@ class ReportsByDateDataSource: DataSource {
     }
 
     func saveReport(report: Report) -> Bool {
-        return dataProvider.saveReport(report)
+        dataProvider.saveReport(report)
+        let otherReports = reports.filter({ $0 != report })
+        for otherReport in otherReports {
+            dataProvider.saveReport(otherReport)
+        }
+        return true
     }
 }

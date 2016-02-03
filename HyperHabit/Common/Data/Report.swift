@@ -45,7 +45,7 @@ class Report: Equatable {
 
 extension Report: Hashable {
     var hashValue: Int {
-        return id.hashValue ^ habitName.hashValue ^ habitRepeatsTotal.hashValue ^ repeatsDone.hashValue ^ date.dateComponent.hashValue
+        return id.hashValue
     }
 }
 
