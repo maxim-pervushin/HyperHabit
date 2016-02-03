@@ -8,24 +8,26 @@ import Foundation
 class Report: Equatable {
     let id: String
     let habitName: String
+    let habitDefinition: String
     let habitRepeatsTotal: Int
     let repeatsDone: Int
     let date: NSDate
 
-    init(id: String, habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
+    init(id: String, habitName: String, habitDefinition: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
         self.id = id
         self.habitName = habitName
+        self.habitDefinition = habitDefinition
         self.habitRepeatsTotal = habitRepeatsTotal
         self.repeatsDone = repeatsDone
         self.date = date
     }
 
-    convenience init(habitName: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
-        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
+    convenience init(habitName: String, habitDefinition: String, habitRepeatsTotal: Int, repeatsDone: Int, date: NSDate) {
+        self.init(id: "\(NSDate().timeIntervalSince1970)\(NSUUID().UUIDString)", habitName: habitName, habitDefinition: habitDefinition, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
     }
 
     convenience init(habit: Habit, repeatsDone: Int, date: NSDate) {
-        self.init(habitName: habit.name, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
+        self.init(habitName: habit.name, habitDefinition: habit.definition, habitRepeatsTotal: habit.repeatsTotal, repeatsDone: repeatsDone, date: date)
     }
 
     var completed: Bool {
@@ -33,11 +35,11 @@ class Report: Equatable {
     }
 
     var completedReport: Report {
-        return Report(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: habitRepeatsTotal, date: date)
+        return Report(id: id, habitName: habitName, habitDefinition: habitDefinition, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: habitRepeatsTotal, date: date)
     }
 
     var incompletedReport: Report {
-        return Report(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: 0, date: date)
+        return Report(id: id, habitName: habitName, habitDefinition: habitDefinition, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: 0, date: date)
     }
 }
 

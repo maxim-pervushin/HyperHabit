@@ -7,11 +7,24 @@ import UIKit
 
 class HabitCell: UITableViewCell, MXReusableView {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel?
 
     var habit: Habit? {
         didSet {
             nameLabel?.text = habit?.name
+        }
+    }
+}
+
+class HabitWithDefinitionCell: UITableViewCell, MXReusableView {
+
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var definitionLabel: UILabel?
+
+    var habit: Habit? {
+        didSet {
+            nameLabel?.text = habit?.name
+            definitionLabel?.text = habit?.definition
         }
     }
 }

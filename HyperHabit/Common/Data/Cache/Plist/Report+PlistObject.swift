@@ -11,11 +11,12 @@ extension Report {
         if let
         id = packed["id"] as? String,
         habitName = packed["habitName"] as? String,
+        habitDefinition = packed["habitDefinition"] as? String,
         habitRepeatsTotal = packed["habitRepeatsTotal"] as? Int,
         repeatsDone = packed["repeatsDone"] as? Int,
         dateComponent = packed["date_dateComponent"] as? String,
         date = NSDate.dateWithDateComponent(dateComponent) {
-            self.init(id: id, habitName: habitName, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
+            self.init(id: id, habitName: habitName, habitDefinition: habitDefinition, habitRepeatsTotal: habitRepeatsTotal, repeatsDone: repeatsDone, date: date)
         } else {
             return nil
         }
@@ -25,6 +26,7 @@ extension Report {
         return [
                 "id": id,
                 "habitName": habitName,
+                "habitDefinition": habitDefinition,
                 "habitRepeatsTotal": habitRepeatsTotal,
                 "repeatsDone": repeatsDone,
                 "date_dateComponent": date.dateComponent,

@@ -10,7 +10,7 @@ class HabitListViewController: ThemedViewController {
     // MARK: HabitListViewController @IB
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     // MARK: HabitListViewController
 
     private let dataSource = HabitListDataSource(dataProvider: App.dataProvider)
@@ -43,10 +43,18 @@ extension HabitListViewController: UITableViewDataSource {
         return tableView.dequeueReusableCellWithIdentifier("AddHabitCell", forIndexPath: indexPath)
     }
 
-    private func habitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> HabitCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(HabitCell.defaultReuseIdentifier, forIndexPath: indexPath) as! HabitCell
-        cell.habit = dataSource.habits[indexPath.row]
-        return cell
+    private func habitCell(tableView: UITableView, forRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let habit = dataSource.habits[indexPath.row]
+        if habit.definition.characters.count > 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(HabitWithDefinitionCell.defaultReuseIdentifier, forIndexPath: indexPath) as! HabitWithDefinitionCell
+            cell.habit = habit
+            return cell
+
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(HabitCell.defaultReuseIdentifier, forIndexPath: indexPath) as! HabitCell
+            cell.habit = habit
+            return cell
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
