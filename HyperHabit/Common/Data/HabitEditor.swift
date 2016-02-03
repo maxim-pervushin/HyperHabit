@@ -12,6 +12,7 @@ class HabitEditor {
     var habit: Habit? {
         didSet {
             name = habit?.name
+            definition = habit?.definition
             if let habit = habit {
                 repeatsTotal = habit.repeatsTotal
             } else {

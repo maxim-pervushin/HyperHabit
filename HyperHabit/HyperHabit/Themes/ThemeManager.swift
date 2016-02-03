@@ -101,6 +101,7 @@ class ThemeManager {
         BackgroundView.appearance().backgroundColor = theme.backgroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([BackgroundView.self]).textColor = theme.foregroundColor
 
+
         // BackgroundImageView
         BackgroundImageView.appearance().tintColor = theme.foregroundColor
         BackgroundImageView.appearance().backgroundColor = theme.backgroundColor
@@ -113,20 +114,20 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
-//        UITextField.appearance().textColor = theme.foregroundColor
-
-        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = UIColor.clearColor()
-        UITextField.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).textColor = theme.foregroundColor
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
         UIButton.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
+
+        // TextField
+        TextField.appearance().textColor = theme.foregroundColor
+        TextField.appearance().placeholderTextColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
+        TextField.appearance().backgroundColor = UIColor.clearColor()
 
         // Cells
         ReportCell.appearance().tintColor = theme.foregroundColor
 
 
         // MXCalendarView
-
         MXDayCell.appearance().defaultTextColor = theme.foregroundColor
         MXDayCell.appearance().defaultBackgroundColor = UIColor.clearColor()
         MXDayCell.appearance().todayDateTextColor = theme.foregroundColor

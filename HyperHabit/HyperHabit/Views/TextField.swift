@@ -7,62 +7,30 @@ import UIKit
 
 class TextField: UITextField {
 
-//    override var placeholder: String? {
-//        didSet {
-//            guard let placeholder = placeholder else {
-//                attributedPlaceholder = nil
-//                return
-//            }
-//            var attributes = defaultTextAttributes
-//            attributes[NSForegroundColorAttributeName] = UIColor.greenColor()
-//            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
-//            setNeedsDisplay()
-//            self.placeholder = nil
-//        }
-//    }
+    private var _placeholderTextColor = UIColor.darkGrayColor()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        if let placeholderText = placeholder {
-//            placeholder = nil
+    override func drawPlaceholderInRect(rect: CGRect) {
+        if let placeholder = placeholder {
             var attributes = defaultTextAttributes
-            attributes[NSForegroundColorAttributeName] = UIColor.greenColor()
-            attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
+            attributes[NSForegroundColorAttributeName] = _placeholderTextColor
+            attributes[NSFontAttributeName] = font
+            let boundingRect = placeholder.boundingRectWithSize(rect.size, options: [], attributes: attributes, context: nil)
+            placeholder.drawAtPoint(CGPointMake(0, (rect.size.height / 2) - boundingRect.size.height / 2), withAttributes: attributes)
         }
     }
+}
 
+extension TextField {
 
-//    override func textRectForBounds(bounds: CGRect) -> CGRect {
-////        let rect = super.textRectForBounds(bounds)
-////        print("\(rect) = textRectForBounds(\(bounds)")
-////        return rect
-//        return rectForBounds(bounds)
-//    }
-//
-//    override func placeholderRectForBounds(bounds: CGRect) -> CGRect {
-////        let rect = super.textRectForBounds(bounds)
-////        print("\(rect) = placeholderRectForBounds(\(bounds)")
-////        return rect
-//        return rectForBounds(bounds)
-//    }
-//
-//    private func rectForBounds(bounds: CGRect) -> CGRect {
-//        let rect = CGRectInset(bounds, 10, 5)
-//        print("\(rect) = rectForBounds(\(bounds))")
-//        return rect
-//    }
-//
-//    override func drawPlaceholderInRect(rect: CGRect) {
-//        if let placeholder = placeholder {
-//            var attributes = defaultTextAttributes
-//            attributes[NSForegroundColorAttributeName] = UIColor.greenColor()
-//            placeholder.drawInRect(rect, withAttributes: attributes)
-//
-//            placeholder.si
-//        }
-////        let ctx = UIGraphicsGetCurrentContext()
-////        CGContextSetStrokeColorWithColor(ctx, UIColor.greenColor().CGColor)
-////        super.drawPlaceholderInRect(rect)
-//    }
+    // MARK: - UIAppearance
 
+    dynamic var placeholderTextColor: UIColor {
+        // UI_APPEARANCE_SELECTOR
+        get {
+            return _placeholderTextColor
+        }
+        set {
+            _placeholderTextColor = newValue
+        }
+    }
 }

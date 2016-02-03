@@ -77,6 +77,7 @@ extension HabitListViewController: UITableViewDataSource {
 extension HabitListViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("EditHabit", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

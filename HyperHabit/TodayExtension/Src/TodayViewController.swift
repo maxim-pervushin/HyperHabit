@@ -83,10 +83,20 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ReportCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportCell
         let report = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
-        cell.report = report
-        return cell
+        if report.habitDefinition.characters.count > 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(ReportWithDefinitionCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportWithDefinitionCell
+            cell.report = report
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(ReportCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportCell
+            cell.report = report
+            return cell
+        }
+//        let cell = tableView.dequeueReusableCellWithIdentifier(ReportCell.defaultReuseIdentifier, forIndexPath: indexPath) as! ReportCell
+//        let report = indexPath.section == 0 ? dataSource.incompletedReports[indexPath.row] : dataSource.completedReports[indexPath.row]
+//        cell.report = report
+//        return cell
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -96,5 +106,9 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         if dataSource.saveReport(updatedReport) {
             tableView.reloadData()
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44;
     }
 }

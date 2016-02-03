@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -16,28 +17,35 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="38" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="80e-yx-tWq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="80e-yx-tWq">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReportCell" id="zFV-fd-DdL" customClass="ReportCell" customModule="TodayExtension" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="38"/>
+                                        <rect key="frame" x="0.0" y="28" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zFV-fd-DdL" id="g6u-gZ-Pq8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5K-LX-o6f">
-                                                    <rect key="frame" x="51" y="9" width="261" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <view alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-jP-pOk" customClass="LineView" customModule="TodayExtension" customModuleProvider="target">
+                                                    <rect key="frame" x="54" y="43" width="338" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" placeholder="YES" id="sgf-Ma-dCi"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q5K-LX-o6f">
+                                                    <rect key="frame" x="54" y="11" width="338" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyt-q2-Uxi" customClass="CheckboxView" customModule="TodayExtension" customModuleProvider="target">
-                                                    <rect key="frame" x="14" y="8" width="22" height="22"/>
+                                                    <rect key="frame" x="14" y="8" width="28" height="28"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nyt-q2-Uxi" secondAttribute="height" multiplier="1:1" id="S1w-rT-UpD"/>
@@ -45,17 +53,76 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Q5K-LX-o6f" firstAttribute="leading" secondItem="nyt-q2-Uxi" secondAttribute="trailing" constant="15" id="89F-5e-D4o"/>
+                                                <constraint firstItem="Q5K-LX-o6f" firstAttribute="leading" secondItem="nyt-q2-Uxi" secondAttribute="trailing" constant="12" id="89F-5e-D4o"/>
+                                                <constraint firstItem="tv6-jP-pOk" firstAttribute="leading" secondItem="Q5K-LX-o6f" secondAttribute="leading" id="Gdt-YE-zlu"/>
+                                                <constraint firstAttribute="bottom" secondItem="tv6-jP-pOk" secondAttribute="bottom" id="HPt-ba-1AM"/>
                                                 <constraint firstItem="nyt-q2-Uxi" firstAttribute="top" secondItem="g6u-gZ-Pq8" secondAttribute="top" constant="8" id="IPd-Md-gKl"/>
                                                 <constraint firstAttribute="bottom" secondItem="nyt-q2-Uxi" secondAttribute="bottom" constant="8" id="maM-h3-eET"/>
                                                 <constraint firstItem="Q5K-LX-o6f" firstAttribute="trailing" secondItem="g6u-gZ-Pq8" secondAttribute="trailingMargin" id="npG-ul-Ryh"/>
                                                 <constraint firstItem="Q5K-LX-o6f" firstAttribute="centerY" secondItem="g6u-gZ-Pq8" secondAttribute="centerY" id="phe-dj-LXn"/>
+                                                <constraint firstItem="tv6-jP-pOk" firstAttribute="trailing" secondItem="Q5K-LX-o6f" secondAttribute="trailing" id="qYG-NX-rJO"/>
                                                 <constraint firstItem="nyt-q2-Uxi" firstAttribute="leading" secondItem="g6u-gZ-Pq8" secondAttribute="leadingMargin" constant="6" id="zA4-hh-UQM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkboxView" destination="nyt-q2-Uxi" id="FbV-Vf-K9S"/>
                                             <outlet property="habitNameLabel" destination="Q5K-LX-o6f" id="N9J-Xt-e1b"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReportWithDefinitionCell" id="rwB-pY-NRc" customClass="ReportWithDefinitionCell" customModule="TodayExtension" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="400" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rwB-pY-NRc" id="wjO-qy-pSv">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJI-uk-fX4" customClass="LineView" customModule="TodayExtension" customModuleProvider="target">
+                                                    <rect key="frame" x="54" y="43" width="338" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" placeholder="YES" id="4ac-OK-Svq"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zFF-Oj-zde">
+                                                    <rect key="frame" x="54" y="4" width="338" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5de-9P-CL0">
+                                                    <rect key="frame" x="54" y="25" width="338" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-v5-7gP" customClass="CheckboxView" customModule="TodayExtension" customModuleProvider="target">
+                                                    <rect key="frame" x="14" y="8" width="28" height="28"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="z6S-v5-7gP" secondAttribute="height" multiplier="1:1" id="ZPM-03-Rbn"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="z6S-v5-7gP" secondAttribute="bottom" constant="8" id="2wZ-ht-wDc"/>
+                                                <constraint firstItem="pJI-uk-fX4" firstAttribute="trailing" secondItem="zFF-Oj-zde" secondAttribute="trailing" id="KCH-HU-sNq"/>
+                                                <constraint firstItem="5de-9P-CL0" firstAttribute="leading" secondItem="zFF-Oj-zde" secondAttribute="leading" id="KDw-N6-DH3"/>
+                                                <constraint firstItem="zFF-Oj-zde" firstAttribute="trailing" secondItem="wjO-qy-pSv" secondAttribute="trailingMargin" id="PTE-mM-NI1"/>
+                                                <constraint firstItem="pJI-uk-fX4" firstAttribute="leading" secondItem="zFF-Oj-zde" secondAttribute="leading" id="U2Q-92-yOH"/>
+                                                <constraint firstItem="5de-9P-CL0" firstAttribute="height" secondItem="zFF-Oj-zde" secondAttribute="height" multiplier="0.66" id="YI3-PX-uXh"/>
+                                                <constraint firstItem="zFF-Oj-zde" firstAttribute="top" secondItem="wjO-qy-pSv" secondAttribute="top" constant="4" id="ZpK-uE-13I"/>
+                                                <constraint firstItem="z6S-v5-7gP" firstAttribute="top" secondItem="wjO-qy-pSv" secondAttribute="top" constant="8" id="iWC-7c-IO4"/>
+                                                <constraint firstItem="z6S-v5-7gP" firstAttribute="leading" secondItem="wjO-qy-pSv" secondAttribute="leadingMargin" constant="6" id="k4K-Pj-fOT"/>
+                                                <constraint firstAttribute="bottom" secondItem="5de-9P-CL0" secondAttribute="bottom" constant="4" id="kFr-EW-f6E"/>
+                                                <constraint firstItem="zFF-Oj-zde" firstAttribute="leading" secondItem="z6S-v5-7gP" secondAttribute="trailing" constant="12" id="ofd-bx-0DO"/>
+                                                <constraint firstAttribute="bottom" secondItem="pJI-uk-fX4" secondAttribute="bottom" id="oi5-bj-d7L"/>
+                                                <constraint firstItem="5de-9P-CL0" firstAttribute="trailing" secondItem="zFF-Oj-zde" secondAttribute="trailing" id="ufL-rg-ihD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkboxView" destination="z6S-v5-7gP" id="xwD-3l-oz7"/>
+                                            <outlet property="habitDefinitionLabel" destination="5de-9P-CL0" id="B22-GC-DuV"/>
+                                            <outlet property="habitNameLabel" destination="zFF-Oj-zde" id="My9-67-x11"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,7 +144,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="100"/>
+                    <size key="freeformSize" width="400" height="200"/>
                     <connections>
                         <outlet property="tableView" destination="80e-yx-tWq" id="XeT-xa-mh3"/>
                     </connections>

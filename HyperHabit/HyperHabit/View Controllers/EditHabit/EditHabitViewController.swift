@@ -20,10 +20,15 @@ class EditHabitViewController: UIViewController {
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var definitionTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
 
     @IBAction func nameTextFieldEditingChanged(sender: AnyObject) {
         editor.name = nameTextField.text
+    }
+
+    @IBAction func definitionTextFieldEditingChanged(sender: AnyObject) {
+        editor.definition = definitionTextField.text
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
@@ -47,6 +52,7 @@ class EditHabitViewController: UIViewController {
     private func updateUI() {
         dispatch_async(dispatch_get_main_queue()) {
             self.nameTextField.text = self.editor.name
+            self.definitionTextField.text = self.editor.definition
             self.saveButton.enabled = self.editor.canSave
         }
     }
