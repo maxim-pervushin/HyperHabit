@@ -633,20 +633,16 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xk5-DB-SER" secondAttribute="bottom" id="AGB-oy-ioX"/>
                                     <constraint firstAttribute="trailing" secondItem="xk5-DB-SER" secondAttribute="trailing" id="AMp-Sl-fAt"/>
                                     <constraint firstItem="xk5-DB-SER" firstAttribute="top" secondItem="EHc-ta-RpP" secondAttribute="bottom" id="BkB-Be-oOg"/>
                                     <constraint firstItem="EHc-ta-RpP" firstAttribute="top" secondItem="2pb-wA-oNl" secondAttribute="top" id="Heq-Sc-MTW"/>
                                     <constraint firstItem="xk5-DB-SER" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="a06-uG-LRC"/>
-                                    <constraint firstAttribute="height" constant="600" id="dec-2w-hUd"/>
+                                    <constraint firstAttribute="height" constant="600" id="dec-2w-hUd">
+                                        <variation key="widthClass=compact" constant="1200"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="EHc-ta-RpP" secondAttribute="trailing" id="mTa-y4-nPl"/>
                                     <constraint firstItem="EHc-ta-RpP" firstAttribute="leading" secondItem="2pb-wA-oNl" secondAttribute="leading" id="tLH-1Z-aOp"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AGB-oy-ioX"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Tf-YgH" userLabel="Header Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
@@ -703,7 +699,9 @@
                                     <constraint firstAttribute="trailing" secondItem="1Wi-yx-X8o" secondAttribute="trailing" constant="8" id="Wdh-4x-02e"/>
                                     <constraint firstItem="1Wi-yx-X8o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FTG-1Y-t4g" secondAttribute="trailing" constant="8" id="btb-49-K7I"/>
                                     <constraint firstItem="1Wi-yx-X8o" firstAttribute="top" secondItem="FTG-1Y-t4g" secondAttribute="top" id="diZ-f9-jTg"/>
-                                    <constraint firstItem="FTG-1Y-t4g" firstAttribute="leading" secondItem="auJ-II-9ZT" secondAttribute="leading" constant="8" id="iEv-QU-vKA"/>
+                                    <constraint firstItem="FTG-1Y-t4g" firstAttribute="leading" secondItem="auJ-II-9ZT" secondAttribute="leading" constant="8" id="iEv-QU-vKA">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstItem="FTG-1Y-t4g" firstAttribute="top" secondItem="auJ-II-9ZT" secondAttribute="top" constant="4" id="nxv-5g-ORA"/>
                                     <constraint firstAttribute="bottom" secondItem="FTG-1Y-t4g" secondAttribute="bottom" constant="4" id="pj2-q1-xTV"/>
                                     <constraint firstAttribute="height" constant="44" id="qLx-t9-DM1"/>
@@ -1167,7 +1165,9 @@
                                     <constraint firstItem="OBw-rC-xti" firstAttribute="top" secondItem="tWP-HG-Kg0" secondAttribute="top" id="lDu-Ea-jmJ"/>
                                     <constraint firstAttribute="bottom" secondItem="tWP-HG-Kg0" secondAttribute="bottom" constant="4" id="lJa-nf-oOD"/>
                                     <constraint firstAttribute="height" constant="44" id="nTy-5T-Sws"/>
-                                    <constraint firstItem="tWP-HG-Kg0" firstAttribute="leading" secondItem="Ncp-ff-yla" secondAttribute="leading" constant="8" id="tgn-es-6o4"/>
+                                    <constraint firstItem="tWP-HG-Kg0" firstAttribute="leading" secondItem="Ncp-ff-yla" secondAttribute="leading" constant="8" id="tgn-es-6o4">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstItem="tWP-HG-Kg0" firstAttribute="top" secondItem="Ncp-ff-yla" secondAttribute="top" constant="4" id="zpz-Dt-btS"/>
                                 </constraints>
                             </view>
@@ -1500,7 +1500,9 @@
                                     <constraint firstAttribute="bottom" secondItem="eHX-MP-7Db" secondAttribute="bottom" constant="4" id="2pR-8Q-Q9N"/>
                                     <constraint firstItem="eHX-MP-7Db" firstAttribute="top" secondItem="NDS-IU-cIP" secondAttribute="top" constant="4" id="FJi-Dg-NJf"/>
                                     <constraint firstAttribute="height" constant="44" id="Xfu-3P-HMR"/>
-                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="leading" secondItem="NDS-IU-cIP" secondAttribute="leading" constant="8" id="q0o-av-SkG"/>
+                                    <constraint firstItem="eHX-MP-7Db" firstAttribute="leading" secondItem="NDS-IU-cIP" secondAttribute="leading" constant="8" id="q0o-av-SkG">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-Qx-kOM" userLabel="Content Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
@@ -1765,7 +1767,7 @@
                             <constraint firstItem="8N2-7P-yQX" firstAttribute="centerY" secondItem="Myh-fM-bWH" secondAttribute="centerY" priority="750" id="TPX-Fb-ZJu"/>
                             <constraint firstItem="8N2-7P-yQX" firstAttribute="trailing" secondItem="Myh-fM-bWH" secondAttribute="trailingMargin" id="TuX-FZ-o6o"/>
                             <constraint firstItem="Fia-DZ-bO0" firstAttribute="leading" secondItem="Myh-fM-bWH" secondAttribute="leading" id="XN1-Wx-xKI">
-                                <variation key="widthClass=compact" constant="8"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                         </constraints>
                     </view>
@@ -1879,7 +1881,7 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hMf-AF-SsC" secondAttribute="bottom" id="Adn-WD-IHp"/>
                             <constraint firstItem="hMf-AF-SsC" firstAttribute="leading" secondItem="KZI-Qw-vai" secondAttribute="leadingMargin" id="OQq-ZJ-F1r"/>
                             <constraint firstItem="vg1-RT-vqw" firstAttribute="leading" secondItem="KZI-Qw-vai" secondAttribute="leading" id="Rte-qM-bOE">
-                                <variation key="widthClass=compact" constant="8"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="vg1-RT-vqw" firstAttribute="top" secondItem="SpT-t6-fZR" secondAttribute="bottom" id="iAM-Cn-jZK"/>
                             <constraint firstItem="hMf-AF-SsC" firstAttribute="centerY" secondItem="KZI-Qw-vai" secondAttribute="centerY" priority="750" id="kON-Dp-6Cw"/>
