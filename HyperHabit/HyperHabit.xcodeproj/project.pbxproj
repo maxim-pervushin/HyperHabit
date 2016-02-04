@@ -35,6 +35,7 @@
 		73BC64E424F16B66E9C3F03A /* Habit+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A368C62A04A34352FA2 /* Habit+Parse.swift */; };
 		73BC64FDDC35129A0B541748 /* HabitEditorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612118307D2A7C51D4F9 /* HabitEditorTestCase.swift */; };
 		73BC65163A6E21434542C997 /* ChangesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A94CBCA08D2EC337327 /* ChangesObserver.swift */; };
+		73BC652FF6069ECDFE5F57A2 /* RoundedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E731993A9A10E6C22A1 /* RoundedVisualEffectView.swift */; };
 		73BC6536368992A54577F092 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EB6468E4C72B3BB2542 /* Test.swift */; };
 		73BC654909448959DBA56ECC /* StatisticsForDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6948C7AD8DA4CA2DADE5 /* StatisticsForDateViewController.swift */; };
 		73BC654A3C3F6E787F10E89F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC603928F193F9B3D10622 /* Service.swift */; };
@@ -280,6 +281,7 @@
 		73BC6DCA49864BE9D3395712 /* BackgroundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		73BC6E49AE47A52824875F01 /* TodayDataSourceTestCase+todayReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodayDataSourceTestCase+todayReports.swift"; sourceTree = "<group>"; };
 		73BC6E72395B3A9152E154E6 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		73BC6E731993A9A10E6C22A1 /* RoundedVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffectView.swift; sourceTree = "<group>"; };
 		73BC6EB6468E4C72B3BB2542 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		73BC6EBEDB008DCE20D95068 /* DataManagerTestCase+reportsForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManagerTestCase+reportsForDate.swift"; sourceTree = "<group>"; };
 		73BC6EC850FB98E0148C8E25 /* UIColor+Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hyper.swift"; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				73BC676D212721E13748EBCE /* TodayViewController.swift */,
 				73BC68822C48506F70552FE7 /* App.swift */,
 				73BC61E643CF8316F32BA7D3 /* Data */,
+				73BC6AF392D45A47389BE270 /* Views */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -606,6 +609,14 @@
 				73BC615F160ED6CDA6EA8B5E /* LogInViewController.swift */,
 			);
 			path = "Log In";
+			sourceTree = "<group>";
+		};
+		73BC6AF392D45A47389BE270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6E731993A9A10E6C22A1 /* RoundedVisualEffectView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		73BC6B3124E71F5695668207 /* HabitEditor */ = {
@@ -1196,6 +1207,7 @@
 				73BC6A7A6EB973C9DC64433A /* Cache.swift in Sources */,
 				73BC6A525EFDBCA7346B8E93 /* CheckboxView.swift in Sources */,
 				73BC6A26789CF111C54A98BA /* ServiceAuthentication.swift in Sources */,
+				73BC652FF6069ECDFE5F57A2 /* RoundedVisualEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

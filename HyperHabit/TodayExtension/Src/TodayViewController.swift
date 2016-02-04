@@ -13,12 +13,17 @@ class TodayViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBOutlet weak var previousDayButton: UIButton!
+    @IBAction func openApplicationButtonAction(sender: AnyObject) {
+//        [self.extensionContext openURL:[NSURL URLWithString:@"timelogger://add"] completionHandler:nil];
+        if let url = NSURL(string: "hyperhabit://open") {
+            extensionContext?.openURL(url, completionHandler: nil)
+        }
+        print("Open Application");
+    }
+    
     private let dataSource = TodayDataSource(dataProvider: App.dataProvider)
 
     private var _heightConstraint: NSLayoutConstraint?
-    @IBAction func previousDayButtonAction(sender: AnyObject) {
-    }
     private var heightConstraint: NSLayoutConstraint {
         get {
             if _heightConstraint == nil {

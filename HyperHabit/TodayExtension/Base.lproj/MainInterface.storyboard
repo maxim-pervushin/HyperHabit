@@ -17,11 +17,11 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="80e-yx-tWq">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="354"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReportCell" id="zFV-fd-DdL" customClass="ReportCell" customModule="TodayExtension" customModuleProvider="target">
@@ -131,12 +131,92 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="w4J-1b-MGY"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8os-6f-uTO" customClass="RoundedView" customModule="TodayExtension" customModuleProvider="target">
+                                <rect key="frame" x="30" y="362" width="340" height="30"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-5T-mgx">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="30"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9EJ-ef-pyW">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-DF-Jk0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="30"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PFX-UH-t8q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7Z-Rm-ew0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="340" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Open Application">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="openApplicationButtonAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Ryv-kB-rB2"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="d7Z-Rm-ew0" firstAttribute="leading" secondItem="PFX-UH-t8q" secondAttribute="leading" id="FXX-7c-5lw"/>
+                                                            <constraint firstItem="d7Z-Rm-ew0" firstAttribute="top" secondItem="PFX-UH-t8q" secondAttribute="top" id="wtW-i7-2Y1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d7Z-Rm-ew0" secondAttribute="trailing" id="yP2-k7-1dv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d7Z-Rm-ew0" secondAttribute="bottom" id="zns-oL-PDV"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="extraLight"/>
+                                                    </vibrancyEffect>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </visualEffectView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZPd-DF-Jk0" firstAttribute="leading" secondItem="9EJ-ef-pyW" secondAttribute="leading" id="Pp1-JD-A38"/>
+                                                <constraint firstItem="ZPd-DF-Jk0" firstAttribute="top" secondItem="9EJ-ef-pyW" secondAttribute="top" id="cHT-ED-YVs"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZPd-DF-Jk0" secondAttribute="trailing" id="mC0-6f-ndy"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZPd-DF-Jk0" secondAttribute="bottom" id="yUS-kH-2Zq"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="extraLight"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FmI-5T-mgx" secondAttribute="bottom" id="Ien-A7-yqD"/>
+                                    <constraint firstItem="FmI-5T-mgx" firstAttribute="top" secondItem="8os-6f-uTO" secondAttribute="top" id="Tmn-IQ-dnf"/>
+                                    <constraint firstAttribute="trailing" secondItem="FmI-5T-mgx" secondAttribute="trailing" id="UGq-nZ-EOO"/>
+                                    <constraint firstItem="FmI-5T-mgx" firstAttribute="leading" secondItem="8os-6f-uTO" secondAttribute="leading" id="Wda-ar-xbh"/>
+                                    <constraint firstAttribute="height" constant="30" id="s9T-rZ-Kvr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="80e-yx-tWq" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="7kl-1j-Brk"/>
+                            <constraint firstItem="8os-6f-uTO" firstAttribute="top" secondItem="80e-yx-tWq" secondAttribute="bottom" constant="8" id="Mme-mH-DPb"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="8os-6f-uTO" secondAttribute="bottom" constant="8" id="bdK-9Z-i72"/>
+                            <constraint firstAttribute="trailing" secondItem="8os-6f-uTO" secondAttribute="trailing" constant="30" id="cgU-l3-yln"/>
                             <constraint firstAttribute="trailing" secondItem="80e-yx-tWq" secondAttribute="trailing" id="fRc-KF-TZ9"/>
-                            <constraint firstAttribute="bottom" secondItem="80e-yx-tWq" secondAttribute="bottom" id="n9Y-3K-Mqv"/>
                             <constraint firstItem="80e-yx-tWq" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="nwf-7w-6Ea"/>
+                            <constraint firstItem="8os-6f-uTO" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="30" id="pf6-JL-cHX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -144,7 +224,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="200"/>
+                    <size key="freeformSize" width="400" height="400"/>
                     <connections>
                         <outlet property="tableView" destination="80e-yx-tWq" id="XeT-xa-mh3"/>
                     </connections>

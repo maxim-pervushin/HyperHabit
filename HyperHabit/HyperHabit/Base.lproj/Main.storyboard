@@ -102,7 +102,9 @@
                                             <constraint firstItem="mxO-nB-g3n" firstAttribute="top" secondItem="pj9-Ps-umM" secondAttribute="top" constant="2" id="N3v-W7-avY"/>
                                             <constraint firstAttribute="trailing" secondItem="mxO-nB-g3n" secondAttribute="trailing" constant="2" id="SNy-75-gd6"/>
                                             <constraint firstItem="6ro-pt-PaM" firstAttribute="trailing" secondItem="mxO-nB-g3n" secondAttribute="trailing" id="Sy0-CB-kTS"/>
-                                            <constraint firstItem="6ro-pt-PaM" firstAttribute="top" secondItem="mxO-nB-g3n" secondAttribute="bottom" id="epX-qd-SG6"/>
+                                            <constraint firstItem="6ro-pt-PaM" firstAttribute="top" secondItem="mxO-nB-g3n" secondAttribute="bottom" id="epX-qd-SG6">
+                                                <variation key="widthClass=compact" constant="2"/>
+                                            </constraint>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="gTo-Cj-Pof" appends="YES" id="XUM-mx-hHC"/>
@@ -1943,10 +1945,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="2Cc-hc-TkH" secondAttribute="trailing" constant="20" id="5yY-16-AgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Cc-hc-TkH" secondAttribute="trailing" constant="20" id="5yY-16-AgY">
+                                        <variation key="widthClass=compact" constant="12"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="OtL-Y2-5Yh" secondAttribute="trailing" id="7ml-Lx-fy9"/>
                                     <constraint firstItem="2Cc-hc-TkH" firstAttribute="top" secondItem="AzW-Cz-lcA" secondAttribute="top" id="8P4-rd-c6m"/>
-                                    <constraint firstItem="AzW-Cz-lcA" firstAttribute="leading" secondItem="eR5-c9-RTK" secondAttribute="leading" constant="20" id="QFJ-ux-Pb9"/>
+                                    <constraint firstItem="AzW-Cz-lcA" firstAttribute="leading" secondItem="eR5-c9-RTK" secondAttribute="leading" constant="20" id="QFJ-ux-Pb9">
+                                        <variation key="widthClass=compact" constant="12"/>
+                                    </constraint>
                                     <constraint firstItem="AzW-Cz-lcA" firstAttribute="centerY" secondItem="eR5-c9-RTK" secondAttribute="centerY" id="Qrz-Y0-Wup"/>
                                     <constraint firstAttribute="height" constant="50" id="QxN-a1-20T"/>
                                     <constraint firstItem="Pxw-VZ-Mqb" firstAttribute="top" secondItem="eR5-c9-RTK" secondAttribute="top" id="VGB-7w-QKW"/>
@@ -2002,8 +2008,12 @@
                                     <constraint firstItem="R94-5o-nen" firstAttribute="centerY" secondItem="g4x-Hu-4lR" secondAttribute="centerY" id="MGV-8w-igA"/>
                                     <constraint firstAttribute="bottom" secondItem="8Zs-T3-ufM" secondAttribute="bottom" id="RMx-Qd-ZNm"/>
                                     <constraint firstItem="6FB-Ui-rTO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R94-5o-nen" secondAttribute="trailing" constant="8" id="S48-8t-5m0"/>
-                                    <constraint firstAttribute="trailing" secondItem="6FB-Ui-rTO" secondAttribute="trailing" constant="20" id="UH6-Kb-yZd"/>
-                                    <constraint firstItem="R94-5o-nen" firstAttribute="leading" secondItem="g4x-Hu-4lR" secondAttribute="leading" constant="20" id="Yri-ls-qBJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6FB-Ui-rTO" secondAttribute="trailing" constant="20" id="UH6-Kb-yZd">
+                                        <variation key="widthClass=compact" constant="12"/>
+                                    </constraint>
+                                    <constraint firstItem="R94-5o-nen" firstAttribute="leading" secondItem="g4x-Hu-4lR" secondAttribute="leading" constant="20" id="Yri-ls-qBJ">
+                                        <variation key="widthClass=compact" constant="12"/>
+                                    </constraint>
                                     <constraint firstItem="bpe-6d-WWw" firstAttribute="leading" secondItem="g4x-Hu-4lR" secondAttribute="leading" id="gsE-t8-1os"/>
                                     <constraint firstItem="6FB-Ui-rTO" firstAttribute="top" secondItem="R94-5o-nen" secondAttribute="top" id="iJW-uw-781"/>
                                     <constraint firstItem="bpe-6d-WWw" firstAttribute="top" secondItem="g4x-Hu-4lR" secondAttribute="top" id="yT4-gR-te8"/>
