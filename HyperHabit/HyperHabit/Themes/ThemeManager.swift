@@ -89,9 +89,21 @@ class ThemeManager {
 
         UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewCell.self]).textColor = theme.foregroundColor
 
-        UIButton.appearance().backgroundColor = UIColor.clearColor()
-        UIButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
-        UIButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
+        // Button
+        Button.appearance().backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
+        Button.appearance().setTitleColor(theme.textColor, forState: .Normal)
+        Button.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
+        Button.appearance().tintColor = theme.foregroundColor
+
+        // ClearButton
+        ClearButton.appearance().backgroundColor = UIColor.clearColor()
+        ClearButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
+        ClearButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
+        ClearButton.appearance().tintColor = theme.foregroundColor
+
+//        UIButton.appearance().backgroundColor = UIColor.clearColor()
+//        UIButton.appearance().setTitleColor(theme.textColor, forState: .Normal)
+//        UIButton.appearance().setTitleColor(theme.inactiveTextColor, forState: .Disabled)
 
         // Label
         Label.appearance().textColor = theme.foregroundColor
@@ -114,9 +126,9 @@ class ThemeManager {
         LineView.appearance().backgroundColor = theme.foregroundColor.colorWithAlphaComponent(0.25)
         LineCollectionReusableView.appearance().backgroundColor = UIColor.clearColor()
 
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
+//        UILabel.appearanceWhenContainedInInstancesOfClasses([UITextField.self]).textColor = theme.foregroundColor.colorWithAlphaComponent(0.5)
 
-        UIButton.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
+//        UIButton.appearanceWhenContainedInInstancesOfClasses([BackgroundImageView.self]).backgroundColor = theme.backgroundColor.colorWithAlphaComponent(0.5)
 
         // TextField
         TextField.appearance().textColor = theme.foregroundColor

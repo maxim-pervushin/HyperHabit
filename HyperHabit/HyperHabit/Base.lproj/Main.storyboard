@@ -166,20 +166,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-WG-iJr" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-WG-iJr" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="49" width="560" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" placeholder="YES" id="Bnr-EH-sGD"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Oe-4WP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Oe-4WP">
                                                     <rect key="frame" x="65" y="14" width="527" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ct-Ff8" customClass="CheckboxView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0A-ct-Ff8" customClass="CheckboxView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="10" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -203,16 +203,16 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="rQP-KD-YI7"/>
                                                     <exclude reference="fhd-HD-dG2"/>
                                                     <exclude reference="zeg-df-BlD"/>
+                                                    <exclude reference="rQP-KD-YI7"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="rQP-KD-YI7"/>
                                                     <include reference="fhd-HD-dG2"/>
                                                     <include reference="zeg-df-BlD"/>
+                                                    <include reference="rQP-KD-YI7"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -229,20 +229,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrT-CL-Jvm" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UrT-CL-Jvm" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="49" width="560" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" placeholder="YES" id="Sl3-Eq-GoT"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-ni-6uJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="PgE-ni-6uJ">
                                                     <rect key="frame" x="65" y="14" width="527" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kyz-E5-y6k" customClass="CheckboxView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kyz-E5-y6k" customClass="CheckboxView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="10" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -286,16 +286,16 @@
                                                     <exclude reference="7UH-HQ-Nch"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="bpg-x8-WDt"/>
-                                                    <exclude reference="epT-tF-SRK"/>
-                                                    <exclude reference="gOM-Np-wYl"/>
-                                                    <exclude reference="Lhf-td-eA7"/>
-                                                    <exclude reference="zWN-eK-B7C"/>
                                                     <exclude reference="1Jq-pO-sFQ"/>
                                                     <exclude reference="56f-sK-OQC"/>
                                                     <exclude reference="Yuv-VD-eUg"/>
                                                     <exclude reference="fEv-Of-j1h"/>
                                                     <exclude reference="saA-XA-a7f"/>
+                                                    <exclude reference="Lhf-td-eA7"/>
+                                                    <exclude reference="zWN-eK-B7C"/>
+                                                    <exclude reference="bpg-x8-WDt"/>
+                                                    <exclude reference="epT-tF-SRK"/>
+                                                    <exclude reference="gOM-Np-wYl"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -303,16 +303,16 @@
                                                     <include reference="7UH-HQ-Nch"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="bpg-x8-WDt"/>
-                                                    <include reference="epT-tF-SRK"/>
-                                                    <include reference="gOM-Np-wYl"/>
-                                                    <include reference="Lhf-td-eA7"/>
-                                                    <include reference="zWN-eK-B7C"/>
                                                     <include reference="1Jq-pO-sFQ"/>
                                                     <include reference="56f-sK-OQC"/>
                                                     <include reference="Yuv-VD-eUg"/>
                                                     <include reference="fEv-Of-j1h"/>
                                                     <include reference="saA-XA-a7f"/>
+                                                    <include reference="Lhf-td-eA7"/>
+                                                    <include reference="zWN-eK-B7C"/>
+                                                    <include reference="bpg-x8-WDt"/>
+                                                    <include reference="epT-tF-SRK"/>
+                                                    <include reference="gOM-Np-wYl"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -658,7 +658,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-II-9ZT" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wi-yx-X8o">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wi-yx-X8o" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="548" y="4" width="44" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Today">
@@ -671,15 +671,28 @@
                                             <action selector="todayButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="zBF-R5-04y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-1Y-t4g">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTG-1Y-t4g" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="8" y="4" width="50" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FTG-1Y-t4g" secondAttribute="height" id="Fys-rT-UHK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" image="Close">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Fys-rT-UHK"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Fys-rT-UHK"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonAction:" destination="fBO-bB-84e" eventType="touchUpInside" id="UNC-B3-ahC"/>
                                         </connections>
@@ -990,7 +1003,7 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="7ol-DM-exZ"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="co5-9R-8g2" customClass="TextField" customModule="HyperHabit" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="co5-9R-8g2" customClass="TextField" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="8" y="18" width="584" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1013,7 +1026,7 @@
                                             <action selector="nameTextFieldEditingChanged:" destination="3Dy-km-eTD" eventType="editingChanged" id="hyN-fh-opd"/>
                                         </connections>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-HV-Hpe" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojS-HV-Hpe" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="8" y="49" width="584" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1077,18 +1090,18 @@
                                         <exclude reference="uRb-Nr-qn0"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="7gZ-qY-6G2"/>
-                                        <exclude reference="Z4M-Iy-VqB"/>
-                                        <exclude reference="xbL-Ur-RyB"/>
-                                        <exclude reference="XAa-8F-zAx"/>
-                                        <exclude reference="vWt-1j-DWD"/>
-                                        <exclude reference="zoe-9v-OGe"/>
                                         <exclude reference="H5b-bP-nD4"/>
                                         <exclude reference="MiT-Tb-Zcn"/>
                                         <exclude reference="cgy-8t-i5E"/>
                                         <exclude reference="M1x-We-wym"/>
                                         <exclude reference="cic-zy-Uum"/>
                                         <exclude reference="oHj-pU-VC3"/>
+                                        <exclude reference="7gZ-qY-6G2"/>
+                                        <exclude reference="Z4M-Iy-VqB"/>
+                                        <exclude reference="xbL-Ur-RyB"/>
+                                        <exclude reference="XAa-8F-zAx"/>
+                                        <exclude reference="vWt-1j-DWD"/>
+                                        <exclude reference="zoe-9v-OGe"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1097,18 +1110,18 @@
                                         <include reference="uRb-Nr-qn0"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="7gZ-qY-6G2"/>
-                                        <include reference="Z4M-Iy-VqB"/>
-                                        <include reference="xbL-Ur-RyB"/>
-                                        <include reference="XAa-8F-zAx"/>
-                                        <include reference="vWt-1j-DWD"/>
-                                        <include reference="zoe-9v-OGe"/>
                                         <include reference="H5b-bP-nD4"/>
                                         <include reference="MiT-Tb-Zcn"/>
                                         <include reference="cgy-8t-i5E"/>
                                         <include reference="M1x-We-wym"/>
                                         <include reference="cic-zy-Uum"/>
                                         <include reference="oHj-pU-VC3"/>
+                                        <include reference="7gZ-qY-6G2"/>
+                                        <include reference="Z4M-Iy-VqB"/>
+                                        <include reference="xbL-Ur-RyB"/>
+                                        <include reference="XAa-8F-zAx"/>
+                                        <include reference="vWt-1j-DWD"/>
+                                        <include reference="zoe-9v-OGe"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1119,14 +1132,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncp-ff-yla" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWP-HG-Kg0">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWP-HG-Kg0" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="8" y="4" width="48" height="36"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tWP-HG-Kg0" secondAttribute="height" id="gl4-Eg-GfQ"/>
+                                        </constraints>
+                                        <state key="normal" image="Close"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="gl4-Eg-GfQ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="gl4-Eg-GfQ"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonAction:" destination="3Dy-km-eTD" eventType="touchUpInside" id="Bbh-jX-r5E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-rC-xti">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-rC-xti" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="558" y="4" width="34" height="36"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
@@ -1242,10 +1268,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddHabitCell" id="NXL-1P-k5r">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NXL-1P-k5r" id="1BY-qO-Bnp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Habit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-fg-pAL">
@@ -1265,10 +1291,10 @@
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" id="jvW-GD-spx" customClass="HabitCell" customModule="HyperHabit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="142" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jvW-GD-spx" id="wFp-EU-aL7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK4-99-I6i">
@@ -1277,7 +1303,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1s-b6-Hmy" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1s-b6-Hmy" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="43" width="560" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1315,10 +1341,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitWithDefinitionCell" id="tIa-vV-cza" customClass="HabitWithDefinitionCell" customModule="HyperHabit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="192" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tIa-vV-cza" id="Oza-Yw-o86">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Habit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6o-Q0-ahe">
@@ -1327,7 +1353,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYL-qq-oa5" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYL-qq-oa5" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="43" width="560" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1339,9 +1365,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="12" y="31" width="380" height="15"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -1366,12 +1389,12 @@
                                                     <exclude reference="aXt-57-jgP"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="h3c-ZW-0oI"/>
                                                     <exclude reference="FdK-wD-6zw"/>
                                                     <exclude reference="Fh3-6O-Ced"/>
                                                     <exclude reference="TH7-lm-Pgg"/>
                                                     <exclude reference="WWy-f4-iiv"/>
                                                     <exclude reference="ihU-k9-GHy"/>
+                                                    <exclude reference="h3c-ZW-0oI"/>
                                                     <exclude reference="49E-JS-3No"/>
                                                     <exclude reference="X1B-MA-Vru"/>
                                                 </mask>
@@ -1381,12 +1404,12 @@
                                                     <include reference="aXt-57-jgP"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="h3c-ZW-0oI"/>
                                                     <include reference="FdK-wD-6zw"/>
                                                     <include reference="Fh3-6O-Ced"/>
                                                     <include reference="TH7-lm-Pgg"/>
                                                     <include reference="WWy-f4-iiv"/>
                                                     <include reference="ihU-k9-GHy"/>
+                                                    <include reference="h3c-ZW-0oI"/>
                                                     <include reference="49E-JS-3No"/>
                                                     <include reference="X1B-MA-Vru"/>
                                                 </mask>
@@ -1435,10 +1458,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-qX-yBf" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A0-KA-xLR" userLabel="Header Top View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-480" width="600" height="500"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
@@ -1449,15 +1468,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDS-IU-cIP" userLabel="Header View" customClass="BackgroundView" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHX-MP-7Db">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHX-MP-7Db" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="8" y="4" width="50" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eHX-MP-7Db" secondAttribute="height" id="VUr-ZF-Mrb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" image="Close">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="VUr-ZF-Mrb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="VUr-ZF-Mrb"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonAction:" destination="nVs-Vt-C6e" eventType="touchUpInside" id="X4B-Z1-dL8"/>
                                         </connections>
@@ -1499,9 +1531,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="561" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ThemeName]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-9i-nWu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ThemeName]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-9i-nWu">
                                                             <rect key="frame" x="20" y="14" width="521" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1544,6 +1576,10 @@
                                     <constraint firstItem="Sxo-Fi-tFC" firstAttribute="top" secondItem="RR6-Wx-ymW" secondAttribute="top" id="okx-ez-OAj"/>
                                     <constraint firstAttribute="trailing" secondItem="oy2-Lb-fqk" secondAttribute="trailing" id="vnA-So-Tp2"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-qX-yBf" customClass="TintView" customModule="HyperHabit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <constraints>
@@ -1611,13 +1647,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fia-DZ-bO0">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fia-DZ-bO0" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Xs9-nu-Va4"/>
                                     <constraint firstAttribute="height" constant="40" id="xum-qF-hpa"/>
                                 </constraints>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" image="Close"/>
                                 <connections>
                                     <action selector="cancelButtonAction:" destination="YTf-kg-p3c" eventType="touchUpInside" id="zsZ-fb-UTy"/>
                                 </connections>
@@ -1625,13 +1661,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8N2-7P-yQX" userLabel="Container View">
                                 <rect key="frame" x="20" y="179" width="560" height="242"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pum-1N-S6M">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pum-1N-S6M" customClass="Button" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106" width="560" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8VB-vX-cbl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
                                             <action selector="logInButtonAction:" destination="YTf-kg-p3c" eventType="touchUpInside" id="IGw-DN-6f1"/>
@@ -1643,16 +1679,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pHD-yC-mxj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d76-JF-Rzf">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d76-JF-Rzf" customClass="TextField" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="560" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ZEg-tn-6Ru"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ly9-qj-sZV" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -1669,25 +1705,25 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="urU-pp-m13"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDY-fe-3IL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDY-fe-3IL" customClass="Button" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="154" width="560" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fl5-aq-8XL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
                                             <action selector="forgotPasswordButtonAction:" destination="YTf-kg-p3c" eventType="touchUpInside" id="1cW-Ef-VXn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOH-To-KvD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOH-To-KvD" customClass="Button" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="202" width="560" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1wY-YF-rcV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signUpButtonAction:" destination="YTf-kg-p3c" eventType="touchUpInside" id="6n9-LF-kOr"/>
@@ -1728,7 +1764,9 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8N2-7P-yQX" secondAttribute="bottom" id="P6P-7A-7HV"/>
                             <constraint firstItem="8N2-7P-yQX" firstAttribute="centerY" secondItem="Myh-fM-bWH" secondAttribute="centerY" priority="750" id="TPX-Fb-ZJu"/>
                             <constraint firstItem="8N2-7P-yQX" firstAttribute="trailing" secondItem="Myh-fM-bWH" secondAttribute="trailingMargin" id="TuX-FZ-o6o"/>
-                            <constraint firstItem="Fia-DZ-bO0" firstAttribute="leading" secondItem="Myh-fM-bWH" secondAttribute="leading" id="XN1-Wx-xKI"/>
+                            <constraint firstItem="Fia-DZ-bO0" firstAttribute="leading" secondItem="Myh-fM-bWH" secondAttribute="leading" id="XN1-Wx-xKI">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Log In" id="5xU-l6-f9R"/>
@@ -1755,13 +1793,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg1-RT-vqw">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg1-RT-vqw" customClass="ClearButton" customModule="HyperHabit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="2vQ-hj-iVq"/>
                                     <constraint firstAttribute="height" constant="40" id="TM0-5I-pV8"/>
                                 </constraints>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" image="Close"/>
                                 <connections>
                                     <action selector="cancelButtonAction:" destination="sSZ-PU-EgA" eventType="touchUpInside" id="XQ2-On-TkP"/>
                                 </connections>
@@ -1775,16 +1813,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dyc-UJ-9Tz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STS-5r-4Uy">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STS-5r-4Uy" customClass="TextField" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="560" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4rW-K2-NTH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-iD-vK1" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -1801,13 +1839,13 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="ctT-s6-MTx"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hJ-hr-cPL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hJ-hr-cPL" customClass="Button" customModule="HyperHabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106" width="560" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Wmf-YS-nYz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <action selector="signUpButtonAction:" destination="YTf-kg-p3c" eventType="touchUpInside" id="HLI-ET-Rjj"/>
@@ -1840,7 +1878,9 @@
                         <constraints>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hMf-AF-SsC" secondAttribute="bottom" id="Adn-WD-IHp"/>
                             <constraint firstItem="hMf-AF-SsC" firstAttribute="leading" secondItem="KZI-Qw-vai" secondAttribute="leadingMargin" id="OQq-ZJ-F1r"/>
-                            <constraint firstItem="vg1-RT-vqw" firstAttribute="leading" secondItem="KZI-Qw-vai" secondAttribute="leading" id="Rte-qM-bOE"/>
+                            <constraint firstItem="vg1-RT-vqw" firstAttribute="leading" secondItem="KZI-Qw-vai" secondAttribute="leading" id="Rte-qM-bOE">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="vg1-RT-vqw" firstAttribute="top" secondItem="SpT-t6-fZR" secondAttribute="bottom" id="iAM-Cn-jZK"/>
                             <constraint firstItem="hMf-AF-SsC" firstAttribute="centerY" secondItem="KZI-Qw-vai" secondAttribute="centerY" priority="750" id="kON-Dp-6Cw"/>
                             <constraint firstItem="hMf-AF-SsC" firstAttribute="trailing" secondItem="KZI-Qw-vai" secondAttribute="trailingMargin" id="mPd-gM-aMt"/>
@@ -1885,15 +1925,15 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="8b6-HH-egG"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzW-Cz-lcA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AzW-Cz-lcA">
                                         <rect key="frame" x="20" y="14" width="54" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ThemeName]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cc-hc-TkH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ThemeName]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Cc-hc-TkH">
                                         <rect key="frame" x="470" y="14" width="110" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1936,15 +1976,15 @@
                                             <constraint firstAttribute="height" constant="1" placeholder="YES" id="Rf5-ih-SdJ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="[AuthenticationStatus]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R94-5o-nen">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="[AuthenticationStatus]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R94-5o-nen">
                                         <rect key="frame" x="20" y="14" width="172" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="[ToggleAuthentication]" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FB-Ui-rTO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="[ToggleAuthentication]" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6FB-Ui-rTO">
                                         <rect key="frame" x="405" y="14" width="175" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2008,6 +2048,7 @@
         <image name="ArrowDown" width="44" height="11"/>
         <image name="ArrowLeft" width="38" height="50"/>
         <image name="ArrowRight" width="38" height="50"/>
+        <image name="Close" width="18" height="18"/>
         <image name="Habits" width="22" height="18"/>
         <image name="Reports" width="18" height="22"/>
         <image name="Settings" width="22" height="22"/>
