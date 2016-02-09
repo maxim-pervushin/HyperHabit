@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1794,6 +1795,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cEQ-9n-ahF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nMK-hb-PtW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-0b-w7a">
@@ -1804,6 +1806,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56s-Vn-xwh" id="YY4-8u-Goa">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-13-JQs" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
@@ -1844,9 +1847,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="10" y="67" width="380" height="45"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -1878,12 +1878,12 @@
                                                     <exclude reference="RXk-mg-v1I"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Ina-3A-Jnw"/>
-                                                    <exclude reference="Ph2-zd-vkx"/>
-                                                    <exclude reference="Xgt-OT-xks"/>
                                                     <exclude reference="1GM-vq-dNh"/>
                                                     <exclude reference="8eF-6W-c0E"/>
                                                     <exclude reference="DQZ-V6-LBD"/>
+                                                    <exclude reference="Ina-3A-Jnw"/>
+                                                    <exclude reference="Ph2-zd-vkx"/>
+                                                    <exclude reference="Xgt-OT-xks"/>
                                                     <exclude reference="3UJ-ky-GJX"/>
                                                     <exclude reference="GfA-Ei-byY"/>
                                                     <exclude reference="m6c-lc-DDe"/>
@@ -1901,12 +1901,12 @@
                                                     <include reference="RXk-mg-v1I"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Ina-3A-Jnw"/>
-                                                    <include reference="Ph2-zd-vkx"/>
-                                                    <include reference="Xgt-OT-xks"/>
                                                     <include reference="1GM-vq-dNh"/>
                                                     <include reference="8eF-6W-c0E"/>
                                                     <include reference="DQZ-V6-LBD"/>
+                                                    <include reference="Ina-3A-Jnw"/>
+                                                    <include reference="Ph2-zd-vkx"/>
+                                                    <include reference="Xgt-OT-xks"/>
                                                     <include reference="3UJ-ky-GJX"/>
                                                     <include reference="GfA-Ei-byY"/>
                                                     <include reference="m6c-lc-DDe"/>
@@ -1942,10 +1942,10 @@
                                 <exclude reference="Qjo-0b-w7a"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="u3m-8g-FZY"/>
                                 <exclude reference="0cU-mj-uc6"/>
                                 <exclude reference="DUv-5r-MYc"/>
                                 <exclude reference="Pc1-6f-07J"/>
-                                <exclude reference="u3m-8g-FZY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1953,10 +1953,10 @@
                                 <include reference="Qjo-0b-w7a"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="u3m-8g-FZY"/>
                                 <include reference="0cU-mj-uc6"/>
                                 <include reference="DUv-5r-MYc"/>
                                 <include reference="Pc1-6f-07J"/>
-                                <include reference="u3m-8g-FZY"/>
                             </mask>
                         </variation>
                     </view>
@@ -2352,18 +2352,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1078.5" y="1167"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="weD-Qy-ogK">
-            <objects>
-                <viewController id="LnH-nq-1fT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rbk-pR-paM">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EDG-XW-7d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
