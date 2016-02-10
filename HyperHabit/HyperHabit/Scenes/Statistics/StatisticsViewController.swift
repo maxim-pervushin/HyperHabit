@@ -19,7 +19,6 @@ class StatisticsViewController: UIViewController, Themed {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         calendarView?.scrollToDate(NSDate(), animated: false)
-//        updateUI()
     }
 
     override func viewDidLoad() {
@@ -58,7 +57,7 @@ class StatisticsViewController: UIViewController, Themed {
     private func calendarViewCellConfiguration(cell: UICollectionViewCell) {
         if let dayCell = cell as? MXDayCell, let date = dayCell.date {
             let reports = dataSource.reportsForDate(date)
-            let completedCount = try! reports.reduce(0, combine: {
+            let completedCount = reports.reduce(0, combine: {
                 return $1.completed ? $0 + 1 : $0
             })
             dayCell.accessoryView?.maxValue = reports.count

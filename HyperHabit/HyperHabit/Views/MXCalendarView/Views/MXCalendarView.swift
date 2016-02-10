@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MXCalendarView: UIView {
+public class MXCalendarView: UIView {
 
     // MARK: MXCalendarView @IB
 
@@ -56,7 +56,7 @@ class MXCalendarView: UIView {
     // MARK: MXCalendarView private
 
     private func indexPathForDate(date: NSDate) -> NSIndexPath? {
-        guard let collectionView = collectionView else {
+        guard let _ = collectionView else {
             return nil
         }
         let adjustedDate = date.dateByIgnoringTime()
