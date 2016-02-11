@@ -14,17 +14,17 @@ class ThemeManager {
     var themes: [Theme] {
         return [
                 defaultTheme,
-                Theme(identifier: "sepia",
-                        name: "Sepia",
-                        dark: false,
-                        backgroundColor: UIColor(red: 0.98, green: 0.96, blue: 0.91, alpha: 1),
-                        foregroundColor: UIColor(red: 0.38, green: 0.24, blue: 0.13, alpha: 1)
-                ),
                 Theme(identifier: "cold",
                         name: "Cold",
                         dark: false,
                         backgroundColor: UIColor(red:0.93, green:0.94, blue:0.95, alpha:1),
                         foregroundColor: UIColor(red:0.17, green:0.24, blue:0.32, alpha:1)
+                ),
+                Theme(identifier: "sepia",
+                        name: "Sepia",
+                        dark: false,
+                        backgroundColor: UIColor(red: 0.98, green: 0.96, blue: 0.91, alpha: 1),
+                        foregroundColor: UIColor(red: 0.38, green: 0.24, blue: 0.13, alpha: 1)
                 ),
                 Theme(identifier: "gray",
                         name: "Gray",
@@ -38,12 +38,12 @@ class ThemeManager {
                         backgroundColor: UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1),
                         foregroundColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
                 ),
-                Theme(identifier: "debug",
-                        name: "Debug",
-                        dark: true,
-                        backgroundColor: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1),
-                        foregroundColor: UIColor(red: 0.95, green: 0, blue: 0, alpha: 1)
-                ),
+//                Theme(identifier: "debug",
+//                        name: "Debug",
+//                        dark: true,
+//                        backgroundColor: UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1),
+//                        foregroundColor: UIColor(red: 0.95, green: 0, blue: 0, alpha: 1)
+//                ),
         ]
     }
 
