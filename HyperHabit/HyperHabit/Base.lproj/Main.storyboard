@@ -1947,6 +1947,48 @@
                                     <outletCollection property="gestureRecognizers" destination="3Nd-nQ-lbO" appends="YES" id="GeF-Qf-NGS"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-sS-pHw" userLabel="Test Data View">
+                                <rect key="frame" x="0.0" y="324" width="320" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe2-Qu-ibT" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="wHp-sg-BbR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MV4-P3-08a" customClass="LineView" customModule="HyperHabit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="6US-o7-lF8"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Generate Test Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9yt-55-Sud">
+                                        <rect key="frame" x="12" y="14" width="300" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fe2-Qu-ibT" secondAttribute="trailing" id="310-Gn-8Pv"/>
+                                    <constraint firstItem="fe2-Qu-ibT" firstAttribute="leading" secondItem="d9C-sS-pHw" secondAttribute="leading" id="6ws-ft-fzZ"/>
+                                    <constraint firstItem="MV4-P3-08a" firstAttribute="top" secondItem="d9C-sS-pHw" secondAttribute="top" id="7hN-zR-4e7"/>
+                                    <constraint firstAttribute="trailing" secondItem="9yt-55-Sud" secondAttribute="trailing" constant="8" id="ES9-q8-cwm"/>
+                                    <constraint firstAttribute="bottom" secondItem="fe2-Qu-ibT" secondAttribute="bottom" id="Pf4-DL-fge"/>
+                                    <constraint firstItem="MV4-P3-08a" firstAttribute="leading" secondItem="d9C-sS-pHw" secondAttribute="leading" id="Sa0-FJ-uos"/>
+                                    <constraint firstItem="9yt-55-Sud" firstAttribute="centerY" secondItem="d9C-sS-pHw" secondAttribute="centerY" id="bgw-EC-IyS"/>
+                                    <constraint firstItem="9yt-55-Sud" firstAttribute="leading" secondItem="d9C-sS-pHw" secondAttribute="leading" constant="12" id="fEV-KD-8CD"/>
+                                    <constraint firstAttribute="trailing" secondItem="MV4-P3-08a" secondAttribute="trailing" id="keR-nI-7Dq"/>
+                                    <constraint firstAttribute="height" constant="50" id="nEW-Fw-0d4"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rhZ-eX-LS0" appends="YES" id="aUL-8o-q7x"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1957,13 +1999,17 @@
                             <constraint firstItem="eR5-c9-RTK" firstAttribute="leading" secondItem="ErJ-ng-kNV" secondAttribute="leading" id="9Wn-5C-pu5"/>
                             <constraint firstItem="Hqs-vi-7pd" firstAttribute="leading" secondItem="ErJ-ng-kNV" secondAttribute="leading" id="XPr-OH-Wmq"/>
                             <constraint firstAttribute="trailing" secondItem="g4x-Hu-4lR" secondAttribute="trailing" id="a76-51-gS4"/>
+                            <constraint firstAttribute="trailing" secondItem="d9C-sS-pHw" secondAttribute="trailing" id="e8l-EL-TiJ"/>
+                            <constraint firstItem="d9C-sS-pHw" firstAttribute="leading" secondItem="ErJ-ng-kNV" secondAttribute="leading" id="htA-Ts-dyG"/>
                             <constraint firstItem="g4x-Hu-4lR" firstAttribute="leading" secondItem="ErJ-ng-kNV" secondAttribute="leading" id="knG-cw-hAZ"/>
+                            <constraint firstItem="d9C-sS-pHw" firstAttribute="top" secondItem="Hqs-vi-7pd" secondAttribute="bottom" constant="20" id="q2A-Di-4HD"/>
                             <constraint firstAttribute="trailing" secondItem="Hqs-vi-7pd" secondAttribute="trailing" id="yGZ-4y-T5c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="hrI-Li-0Gz"/>
                     <connections>
                         <outlet property="authenticationStatusLabel" destination="R94-5o-nen" id="jbh-QO-LYQ"/>
+                        <outlet property="generateTestDataContainer" destination="d9C-sS-pHw" id="50A-FU-Cmm"/>
                         <outlet property="themeNameLabel" destination="2Cc-hc-TkH" id="KOi-nf-389"/>
                         <outlet property="toggleAuthenticationLabel" destination="6FB-Ui-rTO" id="Zud-Ar-rCD"/>
                         <segue destination="YTf-kg-p3c" kind="modal" identifier="ShowLogIn" id="LYN-ti-uuH"/>
@@ -1986,8 +2032,13 @@
                         <segue destination="avh-M2-uyJ" kind="push" id="r69-er-7Vt"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="rhZ-eX-LS0">
+                    <connections>
+                        <action selector="generateTestDataAction:" destination="d5d-yf-wAw" id="vRi-dL-Yfi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="575.20000000000005" y="1104.76"/>
+            <point key="canvasLocation" x="575" y="1104"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>active</key>
+		<true/>
+		<key>definition</key>
+		<string>At least 2 litres</string>
+		<key>id</key>
+		<string>1455174931.10037452E212A-48F2-488A-BFDC-8C9D42E27FD0</string>
+		<key>name</key>
+		<string>Drink more water</string>
+		<key>repeatsTotal</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>active</key>
+		<true/>
+		<key>definition</key>
+		<string></string>
+		<key>id</key>
+		<string>1455174931.10021A72993EB-96D2-47D2-845E-11F6879CC618</string>
+		<key>name</key>
+		<string>Meditate</string>
+		<key>repeatsTotal</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>active</key>
+		<true/>
+		<key>definition</key>
+		<string></string>
+		<key>id</key>
+		<string>1455174931.10036359C28EA-1681-4AAE-84F6-E0E38D850379</string>
+		<key>name</key>
+		<string>Eat more vegetables</string>
+		<key>repeatsTotal</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>active</key>
+		<true/>
+		<key>definition</key>
+		<string></string>
+		<key>id</key>
+		<string>1455174931.100389AC92C9B-C269-4DF9-8A72-128DA9B8E12C</string>
+		<key>name</key>
+		<string>Read</string>
+		<key>repeatsTotal</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>active</key>
+		<true/>
+		<key>definition</key>
+		<string>Make 100 push ups</string>
+		<key>id</key>
+		<string>1455174931.100343815AD79-F56B-4A1B-9D60-36CE11B8B002</string>
+		<key>name</key>
+		<string>Exercise</string>
+		<key>repeatsTotal</key>
+		<integer>1</integer>
+	</dict>
+</array>
+</plist>

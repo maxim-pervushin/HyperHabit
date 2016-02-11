@@ -339,6 +339,10 @@
 		C569AC921BFCFCC7003F9995 /* HyperHabitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperHabitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569AC961BFCFCC7003F9995 /* HyperHabitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperHabitUITests.swift; sourceTree = "<group>"; };
 		C569AC981BFCFCC7003F9995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C572B9931C6C6ED000E12B08 /* habits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = habits.plist; sourceTree = "<group>"; };
+		C572B9941C6C6ED000E12B08 /* habitsToSave.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = habitsToSave.plist; sourceTree = "<group>"; };
+		C572B9951C6C6ED000E12B08 /* reports.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = reports.plist; sourceTree = "<group>"; };
+		C572B9961C6C6ED000E12B08 /* reportsToSave.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = reportsToSave.plist; sourceTree = "<group>"; };
 		C5A658181C01BBD2008DE843 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A6581A1C01BBD2008DE843 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		C5A658201C01BBD2008DE843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -823,6 +827,7 @@
 		C569AC6A1BFCFCC7003F9995 = {
 			isa = PBXGroup;
 			children = (
+				C572B9921C6C6EAB00E12B08 /* TestData */,
 				73BC6CBEA91F1311512E2812 /* Common */,
 				C569AC751BFCFCC7003F9995 /* HyperHabit */,
 				C569AC951BFCFCC7003F9995 /* HyperHabitUITests */,
@@ -874,6 +879,17 @@
 				C569AC981BFCFCC7003F9995 /* Info.plist */,
 			);
 			path = HyperHabitUITests;
+			sourceTree = "<group>";
+		};
+		C572B9921C6C6EAB00E12B08 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				C572B9931C6C6ED000E12B08 /* habits.plist */,
+				C572B9941C6C6ED000E12B08 /* habitsToSave.plist */,
+				C572B9951C6C6ED000E12B08 /* reports.plist */,
+				C572B9961C6C6ED000E12B08 /* reportsToSave.plist */,
+			);
+			name = TestData;
 			sourceTree = "<group>";
 		};
 		C580A4DB1BFF507200CF4C31 /* Vendor */ = {

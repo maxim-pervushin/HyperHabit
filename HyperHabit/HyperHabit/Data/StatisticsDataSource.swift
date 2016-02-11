@@ -33,9 +33,6 @@ class StatisticsDataSource {
     }
 
     func reportsForDate(date: NSDate) -> [Report] {
-//        guard let month = month else {
-//            return []
-//        }
         let key = "\(date.year())-\(date.month())"
         guard let cached = cache.objectForKey(key) as? [Report] else {
             return []
